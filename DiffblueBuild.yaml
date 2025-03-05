@@ -223,7 +223,7 @@ phase:
         flags:
           - -Dmaven.compiler.failOnWarning=false
           - --also-make
-          - -DskipTests
+          - -Dmaven.test.skip=true
           - -DskipITs
           - --threads=1C
 
@@ -248,7 +248,7 @@ phase:
         flags:
           - -Dmaven.compiler.failOnWarning=false
           - --also-make
-          - -DskipTests
+          - -Dmaven.test.skip=true
           - -DskipITs
           - --threads=1C
 
