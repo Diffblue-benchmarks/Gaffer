@@ -31,8 +31,13 @@
         <skip.failsafe.tests>true</skip.failsafe.tests>
     </properties>
 
-    <dependencies>
-        <!-- Gaffer dependencies -->
+  <dependencies>
+    <!-- Gaffer dependencies -->
+    <dependency>
+      <groupId>com.diffblue.cover</groupId>
+      <artifactId>cover-annotations</artifactId>
+      <version>1.3.0</version>
+    </dependency>
         <dependency>
             <groupId>uk.gov.gchq.gaffer</groupId>
             <artifactId>graph</artifactId>
