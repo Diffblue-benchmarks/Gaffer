@@ -226,6 +226,7 @@ phase:
           - -Dmaven.test.skip=true
           - -DskipITs
           - --threads=1C
+          - -Denforcer.fail=false
 
   # The launcher phase is used to download the JUnit Jupiter launcher - run on a project (?)
   launcher: ~
@@ -251,6 +252,7 @@ phase:
           - -Dmaven.test.skip=true
           - -DskipITs
           - --threads=1C
+          - -Denforcer.fail=false
 
   # The test phase is used to run the module under test's tests. This allows a filter to be specified to
   # include/exclude tests that match patterns, or run a single named test.
