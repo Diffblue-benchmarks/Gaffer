@@ -1,0 +1,350 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-09-19T16:23:19.663Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 137.699,
+    "environmentDetectionTime" : 0.023,
+    "indexingTime" : 0.386,
+    "entryPointsTime" : 0.018,
+    "generationTime" : 15707.184,
+    "timeToFirstTest" : 18223.737,
+    "timeToLastTest" : 18186.481,
+    "indexQueryTime" : 4.76,
+    "verificationTime" : 354.785,
+    "validationTime" : 4.429
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "T000" : "Method eligible for test creation",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 17,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 17,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 159,
+    "perMethodTestability" : {
+      "T000" : 8,
+      "T002" : 3,
+      "T003" : 3,
+      "T005" : 2,
+      "T023" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 12,
+      "R002" : 1,
+      "T003" : 3,
+      "T023" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 17
+    },
+    "perTestValidation" : {
+      "V000" : 17
+    },
+    "warnings" : {
+      "W002" : 1
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T002" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T003" : 3,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "R002" : 1,
+        "T003" : 3,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 13
+      },
+      "warnings" : {
+        "W002" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        32,
+        34,
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.getSchema:()Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.getStoreProperties:()Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.getTestsToSkip:()Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.setSchema:(Luk/gov/gchq/gaffer/store/schema/Schema;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.setStoreProperties:(Luk/gov/gchq/gaffer/store/StoreProperties;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        72,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuite.setTestsToSkip:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92,
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.beforeAll:(Lorg/junit/jupiter/api/extension/ExtensionContext;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        155
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.beforeEach:(Lorg/junit/jupiter/api/extension/ExtensionContext;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        186,
+        187,
+        188,
+        189
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.evaluateExecutionCondition:(Lorg/junit/jupiter/api/extension/ExtensionContext;)Lorg/junit/jupiter/api/extension/ConditionEvaluationResult;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        257,
+        258,
+        259,
+        260,
+        263
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.getIntegrationTestSuite:(Ljava/lang/String;)Luk/gov/gchq/gaffer/integration/junit/extensions/IntegrationTestSuite;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        293,
+        294,
+        296,
+        297,
+        298,
+        299,
+        300,
+        302,
+        303,
+        302,
+        305,
+        306,
+        307,
+        310
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.getObject:(Ljava/lang/Class;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        282,
+        283,
+        284,
+        285,
+        287
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.injectInstanceFields:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        267,
+        269,
+        271,
+        272,
+        273,
+        274,
+        277,
+        275,
+        276,
+        278,
+        279
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.resolveParameter:(Lorg/junit/jupiter/api/extension/ParameterContext;Lorg/junit/jupiter/api/extension/ExtensionContext;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        239,
+        240
+      ]
+    },
+    "uk.gov.gchq.gaffer.integration.junit.extensions.IntegrationTestSuiteExtension.supportsParameter:(Lorg/junit/jupiter/api/extension/ParameterContext;Lorg/junit/jupiter/api/extension/ExtensionContext;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        204,
+        205
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

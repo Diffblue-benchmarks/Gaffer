@@ -1,0 +1,268 @@
+package uk.gov.gchq.gaffer.operation.impl;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import com.fasterxml.jackson.core.type.TypeReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.Function;
+import org.apache.commons.lang3.exception.CloneFailedException;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.operation.impl.Map.Builder;
+import uk.gov.gchq.gaffer.operation.impl.Map.OutputBuilder;
+import uk.gov.gchq.gaffer.operation.serialisation.TypeReferenceImpl;
+
+class MapDiffblueTest {
+  /**
+   * Test Builder {@link Builder#first(Function)}.
+   *
+   * <p>Method under test: {@link Builder#first(Function)}
+   */
+  @Test
+  @DisplayName("Test Builder first(Function)")
+  @Tag("MaintainedByDiffblue")
+  void testBuilderFirst() {
+    // Arrange
+    Builder<Object> builder = new Builder<>();
+    Function<Object, Object> function = mock(Function.class);
+
+    // Act
+    OutputBuilder<Object, Object> actualFirstResult = builder.first(function);
+
+    // Assert
+    Map<Object, Object> _getOpResult = actualFirstResult._getOp();
+    TypeReference<Object> outputTypeReference = _getOpResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(_getOpResult.getInput());
+    assertNull(_getOpResult.getOptions());
+    List<Function> functions = _getOpResult.getFunctions();
+    assertEquals(1, functions.size());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = _getOpResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Map<Object, Object> actualMap = actualFirstResult.build();
+    assertSame(_getOpResult, actualMap);
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, _getOpResult.getOutputType());
+    assertSame(function, functions.get(0));
+  }
+
+  /**
+   * Test Builder new {@link Builder} (default constructor).
+   *
+   * <p>Method under test: default or parameterless constructor of {@link Builder}
+   */
+  @Test
+  @DisplayName("Test Builder new Builder (default constructor)")
+  @Tag("MaintainedByDiffblue")
+  void testBuilderNewBuilder() {
+    // Arrange and Act
+    Builder<Object> actualBuilder = new Builder<>();
+
+    // Assert
+    Map<Object, Object> _getOpResult = actualBuilder._getOp();
+    TypeReference<Object> outputTypeReference = _getOpResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(_getOpResult.getInput());
+    assertNull(_getOpResult.getFunctions());
+    assertNull(_getOpResult.getOptions());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = _getOpResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Map<Object, Object> actualMap = actualBuilder.build();
+    assertSame(_getOpResult, actualMap);
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, _getOpResult.getOutputType());
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link Map#Map()}
+   *   <li>{@link Map#setFunctions(List)}
+   *   <li>{@link Map#setInput(Object)}
+   *   <li>{@link Map#setOptions(java.util.Map)}
+   *   <li>{@link Map#getFunctions()}
+   *   <li>{@link Map#getInput()}
+   *   <li>{@link Map#getOptions()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("MaintainedByDiffblue")
+  void testGettersAndSetters() {
+    // Arrange and Act
+    Map<Object, Object> actualMap = new Map<>();
+    ArrayList<Function> funcs = new ArrayList<>();
+    actualMap.setFunctions(funcs);
+    actualMap.setInput("Input");
+    HashMap<String, String> options = new HashMap<>();
+    actualMap.setOptions(options);
+    List<Function> actualFunctions = actualMap.getFunctions();
+    Object actualInput = actualMap.getInput();
+    java.util.Map<String, String> actualOptions = actualMap.getOptions();
+
+    // Assert
+    assertEquals("Input", actualInput);
+    assertTrue(actualFunctions.isEmpty());
+    assertTrue(actualOptions.isEmpty());
+    assertSame(funcs, actualFunctions);
+    assertSame(options, actualOptions);
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <ul>
+   *   <li>When {@link ArrayList#ArrayList()}.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link Map#Map(List)}
+   *   <li>{@link Map#setFunctions(List)}
+   *   <li>{@link Map#setInput(Object)}
+   *   <li>{@link Map#setOptions(java.util.Map)}
+   *   <li>{@link Map#getFunctions()}
+   *   <li>{@link Map#getInput()}
+   *   <li>{@link Map#getOptions()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters; when ArrayList()")
+  @Tag("MaintainedByDiffblue")
+  void testGettersAndSetters_whenArrayList() {
+    // Arrange and Act
+    Map<Object, Object> actualMap = new Map<>(new ArrayList<>());
+    ArrayList<Function> funcs = new ArrayList<>();
+    actualMap.setFunctions(funcs);
+    actualMap.setInput("Input");
+    HashMap<String, String> options = new HashMap<>();
+    actualMap.setOptions(options);
+    List<Function> actualFunctions = actualMap.getFunctions();
+    Object actualInput = actualMap.getInput();
+    java.util.Map<String, String> actualOptions = actualMap.getOptions();
+
+    // Assert
+    assertEquals("Input", actualInput);
+    assertTrue(actualFunctions.isEmpty());
+    assertTrue(actualOptions.isEmpty());
+    assertSame(funcs, actualFunctions);
+    assertSame(options, actualOptions);
+  }
+
+  /**
+   * Test {@link Map#Map(Function)}.
+   *
+   * <p>Method under test: {@link Map#Map(Function)}
+   */
+  @Test
+  @DisplayName("Test new Map(Function)")
+  @Tag("MaintainedByDiffblue")
+  void testNewMap() {
+    // Arrange
+    Function function = mock(Function.class);
+
+    // Act
+    Map<Object, Object> actualMap = new Map<>(function);
+
+    // Assert
+    TypeReference<Object> outputTypeReference = actualMap.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(actualMap.getInput());
+    assertNull(actualMap.getOptions());
+    List<Function> functions = actualMap.getFunctions();
+    assertEquals(1, functions.size());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = actualMap.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, actualMap.getOutputType());
+    assertSame(function, functions.get(0));
+  }
+
+  /**
+   * Test {@link Map#getOutputTypeReference()}.
+   *
+   * <p>Method under test: {@link Map#getOutputTypeReference()}
+   */
+  @Test
+  @DisplayName("Test getOutputTypeReference()")
+  @Tag("MaintainedByDiffblue")
+  void testGetOutputTypeReference() {
+    // Arrange
+    Map<Object, Object> map = new Map<>();
+
+    // Act and Assert
+    assertTrue(map.getOutputTypeReference() instanceof TypeReferenceImpl.Object);
+  }
+
+  /**
+   * Test {@link Map#shallowClone()}.
+   *
+   * <ul>
+   *   <li>Given {@link ArrayList#ArrayList()} add {@link Function}.
+   *   <li>Then OutputTypeReference return {@link TypeReferenceImpl.Object}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Map#shallowClone()}
+   */
+  @Test
+  @DisplayName(
+      "Test shallowClone(); given ArrayList() add Function; then OutputTypeReference return Object")
+  @Tag("MaintainedByDiffblue")
+  void testShallowClone_givenArrayListAddFunction_thenOutputTypeReferenceReturnObject()
+      throws CloneFailedException {
+    // Arrange
+    ArrayList<Function> functions = new ArrayList<>();
+    functions.add(mock(Function.class));
+    Map<Object, Object> map = new Map<>(functions);
+
+    // Act
+    Map<Object, Object> actualShallowCloneResult = map.shallowClone();
+
+    // Assert
+    TypeReference<Object> outputTypeReference = actualShallowCloneResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(actualShallowCloneResult.getInput());
+    assertNull(actualShallowCloneResult.getOptions());
+    assertEquals(1, actualShallowCloneResult.getFunctions().size());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = actualShallowCloneResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, actualShallowCloneResult.getOutputType());
+  }
+
+  /**
+   * Test {@link Map#setFunction(Function)}.
+   *
+   * <p>Method under test: {@link Map#setFunction(Function)}
+   */
+  @Test
+  @DisplayName("Test setFunction(Function)")
+  @Tag("MaintainedByDiffblue")
+  void testSetFunction() {
+    // Arrange
+    Map<Object, Object> map = new Map<>();
+    Function function = mock(Function.class);
+
+    // Act
+    map.setFunction(function);
+
+    // Assert
+    List<Function> functions = map.getFunctions();
+    assertEquals(1, functions.size());
+    assertSame(function, functions.get(0));
+  }
+}

@@ -1,0 +1,268 @@
+package uk.gov.gchq.gaffer.serialisation.implementation;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.exception.SerialisationException;
+
+class JavaSerialiserDiffblueTest {
+  /**
+   * Test {@link JavaSerialiser#serialise(Object)}.
+   *
+   * <p>Method under test: {@link JavaSerialiser#serialise(Object)}
+   */
+  @Test
+  @DisplayName("Test serialise(Object)")
+  @Tag("MaintainedByDiffblue")
+  void testSerialise() throws SerialisationException {
+    // Arrange, Act and Assert
+    assertArrayEquals(
+        new byte[] {-84, -19, 0, 5, 't', 0, 6, 'O', 'b', 'j', 'e', 'c', 't'},
+        new JavaSerialiser().serialise("Object"));
+  }
+
+  /**
+   * Test {@link JavaSerialiser#deserialise(byte[], int, int)} with {@code allBytes}, {@code
+   * offset}, {@code length}.
+   *
+   * <ul>
+   *   <li>When two.
+   *   <li>Then throw {@link SerialisationException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#deserialise(byte[], int, int)}
+   */
+  @Test
+  @DisplayName(
+      "Test deserialise(byte[], int, int) with 'allBytes', 'offset', 'length'; when two; then throw SerialisationException")
+  @Tag("MaintainedByDiffblue")
+  void testDeserialiseWithAllBytesOffsetLength_whenTwo_thenThrowSerialisationException()
+      throws UnsupportedEncodingException, SerialisationException {
+    // Arrange, Act and Assert
+    assertThrows(
+        SerialisationException.class,
+        () -> new JavaSerialiser().deserialise("AXAXAXAX".getBytes("UTF-8"), 2, 3));
+  }
+
+  /**
+   * Test {@link JavaSerialiser#deserialise(byte[])} with {@code bytes}.
+   *
+   * <p>Method under test: {@link JavaSerialiser#deserialise(byte[])}
+   */
+  @Test
+  @DisplayName("Test deserialise(byte[]) with 'bytes'")
+  @Tag("MaintainedByDiffblue")
+  void testDeserialiseWithBytes() throws UnsupportedEncodingException, SerialisationException {
+    // Arrange, Act and Assert
+    assertThrows(
+        SerialisationException.class,
+        () -> new JavaSerialiser().deserialise("AXAXAXAX".getBytes("UTF-8")));
+  }
+
+  /**
+   * Test {@link JavaSerialiser#deserialiseEmpty()}.
+   *
+   * <p>Method under test: {@link JavaSerialiser#deserialiseEmpty()}
+   */
+  @Test
+  @DisplayName("Test deserialiseEmpty()")
+  @Tag("MaintainedByDiffblue")
+  void testDeserialiseEmpty() {
+    // Arrange, Act and Assert
+    assertNull(new JavaSerialiser().deserialiseEmpty());
+  }
+
+  /**
+   * Test {@link JavaSerialiser#canHandle(Class)}.
+   *
+   * <ul>
+   *   <li>When {@code Serializable}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#canHandle(Class)}
+   */
+  @Test
+  @DisplayName("Test canHandle(Class); when 'java.io.Serializable'; then return 'true'")
+  @Tag("MaintainedByDiffblue")
+  void testCanHandle_whenJavaIoSerializable_thenReturnTrue() {
+    // Arrange
+    JavaSerialiser javaSerialiser = new JavaSerialiser();
+    Class<Serializable> clazz = Serializable.class;
+
+    // Act and Assert
+    assertTrue(javaSerialiser.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link JavaSerialiser#canHandle(Class)}.
+   *
+   * <ul>
+   *   <li>When {@code Object}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#canHandle(Class)}
+   */
+  @Test
+  @DisplayName("Test canHandle(Class); when 'java.lang.Object'; then return 'false'")
+  @Tag("MaintainedByDiffblue")
+  void testCanHandle_whenJavaLangObject_thenReturnFalse() {
+    // Arrange
+    JavaSerialiser javaSerialiser = new JavaSerialiser();
+    Class<Object> clazz = Object.class;
+
+    // Act and Assert
+    assertFalse(javaSerialiser.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link JavaSerialiser#preservesObjectOrdering()}.
+   *
+   * <p>Method under test: {@link JavaSerialiser#preservesObjectOrdering()}
+   */
+  @Test
+  @DisplayName("Test preservesObjectOrdering()")
+  @Tag("MaintainedByDiffblue")
+  void testPreservesObjectOrdering() {
+    // Arrange, Act and Assert
+    assertFalse(new JavaSerialiser().preservesObjectOrdering());
+  }
+
+  /**
+   * Test {@link JavaSerialiser#equals(Object)}, and {@link JavaSerialiser#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link JavaSerialiser#equals(Object)}
+   *   <li>{@link JavaSerialiser#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is equal; then return equal")
+  @Tag("MaintainedByDiffblue")
+  void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual() {
+    // Arrange
+    JavaSerialiser javaSerialiser = new JavaSerialiser();
+    JavaSerialiser javaSerialiser2 = new JavaSerialiser();
+
+    // Act and Assert
+    assertEquals(javaSerialiser, javaSerialiser2);
+    assertEquals(javaSerialiser.hashCode(), javaSerialiser2.hashCode());
+  }
+
+  /**
+   * Test {@link JavaSerialiser#equals(Object)}, and {@link JavaSerialiser#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is same.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link JavaSerialiser#equals(Object)}
+   *   <li>{@link JavaSerialiser#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is same; then return equal")
+  @Tag("MaintainedByDiffblue")
+  void testEqualsAndHashCode_whenOtherIsSame_thenReturnEqual() {
+    // Arrange
+    JavaSerialiser javaSerialiser = new JavaSerialiser();
+
+    // Act and Assert
+    assertEquals(javaSerialiser, javaSerialiser);
+    int expectedHashCodeResult = javaSerialiser.hashCode();
+    assertEquals(expectedHashCodeResult, javaSerialiser.hashCode());
+  }
+
+  /**
+   * Test {@link JavaSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is different; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new JavaSerialiser(), 1);
+  }
+
+  /**
+   * Test {@link JavaSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is 'null'; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  void testEquals_whenOtherIsNull_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new JavaSerialiser(), null);
+  }
+
+  /**
+   * Test {@link JavaSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link JavaSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is wrong type; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new JavaSerialiser(), "Different type to JavaSerialiser");
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>default or parameterless constructor of {@link JavaSerialiser}
+   *   <li>{@link JavaSerialiser#isConsistent()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("MaintainedByDiffblue")
+  void testGettersAndSetters() {
+    // Arrange, Act and Assert
+    assertFalse(new JavaSerialiser().isConsistent());
+  }
+}

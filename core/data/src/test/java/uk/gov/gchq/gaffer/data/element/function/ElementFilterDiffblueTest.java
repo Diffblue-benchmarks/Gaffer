@@ -1,0 +1,336 @@
+package uk.gov.gchq.gaffer.data.element.function;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import java.util.ArrayList;
+import java.util.function.Predicate;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import uk.gov.gchq.gaffer.data.element.Edge;
+import uk.gov.gchq.gaffer.data.element.Element;
+import uk.gov.gchq.gaffer.data.element.function.ElementFilter.Builder;
+import uk.gov.gchq.koryphe.ValidationResult;
+import uk.gov.gchq.koryphe.tuple.predicate.TupleAdaptedPredicate;
+
+class ElementFilterDiffblueTest {
+  /**
+   * Test Builder {@link Builder#build()}.
+   *
+   * <p>Method under test: {@link Builder#build()}
+   */
+  @Test
+  @DisplayName("Test Builder build()")
+  @Tag("MaintainedByDiffblue")
+  void testBuilderBuild() {
+    // Arrange, Act and Assert
+    assertTrue(new Builder().build().getComponents().isEmpty());
+  }
+
+  /**
+   * Test Builder {@link Builder#Builder()}.
+   *
+   * <p>Method under test: {@link Builder#Builder()}
+   */
+  @Test
+  @DisplayName("Test Builder new Builder()")
+  @Tag("MaintainedByDiffblue")
+  void testBuilderNewBuilder() {
+    // Arrange, Act and Assert
+    assertTrue(new Builder().build().getComponents().isEmpty());
+  }
+
+  /**
+   * Test {@link ElementFilter#test(Element)} with {@code element}.
+   *
+   * <p>Method under test: {@link ElementFilter#test(Element)}
+   */
+  @Test
+  @DisplayName("Test test(Element) with 'element'")
+  @Tag("MaintainedByDiffblue")
+  void testTestWithElement() {
+    // Arrange
+    ElementFilter elementFilter = new ElementFilter();
+
+    // Act
+    boolean actualTestResult = elementFilter.test(new Edge("Group"));
+
+    // Assert
+    assertTrue(actualTestResult);
+  }
+
+  /**
+   * Test {@link ElementFilter#testWithValidationResult(Element)}.
+   *
+   * <p>Method under test: {@link ElementFilter#testWithValidationResult(Element)}
+   */
+  @Test
+  @DisplayName("Test testWithValidationResult(Element)")
+  @Tag("MaintainedByDiffblue")
+  void testTestWithValidationResult() {
+    // Arrange
+    Predicate<Object> predicate = mock(Predicate.class);
+    when(predicate.test(Mockito.<Object>any())).thenReturn(true);
+    String[] selection = new String[] {"Selection"};
+
+    TupleAdaptedPredicate<String, ?> tupleAdaptedPredicate =
+        new TupleAdaptedPredicate<>(predicate, selection);
+
+    ArrayList<TupleAdaptedPredicate<String, ?>> components = new ArrayList<>();
+    components.add(tupleAdaptedPredicate);
+
+    ElementFilter elementFilter = new ElementFilter();
+    elementFilter.setComponents(components);
+
+    // Act
+    ValidationResult actualTestWithValidationResultResult =
+        elementFilter.testWithValidationResult(new Edge("Group"));
+
+    // Assert
+    verify(predicate).test(isNull());
+    assertEquals("Validation errors: \n", actualTestWithValidationResultResult.getErrorString());
+    assertTrue(actualTestWithValidationResultResult.getErrors().isEmpty());
+    assertTrue(actualTestWithValidationResultResult.isValid());
+  }
+
+  /**
+   * Test {@link ElementFilter#testWithValidationResult(Element)}.
+   *
+   * <ul>
+   *   <li>Given {@link ArrayList#ArrayList()} add {@link
+   *       TupleAdaptedPredicate#TupleAdaptedPredicate()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ElementFilter#testWithValidationResult(Element)}
+   */
+  @Test
+  @DisplayName(
+      "Test testWithValidationResult(Element); given ArrayList() add TupleAdaptedPredicate()")
+  @Tag("MaintainedByDiffblue")
+  void testTestWithValidationResult_givenArrayListAddTupleAdaptedPredicate() {
+    // Arrange
+    ArrayList<TupleAdaptedPredicate<String, ?>> components = new ArrayList<>();
+    components.add(new TupleAdaptedPredicate<>());
+
+    ElementFilter elementFilter = new ElementFilter();
+    elementFilter.setComponents(components);
+
+    // Act
+    ValidationResult actualTestWithValidationResultResult =
+        elementFilter.testWithValidationResult(new Edge("Group"));
+
+    // Assert
+    assertEquals("Validation errors: \n", actualTestWithValidationResultResult.getErrorString());
+    assertTrue(actualTestWithValidationResultResult.getErrors().isEmpty());
+    assertTrue(actualTestWithValidationResultResult.isValid());
+  }
+
+  /**
+   * Test {@link ElementFilter#testWithValidationResult(Element)}.
+   *
+   * <ul>
+   *   <li>Given {@link ArrayList#ArrayList()} add {@link
+   *       TupleAdaptedPredicate#TupleAdaptedPredicate()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ElementFilter#testWithValidationResult(Element)}
+   */
+  @Test
+  @DisplayName(
+      "Test testWithValidationResult(Element); given ArrayList() add TupleAdaptedPredicate()")
+  @Tag("MaintainedByDiffblue")
+  void testTestWithValidationResult_givenArrayListAddTupleAdaptedPredicate2() {
+    // Arrange
+    ArrayList<TupleAdaptedPredicate<String, ?>> components = new ArrayList<>();
+    components.add(new TupleAdaptedPredicate<>());
+    components.add(new TupleAdaptedPredicate<>());
+
+    ElementFilter elementFilter = new ElementFilter();
+    elementFilter.setComponents(components);
+
+    // Act
+    ValidationResult actualTestWithValidationResultResult =
+        elementFilter.testWithValidationResult(new Edge("Group"));
+
+    // Assert
+    assertEquals("Validation errors: \n", actualTestWithValidationResultResult.getErrorString());
+    assertTrue(actualTestWithValidationResultResult.getErrors().isEmpty());
+    assertTrue(actualTestWithValidationResultResult.isValid());
+  }
+
+  /**
+   * Test {@link ElementFilter#testWithValidationResult(Element)}.
+   *
+   * <ul>
+   *   <li>Given {@link ElementFilter} (default constructor).
+   *   <li>When {@link Edge#Edge(String)} with {@code Group}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ElementFilter#testWithValidationResult(Element)}
+   */
+  @Test
+  @DisplayName(
+      "Test testWithValidationResult(Element); given ElementFilter (default constructor); when Edge(String) with 'Group'")
+  @Tag("MaintainedByDiffblue")
+  void testTestWithValidationResult_givenElementFilter_whenEdgeWithGroup() {
+    // Arrange
+    ElementFilter elementFilter = new ElementFilter();
+
+    // Act
+    ValidationResult actualTestWithValidationResultResult =
+        elementFilter.testWithValidationResult(new Edge("Group"));
+
+    // Assert
+    assertEquals("Validation errors: \n", actualTestWithValidationResultResult.getErrorString());
+    assertTrue(actualTestWithValidationResultResult.getErrors().isEmpty());
+    assertTrue(actualTestWithValidationResultResult.isValid());
+  }
+
+  /**
+   * Test {@link ElementFilter#getComponents()}.
+   *
+   * <p>Method under test: {@link ElementFilter#getComponents()}
+   */
+  @Test
+  @DisplayName("Test getComponents()")
+  @Tag("MaintainedByDiffblue")
+  void testGetComponents() {
+    // Arrange, Act and Assert
+    assertTrue(new ElementFilter().getComponents().isEmpty());
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link ElementFilter#lock()}
+   *   <li>{@link ElementFilter#toString()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("MaintainedByDiffblue")
+  void testGettersAndSetters() {
+    // Arrange
+    ElementFilter elementFilter = new Builder().build();
+
+    // Act
+    elementFilter.lock();
+
+    // Assert
+    assertEquals("ElementFilter[elementTuple=ElementTuple[]]", elementFilter.toString());
+  }
+
+  /**
+   * Test {@link ElementFilter#equals(Object)}, and {@link ElementFilter#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link ElementFilter#equals(Object)}
+   *   <li>{@link ElementFilter#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is equal; then return equal")
+  @Tag("MaintainedByDiffblue")
+  void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual() {
+    // Arrange
+    ElementFilter elementFilter = new Builder().build();
+    ElementFilter elementFilter2 = new Builder().build();
+
+    // Act and Assert
+    assertEquals(elementFilter, elementFilter2);
+    assertEquals(elementFilter.hashCode(), elementFilter2.hashCode());
+  }
+
+  /**
+   * Test {@link ElementFilter#equals(Object)}, and {@link ElementFilter#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is same.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link ElementFilter#equals(Object)}
+   *   <li>{@link ElementFilter#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is same; then return equal")
+  @Tag("MaintainedByDiffblue")
+  void testEqualsAndHashCode_whenOtherIsSame_thenReturnEqual() {
+    // Arrange
+    ElementFilter elementFilter = new Builder().build();
+
+    // Act and Assert
+    assertEquals(elementFilter, elementFilter);
+    int expectedHashCodeResult = elementFilter.hashCode();
+    assertEquals(expectedHashCodeResult, elementFilter.hashCode());
+  }
+
+  /**
+   * Test {@link ElementFilter#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link ElementFilter#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is 'null'; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  void testEquals_whenOtherIsNull_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new Builder().build(), null);
+  }
+
+  /**
+   * Test {@link ElementFilter#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link ElementFilter#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is wrong type; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new Builder().build(), "Different type to ElementFilter");
+  }
+
+  /**
+   * Test new {@link ElementFilter} (default constructor).
+   *
+   * <p>Method under test: default or parameterless constructor of {@link ElementFilter}
+   */
+  @Test
+  @DisplayName("Test new ElementFilter (default constructor)")
+  @Tag("MaintainedByDiffblue")
+  void testNewElementFilter() {
+    // Arrange, Act and Assert
+    assertTrue(new ElementFilter().getComponents().isEmpty());
+  }
+}

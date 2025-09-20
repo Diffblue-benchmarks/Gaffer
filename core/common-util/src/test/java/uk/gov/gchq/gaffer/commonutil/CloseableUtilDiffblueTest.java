@@ -1,0 +1,64 @@
+package uk.gov.gchq.gaffer.commonutil;
+
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class CloseableUtilDiffblueTest {
+  /**
+   * Test {@link CloseableUtil#close(AutoCloseable)} with {@code AutoCloseable}.
+   *
+   * <ul>
+   *   <li>When {@link AutoCloseable} {@link AutoCloseable#close()} does nothing.
+   *   <li>Then calls {@link AutoCloseable#close()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link CloseableUtil#close(AutoCloseable)}
+   */
+  @Test
+  @DisplayName(
+      "Test close(AutoCloseable) with 'AutoCloseable'; when AutoCloseable close() does nothing; then calls close()")
+  @Tag("MaintainedByDiffblue")
+  void testCloseWithAutoCloseable_whenAutoCloseableCloseDoesNothing_thenCallsClose()
+      throws Exception {
+    // Arrange
+    AutoCloseable closeable = mock(AutoCloseable.class);
+    doNothing().when(closeable).close();
+
+    // Act
+    CloseableUtil.close(closeable);
+
+    // Assert
+    verify(closeable).close();
+  }
+
+  /**
+   * Test {@link CloseableUtil#close(AutoCloseable[])} with {@code AutoCloseable[]}.
+   *
+   * <ul>
+   *   <li>When {@link AutoCloseable} {@link AutoCloseable#close()} does nothing.
+   *   <li>Then calls {@link AutoCloseable#close()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link CloseableUtil#close(AutoCloseable[])}
+   */
+  @Test
+  @DisplayName(
+      "Test close(AutoCloseable[]) with 'AutoCloseable[]'; when AutoCloseable close() does nothing; then calls close()")
+  @Tag("MaintainedByDiffblue")
+  void testCloseWithAutoCloseable_whenAutoCloseableCloseDoesNothing_thenCallsClose2()
+      throws Exception {
+    // Arrange
+    AutoCloseable autoCloseable = mock(AutoCloseable.class);
+    doNothing().when(autoCloseable).close();
+
+    // Act
+    CloseableUtil.close(autoCloseable);
+
+    // Assert
+    verify(autoCloseable).close();
+  }
+}

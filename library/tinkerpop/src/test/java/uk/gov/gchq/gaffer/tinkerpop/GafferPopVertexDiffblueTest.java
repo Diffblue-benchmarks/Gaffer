@@ -1,0 +1,928 @@
+package uk.gov.gchq.gaffer.tinkerpop;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.apache.tinkerpop.gremlin.structure.Direction;
+import org.apache.tinkerpop.gremlin.structure.Edge;
+import org.apache.tinkerpop.gremlin.structure.Graph;
+import org.apache.tinkerpop.gremlin.structure.Graph.Features;
+import org.apache.tinkerpop.gremlin.structure.Graph.Features.VertexFeatures;
+import org.apache.tinkerpop.gremlin.structure.Graph.Features.VertexPropertyFeatures;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.apache.tinkerpop.gremlin.structure.VertexProperty;
+import org.apache.tinkerpop.gremlin.structure.VertexProperty.Cardinality;
+import org.apache.tinkerpop.gremlin.structure.util.empty.EmptyVertexProperty;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import uk.gov.gchq.gaffer.data.elementdefinition.view.View;
+
+class GafferPopVertexDiffblueTest {
+  /**
+   * Test {@link GafferPopVertex#property(Cardinality, String, Object, Object[])} with {@code
+   * cardinality}, {@code key}, {@code value}, {@code keyValues}.
+   *
+   * <p>Method under test: {@link GafferPopVertex#property(VertexProperty.Cardinality, String,
+   * Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test property(Cardinality, String, Object, Object[]) with 'cardinality', 'key', 'value', 'keyValues'")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithCardinalityKeyValueKeyValues() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    doNothing().when(graph).addVertex(Mockito.<GafferPopVertex>any());
+    when(graph.features()).thenReturn(new GafferPopGraphFeatures());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyResult =
+        gafferPopVertex.property(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(graph).addVertex(isA(GafferPopVertex.class));
+    verify(graph, atLeast(1)).features();
+    assertTrue(actualPropertyResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyResult.id();
+    assertEquals("[Id,Key,Value]", idResult);
+    assertEquals("[Id,Key,Value]", ((GafferPopVertexProperty<Object>) actualPropertyResult).id);
+    assertNull(((GafferPopVertexProperty<Object>) actualPropertyResult).properties);
+    assertSame(gafferPopVertex, actualPropertyResult.element());
+    assertSame(((GafferPopElement) actualPropertyResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#property(Cardinality, String, Object, Object[])} with {@code
+   * cardinality}, {@code key}, {@code value}, {@code keyValues}.
+   *
+   * <p>Method under test: {@link GafferPopVertex#property(VertexProperty.Cardinality, String,
+   * Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test property(Cardinality, String, Object, Object[]) with 'cardinality', 'key', 'value', 'keyValues'")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithCardinalityKeyValueKeyValues2() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    doThrow(new UnsupportedOperationException())
+        .when(graph)
+        .addVertex(Mockito.<GafferPopVertex>any());
+    when(graph.features()).thenReturn(new GafferPopGraphFeatures());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act and Assert
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> gafferPopVertex.property(Cardinality.single, "Key", "Value"));
+    verify(graph).addVertex(isA(GafferPopVertex.class));
+    verify(graph, atLeast(1)).features();
+  }
+
+  /**
+   * Test {@link GafferPopVertex#property(Cardinality, String, Object, Object[])} with {@code
+   * cardinality}, {@code key}, {@code value}, {@code keyValues}.
+   *
+   * <ul>
+   *   <li>Then calls {@link VertexPropertyFeatures#supportsNullPropertyValues()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#property(VertexProperty.Cardinality, String,
+   * Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test property(Cardinality, String, Object, Object[]) with 'cardinality', 'key', 'value', 'keyValues'; then calls supportsNullPropertyValues()")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithCardinalityKeyValueKeyValues_thenCallsSupportsNullPropertyValues() {
+    // Arrange
+    VertexPropertyFeatures vertexPropertyFeatures = mock(VertexPropertyFeatures.class);
+    when(vertexPropertyFeatures.supportsNullPropertyValues()).thenReturn(false);
+
+    VertexFeatures vertexFeatures = mock(VertexFeatures.class);
+    when(vertexFeatures.properties()).thenReturn(vertexPropertyFeatures);
+
+    GafferPopGraphFeatures gafferPopGraphFeatures = mock(GafferPopGraphFeatures.class);
+    when(gafferPopGraphFeatures.vertex()).thenReturn(vertexFeatures);
+
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    doNothing().when(graph).addVertex(Mockito.<GafferPopVertex>any());
+    when(graph.features()).thenReturn(gafferPopGraphFeatures);
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyResult =
+        gafferPopVertex.property(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(vertexFeatures, atLeast(1)).properties();
+    verify(vertexPropertyFeatures, atLeast(1)).supportsNullPropertyValues();
+    verify(graph).addVertex(isA(GafferPopVertex.class));
+    verify(graph, atLeast(1)).features();
+    verify(gafferPopGraphFeatures, atLeast(1)).vertex();
+    assertTrue(actualPropertyResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyResult.id();
+    assertEquals("[Id,Key,Value]", idResult);
+    assertEquals("[Id,Key,Value]", ((GafferPopVertexProperty<Object>) actualPropertyResult).id);
+    assertNull(((GafferPopVertexProperty<Object>) actualPropertyResult).properties);
+    assertSame(gafferPopVertex, actualPropertyResult.element());
+    assertSame(((GafferPopElement) actualPropertyResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#property(Cardinality, String, Object, Object[])} with {@code
+   * cardinality}, {@code key}, {@code value}, {@code keyValues}.
+   *
+   * <ul>
+   *   <li>Then return id is a string.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#property(VertexProperty.Cardinality, String,
+   * Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test property(Cardinality, String, Object, Object[]) with 'cardinality', 'key', 'value', 'keyValues'; then return id is a string")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithCardinalityKeyValueKeyValues_thenReturnIdIsAString() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    doNothing().when(graph).addVertex(Mockito.<GafferPopVertex>any());
+    when(graph.features()).thenReturn(new GafferPopGraphFeatures());
+    GafferPopVertex gafferPopVertex =
+        new GafferPopVertex("Label", new GafferPopGraphFeatures(), graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyResult =
+        gafferPopVertex.property(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(graph).addVertex(isA(GafferPopVertex.class));
+    verify(graph, atLeast(1)).features();
+    assertTrue(actualPropertyResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyResult.id();
+    assertEquals(
+        "[FEATURES\n"
+            + "> GraphFeatures\n"
+            + ">-- Computer: false\n"
+            + ">-- ConcurrentAccess: true\n"
+            + ">-- IoRead: true\n"
+            + ">-- IoWrite: true\n"
+            + ">-- OrderabilitySemantics: true\n"
+            + ">-- Persistence: true\n"
+            + ">-- ServiceCall: false\n"
+            + ">-- ThreadedTransactions: false\n"
+            + ">-- Transactions: false\n"
+            + "> VariableFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Variables: true\n"
+            + "> VertexFeatures\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + ">-- AddVertices: true\n"
+            + ">-- DuplicateMultiProperties: true\n"
+            + ">-- MetaProperties: true\n"
+            + ">-- MultiProperties: true\n"
+            + ">-- RemoveVertices: false\n"
+            + ">-- Upsert: false\n"
+            + "> VertexPropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgeFeatures\n"
+            + ">-- AddEdges: true\n"
+            + ">-- RemoveEdges: false\n"
+            + ">-- Upsert: false\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgePropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ",Key,Value]",
+        idResult);
+    assertEquals(
+        "[FEATURES\n"
+            + "> GraphFeatures\n"
+            + ">-- Computer: false\n"
+            + ">-- ConcurrentAccess: true\n"
+            + ">-- IoRead: true\n"
+            + ">-- IoWrite: true\n"
+            + ">-- OrderabilitySemantics: true\n"
+            + ">-- Persistence: true\n"
+            + ">-- ServiceCall: false\n"
+            + ">-- ThreadedTransactions: false\n"
+            + ">-- Transactions: false\n"
+            + "> VariableFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Variables: true\n"
+            + "> VertexFeatures\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + ">-- AddVertices: true\n"
+            + ">-- DuplicateMultiProperties: true\n"
+            + ">-- MetaProperties: true\n"
+            + ">-- MultiProperties: true\n"
+            + ">-- RemoveVertices: false\n"
+            + ">-- Upsert: false\n"
+            + "> VertexPropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgeFeatures\n"
+            + ">-- AddEdges: true\n"
+            + ">-- RemoveEdges: false\n"
+            + ">-- Upsert: false\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgePropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ",Key,Value]",
+        ((GafferPopVertexProperty<Object>) actualPropertyResult).id);
+    assertSame(gafferPopVertex, actualPropertyResult.element());
+    assertSame(((GafferPopElement) actualPropertyResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#property(String)} with {@code key}.
+   *
+   * <ul>
+   *   <li>Then return {@link EmptyVertexProperty}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#property(String)}
+   */
+  @Test
+  @DisplayName("Test property(String) with 'key'; then return EmptyVertexProperty")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithKey_thenReturnEmptyVertexProperty() {
+    // Arrange
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", null);
+
+    // Act
+    VertexProperty<Object> actualPropertyResult = gafferPopVertex.property("Key");
+
+    // Assert
+    assertTrue(actualPropertyResult instanceof EmptyVertexProperty);
+    assertFalse(actualPropertyResult.isPresent());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#properties(String[])}.
+   *
+   * <ul>
+   *   <li>Then return not hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#properties(String[])}
+   */
+  @Test
+  @DisplayName("Test properties(String[]); then return not hasNext")
+  @Tag("MaintainedByDiffblue")
+  void testProperties_thenReturnNotHasNext() {
+    // Arrange
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", null);
+
+    // Act and Assert
+    assertFalse(gafferPopVertex.properties("Property Keys").hasNext());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#propertyWithoutUpdate(Cardinality, String, Object, Object[])}.
+   *
+   * <p>Method under test: {@link GafferPopVertex#propertyWithoutUpdate(VertexProperty.Cardinality,
+   * String, Object, Object[])}
+   */
+  @Test
+  @DisplayName("Test propertyWithoutUpdate(Cardinality, String, Object, Object[])")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithoutUpdate() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    when(graph.features()).thenReturn(new GafferPopGraphFeatures());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyWithoutUpdateResult =
+        gafferPopVertex.propertyWithoutUpdate(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(graph, atLeast(1)).features();
+    assertTrue(actualPropertyWithoutUpdateResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyWithoutUpdateResult.id();
+    assertEquals("[Id,Key,Value]", idResult);
+    assertEquals(
+        "[Id,Key,Value]", ((GafferPopVertexProperty<Object>) actualPropertyWithoutUpdateResult).id);
+    assertNull(((GafferPopVertexProperty<Object>) actualPropertyWithoutUpdateResult).properties);
+    assertSame(gafferPopVertex, actualPropertyWithoutUpdateResult.element());
+    assertSame(((GafferPopElement) actualPropertyWithoutUpdateResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#propertyWithoutUpdate(Cardinality, String, Object, Object[])}.
+   *
+   * <ul>
+   *   <li>Then calls {@link VertexPropertyFeatures#supportsNullPropertyValues()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#propertyWithoutUpdate(VertexProperty.Cardinality,
+   * String, Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test propertyWithoutUpdate(Cardinality, String, Object, Object[]); then calls supportsNullPropertyValues()")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithoutUpdate_thenCallsSupportsNullPropertyValues() {
+    // Arrange
+    VertexPropertyFeatures vertexPropertyFeatures = mock(VertexPropertyFeatures.class);
+    when(vertexPropertyFeatures.supportsNullPropertyValues()).thenReturn(false);
+
+    VertexFeatures vertexFeatures = mock(VertexFeatures.class);
+    when(vertexFeatures.properties()).thenReturn(vertexPropertyFeatures);
+
+    GafferPopGraphFeatures gafferPopGraphFeatures = mock(GafferPopGraphFeatures.class);
+    when(gafferPopGraphFeatures.vertex()).thenReturn(vertexFeatures);
+
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    when(graph.features()).thenReturn(gafferPopGraphFeatures);
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyWithoutUpdateResult =
+        gafferPopVertex.propertyWithoutUpdate(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(vertexFeatures, atLeast(1)).properties();
+    verify(vertexPropertyFeatures, atLeast(1)).supportsNullPropertyValues();
+    verify(graph, atLeast(1)).features();
+    verify(gafferPopGraphFeatures, atLeast(1)).vertex();
+    assertTrue(actualPropertyWithoutUpdateResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyWithoutUpdateResult.id();
+    assertEquals("[Id,Key,Value]", idResult);
+    assertEquals(
+        "[Id,Key,Value]", ((GafferPopVertexProperty<Object>) actualPropertyWithoutUpdateResult).id);
+    assertNull(((GafferPopVertexProperty<Object>) actualPropertyWithoutUpdateResult).properties);
+    assertSame(gafferPopVertex, actualPropertyWithoutUpdateResult.element());
+    assertSame(((GafferPopElement) actualPropertyWithoutUpdateResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#propertyWithoutUpdate(Cardinality, String, Object, Object[])}.
+   *
+   * <ul>
+   *   <li>Then return id is a string.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#propertyWithoutUpdate(VertexProperty.Cardinality,
+   * String, Object, Object[])}
+   */
+  @Test
+  @DisplayName(
+      "Test propertyWithoutUpdate(Cardinality, String, Object, Object[]); then return id is a string")
+  @Tag("MaintainedByDiffblue")
+  void testPropertyWithoutUpdate_thenReturnIdIsAString() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+    when(graph.features()).thenReturn(new GafferPopGraphFeatures());
+    GafferPopVertex gafferPopVertex =
+        new GafferPopVertex("Label", new GafferPopGraphFeatures(), graph);
+
+    // Act
+    VertexProperty<Object> actualPropertyWithoutUpdateResult =
+        gafferPopVertex.propertyWithoutUpdate(Cardinality.single, "Key", "Value");
+
+    // Assert
+    verify(graph, atLeast(1)).features();
+    assertTrue(actualPropertyWithoutUpdateResult instanceof GafferPopVertexProperty);
+    Object idResult = actualPropertyWithoutUpdateResult.id();
+    assertEquals(
+        "[FEATURES\n"
+            + "> GraphFeatures\n"
+            + ">-- Computer: false\n"
+            + ">-- ConcurrentAccess: true\n"
+            + ">-- IoRead: true\n"
+            + ">-- IoWrite: true\n"
+            + ">-- OrderabilitySemantics: true\n"
+            + ">-- Persistence: true\n"
+            + ">-- ServiceCall: false\n"
+            + ">-- ThreadedTransactions: false\n"
+            + ">-- Transactions: false\n"
+            + "> VariableFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Variables: true\n"
+            + "> VertexFeatures\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + ">-- AddVertices: true\n"
+            + ">-- DuplicateMultiProperties: true\n"
+            + ">-- MetaProperties: true\n"
+            + ">-- MultiProperties: true\n"
+            + ">-- RemoveVertices: false\n"
+            + ">-- Upsert: false\n"
+            + "> VertexPropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgeFeatures\n"
+            + ">-- AddEdges: true\n"
+            + ">-- RemoveEdges: false\n"
+            + ">-- Upsert: false\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgePropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ",Key,Value]",
+        idResult);
+    assertEquals(
+        "[FEATURES\n"
+            + "> GraphFeatures\n"
+            + ">-- Computer: false\n"
+            + ">-- ConcurrentAccess: true\n"
+            + ">-- IoRead: true\n"
+            + ">-- IoWrite: true\n"
+            + ">-- OrderabilitySemantics: true\n"
+            + ">-- Persistence: true\n"
+            + ">-- ServiceCall: false\n"
+            + ">-- ThreadedTransactions: false\n"
+            + ">-- Transactions: false\n"
+            + "> VariableFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Variables: true\n"
+            + "> VertexFeatures\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + ">-- AddVertices: true\n"
+            + ">-- DuplicateMultiProperties: true\n"
+            + ">-- MetaProperties: true\n"
+            + ">-- MultiProperties: true\n"
+            + ">-- RemoveVertices: false\n"
+            + ">-- Upsert: false\n"
+            + "> VertexPropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgeFeatures\n"
+            + ">-- AddEdges: true\n"
+            + ">-- RemoveEdges: false\n"
+            + ">-- Upsert: false\n"
+            + ">-- AddProperty: true\n"
+            + ">-- AnyIds: true\n"
+            + ">-- CustomIds: true\n"
+            + ">-- NullPropertyValues: true\n"
+            + ">-- NumericIds: true\n"
+            + ">-- RemoveProperty: false\n"
+            + ">-- StringIds: true\n"
+            + ">-- UserSuppliedIds: true\n"
+            + ">-- UuidIds: true\n"
+            + "> EdgePropertyFeatures\n"
+            + ">-- BooleanArrayValues: true\n"
+            + ">-- BooleanValues: true\n"
+            + ">-- ByteArrayValues: true\n"
+            + ">-- ByteValues: true\n"
+            + ">-- DoubleArrayValues: true\n"
+            + ">-- DoubleValues: true\n"
+            + ">-- FloatArrayValues: true\n"
+            + ">-- FloatValues: true\n"
+            + ">-- IntegerArrayValues: true\n"
+            + ">-- IntegerValues: true\n"
+            + ">-- LongArrayValues: true\n"
+            + ">-- LongValues: true\n"
+            + ">-- MapValues: true\n"
+            + ">-- MixedListValues: true\n"
+            + ">-- SerializableValues: true\n"
+            + ">-- StringArrayValues: true\n"
+            + ">-- StringValues: true\n"
+            + ">-- UniformListValues: true\n"
+            + ">-- Properties: true\n"
+            + ",Key,Value]",
+        ((GafferPopVertexProperty<Object>) actualPropertyWithoutUpdateResult).id);
+    assertSame(gafferPopVertex, actualPropertyWithoutUpdateResult.element());
+    assertSame(((GafferPopElement) actualPropertyWithoutUpdateResult).id, idResult);
+  }
+
+  /**
+   * Test {@link GafferPopVertex#edges(Direction, String[])} with {@code direction}, {@code
+   * edgeLabels}.
+   *
+   * <ul>
+   *   <li>Then return not hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#edges(Direction, String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test edges(Direction, String[]) with 'direction', 'edgeLabels'; then return not hasNext")
+  @Tag("MaintainedByDiffblue")
+  void testEdgesWithDirectionEdgeLabels_thenReturnNotHasNext() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+
+    ArrayList<Edge> edgeList = new ArrayList<>();
+    when(graph.edgesWithView(Mockito.<Object>any(), Mockito.<Direction>any(), Mockito.<View>any()))
+        .thenReturn(edgeList.iterator());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    Iterator<Edge> actualEdgesResult = gafferPopVertex.edges(Direction.OUT, "Edge Labels");
+
+    // Assert
+    verify(graph).edgesWithView(isA(Object.class), eq(Direction.OUT), isA(View.class));
+    assertFalse(actualEdgesResult.hasNext());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#edges(Direction, View)} with {@code direction}, {@code view}.
+   *
+   * <ul>
+   *   <li>Then return not hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#edges(Direction, View)}
+   */
+  @Test
+  @DisplayName("Test edges(Direction, View) with 'direction', 'view'; then return not hasNext")
+  @Tag("MaintainedByDiffblue")
+  void testEdgesWithDirectionView_thenReturnNotHasNext() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+
+    ArrayList<Edge> edgeList = new ArrayList<>();
+    when(graph.edgesWithView(Mockito.<Object>any(), Mockito.<Direction>any(), Mockito.<View>any()))
+        .thenReturn(edgeList.iterator());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    Iterator<Edge> actualEdgesResult = gafferPopVertex.edges(Direction.OUT, new View());
+
+    // Assert
+    verify(graph).edgesWithView(isA(Object.class), eq(Direction.OUT), isA(View.class));
+    assertFalse(actualEdgesResult.hasNext());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#vertices(Direction, String[])} with {@code direction}, {@code
+   * edgeLabels}.
+   *
+   * <ul>
+   *   <li>Then return not hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#vertices(Direction, String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test vertices(Direction, String[]) with 'direction', 'edgeLabels'; then return not hasNext")
+  @Tag("MaintainedByDiffblue")
+  void testVerticesWithDirectionEdgeLabels_thenReturnNotHasNext() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+
+    ArrayList<Vertex> vertexList = new ArrayList<>();
+    when(graph.adjVertices(
+            Mockito.<Object>any(), Mockito.<Direction>any(), (String[]) Mockito.any()))
+        .thenReturn(vertexList.iterator());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    Iterator<Vertex> actualVerticesResult = gafferPopVertex.vertices(Direction.OUT, "Edge Labels");
+
+    // Assert
+    verify(graph).adjVertices(isA(Object.class), eq(Direction.OUT), (String[]) Mockito.any());
+    assertFalse(actualVerticesResult.hasNext());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#vertices(Direction, View)} with {@code direction}, {@code view}.
+   *
+   * <ul>
+   *   <li>Then return not hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#vertices(Direction, View)}
+   */
+  @Test
+  @DisplayName("Test vertices(Direction, View) with 'direction', 'view'; then return not hasNext")
+  @Tag("MaintainedByDiffblue")
+  void testVerticesWithDirectionView_thenReturnNotHasNext() {
+    // Arrange
+    GafferPopGraph graph = mock(GafferPopGraph.class);
+
+    ArrayList<Vertex> vertexList = new ArrayList<>();
+    when(graph.adjVerticesWithView(
+            Mockito.<Object>any(), Mockito.<Direction>any(), Mockito.<View>any()))
+        .thenReturn(vertexList.iterator());
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", graph);
+
+    // Act
+    Iterator<Vertex> actualVerticesResult = gafferPopVertex.vertices(Direction.OUT, new View());
+
+    // Assert
+    verify(graph).adjVerticesWithView(isA(Object.class), eq(Direction.OUT), isA(View.class));
+    assertFalse(actualVerticesResult.hasNext());
+  }
+
+  /**
+   * Test {@link GafferPopVertex#keys()}.
+   *
+   * <ul>
+   *   <li>Given {@link GafferPopVertex#GafferPopVertex(String, Object, GafferPopGraph)} with {@code
+   *       Label} and {@code Id} and graph is {@code null}.
+   *   <li>Then return Empty.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopVertex#keys()}
+   */
+  @Test
+  @DisplayName(
+      "Test keys(); given GafferPopVertex(String, Object, GafferPopGraph) with 'Label' and 'Id' and graph is 'null'; then return Empty")
+  @Tag("MaintainedByDiffblue")
+  void testKeys_givenGafferPopVertexWithLabelAndIdAndGraphIsNull_thenReturnEmpty() {
+    // Arrange
+    GafferPopVertex gafferPopVertex = new GafferPopVertex("Label", "Id", null);
+
+    // Act and Assert
+    assertTrue(gafferPopVertex.keys().isEmpty());
+  }
+}
