@@ -131,6 +131,7 @@ global:
   flags:
     - -Dmaven.ext.class.path=${DIFFBLUE_MAVEN_SPY_JAR}
     - -Dcom.diffblue.cover.skipTests=true
+    - -Denforcer.fail=false
     - -DskipTestOptimizer
     - --batch-mode
     - --projects=${MODULE}
@@ -235,13 +236,7 @@ phase:
   classpath:
     goals:
       - name: ~
-        goal: install
-        flags:
-          - -Dmaven.compiler.failOnWarning=false
-          - --also-make
-          - -DskipTests
-          - -DskipITs
-          - --threads=1C
+        goal: dependency:build-classpath
 
   # The launcher phase is used to download the JUnit Jupiter launcher - run on a project (?)
   launcher: ~
@@ -264,8 +259,8 @@ phase:
         flags:
           - -Dmaven.compiler.failOnWarning=false
           - --also-make
-          - -DskipTests
-          - -DskipITs
+          - -Dskip.surefire.tests=true
+          - -Dskip.failsafe.tests=true
           - --threads=1C
 
   # The test phase is used to run the module under test's tests. This allows a filter to be specified to
