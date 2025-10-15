@@ -30,7 +30,8 @@
         <cucumber.version>7.15.0</cucumber.version>
 
         <!-- Don't run any of the standard tinkerpop tests by default-->
-        <test>!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest</test>
+        <!-- Unfortuantely I can't just modify DiffblueBuild.yml file for this, I need to actually remove the test files as well-->
+        <!-- <test>!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest</test> -->
     </properties>
 
     <dependencies>
