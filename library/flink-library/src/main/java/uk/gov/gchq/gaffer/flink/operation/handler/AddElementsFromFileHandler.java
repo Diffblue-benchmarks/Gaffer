@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.gchq.gaffer.flink.operation.handler;
 
 import org.apache.flink.api.common.io.RichOutputFormat;

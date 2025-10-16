@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.gchq.gaffer.core.exception;
 
 import static uk.gov.gchq.gaffer.core.exception.Status.INTERNAL_SERVER_ERROR;

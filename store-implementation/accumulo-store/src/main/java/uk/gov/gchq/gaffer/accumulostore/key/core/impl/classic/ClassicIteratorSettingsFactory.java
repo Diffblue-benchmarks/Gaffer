@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.gchq.gaffer.accumulostore.key.core.impl.classic;
 
 import org.apache.accumulo.core.client.IteratorSetting;

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.gchq.gaffer.spark.operation.dataframe.converter.property.impl;
 
 import com.clearspring.analytics.stream.cardinality.HyperLogLogPlus;
