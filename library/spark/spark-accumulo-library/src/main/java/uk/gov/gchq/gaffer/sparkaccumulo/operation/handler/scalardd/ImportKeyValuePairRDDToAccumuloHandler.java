@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd;
 
 import org.apache.accumulo.core.client.mapreduce.AccumuloFileOutputFormat;
