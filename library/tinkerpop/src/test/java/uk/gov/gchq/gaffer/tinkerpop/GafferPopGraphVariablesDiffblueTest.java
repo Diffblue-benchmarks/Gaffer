@@ -1,0 +1,384 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.tinkerpop;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class GafferPopGraphVariablesDiffblueTest {
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link GafferPopGraphVariables#GafferPopGraphVariables()}
+   *   <li>{@link GafferPopGraphVariables#toString()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void GafferPopGraphVariables.<init>()",
+    "void GafferPopGraphVariables.<init>(Map)",
+    "String GafferPopGraphVariables.toString()"
+  })
+  void testGettersAndSetters() {
+    // Arrange, Act and Assert
+    assertEquals("variables[size:0]", new GafferPopGraphVariables().toString());
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <ul>
+   *   <li>When {@link HashMap#HashMap()}.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link GafferPopGraphVariables#GafferPopGraphVariables(Map)}
+   *   <li>{@link GafferPopGraphVariables#toString()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters; when HashMap()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void GafferPopGraphVariables.<init>()",
+    "void GafferPopGraphVariables.<init>(Map)",
+    "String GafferPopGraphVariables.toString()"
+  })
+  void testGettersAndSetters_whenHashMap() {
+    // Arrange, Act and Assert
+    assertEquals("variables[size:0]", new GafferPopGraphVariables(new HashMap<>()).toString());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#keys()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#keys()}
+   */
+  @Test
+  @DisplayName("Test keys()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.util.Set GafferPopGraphVariables.keys()"})
+  void testKeys() {
+    // Arrange, Act and Assert
+    assertTrue(new GafferPopGraphVariables().keys().isEmpty());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#get(String)}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#get(String)}
+   */
+  @Test
+  @DisplayName("Test get(String)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.util.Optional GafferPopGraphVariables.get(String)"})
+  void testGet() {
+    // Arrange, Act and Assert
+    assertFalse(new GafferPopGraphVariables().get("Key").isPresent());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#set(String, Object)}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#set(String, Object)}
+   */
+  @Test
+  @DisplayName("Test set(String, Object)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.set(String, Object)"})
+  void testSet() {
+    // Arrange
+    HashMap<String, Object> variables = new HashMap<>();
+    variables.put(GafferPopGraphVariables.OP_OPTIONS, "Variables");
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables(variables);
+
+    LinkedHashSet<Object> objectSet = new LinkedHashSet<>();
+    objectSet.add("foo:bar");
+
+    // Act
+    gafferPopGraphVariables.set(GafferPopGraphVariables.OP_OPTIONS, objectSet);
+
+    // Assert
+    Map<String, String> operationOptions = gafferPopGraphVariables.getOperationOptions();
+    assertEquals(1, operationOptions.size());
+    assertEquals("bar", operationOptions.get("foo"));
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#set(String, Object)}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#set(String, Object)}
+   */
+  @Test
+  @DisplayName("Test set(String, Object)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.set(String, Object)"})
+  void testSet2() {
+    // Arrange
+    HashMap<String, Object> variables = new HashMap<>();
+    variables.put(GafferPopGraphVariables.OP_OPTIONS, "Variables");
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables(variables);
+
+    LinkedHashSet<Object> objectSet = new LinkedHashSet<>();
+    objectSet.add("");
+
+    // Act
+    gafferPopGraphVariables.set(GafferPopGraphVariables.INCLUDE_ORPHANED_VERTICES, objectSet);
+
+    // Assert
+    assertFalse(gafferPopGraphVariables.getIncludeOrphanedVertices());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#set(String, Object)}.
+   *
+   * <ul>
+   *   <li>When {@link HashMap#HashMap()}.
+   *   <li>Then {@link GafferPopGraphVariables#GafferPopGraphVariables()} OperationOptions is {@link
+   *       HashMap#HashMap()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#set(String, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test set(String, Object); when HashMap(); then GafferPopGraphVariables() OperationOptions is HashMap()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.set(String, Object)"})
+  void testSet_whenHashMap_thenGafferPopGraphVariablesOperationOptionsIsHashMap() {
+    // Arrange
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables();
+    HashMap<Object, Object> objectObjectMap = new HashMap<>();
+
+    // Act
+    gafferPopGraphVariables.set(GafferPopGraphVariables.OP_OPTIONS, objectObjectMap);
+
+    // Assert
+    assertSame(objectObjectMap, gafferPopGraphVariables.getOperationOptions());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#set(String, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code Key}.
+   *   <li>Then {@link GafferPopGraphVariables#GafferPopGraphVariables()} OperationOptions Empty.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#set(String, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test set(String, Object); when 'Key'; then GafferPopGraphVariables() OperationOptions Empty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.set(String, Object)"})
+  void testSet_whenKey_thenGafferPopGraphVariablesOperationOptionsEmpty() {
+    // Arrange
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables();
+
+    // Act
+    gafferPopGraphVariables.set("Key", "Value");
+
+    // Assert that nothing has changed
+    assertTrue(gafferPopGraphVariables.getOperationOptions().isEmpty());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#set(String, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code Value}.
+   *   <li>Then {@link GafferPopGraphVariables#GafferPopGraphVariables()} OperationOptions Empty.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#set(String, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test set(String, Object); when 'Value'; then GafferPopGraphVariables() OperationOptions Empty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.set(String, Object)"})
+  void testSet_whenValue_thenGafferPopGraphVariablesOperationOptionsEmpty() {
+    // Arrange
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables();
+
+    // Act
+    gafferPopGraphVariables.set(GafferPopGraphVariables.OP_OPTIONS, "Value");
+
+    // Assert that nothing has changed
+    assertTrue(gafferPopGraphVariables.getOperationOptions().isEmpty());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#setOperationOptions(Iterable)}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#setOperationOptions(Iterable)}
+   */
+  @Test
+  @DisplayName("Test setOperationOptions(Iterable)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.setOperationOptions(Iterable)"})
+  void testSetOperationOptions() {
+    // Arrange
+    HashMap<String, Object> variables = new HashMap<>();
+    variables.put(GafferPopGraphVariables.OP_OPTIONS, "Variables");
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables(variables);
+
+    LinkedHashSet<String> opOptions = new LinkedHashSet<>();
+    opOptions.add("foo:bar");
+
+    // Act
+    gafferPopGraphVariables.setOperationOptions(opOptions);
+
+    // Assert
+    Map<String, String> operationOptions = gafferPopGraphVariables.getOperationOptions();
+    assertEquals(1, operationOptions.size());
+    assertEquals("bar", operationOptions.get("foo"));
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#setOperationOptions(Iterable)}.
+   *
+   * <ul>
+   *   <li>Then {@link GafferPopGraphVariables#GafferPopGraphVariables()} OperationOptions Empty.
+   * </ul>
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#setOperationOptions(Iterable)}
+   */
+  @Test
+  @DisplayName(
+      "Test setOperationOptions(Iterable); then GafferPopGraphVariables() OperationOptions Empty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GafferPopGraphVariables.setOperationOptions(Iterable)"})
+  void testSetOperationOptions_thenGafferPopGraphVariablesOperationOptionsEmpty() {
+    // Arrange
+    GafferPopGraphVariables gafferPopGraphVariables = new GafferPopGraphVariables();
+
+    // Act
+    gafferPopGraphVariables.setOperationOptions(new ArrayList<>());
+
+    // Assert that nothing has changed
+    assertTrue(gafferPopGraphVariables.getOperationOptions().isEmpty());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#getOperationOptions()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#getOperationOptions()}
+   */
+  @Test
+  @DisplayName("Test getOperationOptions()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Map GafferPopGraphVariables.getOperationOptions()"})
+  void testGetOperationOptions() {
+    // Arrange, Act and Assert
+    assertTrue(new GafferPopGraphVariables().getOperationOptions().isEmpty());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#getUser()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#getUser()}
+   */
+  @Test
+  @DisplayName("Test getUser()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"uk.gov.gchq.gaffer.user.User GafferPopGraphVariables.getUser()"})
+  void testGetUser() {
+    // Arrange, Act and Assert
+    assertNull(new GafferPopGraphVariables().getUser());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#getElementsLimit()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#getElementsLimit()}
+   */
+  @Test
+  @DisplayName("Test getElementsLimit()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.lang.Integer GafferPopGraphVariables.getElementsLimit()"})
+  void testGetElementsLimit() {
+    // Arrange, Act and Assert
+    assertNull(new GafferPopGraphVariables().getElementsLimit());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#getHasStepFilterStage()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#getHasStepFilterStage()}
+   */
+  @Test
+  @DisplayName("Test getHasStepFilterStage()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"String GafferPopGraphVariables.getHasStepFilterStage()"})
+  void testGetHasStepFilterStage() {
+    // Arrange, Act and Assert
+    assertNull(new GafferPopGraphVariables().getHasStepFilterStage());
+  }
+
+  /**
+   * Test {@link GafferPopGraphVariables#getLastOperationChain()}.
+   *
+   * <p>Method under test: {@link GafferPopGraphVariables#getLastOperationChain()}
+   */
+  @Test
+  @DisplayName("Test getLastOperationChain()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "uk.gov.gchq.gaffer.operation.OperationChain GafferPopGraphVariables.getLastOperationChain()"
+  })
+  void testGetLastOperationChain() {
+    // Arrange, Act and Assert
+    assertNull(new GafferPopGraphVariables().getLastOperationChain());
+  }
+}

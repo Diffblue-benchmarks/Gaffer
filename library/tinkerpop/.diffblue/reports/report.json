@@ -1,0 +1,4527 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-16T12:12:39.365Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:basic-rest,uk.gov.gchq.gaffer:map-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 1425.331,
+    "environmentDetectionTime" : 0.259,
+    "indexingTime" : 0.467,
+    "entryPointsTime" : 0.251,
+    "generationTime" : 15021.111,
+    "timeToFirstTest" : 17440.686,
+    "timeToLastTest" : 16049.163,
+    "indexQueryTime" : 21.829,
+    "verificationTime" : 375.565,
+    "validationTime" : 112.435
+  },
+  "codes" : {
+    "F009" : "Internal error",
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R005" : "Unable to load class",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R034" : "Diffblue Cover can't complete test",
+    "R081" : "Exception in arrange section",
+    "R083" : "Can't find a suitable constructor",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T020" : "Other trivial method",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 36,
+    "methodsCount" : 310,
+    "cumulativeDiffblueTestCount" : 181,
+    "cumulativeManualTestCount" : 125,
+    "completeTestCount" : 184,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 2306,
+    "perMethodTestability" : {
+      "T000" : 139,
+      "T001" : 20,
+      "T003" : 44,
+      "T005" : 14,
+      "T010" : 1,
+      "T012" : 66,
+      "T020" : 7,
+      "T023" : 19
+    },
+    "perMethodOutcome" : {
+      "F009" : 6,
+      "R000" : 73,
+      "R002" : 2,
+      "R004" : 3,
+      "R005" : 5,
+      "R013" : 48,
+      "R034" : 2,
+      "R081" : 29,
+      "R083" : 12,
+      "T003" : 44,
+      "T010" : 1,
+      "T012" : 66,
+      "T023" : 19
+    },
+    "perTestOutcome" : {
+      "R000" : 184
+    },
+    "perTestValidation" : {
+      "V000" : 181,
+      "V003" : 3
+    },
+    "warnings" : {
+      "W001" : 2,
+      "W002" : 9
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge" : {
+      "methodsCount" : 18,
+      "completeTestCount" : 17,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 2,
+        "T003" : 3,
+        "T012" : 3,
+        "T020" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7,
+        "R013" : 1,
+        "R081" : 3,
+        "T003" : 3,
+        "T012" : 3,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 17
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "R013" : 3,
+        "T010" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph" : {
+      "methodsCount" : 58,
+      "completeTestCount" : 29,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 28,
+        "T001" : 5,
+        "T003" : 12,
+        "T012" : 12,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R013" : 24,
+        "R081" : 5,
+        "T003" : 12,
+        "T012" : 12,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 29
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$DefaultIdManager" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R083" : 3,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R083" : 3,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R083" : 4,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexPropertyFeatures" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R083" : 2,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables" : {
+      "methodsCount" : 15,
+      "completeTestCount" : 16,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 11,
+        "T005" : 2,
+        "T020" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 12,
+        "R004" : 1,
+        "R013" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 16
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables$HasStepFilterStage" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 3,
+        "T005" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 3,
+        "R081" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex" : {
+      "methodsCount" : 16,
+      "completeTestCount" : 14,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 11,
+        "T005" : 1,
+        "T012" : 2,
+        "T020" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "R013" : 2,
+        "R081" : 2,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 14
+      },
+      "warnings" : {
+        "W002" : 8
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty" : {
+      "methodsCount" : 15,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 9,
+        "T001" : 3,
+        "T012" : 2,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R013" : 9,
+        "R081" : 4,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEdgeGenerator" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopEdgeGenerator" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R081" : 2,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopElementGenerator" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R081" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopVertexGenerator" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R081" : 2,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep" : {
+      "methodsCount" : 26,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 7,
+        "T012" : 15,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R034" : 2,
+        "T003" : 7,
+        "T012" : 15,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "warnings" : {
+        "W002" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopHasStep" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep" : {
+      "methodsCount" : 18,
+      "completeTestCount" : 12,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 10,
+        "T001" : 4,
+        "T003" : 2,
+        "T020" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 5,
+        "R000" : 6,
+        "R004" : 2,
+        "R013" : 2,
+        "T003" : 2,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 12
+      },
+      "warnings" : {
+        "W001" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T001" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R005" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T003" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T003" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 12,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 1,
+        "T012" : 2,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 12
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 7,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "T003" : 7,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 2,
+        "T012" : 7,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T003" : 2,
+        "T012" : 7,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "R081" : 2,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationServiceFactory" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R081" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.<init>:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.getValidVertex:(Ljava/lang/Object;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        211,
+        212,
+        217
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.getVertexId:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        196,
+        197,
+        199
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.inVertex:()Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.keys:()Ljava/util/Set;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.lambda$lookupVertex$2:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        241
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.lambda$properties$0:([Ljava/lang/String;Ljava/util/Map$Entry;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.lambda$properties$1:(Ljava/util/Map$Entry;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.lookupVertex:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        228,
+        230,
+        231,
+        232,
+        229,
+        233,
+        235,
+        236,
+        238,
+        239,
+        240,
+        241,
+        242,
+        244,
+        245,
+        248
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.outVertex:()Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.properties:([Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        91,
+        92,
+        94,
+        95,
+        96,
+        98,
+        99,
+        100,
+        101,
+        102,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.property:(Ljava/lang/String;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        86
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.property:(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        71,
+        72,
+        76,
+        77,
+        80,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.propertyWithoutUpdate:(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        121,
+        122,
+        123,
+        124,
+        126,
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.remove:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        153
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        158
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopEdge.vertices:(Lorg/apache/tinkerpop/gremlin/structure/Direction;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        135,
+        137,
+        139,
+        141
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.<init>:(Ljava/lang/String;Ljava/lang/Object;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        34,
+        31,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.graph:()Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.id:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.isReadOnly:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.label:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.remove:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopElement.setReadOnly:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$DefaultIdManager.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$DefaultIdManager.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        244
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$DefaultIdManager.valueOf:(Ljava/lang/String;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph$DefaultIdManager;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        244
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph$DefaultIdManager.values:()[Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph$DefaultIdManager;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        244
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.<init>:(Lorg/apache/commons/configuration2/Configuration;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        267,
+        268
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.<init>:(Lorg/apache/commons/configuration2/Configuration;Luk/gov/gchq/gaffer/graph/Graph;)V" : {
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 10
+      },
+      "lineNumbers" : [
+        270,
+        252,
+        257,
+        258,
+        259,
+        260,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        274,
+        280,
+        281,
+        282,
+        283,
+        286,
+        288,
+        291,
+        292,
+        293,
+        294,
+        291,
+        295,
+        296
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.addEdge:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopEdge;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        385,
+        387,
+        388,
+        386,
+        389,
+        385,
+        390
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.addVertex:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        371,
+        373,
+        374,
+        372,
+        375,
+        371,
+        378,
+        379,
+        381
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.addVertex:([Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        350,
+        351,
+        354,
+        355,
+        356,
+        357,
+        360,
+        363,
+        364,
+        365,
+        366
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.adjVertices:(Ljava/lang/Iterable;Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        519
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.adjVertices:(Ljava/lang/Object;Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        502
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.adjVerticesWithSeedsAndView:(Ljava/util/List;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        836,
+        837,
+        840,
+        843,
+        844,
+        845,
+        846,
+        842,
+        847,
+        840,
+        849,
+        851,
+        853,
+        854,
+        858,
+        859,
+        858,
+        862,
+        863,
+        864,
+        865,
+        866,
+        867,
+        870,
+        871,
+        872,
+        871,
+        875
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.adjVerticesWithView:(Ljava/lang/Iterable;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        552
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.adjVerticesWithView:(Ljava/lang/Object;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        536
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        772,
+        773
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.compute:()Lorg/apache/tinkerpop/gremlin/process/computer/GraphComputer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        752
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.compute:(Ljava/lang/Class;)Lorg/apache/tinkerpop/gremlin/process/computer/GraphComputer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        747
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.configuration:()Lorg/apache/commons/configuration2/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        767
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.createAllEdgesView:()Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        972
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.createAllEntitiesView:()Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        968
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.createGraph:(Lorg/apache/commons/configuration2/Configuration;)Luk/gov/gchq/gaffer/graph/Graph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        309,
+        310,
+        311,
+        314,
+        315,
+        317,
+        318,
+        319,
+        321,
+        322,
+        323,
+        321,
+        324,
+        327,
+        329,
+        330,
+        328,
+        331,
+        332,
+        333,
+        327
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.createView:([Ljava/lang/String;)Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        944,
+        945,
+        946,
+        947,
+        949,
+        950,
+        948,
+        951,
+        952,
+        947,
+        953,
+        954,
+        955,
+        956,
+        957,
+        958,
+        959,
+        953,
+        962,
+        964
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.createViewWithEntities:([Ljava/lang/String;)Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        927,
+        928,
+        929,
+        931,
+        933,
+        934,
+        935,
+        934,
+        937,
+        940
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edges:(Ljava/lang/Iterable;Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        644
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edges:(Ljava/lang/Object;Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        630
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edges:([Ljava/lang/Object;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        567,
+        570,
+        571,
+        572,
+        574,
+        575,
+        573,
+        576,
+        577,
+        580,
+        581,
+        582,
+        584,
+        587,
+        590,
+        592,
+        593,
+        594,
+        591,
+        595,
+        596,
+        600,
+        603,
+        604,
+        605,
+        606,
+        607,
+        608,
+        609,
+        611,
+        612,
+        614,
+        612,
+        616
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edgesWithSeedsAndView:(Ljava/util/List;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        879,
+        881,
+        882,
+        883,
+        884,
+        885,
+        886,
+        887,
+        888,
+        892,
+        893,
+        894,
+        896,
+        897,
+        895,
+        898,
+        899,
+        901,
+        903,
+        904,
+        905,
+        906,
+        902,
+        907,
+        908,
+        912,
+        915,
+        916,
+        917,
+        918,
+        919,
+        920,
+        921,
+        923
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edgesWithView:(Ljava/lang/Iterable;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        742
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.edgesWithView:(Ljava/lang/Object;Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        658
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.execute:(Luk/gov/gchq/gaffer/operation/OperationChain;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        663,
+        664,
+        666,
+        668,
+        669,
+        670,
+        671,
+        673,
+        676,
+        679,
+        680,
+        681,
+        684,
+        685,
+        686,
+        687,
+        688
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.features:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Features;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        782
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getEdgeLabelsFromIds:(Ljava/lang/Iterable;)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        1032,
+        1034,
+        1035,
+        1036,
+        1039,
+        1040,
+        1042,
+        1045,
+        1047,
+        1049
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getElementSeeds:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        983,
+        984,
+        985,
+        986,
+        989,
+        1020
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getGafferGraph:()Luk/gov/gchq/gaffer/graph/Graph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        728
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getInOutType:(Lorg/apache/tinkerpop/gremlin/structure/Direction;)Luk/gov/gchq/gaffer/operation/graph/SeededGraphFilters$IncludeIncomingOutgoingType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        1054,
+        1055,
+        1056,
+        1057,
+        1059,
+        1062
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getNextVertexId:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        1071,
+        1073,
+        1076,
+        1079,
+        1083
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.getServiceRegistry:()Lorg/apache/tinkerpop/gremlin/structure/service/ServiceRegistry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        777
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$addVertex$2:()Ljava/lang/IllegalArgumentException;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        360
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$adjVerticesWithSeedsAndView$8:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        866
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$adjVerticesWithSeedsAndView$9:(I)[Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        872
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$createGraph$0:(Luk/gov/gchq/gaffer/store/schema/Schema$Builder;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        319
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$createGraph$1:(Luk/gov/gchq/gaffer/store/schema/Schema$Builder;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        324
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$edges$4:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Lorg/apache/tinkerpop/gremlin/structure/Edge;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        607
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$edgesWithSeedsAndView$10:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Lorg/apache/tinkerpop/gremlin/structure/Edge;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        919
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$execute$5:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        671
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$getElementSeeds$11:(Ljava/util/List;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        990,
+        992,
+        993,
+        994,
+        996,
+        997,
+        998,
+        999,
+        1001,
+        1002,
+        1005,
+        1006,
+        1008,
+        1009,
+        1012,
+        1015,
+        1016,
+        1018
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$vertices$3:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        446
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$verticesWithSeedsAndView$6:(Ljava/util/LinkedList;Luk/gov/gchq/gaffer/operation/data/ElementSeed;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        810,
+        811,
+        813
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.lambda$verticesWithSeedsAndView$7:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        829
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.newInstance:()Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        305
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.open:(Ljava/lang/String;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        337
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.open:(Lorg/apache/commons/configuration2/Configuration;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        341
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.open:(Lorg/apache/commons/configuration2/Configuration;Luk/gov/gchq/gaffer/graph/Graph;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;" : {
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 11
+      },
+      "lineNumbers" : [
+        345
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.setDefaultVariables:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        697,
+        698
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.setDefaultVariables:(Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        707,
+        708,
+        709,
+        710,
+        712,
+        713,
+        714,
+        713,
+        715,
+        716,
+        715,
+        717,
+        718,
+        717,
+        719,
+        720
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.tx:()Lorg/apache/tinkerpop/gremlin/structure/Transaction;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        757
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.variables:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Variables;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        762
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.vertices:(Ljava/lang/Iterable;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        471
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.vertices:([Ljava/lang/Object;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        405,
+        406,
+        409,
+        410,
+        412,
+        413,
+        415,
+        417,
+        418,
+        419,
+        421,
+        422,
+        424,
+        428,
+        429,
+        430,
+        431,
+        432,
+        435,
+        436,
+        438,
+        436,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        450,
+        451,
+        454
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.verticesWithSeedsAndView:(Ljava/util/List;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        786,
+        787,
+        789,
+        790,
+        791,
+        792,
+        793,
+        794,
+        795,
+        796,
+        800,
+        801,
+        802,
+        804,
+        805,
+        806,
+        807,
+        808,
+        809,
+        818,
+        819,
+        820,
+        821,
+        822,
+        825,
+        826,
+        827,
+        828,
+        829,
+        830,
+        832
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraph.verticesWithView:(Ljava/lang/Iterable;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        485
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphFeatures$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures.supportsRemoveEdges:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures.supportsRemoveProperty:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphEdgeFeatures.willAllowId:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        95,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphFeatures$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures.supportsComputer:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures.supportsThreadedTransactions:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphGraphFeatures.supportsTransactions:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        50,
+        48,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphFeatures$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.properties:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Features$VertexPropertyFeatures;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.supportsRemoveProperty:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.supportsRemoveVertices:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexFeatures.willAllowId:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexPropertyFeatures.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        115,
+        116
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexPropertyFeatures.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphFeatures$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        114
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexPropertyFeatures.supportsRemoveProperty:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures$GafferPopGraphVertexPropertyFeatures.willAllowId:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures.edge:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Features$EdgeFeatures;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures.graph:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Features$GraphFeatures;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphFeatures.vertex:()Lorg/apache/tinkerpop/gremlin/structure/Graph$Features$VertexFeatures;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables$HasStepFilterStage.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables$HasStepFilterStage.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables$HasStepFilterStage.valueOf:(Ljava/lang/String;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphVariables$HasStepFilterStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables$HasStepFilterStage.values:()[Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraphVariables$HasStepFilterStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        109,
+        110,
+        111
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.<init>:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        105,
+        106,
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.get:(Ljava/lang/String;)Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getElementsLimit:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        191
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getHasStepFilterStage:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        195
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getIncludeOrphanedVertices:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        203
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getLastOperationChain:()Luk/gov/gchq/gaffer/operation/OperationChain;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        199
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getOperationOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        180,
+        181,
+        183
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.getUser:()Luk/gov/gchq/gaffer/user/User;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        187
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.keys:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.remove:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        125,
+        126
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.set:(Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        130,
+        131,
+        133,
+        134,
+        135,
+        136,
+        138,
+        140,
+        143,
+        144,
+        146,
+        148,
+        151,
+        152,
+        155,
+        158
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.setOperationOptions:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        167,
+        168,
+        169,
+        170,
+        171,
+        172
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopGraphVariables.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        207
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.<init>:(Lorg/apache/tinkerpop/gremlin/structure/Element;Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.element:()Lorg/apache/tinkerpop/gremlin/structure/Element;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.isPresent:()Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.key:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.remove:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopProperty.value:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.<init>:(Ljava/lang/String;Ljava/lang/Object;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.addEdge:(Ljava/lang/String;Lorg/apache/tinkerpop/gremlin/structure/Vertex;[Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Edge;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        133,
+        134,
+        137,
+        138,
+        139,
+        142,
+        143,
+        146
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.edges:(Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        160
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.edges:(Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        152,
+        153,
+        154,
+        156
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.keys:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        174,
+        175,
+        177
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.lambda$properties$0:([Ljava/lang/String;Ljava/util/Map$Entry;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.lambda$properties$1:(Ljava/util/Map$Entry;)Ljava/util/stream/Stream;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.properties:([Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.property:(Ljava/lang/String;)Lorg/apache/tinkerpop/gremlin/structure/VertexProperty;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55,
+        56,
+        57,
+        58,
+        60,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.property:(Lorg/apache/tinkerpop/gremlin/structure/VertexProperty$Cardinality;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/VertexProperty;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "warnings" : {
+        "W002" : 4
+      },
+      "lineNumbers" : [
+        69,
+        70,
+        73,
+        74,
+        77,
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.propertyWithoutUpdate:(Lorg/apache/tinkerpop/gremlin/structure/VertexProperty$Cardinality;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/VertexProperty;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "warnings" : {
+        "W002" : 4
+      },
+      "lineNumbers" : [
+        110,
+        111,
+        112,
+        113,
+        114,
+        117,
+        119,
+        120,
+        123,
+        124,
+        125,
+        126,
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.remove:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        183
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        188
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.vertices:(Lorg/apache/tinkerpop/gremlin/structure/Direction;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        169
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertex.vertices:(Lorg/apache/tinkerpop/gremlin/structure/Direction;[Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        165
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.element:()Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.isPresent:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.key:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.keys:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.lambda$properties$0:([Ljava/lang/String;Ljava/util/Map$Entry;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.lambda$properties$1:(Ljava/util/Map$Entry;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        114
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.properties:([Ljava/lang/String;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        108,
+        109,
+        112,
+        113,
+        114,
+        115,
+        116,
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.property:(Ljava/lang/String;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.property:(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Property;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        89,
+        90,
+        93,
+        94,
+        95,
+        97,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.remove:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.GafferPopVertexProperty.value:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEdgeGenerator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEdgeGenerator._apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/data/element/Element;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEdgeGenerator._apply:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopEdge;)Luk/gov/gchq/gaffer/data/element/Edge;" : {
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "lineNumbers" : [
+        28,
+        29,
+        30,
+        31,
+        35,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEdgeGenerator.lambda$_apply$0:(Luk/gov/gchq/gaffer/data/element/Edge;Lorg/apache/tinkerpop/gremlin/structure/Property;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36,
+        37,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator._apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/data/element/Element;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator._apply:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;)Luk/gov/gchq/gaffer/data/element/Entity;" : {
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "lineNumbers" : [
+        27,
+        28,
+        31,
+        34,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator.lambda$_apply$1:(Luk/gov/gchq/gaffer/data/element/Entity;Lorg/apache/tinkerpop/gremlin/structure/VertexProperty;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35,
+        36,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferEntityGenerator.lambda$null$0:(Luk/gov/gchq/gaffer/data/element/Entity;Lorg/apache/tinkerpop/gremlin/structure/Property;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopEdgeGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopEdgeGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopEdgeGenerator._apply:(Luk/gov/gchq/gaffer/data/element/Element;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopEdge;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        45,
+        46,
+        49,
+        50,
+        51,
+        52,
+        53,
+        57,
+        63,
+        64,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopEdgeGenerator.lambda$_apply$0:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopEdge;Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        58,
+        59,
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopElementGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopElementGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopElementGenerator._apply:(Luk/gov/gchq/gaffer/data/element/Element;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopElement;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        44,
+        45,
+        46,
+        47,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopVertexGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        36,
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopVertexGenerator.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopVertexGenerator._apply:(Luk/gov/gchq/gaffer/data/element/Element;)Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        47,
+        48,
+        51,
+        52,
+        53,
+        54,
+        58,
+        64,
+        65,
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.generator.GafferPopVertexGenerator.lambda$_apply$0:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopVertex;Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        59,
+        60,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin.createImports:()Lorg/apache/tinkerpop/gremlin/jsr223/DefaultImportCustomizer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        51,
+        52,
+        61,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin.instance:()Luk/gov/gchq/gaffer/tinkerpop/gremlinplugin/GafferPopGremlinPlugin;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.gremlinplugin.GafferPopGremlinPlugin.requireRestart:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.<init>:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/map/GraphStep;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        70,
+        67,
+        71,
+        72,
+        75,
+        77,
+        80,
+        81,
+        82,
+        83,
+        91,
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.addHasContainer:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        294,
+        295
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.createEdgeViewFromPredicates:(Ljava/lang/String;Ljava/util/List;)Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        196,
+        197,
+        198,
+        201,
+        202,
+        204,
+        207,
+        209
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.createElementDefFromPredicates:(Ljava/lang/String;Z)Luk/gov/gchq/gaffer/data/elementdefinition/view/ViewElementDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        223,
+        226,
+        227,
+        231,
+        232,
+        238,
+        240,
+        247,
+        252,
+        248,
+        249,
+        251,
+        254,
+        256,
+        257,
+        259,
+        260,
+        262,
+        263,
+        265,
+        269
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.createVertexViewFromPredicates:(Ljava/lang/String;Ljava/util/List;)Luk/gov/gchq/gaffer/data/elementdefinition/view/View;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        171,
+        172,
+        173,
+        176,
+        177,
+        179,
+        182,
+        184
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.edges:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        97,
+        100,
+        101,
+        103,
+        105,
+        106,
+        108,
+        109,
+        110,
+        114,
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.getHasContainers:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        289
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.getRequestedLabels:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        148,
+        149,
+        150,
+        151,
+        154,
+        157,
+        158,
+        148
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.getRequestedPredicates:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        279
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$createEdgeViewFromPredicates$9:(Luk/gov/gchq/gaffer/data/elementdefinition/view/View$Builder;Luk/gov/gchq/gaffer/data/elementdefinition/view/ViewElementDefinition;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        207
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$createElementDefFromPredicates$10:(Luk/gov/gchq/gaffer/data/element/function/ElementFilter$Builder;Luk/gov/gchq/gaffer/tinkerpop/process/traversal/step/util/GafferPopHasContainer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        233,
+        235,
+        236,
+        237,
+        233
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$createVertexViewFromPredicates$8:(Luk/gov/gchq/gaffer/data/elementdefinition/view/View$Builder;Luk/gov/gchq/gaffer/data/elementdefinition/view/ViewElementDefinition;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        182
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$edges$2:(Lorg/apache/tinkerpop/gremlin/structure/Edge;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedLabels$4:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        149
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedLabels$5:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        150
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedLabels$6:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        151
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedLabels$7:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        154,
+        155,
+        156,
+        154
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedPredicates$11:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        280
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedPredicates$12:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        281
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedPredicates$13:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        282
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$getRequestedPredicates$14:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)Luk/gov/gchq/gaffer/tinkerpop/process/traversal/step/util/GafferPopHasContainer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        283
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$new$0:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        84,
+        85,
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$new$1:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.lambda$vertices$3:(Lorg/apache/tinkerpop/gremlin/structure/Vertex;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopGraphStep.vertices:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        120,
+        123,
+        124,
+        126,
+        128,
+        129,
+        131,
+        132,
+        133,
+        137,
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopHasStep.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopHasStep.<init>:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/filter/HasStep;)V" : {
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "lineNumbers" : [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopHasStep.addHasContainer:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.<init>:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/map/VertexStep;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        75,
+        69,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        154,
+        155
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.configure:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        90,
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.edges:(Ljava/lang/Iterable;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        176,
+        178,
+        179,
+        180,
+        183,
+        184,
+        185
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        147,
+        148,
+        149,
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.flatMap:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traverser$Admin;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.getDirection:()Lorg/apache/tinkerpop/gremlin/structure/Direction;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.getEdgeLabels:()[Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.getParameters:()Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/Parameters;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.getRequirements:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        159
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.getReturnClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        109
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.hashCode:()I" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        132,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        142
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.returnsEdge:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.returnsVertex:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        117
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.reverseDirection:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        113,
+        114
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        126,
+        127,
+        126
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.GafferPopVertexStep.vertices:(Ljava/lang/Iterable;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163,
+        165,
+        166,
+        167,
+        170,
+        171,
+        172
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.<init>:(Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)V" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.getGafferPredicate:()Ljava/util/function/Predicate;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.testId:(Lorg/apache/tinkerpop/gremlin/structure/Element;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.testIdAsString:(Lorg/apache/tinkerpop/gremlin/structure/Element;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.testKey:(Lorg/apache/tinkerpop/gremlin/structure/Property;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.testLabel:(Lorg/apache/tinkerpop/gremlin/structure/Element;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.step.util.GafferPopHasContainer.testValue:(Lorg/apache/tinkerpop/gremlin/structure/Property;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.apply:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        73,
+        74,
+        78,
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.instance:()Luk/gov/gchq/gaffer/tinkerpop/process/traversal/strategy/optimisation/GafferPopGraphStepStrategy;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.lambda$apply$1:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;Lorg/apache/tinkerpop/gremlin/process/traversal/step/map/GraphStep;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        80,
+        81,
+        87,
+        88,
+        89,
+        90,
+        95,
+        96,
+        98,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopGraphStepStrategy.lambda$null$0:(Luk/gov/gchq/gaffer/tinkerpop/process/traversal/step/GafferPopGraphStep;Lorg/apache/tinkerpop/gremlin/process/traversal/step/util/HasContainer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        91,
+        92,
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        32,
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy.apply:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        37,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy.instance:()Luk/gov/gchq/gaffer/tinkerpop/process/traversal/strategy/optimisation/GafferPopHasStepStrategy;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopHasStepStrategy.lambda$apply$0:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;Lorg/apache/tinkerpop/gremlin/process/traversal/step/filter/HasStep;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39,
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy.apply:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        50,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy.instance:()Luk/gov/gchq/gaffer/tinkerpop/process/traversal/strategy/optimisation/GafferPopVertexStepStrategy;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.strategy.optimisation.GafferPopVertexStepStrategy.lambda$apply$0:(Lorg/apache/tinkerpop/gremlin/process/traversal/Traversal$Admin;Lorg/apache/tinkerpop/gremlin/process/traversal/step/map/VertexStep;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        51,
+        54,
+        55,
+        59,
+        60,
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        69,
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.lambda$parseAsCustomTypeIfValid$0:(Ljava/util/List;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.lambda$parseForGraphSONv3$1:(Ljava/util/List;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        132
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.parseAsCustomTypeIfValid:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        89,
+        90,
+        91,
+        93,
+        94,
+        95,
+        96,
+        97,
+        94,
+        102,
+        103,
+        104,
+        106,
+        107,
+        109,
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferCustomTypeFactory.parseForGraphSONv3:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        125,
+        126,
+        130,
+        131,
+        132,
+        134,
+        135,
+        137,
+        141,
+        142,
+        143,
+        146
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        47,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.convertGremlinPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/P;)Ljava/util/function/Predicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        65,
+        66,
+        70,
+        71,
+        72,
+        73,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getAndPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/util/AndP;)Luk/gov/gchq/koryphe/impl/predicate/And;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        104,
+        105,
+        106,
+        108
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getComparePredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/Compare;Ljava/lang/Object;)Luk/gov/gchq/koryphe/predicate/KoryphePredicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        112,
+        114,
+        116,
+        118,
+        120,
+        122,
+        124,
+        126
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getContainsPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/Contains;Ljava/util/Collection;)Luk/gov/gchq/koryphe/predicate/KoryphePredicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        132,
+        134,
+        136,
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getOrPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/util/OrP;)Luk/gov/gchq/koryphe/impl/predicate/Or;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        96,
+        97,
+        98,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getRegexPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/Text$RegexPredicate;)Luk/gov/gchq/koryphe/predicate/KoryphePredicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163,
+        164
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.getTextPredicate:(Lorg/apache/tinkerpop/gremlin/process/traversal/Text;Ljava/lang/String;)Luk/gov/gchq/koryphe/predicate/KoryphePredicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        144,
+        146,
+        148,
+        150,
+        152,
+        154,
+        156,
+        158
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.lambda$getAndPredicate$1:(Lorg/apache/tinkerpop/gremlin/process/traversal/P;)Ljava/util/function/Predicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferPredicateFactory.lambda$getOrPredicate$0:(Lorg/apache/tinkerpop/gremlin/process/traversal/P;)Ljava/util/function/Predicate;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        40,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.extractOrphanVerticesFromEdges:(Ljava/lang/Iterable;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Ljava/util/List;)Ljava/util/Collection;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        80,
+        81,
+        82,
+        83,
+        92,
+        93,
+        94,
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.getOrphanVertices:(Ljava/lang/Iterable;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;[Ljava/lang/Object;)Ljava/util/Collection;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        59,
+        60,
+        64,
+        66,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$extractOrphanVerticesFromEdges$4:(Luk/gov/gchq/gaffer/data/element/Element;)Luk/gov/gchq/gaffer/data/element/Edge;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$extractOrphanVerticesFromEdges$5:(Ljava/util/List;Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;Luk/gov/gchq/gaffer/data/element/Edge;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        84,
+        85,
+        87,
+        88,
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$extractOrphanVerticesFromEdges$6:(Ljava/lang/Object;)Lorg/apache/tinkerpop/gremlin/structure/Vertex;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$getOrphanVertices$2:(Ljava/lang/Iterable;Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        60,
+        61,
+        62,
+        63,
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$getOrphanVertices$3:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$null$0:(Luk/gov/gchq/gaffer/data/element/Element;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.process.traversal.util.GafferVertexUtils.lambda$null$1:(Ljava/lang/Object;Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.addNamedOperation:(Ljava/util/Map;)Lorg/apache/tinkerpop/gremlin/structure/util/CloseableIterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        127,
+        129,
+        130,
+        131,
+        128,
+        132,
+        127,
+        133
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.execute:(Lorg/apache/tinkerpop/gremlin/structure/service/Service$ServiceCallContext;Ljava/util/Map;)Lorg/apache/tinkerpop/gremlin/structure/util/CloseableIterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        72,
+        73,
+        74,
+        75,
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.executeNamedOperation:(Ljava/lang/String;)Lorg/apache/tinkerpop/gremlin/structure/util/CloseableIterator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92,
+        93,
+        94,
+        95,
+        96,
+        100,
+        101,
+        103,
+        104,
+        102,
+        106,
+        107,
+        105,
+        108,
+        101,
+        108,
+        101,
+        110,
+        112,
+        113,
+        111,
+        114,
+        110,
+        114,
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.getType:()Lorg/apache/tinkerpop/gremlin/structure/service/Service$Type;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.lambda$executeNamedOperation$0:(Ljava/lang/String;Luk/gov/gchq/gaffer/named/operation/NamedOperationDetail;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationService.lambda$executeNamedOperation$1:()Ljava/lang/IllegalStateException;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationServiceFactory.<init>:(Luk/gov/gchq/gaffer/tinkerpop/GafferPopGraph;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        32,
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationServiceFactory.createService:(ZLjava/util/Map;)Lorg/apache/tinkerpop/gremlin/structure/service/Service;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47,
+        48,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationServiceFactory.getName:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.tinkerpop.service.GafferPopNamedOperationServiceFactory.getSupportedTypes:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

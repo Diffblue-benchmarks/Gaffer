@@ -1,0 +1,5242 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-16T12:12:39.365Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:basic-rest,uk.gov.gchq.gaffer:map-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 377.911,
+    "environmentDetectionTime" : 0.251,
+    "indexingTime" : 0.398,
+    "entryPointsTime" : 0.241,
+    "generationTime" : 2616.655,
+    "timeToFirstTest" : 2772.143,
+    "timeToLastTest" : 2824.479,
+    "indexQueryTime" : 5.088,
+    "verificationTime" : 89.338,
+    "validationTime" : 20.425
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 32,
+    "methodsCount" : 348,
+    "cumulativeDiffblueTestCount" : 495,
+    "cumulativeManualTestCount" : 187,
+    "completeTestCount" : 496,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 2125,
+    "perMethodTestability" : {
+      "T000" : 232,
+      "T001" : 28,
+      "T002" : 10,
+      "T003" : 10,
+      "T005" : 23,
+      "T008" : 2,
+      "T010" : 14,
+      "T012" : 21,
+      "T023" : 8
+    },
+    "perMethodOutcome" : {
+      "R000" : 266,
+      "R002" : 3,
+      "R004" : 2,
+      "R013" : 7,
+      "T000" : 12,
+      "T003" : 10,
+      "T008" : 2,
+      "T010" : 14,
+      "T012" : 21,
+      "T023" : 8,
+      "W001" : 1,
+      "W002" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 496
+    },
+    "perTestValidation" : {
+      "V000" : 495,
+      "V003" : 1
+    },
+    "warnings" : {
+      "W001" : 4,
+      "W002" : 7
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.exception.SerialisationException" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser" : {
+      "methodsCount" : 22,
+      "completeTestCount" : 58,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 20,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 12,
+        "R002" : 3,
+        "R004" : 1,
+        "R013" : 2,
+        "T023" : 1,
+        "W001" : 1,
+        "W002" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 58
+      },
+      "warnings" : {
+        "W001" : 2,
+        "W002" : 7
+      }
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiserModules" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 7
+      },
+      "perMethodOutcome" : {
+        "T010" : 7
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T010" : 3,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T000" : 1,
+        "T010" : 3,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T010" : 3,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R004" : 1,
+        "T010" : 3,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToStringSerialiser" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 21,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 10,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 11,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 21
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 13
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser" : {
+      "methodsCount" : 25,
+      "completeTestCount" : 30,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 16,
+        "T001" : 4,
+        "T002" : 3,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 22,
+        "R013" : 1,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 30
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser" : {
+      "methodsCount" : 14,
+      "completeTestCount" : 20,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 12,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 11,
+        "R013" : 1,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 20
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage" : {
+      "methodsCount" : 19,
+      "completeTestCount" : 40,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 11,
+        "T001" : 2,
+        "T003" : 4,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 14,
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 40
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 3,
+        "T002" : 3,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser" : {
+      "methodsCount" : 21,
+      "completeTestCount" : 27,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 13,
+        "T001" : 3,
+        "T002" : 2,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 19,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 27
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 13
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 16,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 16
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 8,
+        "R013" : 1,
+        "T000" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 13
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 17,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 17
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 18,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 18
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 14,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 9,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 14
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 9,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 16,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T003" : 1,
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T003" : 1,
+        "T008" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 16
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 34,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T008" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 1,
+        "T008" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 34
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil" : {
+      "methodsCount" : 27,
+      "completeTestCount" : 51,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 23,
+        "T003" : 3,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 23,
+        "T003" : 3,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 51
+      },
+      "warnings" : {
+        "W001" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$LengthValueBuilder" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 2,
+        "T002" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.exception.SerialisationException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        28,
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.exception.SerialisationException.<init>:(Ljava/lang/String;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        32,
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        105,
+        106
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.<init>:(Lcom/fasterxml/jackson/databind/ObjectMapper;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        116,
+        117,
+        118
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.addSimpleClassNames:(Z[Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        143,
+        144
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        248
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.createDefaultMapper:()Lcom/fasterxml/jackson/databind/ObjectMapper;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        216,
+        219,
+        222,
+        227,
+        228,
+        229
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.deserialise:(Ljava/io/InputStream;Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/lang/Object;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        377,
+        378,
+        379,
+        380,
+        379,
+        377,
+        380,
+        381
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.deserialise:(Ljava/io/InputStream;Ljava/lang/Class;)Ljava/lang/Object;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        346,
+        347,
+        348,
+        349,
+        348,
+        346,
+        349,
+        350
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.deserialise:(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        317,
+        318,
+        319
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.deserialise:([BLcom/fasterxml/jackson/core/type/TypeReference;)Ljava/lang/Object;" : {
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "lineNumbers" : [
+        363,
+        364,
+        365
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.deserialise:([BLjava/lang/Class;)Ljava/lang/Object;" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        332,
+        333,
+        334
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.getFilterProvider:([Ljava/lang/String;)Lcom/fasterxml/jackson/databind/ser/FilterProvider;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        233,
+        235,
+        236,
+        235,
+        239,
+        240,
+        239
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.getInstance:()Luk/gov/gchq/gaffer/jsonserialisation/JSONSerialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        406,
+        407,
+        409
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.getJsonNodeFromString:(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        392,
+        393,
+        394
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.getMapper:()Lcom/fasterxml/jackson/databind/ObjectMapper;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        401
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.registerModules:(Ljava/util/Collection;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        139,
+        140
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.registerModules:([Lcom/fasterxml/jackson/databind/Module;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 2
+      },
+      "lineNumbers" : [
+        127,
+        128,
+        127,
+        130
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.serialise:(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Z[Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        296,
+        297,
+        300,
+        302,
+        305,
+        303,
+        304,
+        306
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.serialise:(Ljava/lang/Object;Z[Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 4
+      },
+      "lineNumbers" : [
+        274,
+        276,
+        279,
+        277,
+        278,
+        281
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.serialise:(Ljava/lang/Object;[Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 3
+      },
+      "lineNumbers" : [
+        260
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.update:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        174,
+        177,
+        181,
+        178,
+        179,
+        180,
+        179,
+        183,
+        184,
+        185,
+        186,
+        189,
+        193,
+        190,
+        191,
+        192,
+        191,
+        194,
+        195,
+        196,
+        198,
+        200,
+        201,
+        200,
+        203,
+        204,
+        205
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiser.update:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        156,
+        157,
+        158,
+        159,
+        162,
+        163,
+        166,
+        167,
+        170,
+        171
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.JSONSerialiserModules.getModules:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer.createContextual:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonDeserializer;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        59,
+        60,
+        62,
+        63,
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer.deserialize:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        50,
+        51,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer.getModule:()Lcom/fasterxml/jackson/databind/module/SimpleModule;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        43,
+        44,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.isConsistent:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.serialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.Serialiser.serialiseNull:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.deserialise:([BII)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        64,
+        66,
+        69,
+        67,
+        68,
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser.serialiseNull:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        39,
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.deserialise:([BII)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.deserialiseString:(Ljava/lang/String;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.getCharset:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        86,
+        89,
+        87,
+        88,
+        90,
+        92,
+        93,
+        94,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.serialiseToString:(Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToBytesViaStringDeserialiser.setCharset:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToStringSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.ToStringSerialiser.serialiseNull:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.deserialise:([B)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.deserialise:([BII)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.deserialise:([BLjava/lang/Class;)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.deserialiseEmpty:()Ljava/lang/Boolean;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.serialise:(Ljava/lang/Boolean;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BooleanSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.deserialise:([B)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.deserialiseEmpty:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.BytesSerialiser.serialise:([B)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.deserialise:([BII)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52,
+        53,
+        52,
+        51,
+        53,
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        75
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.JavaSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        39,
+        41,
+        42,
+        43,
+        42,
+        39,
+        43,
+        39,
+        43,
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.checkSerialiers:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        74,
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.deserialise:([B)Ljava/util/Map;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        81,
+        82,
+        85,
+        88,
+        86,
+        87,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.deserialiseEmpty:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        186,
+        187,
+        190,
+        191,
+        194,
+        196,
+        197,
+        198,
+        199,
+        200,
+        196
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getKeySerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        127
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getKeySerialiserClassString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        137
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getMapClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        177
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getMapClassString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        167
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getValueSerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.getValueSerialiserClassString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.hashCode:()I" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        205,
+        206,
+        207,
+        208,
+        209,
+        205
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        117
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.serialise:(Ljava/util/Map;)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        66,
+        69,
+        67,
+        68,
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.serialiseNull:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setKeySerialiser:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        132,
+        133
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setKeySerialiserClassString:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        142,
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setMapClass:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        181,
+        182
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setMapClassString:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        172,
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setValueSerialiser:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        152,
+        153
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MapSerialiser.setValueSerialiserClassString:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        162,
+        163
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        89,
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.addSerialiser:(BLuk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Class;)Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        99,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        164
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        135,
+        136,
+        137,
+        138,
+        140,
+        141,
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        149
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        169,
+        170,
+        173,
+        174,
+        177,
+        179,
+        180,
+        181,
+        179
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.getSerialisers:()Ljava/util/List;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        186,
+        187,
+        188,
+        186
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        159
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.nullCheck:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        126,
+        127,
+        129
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        154
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        109,
+        110,
+        111,
+        113,
+        114,
+        115,
+        116,
+        115,
+        109,
+        116,
+        118,
+        119,
+        121
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiser.setSerialisers:(Ljava/util/List;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        95,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        188,
+        189
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.<init>:(BLuk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        192,
+        193,
+        194,
+        195,
+        196
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.getKey:()B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        199
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.getSerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        218
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.getValueClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        208
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.key:(B)Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiserStorage$SerialiserDetail;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        203,
+        204
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.serialiser:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiserStorage$SerialiserDetail;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        222,
+        223
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage$SerialiserDetail.valueClass:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiserStorage$SerialiserDetail;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        212,
+        213
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.addSerialiserDetails:(BLuk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        117,
+        118
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.addSerialiserDetails:(Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiserStorage$SerialiserDetail;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        121,
+        122,
+        123,
+        125,
+        127
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        85,
+        86,
+        87,
+        88,
+        89,
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        145,
+        146,
+        147,
+        148
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.continuesToBeConsistant:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.continuesToPreserveOrdering:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        152,
+        153,
+        156,
+        157,
+        160,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        162
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.getKeyFromValue:(Ljava/lang/Object;)Ljava/lang/Byte;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.getSerialiserDetails:()Ljava/util/List;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        130,
+        131,
+        132,
+        130
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.getSerialiserFromKey:(Ljava/lang/Byte;)Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.getSerialiserFromValue:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.hashCode:()I" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.lambda$getSerialiserDetails$0:(Ljava/lang/Byte;)Luk/gov/gchq/gaffer/serialisation/implementation/MultiSerialiserStorage$SerialiserDetail;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        131
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        106
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.put:(BLuk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        45,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.setSerialiserDetails:(Ljava/util/List;)V" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        136,
+        137,
+        138,
+        139,
+        140,
+        142
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.MultiSerialiserStorage.validatePutParams:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        56,
+        57,
+        59,
+        60,
+        62,
+        63,
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.NullSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.<init>:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        43,
+        44,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.deserialise:([B)Ljava/util/Set;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        72,
+        75,
+        73,
+        74,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.deserialiseEmpty:()Ljava/util/Set;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        91,
+        92,
+        95,
+        98,
+        96,
+        97,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        161,
+        162,
+        165,
+        166,
+        169,
+        171,
+        172,
+        173,
+        174,
+        171
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.getObjectSerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.getObjectSerialiserClassString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.getSetClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        151
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.getSetClassString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        141
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.hashCode:()I" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        179,
+        180,
+        181,
+        182,
+        179
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.serialise:(Ljava/util/Set;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        54,
+        56,
+        57,
+        58,
+        61,
+        59,
+        60,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.serialiseNull:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.setObjectSerialiser:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        125,
+        126
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.setObjectSerialiserClassString:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        135,
+        136
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.setSetClass:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        156,
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.SetSerialiser.setSetClassString:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        146,
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32,
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.deserialiseEmpty:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.deserialiseString:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.serialiseToString:(Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.StringSerialiser.serialiseToString:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.deserialiseEmpty:()Ljava/util/TreeSet;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.deserialiseString:(Ljava/lang/String;)Ljava/util/TreeSet;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.serialiseToString:(Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.TreeSetStringSerialiser.serialiseToString:(Ljava/util/TreeSet;)Ljava/lang/String;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        49,
+        50,
+        51,
+        52,
+        54,
+        55,
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.deserialise:([B)Ljava/util/Date;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.deserialiseEmpty:()Ljava/util/Date;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        56
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDateSerialiser.serialise:(Ljava/util/Date;)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.deserialise:([B)Ljava/lang/Double;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        48,
+        50,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.deserialiseEmpty:()Ljava/lang/Double;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.serialise:(Ljava/lang/Double;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        35,
+        36,
+        37,
+        39,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedDoubleSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.deserialise:([B)Ljava/lang/Float;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        48,
+        50,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.deserialiseEmpty:()Ljava/lang/Float;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.serialise:(Ljava/lang/Float;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        35,
+        36,
+        37,
+        39,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedFloatSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.deserialise:([B)Ljava/lang/Integer;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        58,
+        59,
+        60,
+        62,
+        63,
+        64,
+        62,
+        67,
+        68,
+        70,
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.deserialiseEmpty:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.serialise:(Ljava/lang/Integer;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        33,
+        34,
+        35,
+        38,
+        39,
+        38,
+        42,
+        43,
+        45,
+        46,
+        47,
+        45,
+        50,
+        51,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedIntegerSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.deserialise:([B)Ljava/lang/Long;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        63,
+        64,
+        66,
+        67,
+        70,
+        71,
+        72,
+        70,
+        75,
+        76,
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.deserialiseEmpty:()Ljava/lang/Long;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        109
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.serialise:(Ljava/lang/Long;)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        33,
+        34,
+        36,
+        38,
+        39,
+        40,
+        43,
+        38,
+        46,
+        47,
+        48,
+        49,
+        50,
+        48,
+        53,
+        54,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.ordered.OrderedLongSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.deserialise:([B)Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.deserialise:([BII)Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.deserialiseEmpty:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.serialise:(Ljava/lang/Integer;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawIntegerSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.deserialise:([B)Ljava/lang/Long;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.deserialise:([BII)Ljava/lang/Long;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.deserialiseEmpty:()Ljava/lang/Long;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.serialise:(Ljava/lang/Long;)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawLongSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.decodeVIntSize:(B)I" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        165,
+        166,
+        167,
+        168,
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.isNegativeVInt:(B)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        174
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.read:(Ljava/io/InputStream;)J" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        147,
+        148,
+        149,
+        150,
+        152,
+        153,
+        154,
+        155,
+        156,
+        153,
+        158,
+        159,
+        160
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.readLong:([B)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.readLong:([BI)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        68,
+        69,
+        71,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        83,
+        84,
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.write:(JLjava/io/OutputStream;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        106,
+        107,
+        108,
+        109,
+        111,
+        112,
+        113,
+        114,
+        116,
+        117,
+        118,
+        119,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        123,
+        130,
+        128,
+        129,
+        131
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.raw.CompactRawSerialisationUtils.writeLong:(J)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48,
+        49,
+        50,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        55,
+        60,
+        61,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.deserialise:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.serialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.implementation.tostring.StringToStringSerialiser.serialise:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        50,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.findAnnotation:(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/annotation/Annotation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        249,
+        258
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.getFieldTypeString:(Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/String;" : {
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 13
+      },
+      "lineNumbers" : [
+        191,
+        192,
+        193,
+        194,
+        195,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        211,
+        212,
+        213,
+        215,
+        218,
+        219,
+        222,
+        223,
+        224,
+        227,
+        228,
+        230,
+        231,
+        232,
+        234
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.getSerialisedFieldClasses:(Ljava/lang/String;)Ljava/util/Map;" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        61,
+        62,
+        63,
+        68,
+        71,
+        69,
+        70,
+        73,
+        74,
+        75,
+        76,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        88,
+        96,
+        98,
+        99,
+        100,
+        103,
+        104,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        119,
+        120,
+        121,
+        122,
+        124,
+        125,
+        126,
+        128,
+        110,
+        133,
+        134,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        144,
+        146,
+        138,
+        150,
+        151,
+        153,
+        154,
+        156,
+        157,
+        159,
+        163,
+        164,
+        166,
+        167,
+        168,
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.JsonSerialisationUtil.getTypeString:(Ljava/lang/reflect/Type;)Ljava/lang/String;" : {
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 13
+      },
+      "lineNumbers" : [
+        180
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$LengthValueBuilder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        239,
+        241
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$LengthValueBuilder.appendLengthValueFromBytesToByteStream:([B)Luk/gov/gchq/gaffer/serialisation/util/LengthValueBytesSerialiserUtil$LengthValueBuilder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        249,
+        250
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$LengthValueBuilder.appendLengthValueFromObjectToByteStream:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Object;)Luk/gov/gchq/gaffer/serialisation/util/LengthValueBytesSerialiserUtil$LengthValueBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        244,
+        245
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$LengthValueBuilder.toArray:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        254
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage.<init>:(Ljava/lang/Object;I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        217,
+        218,
+        219,
+        220
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage.getCarriage:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        231
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage.getObject:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        223
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage.setCarriage:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        235,
+        236
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil$ObjectCarriage.setObject:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        227,
+        228
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        37,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.appendLengthValueFromBytesToByteStream:(Ljava/io/ByteArrayOutputStream;[B)Ljava/io/ByteArrayOutputStream;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        53,
+        56,
+        54,
+        55,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.appendLengthValueFromObjectToByteStream:(Ljava/io/ByteArrayOutputStream;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Object;)Ljava/io/ByteArrayOutputStream;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        46,
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.createByteArray:()Ljava/io/ByteArrayOutputStream;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[B)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[BI)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[B[I)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:([B)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:([BI)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        125,
+        126,
+        129,
+        130,
+        131
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:([BIII)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        135,
+        136,
+        139
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialise:([B[I)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        108,
+        109,
+        112,
+        113,
+        114,
+        115,
+        117
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.deserialiseNextObject:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;I[B)Luk/gov/gchq/gaffer/serialisation/util/LengthValueBytesSerialiserUtil$ObjectCarriage;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getCurrentPropLength:([BII)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        207,
+        208,
+        209
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getLengthSize:([BI)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getNextDelimiter:(III)I" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getNextDelimiter:([BI)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        159,
+        160,
+        161
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getNextDelimiter:([BII)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        169
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getNextDelimiter:([B[BI)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        165
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getValue:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[B)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        189,
+        190,
+        192
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getValueBytes:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        178,
+        179,
+        180,
+        181,
+        183,
+        185
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getValueSize:([BI)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.getValueSize:([BII)I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        151,
+        152,
+        153,
+        152,
+        151,
+        153,
+        154
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.serialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        62,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.serialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/lang/Object;Ljava/io/ByteArrayOutputStream;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.serialise:([B)[B" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        76,
+        75,
+        73,
+        76,
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.util.LengthValueBytesSerialiserUtil.serialise:([BLjava/io/ByteArrayOutputStream;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        83,
+        84,
+        86,
+        88,
+        91,
+        89,
+        90,
+        93
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

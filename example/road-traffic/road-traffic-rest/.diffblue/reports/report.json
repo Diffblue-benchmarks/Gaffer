@@ -1,0 +1,187 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-16T12:12:39.365Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:basic-rest,uk.gov.gchq.gaffer:map-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 138.459,
+    "environmentDetectionTime" : 0.025,
+    "indexingTime" : 0.518,
+    "entryPointsTime" : 0.018,
+    "generationTime" : 39306.613,
+    "timeToFirstTest" : 44444.248,
+    "timeToLastTest" : 41089.145,
+    "indexQueryTime" : 18.879,
+    "verificationTime" : 688.296,
+    "validationTime" : 8.574
+  },
+  "codes" : {
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T021" : "Empty method body",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 9,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 53,
+    "perMethodTestability" : {
+      "T000" : 2,
+      "T003" : 1,
+      "T005" : 2,
+      "T021" : 2,
+      "T023" : 2
+    },
+    "perMethodOutcome" : {
+      "R002" : 4,
+      "R004" : 2,
+      "T003" : 1,
+      "T023" : 2
+    },
+    "perTestValidation" : {
+      "V000" : 1,
+      "V003" : 1
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.traffic.listeners.ConsoleBanner" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T021" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R004" : 1,
+        "T023" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T021" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R004" : 1,
+        "T003" : 1,
+        "T023" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.traffic.listeners.ConsoleBanner.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.ConsoleBanner.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.ConsoleBanner.contextDestroyed:(Ljavax/servlet/ServletContextEvent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.ConsoleBanner.contextInitialized:(Ljavax/servlet/ServletContextEvent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        34,
+        35,
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader.contextDestroyed:(Ljavax/servlet/ServletContextEvent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader.contextInitialized:(Ljavax/servlet/ServletContextEvent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        43,
+        44,
+        45,
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.listeners.DataLoader.loadData:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        54,
+        56,
+        58,
+        60,
+        64,
+        61,
+        62,
+        63,
+        66,
+        67
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}
