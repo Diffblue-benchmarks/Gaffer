@@ -33,6 +33,12 @@
             <artifactId>store</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+    <dependency>
+      <groupId>com.diffblue.cover</groupId>
+      <artifactId>cover-annotations</artifactId>
+      <version>1.7.0</version>
+      <scope>provided</scope>
+    </dependency>
         <dependency>
             <groupId>uk.gov.gchq.gaffer</groupId>
             <artifactId>graph</artifactId>
@@ -143,6 +149,12 @@
             <version>${jersey.version}</version>
             <scope>test</scope>
         </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+      <artifactId>jersey-test-framework-provider-inmemory</artifactId>
+      <version>2.36</version>
+      <scope>test</scope>
+    </dependency>
         <dependency>
             <groupId>uk.gov.gchq.gaffer</groupId>
             <artifactId>core-rest</artifactId>
@@ -173,6 +185,18 @@
             <artifactId>junit-platform-suite</artifactId>
             <scope>test</scope>
         </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>5.9.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>5.3.8</version>
+      <scope>test</scope>
+    </dependency>
     </dependencies>
 
 </project>
