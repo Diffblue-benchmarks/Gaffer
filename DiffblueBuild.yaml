@@ -210,8 +210,8 @@ phase:
         flags:
           - -Dmaven.compiler.failOnWarning=false
           - --also-make
-          - -DskipTests
-          - -DskipITs
+          - -Dskip.surefire.tests=true
+          - -Dskip.failsafe.tests=true
           - --threads=1C
 
   # The launcher phase is used to download the JUnit Jupiter launcher - run on a project (?)
@@ -235,8 +235,8 @@ phase:
         flags:
           - -Dmaven.compiler.failOnWarning=false
           - --also-make
-          - -DskipTests
-          - -DskipITs
+          - -Dskip.surefire.tests=true
+          - -Dskip.failsafe.tests=true
           - --threads=1C
 
   # The test phase is used to run the module under test's tests. This allows a filter to be specified to
@@ -257,12 +257,13 @@ phase:
 
     filter:
       # By default, all tests are executed
-      default: ~
+      default:
+        - -Dtest=!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest
       # To execute tests that Diffblue hasn't created (often referred to manual tests in Cover Reports), this is the
       # regular expression to use to match file names. This is the default maven regex with the negation of the
       # Diffblue test file names.
       neverDiffblue:
-        - -Dtest=!${DIFFBLUE_TEST_FILE_REGEX},**/Test*.java,**/*Test.java,**/*Tests.java,**/*TestCase.java
+        - -Dtest=!${DIFFBLUE_TEST_FILE_REGEX},!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest,**/Test*.java,**/*Test.java,**/*Tests.java,**/*TestCase.java
       # To execute only the Diffblue created tests, then pass this regular expression to match the file names
       onlyDiffblue:
         - -Dtest=${DIFFBLUE_TEST_FILE_REGEX}
@@ -297,12 +298,13 @@ phase:
 
     filter:
       # By default, all tests are executed
-      default: ~
+      default:
+        - -Dtest=!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest
       # To execute tests that Diffblue hasn't created (often referred to manual tests in Cover Reports), this is the
       # regular expression to use to match file names. This is the default maven regex with the negation of the
       # Diffblue test file names.
       neverDiffblue:
-        - -Dtest=!${DIFFBLUE_TEST_FILE_REGEX},**/Test*.java,**/*Test.java,**/*Tests.java,**/*TestCase.java
+        - -Dtest=!${DIFFBLUE_TEST_FILE_REGEX},!GafferPopGraphStructureStandardTest,!GafferPopFeatureTest,!GafferPopGraphProcessStandardTest,**/Test*.java,**/*Test.java,**/*Tests.java,**/*TestCase.java
       # To execute only the Diffblue created tests, then pass this regular expression to match the file names
       onlyDiffblue:
         - -Dtest=${DIFFBLUE_TEST_FILE_REGEX}
