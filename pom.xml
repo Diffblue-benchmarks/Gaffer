@@ -925,7 +925,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
-                    <argLine>${surefireArgLine}</argLine>
                     <skipTests>${skip.surefire.tests}</skipTests>
                     <excludes>
                         <exclude>${exclude.tests}</exclude>
@@ -952,7 +951,6 @@
                 </executions>
                 <configuration>
                     <skipITs>${skip.failsafe.tests}</skipITs>
-                    <argLine>${failsafeArgLine}</argLine>
                     <excludes>
                         <exclude>**/*$*</exclude>
                         <exclude>**/performance/**</exclude>
