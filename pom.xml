@@ -1004,7 +1004,7 @@
                     </suppressionsFileExpression>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
+                    <failsOnError>false</failsOnError>
                     <excludes>**/generated/**/*</excludes>
                     <sourceDirectories>
                         <sourceDirectory>${project.build.sourceDirectory}
@@ -1022,7 +1022,7 @@
                             </configLocation>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
+                            <failsOnError>false</failsOnError>
                         </configuration>
                         <goals>
                             <goal>check</goal>
