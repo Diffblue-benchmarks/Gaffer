@@ -142,15 +142,16 @@ global:
     #   enable:   the name of the goal (listed below) to use when this plugin should be enabled
     #   flags:    any flags to apply to the plugin regardless of enablement/disablement
     #   goals:
-    #     - name: the name of the goal, referenced in the enable/disable options above
-    #       flags: any flags to apply to the named goal
+    #     - name: the name of the goal, referenced in the enable/disable options above.
+    #             This should contain the name of the plugin to prevent ambiguity.
+    #       flags: any flags to apply to the named goal.
     - name: com.mycila:license-maven-plugin
       disable: disable
       enable: format
       flags: ~
       goals:
         - name: format
-          goal: format
+          goal: com.mycila:license-maven-plugin:format
           flags: ~
         - name: disable
           goal: ~
@@ -177,7 +178,7 @@ global:
       flags: ~
       goals:
         - name: check
-          goal: checkstyle::check
+          goal: org.apache.maven.plugins:maven-checkstyle-plugin:check
           flags:
             - -Dcheckstyle.failOnViolation=false
         - name: disable
@@ -191,12 +192,25 @@ global:
       flags: ~
       goals:
         - name: apply
-          goal: spring-javaformat:apply
+          goal: io.spring.javaformat:spring-javaformat-maven-plugin:apply
           flags: ~
         - name: disable
           goal: ~
           flags:
             - -Dspring-javaformat.skip=true
+
+    - name: org.apache.maven.plugins:maven-pmd-plugin
+      disable: disable
+      enable: apply
+      flags: ~
+      goals:
+        - name: apply
+          goal: ~
+          flags: ~
+        - name: disable
+          goal: ~
+          flags:
+            - -Dpmd.skip=true
 
 # The phases are named according to `dcover`'s needs and aren't specific to any build system (despite some overlap).
 # The idea is that each phase provides a list of build system `goals` which will be combined into a single invocation.
