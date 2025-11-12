@@ -1,0 +1,1573 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:53.29Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 11094.438,
+    "environmentDetectionTime" : 0.393,
+    "indexingTime" : 0.472,
+    "entryPointsTime" : 0.386,
+    "generationTime" : 8748.318,
+    "timeToFirstTest" : 165.83,
+    "timeToLastTest" : 368.843,
+    "indexQueryTime" : 5.9030000000000005,
+    "verificationTime" : 179.066,
+    "validationTime" : 15.16
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R005" : "Unable to load class",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T021" : "Empty method body",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 15,
+    "methodsCount" : 115,
+    "cumulativeDiffblueTestCount" : 5,
+    "cumulativeManualTestCount" : 34,
+    "completeTestCount" : 5,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 857,
+    "perMethodTestability" : {
+      "T000" : 64,
+      "T001" : 11,
+      "T002" : 1,
+      "T003" : 9,
+      "T004" : 1,
+      "T005" : 17,
+      "T010" : 1,
+      "T012" : 10,
+      "T021" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 5,
+      "R005" : 89,
+      "T003" : 9,
+      "T004" : 1,
+      "T010" : 1,
+      "T012" : 10
+    },
+    "perTestOutcome" : {
+      "R000" : 5
+    },
+    "perTestValidation" : {
+      "V000" : 5,
+      "V003" : 2
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties" : {
+      "methodsCount" : 19,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 16,
+        "T005" : 3
+      },
+      "perMethodOutcome" : {
+        "R005" : 19
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore" : {
+      "methodsCount" : 36,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 22,
+        "T001" : 9,
+        "T005" : 2,
+        "T012" : 2,
+        "T021" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 34,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T002" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 7
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties$Builder" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 7
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl$Builder" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyPropertiesHandler" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyUrlHandler" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 9,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 9,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.ResponseDeserialiser" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 1,
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.DefaultResponseDeserialiser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.<init>:(Ljava/nio/file/Path;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.<init>:(Ljava/util/Properties;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getConnectTimeout:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        72,
+        74,
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferContextRoot:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        119
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferHost:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferPort:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        106,
+        108,
+        109,
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferUrl:()Ljava/net/URL;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferUrl:(Ljava/lang/String;)Ljava/net/URL;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        132
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getGafferUrl:(Ljava/lang/String;Ljava/lang/String;)Ljava/net/URL;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        136,
+        137,
+        140,
+        142,
+        143,
+        144,
+        145
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.getReadTimeout:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        85,
+        87,
+        88,
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.loadStoreProperties:(Ljava/io/InputStream;)Luk/gov/gchq/gaffer/proxystore/ProxyProperties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.loadStoreProperties:(Ljava/lang/String;)Luk/gov/gchq/gaffer/proxystore/ProxyProperties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.loadStoreProperties:(Ljava/nio/file/Path;)Luk/gov/gchq/gaffer/proxystore/ProxyProperties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.setConnectTimeout:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        81,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.setGafferContextRoot:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        123,
+        124,
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.setGafferHost:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        102,
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.setGafferPort:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        115,
+        116
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyProperties.setReadTimeout:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        94,
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        407,
+        408,
+        409,
+        410,
+        411,
+        412
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.build:()Luk/gov/gchq/gaffer/proxystore/ProxyStore;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        451,
+        454,
+        452,
+        453,
+        455
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.connectTimeout:(I)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        430,
+        431
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.contextRoot:(Ljava/lang/String;)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        425,
+        426
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.graphId:(Ljava/lang/String;)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        445,
+        446
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.host:(Ljava/lang/String;)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        415,
+        416
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.jsonSerialiser:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        440,
+        441
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.port:(I)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        420,
+        421
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore$Builder.readTimeout:(I)Luk/gov/gchq/gaffer/proxystore/ProxyStore$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        435,
+        436
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        96,
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.addAdditionalOperationHandlers:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        343,
+        344,
+        345,
+        346
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.checkDelegateStoreStatus:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        111,
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.createClient:()Ljavax/ws/rs/client/Client;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        390,
+        391,
+        392,
+        393
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.createRequest:(Ljava/lang/String;Ljava/net/URL;Luk/gov/gchq/gaffer/store/Context;)Ljavax/ws/rs/client/Invocation$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        327
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.doGet:(Ljava/net/URL;Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;Luk/gov/gchq/gaffer/store/Context;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        280,
+        283,
+        286,
+        284,
+        285,
+        288
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.doPost:(Ljava/net/URL;Ljava/lang/Object;Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;Luk/gov/gchq/gaffer/store/Context;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        257,
+        258,
+        259
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.doPost:(Ljava/net/URL;Ljava/lang/String;Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;Luk/gov/gchq/gaffer/store/Context;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        268,
+        271,
+        274,
+        272,
+        273,
+        276
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.executeJob:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;)Luk/gov/gchq/gaffer/jobtracker/JobDetail;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        219,
+        221,
+        222,
+        223,
+        224
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.executeOpChainViaUrl:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        232,
+        235,
+        233,
+        234,
+        237,
+        240,
+        241,
+        242,
+        244,
+        246,
+        247,
+        248
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.fetchOperations:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        120,
+        121,
+        122,
+        123,
+        124
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.fetchSchema:(Z)Luk/gov/gchq/gaffer/store/schema/Schema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        178,
+        179,
+        180
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.fetchTraits:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        164,
+        165,
+        166,
+        169,
+        171,
+        172,
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getAddElementsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        365
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getAdjacentIdsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OutputOperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        360
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getDeleteAllDataHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        375
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getDeleteElementsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OutputOperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        370
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getGetAllElementsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OutputOperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        355
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getGetElementsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OutputOperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        350
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getGetTraitsHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OutputOperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        381
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getOperationChainHandler:()Luk/gov/gchq/gaffer/store/operation/handler/OperationHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        386
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getOperationsResponseDeserialiser:()Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        129
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getOriginalSchema:()Luk/gov/gchq/gaffer/store/schema/Schema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        191,
+        192,
+        193
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getProperties:()Luk/gov/gchq/gaffer/proxystore/ProxyProperties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        333
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getPropertiesClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        338
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getRequiredParentSerialiserClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        399
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getResponseDeserialiserFor:(Lcom/fasterxml/jackson/core/type/TypeReference;)Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getResponseDeserialiserForNamedOperation:(Luk/gov/gchq/gaffer/named/operation/NamedOperation;Luk/gov/gchq/gaffer/store/Context;)Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        137,
+        138,
+        139,
+        140,
+        142,
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getSchema:()Luk/gov/gchq/gaffer/store/schema/Schema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        205,
+        206,
+        207
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.getSupportedOperations:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        148,
+        149,
+        150,
+        151
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.handleResponse:(Ljavax/ws/rs/core/Response;Luk/gov/gchq/gaffer/proxystore/response/deserialiser/ResponseDeserialiser;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        294,
+        295,
+        298,
+        302,
+        299,
+        300,
+        301,
+        303,
+        306,
+        307,
+        309,
+        312,
+        310,
+        311,
+        315
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.initialise:(Ljava/lang/String;Luk/gov/gchq/gaffer/store/schema/Schema;Luk/gov/gchq/gaffer/store/StoreProperties;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        102,
+        103,
+        105,
+        106,
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.isSupported:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        156,
+        157,
+        158,
+        159,
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.lambda$getGetTraitsHandler$0:(Luk/gov/gchq/gaffer/store/operation/GetTraits;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        381
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.ProxyStore.validateSchemas:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        214
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException.<init>:()V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        21,
+        22
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        25,
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException.<init>:(Ljava/lang/String;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        29,
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException.<init>:(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.exception.ProxyStoreException.<init>:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        80,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        63,
+        65,
+        67,
+        68,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.getOutputTypeReference:()Lcom/fasterxml/jackson/core/type/TypeReference;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyProperties.shallowClone:()Luk/gov/gchq/gaffer/operation/Operation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        80,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        63,
+        65,
+        67,
+        68,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.getOutputTypeReference:()Lcom/fasterxml/jackson/core/type/TypeReference;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.GetProxyUrl.shallowClone:()Luk/gov/gchq/gaffer/proxystore/operation/GetProxyUrl;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyPropertiesHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyPropertiesHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyPropertiesHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyPropertiesHandler.doOperation:(Luk/gov/gchq/gaffer/proxystore/operation/GetProxyProperties;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        51,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyUrlHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyUrlHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyUrlHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.GetProxyUrlHandler.doOperation:(Luk/gov/gchq/gaffer/proxystore/operation/GetProxyUrl;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        30,
+        31,
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.<init>:(Luk/gov/gchq/gaffer/store/operation/OperationChainValidator;Ljava/util/List;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.doOperation:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        57,
+        58,
+        60,
+        63,
+        66,
+        72,
+        75,
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.getProxyOptions:(Luk/gov/gchq/gaffer/operation/OperationChain;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        85,
+        86
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.handlersLogic:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.ifAlternativeOperationsExists:(Ljava/util/ArrayList;Ljava/util/ArrayList;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        165,
+        167,
+        169,
+        171,
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.opChainsToOpChain:(Ljava/util/ArrayList;)Luk/gov/gchq/gaffer/operation/OperationChain;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        176,
+        179,
+        180
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.operationsToOpChain:(Ljava/util/ArrayList;)Luk/gov/gchq/gaffer/operation/OperationChain;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        184,
+        185,
+        188,
+        189
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.processAlternatingLists:(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Luk/gov/gchq/gaffer/operation/Operation;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        160,
+        161,
+        162
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.proxyLogic:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/proxystore/ProxyStore;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        124
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.resolvedLogic:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        132,
+        133,
+        134,
+        136,
+        137,
+        138,
+        139,
+        142,
+        144,
+        145,
+        147,
+        152,
+        155,
+        153,
+        154,
+        156
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.operation.handler.OperationChainHandler.unprocessedLogic:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        90,
+        92,
+        93,
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        102,
+        103,
+        105,
+        99,
+        109,
+        110,
+        112,
+        113,
+        114,
+        116,
+        117,
+        118,
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.ResponseDeserialiser.deserialise:(Ljava/lang/String;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.ResponseDeserialiser.encodeString:(Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.DefaultResponseDeserialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.DefaultResponseDeserialiser.<init>:(Lcom/fasterxml/jackson/core/type/TypeReference;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        34,
+        35,
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.DefaultResponseDeserialiser.deserialise:(Ljava/lang/String;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        41,
+        43,
+        50,
+        51,
+        53,
+        55,
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser$1.<init>:(Luk/gov/gchq/gaffer/proxystore/response/deserialiser/impl/OperationsResponseDeserialiser;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.proxystore.response.deserialiser.impl.OperationsResponseDeserialiser.deserialise:(Ljava/lang/String;)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37,
+        38,
+        40,
+        41,
+        43,
+        44,
+        45,
+        47,
+        51,
+        49,
+        50,
+        52,
+        53
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.UtilsDiffblueTest.testSerialiseConfiguration"
+    ]
+  }
+}

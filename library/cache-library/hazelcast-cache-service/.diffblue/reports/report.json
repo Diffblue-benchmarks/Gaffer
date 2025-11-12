@@ -1,0 +1,245 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:53.29Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 5978.066,
+    "environmentDetectionTime" : 0.235,
+    "indexingTime" : 0.446,
+    "entryPointsTime" : 0.233,
+    "generationTime" : 4245.729,
+    "timeToFirstTest" : 165.83,
+    "timeToLastTest" : 368.843,
+    "indexQueryTime" : 6.646,
+    "verificationTime" : 138.39,
+    "validationTime" : 14.172
+  },
+  "codes" : {
+    "R005" : "Unable to load class",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 14,
+    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeManualTestCount" : 20,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 101,
+    "perMethodTestability" : {
+      "T000" : 10,
+      "T003" : 1,
+      "T005" : 2,
+      "T012" : 1
+    },
+    "perMethodOutcome" : {
+      "R005" : 12,
+      "T003" : 1,
+      "T012" : 1
+    },
+    "perTestValidation" : {
+      "V000" : 19,
+      "V003" : 2
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 8
+      }
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 4,
+        "T003" : 1,
+        "T012" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.<init>:(Lcom/hazelcast/map/IMap;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        78,
+        81,
+        79,
+        80,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.get:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.getAllKeys:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.getAllValues:()Ljava/util/Collection;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.put:(Ljava/lang/Object;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        49,
+        52,
+        50,
+        51,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.remove:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCache.size:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.configureHazelcast:(Ljava/util/Properties;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45,
+        47,
+        50,
+        51,
+        54,
+        52,
+        53,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.getCache:(Ljava/lang/String;)Luk/gov/gchq/gaffer/cache/ICache;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        75,
+        76,
+        78,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.initialise:(Ljava/util/Properties;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        61,
+        62,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.HazelcastCacheService.shutdown:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        67,
+        68,
+        70
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.UtilsDiffblueTest.testSerialiseConfiguration"
+    ]
+  }
+}

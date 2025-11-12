@@ -1,0 +1,278 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:53.29Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 5903.882,
+    "environmentDetectionTime" : 0.147,
+    "indexingTime" : 0.443,
+    "entryPointsTime" : 0.145,
+    "generationTime" : 4232.66,
+    "timeToFirstTest" : 165.83,
+    "timeToLastTest" : 368.843,
+    "indexQueryTime" : 3.1550000000000002,
+    "verificationTime" : 138.39,
+    "validationTime" : 14.172
+  },
+  "codes" : {
+    "R005" : "Unable to load class",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 16,
+    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeManualTestCount" : 27,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 123,
+    "perMethodTestability" : {
+      "T000" : 11,
+      "T003" : 2,
+      "T005" : 1,
+      "T012" : 2
+    },
+    "perMethodOutcome" : {
+      "R005" : 12,
+      "T003" : 2,
+      "T012" : 2
+    },
+    "perTestValidation" : {
+      "V000" : 19,
+      "V003" : 2
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 8,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 4,
+        "T003" : 1,
+        "T012" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.<init>:(Ljava/lang/String;Lorg/apache/commons/jcs/engine/behavior/ICompositeCacheAttributes;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.<init>:(Lorg/apache/commons/jcs/engine/control/CompositeCache;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        95,
+        98,
+        96,
+        97,
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.get:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.getAllKeys:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.getAllValues:()Ljava/util/Collection;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        77,
+        78,
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.lambda$getAllValues$0:(Ljava/util/ArrayList;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.put:(Ljava/lang/Object;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        60,
+        61,
+        64,
+        67,
+        65,
+        66,
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.remove:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        72,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCache.size:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.getCache:(Ljava/lang/String;)Luk/gov/gchq/gaffer/cache/ICache;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        65,
+        67,
+        68,
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.initialise:(Ljava/util/Properties;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        47,
+        48,
+        50,
+        52,
+        53,
+        54,
+        55,
+        56,
+        59,
+        60,
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.readProperties:(Ljava/lang/String;)Ljava/util/Properties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        82,
+        84,
+        85,
+        86,
+        87,
+        86,
+        84,
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.cache.impl.JcsCacheService.shutdown:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        75,
+        76,
+        77,
+        79
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.UtilsDiffblueTest.testSerialiseConfiguration"
+    ]
+  }
+}

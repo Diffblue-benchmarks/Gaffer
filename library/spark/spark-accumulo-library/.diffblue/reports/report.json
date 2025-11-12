@@ -1,0 +1,2700 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:53.29Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 5744.619,
+    "environmentDetectionTime" : 1.828,
+    "indexingTime" : 0.437,
+    "entryPointsTime" : 1.822,
+    "generationTime" : 4174.343,
+    "timeToFirstTest" : 165.83,
+    "timeToLastTest" : 368.843,
+    "indexQueryTime" : 49.359,
+    "verificationTime" : 135.95,
+    "validationTime" : 143.913
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R005" : "Unable to load class",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R034" : "Diffblue Cover can't complete test",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 30,
+    "methodsCount" : 179,
+    "cumulativeDiffblueTestCount" : 10,
+    "cumulativeManualTestCount" : 94,
+    "completeTestCount" : 10,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 2051,
+    "perMethodTestability" : {
+      "T000" : 66,
+      "T001" : 8,
+      "T002" : 9,
+      "T003" : 23,
+      "T004" : 10,
+      "T005" : 14,
+      "T008" : 1,
+      "T010" : 6,
+      "T012" : 42
+    },
+    "perMethodOutcome" : {
+      "R000" : 9,
+      "R005" : 81,
+      "R013" : 5,
+      "R034" : 1,
+      "T003" : 23,
+      "T004" : 10,
+      "T008" : 1,
+      "T010" : 6,
+      "T012" : 42,
+      "W002" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 10
+    },
+    "perTestValidation" : {
+      "V000" : 10,
+      "V003" : 2
+    },
+    "warnings" : {
+      "W002" : 9
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T003" : 1,
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 6,
+        "T003" : 1,
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "R005" : 3,
+        "T010" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractSplitStoreFromRDDOfElementsHandler" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T010" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T010" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 6,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 3,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 1,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 1,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportJavaRDDOfElementsHandler" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 3,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R005" : 4,
+        "T012" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 1,
+        "T012" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 5,
+        "T005" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 5,
+        "T012" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler$EntryIteratorToElementIterator" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 1,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "R005" : 4,
+        "T012" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 3,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R005" : 2,
+        "T003" : 1,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$ElementIteratorToPairIteratorFunction" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$TextToStringFunction" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 2,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 2,
+        "T012" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.GetJavaRDDOfElementsInRanges$Builder" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 3,
+        "T002" : 4,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 10,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo$Builder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R005" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 4,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R013" : 2,
+        "R034" : 1,
+        "T003" : 4,
+        "T012" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 10
+      },
+      "perMethodOutcome" : {
+        "T004" : 10
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R013" : 3,
+        "T003" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.Utils" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T008" : 1,
+        "W002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W002" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.GetRDDOfElementsInRanges$Builder" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 3,
+        "T002" : 4,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 10,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo$Builder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R005" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T002" : 1,
+        "T003" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 5,
+        "T003" : 2,
+        "T012" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.addIterators:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Lorg/apache/hadoop/conf/Configuration;Luk/gov/gchq/gaffer/user/User;Luk/gov/gchq/gaffer/operation/io/Output;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        69,
+        74,
+        76,
+        79,
+        81,
+        82,
+        83,
+        84,
+        85,
+        87,
+        88,
+        89,
+        90,
+        91,
+        95,
+        93,
+        94,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.addRanges:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Lorg/apache/hadoop/conf/Configuration;Luk/gov/gchq/gaffer/operation/Operation;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        111,
+        112,
+        114,
+        115,
+        116,
+        114,
+        119,
+        117,
+        118,
+        120,
+        121,
+        122
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.addRangesFromPairs:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Lorg/apache/hadoop/conf/Configuration;Luk/gov/gchq/gaffer/operation/Operation;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        129,
+        130,
+        132,
+        133,
+        134,
+        132,
+        137,
+        135,
+        136,
+        138,
+        139,
+        140
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.convertConfigurationToString:(Lorg/apache/hadoop/conf/Configuration;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        155,
+        156,
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.convertStringToConfiguration:(Ljava/lang/String;)Lorg/apache/hadoop/conf/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        161,
+        162,
+        163,
+        164,
+        165,
+        166
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.getConfiguration:(Luk/gov/gchq/gaffer/operation/io/Output;)Lorg/apache/hadoop/conf/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        143,
+        144,
+        145,
+        148,
+        149,
+        150
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractGetRDDHandler.getGetAllElements:(Luk/gov/gchq/gaffer/operation/io/Output;)Luk/gov/gchq/gaffer/operation/impl/get/GetAllElements;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        99,
+        100,
+        101,
+        102,
+        103,
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        60,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        46,
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.getConfiguration:(Luk/gov/gchq/gaffer/operation/Operation;)Lorg/apache/hadoop/conf/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        71,
+        72,
+        73,
+        75,
+        76,
+        79,
+        77,
+        78,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.getFailurePath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.getOutputPath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractImportKeyValuePairRDDToAccumuloHandler.prepareKeyValues:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/sparkaccumulo/operation/utils/AccumuloKeyRangePartitioner;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractSplitStoreFromRDDOfElementsHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractSplitStoreFromRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractSplitStoreFromRDDOfElementsHandler.adjustFractionToSampleForSize:(Ljava/lang/Double;Ljava/lang/Integer;J)D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        46,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        50,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.AbstractSplitStoreFromRDDOfElementsHandler.createSplitPoints:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Luk/gov/gchq/gaffer/store/Context;Ljava/util/List;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        62,
+        65,
+        66,
+        64,
+        68,
+        67,
+        69,
+        62,
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.<init>:(Luk/gov/gchq/gaffer/store/Context;Ljava/util/List;Luk/gov/gchq/gaffer/data/elementdefinition/view/View;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.buildScan:()Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.buildScan:([Ljava/lang/String;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        162,
+        163,
+        164
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.buildScan:([Ljava/lang/String;[Lorg/apache/spark/sql/sources/Filter;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        184,
+        185,
+        186,
+        187,
+        184,
+        188,
+        189,
+        190,
+        193,
+        195,
+        197,
+        198,
+        201,
+        202,
+        203
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.schema:()Lorg/apache/spark/sql/types/StructType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        116
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.AccumuloStoreRelation.sqlContext:()Lorg/apache/spark/sql/SQLContext;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        111
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/dataframe/GetDataFrameOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/sql/Dataset;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43,
+        44,
+        46,
+        49,
+        50,
+        51,
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.dataframe.GetDataFrameOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/dataframe/GetDataFrameOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/spark/sql/Dataset;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/GetJavaRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/api/java/JavaRDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/GetJavaRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/spark/api/java/JavaRDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/GetJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/api/java/JavaRDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        53,
+        54,
+        56,
+        57,
+        58,
+        59,
+        63,
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.GetJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/GetJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/spark/api/java/JavaRDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportJavaRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/ImportJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        59,
+        60,
+        61,
+        62,
+        63,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/ImportJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.getFailurePath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.getFailurePath:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.getOutputPath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.getOutputPath:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.prepareKeyValues:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/sparkaccumulo/operation/utils/AccumuloKeyRangePartitioner;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.ImportKeyValueJavaPairRDDToAccumuloHandler.prepareKeyValues:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo;Luk/gov/gchq/gaffer/sparkaccumulo/operation/utils/AccumuloKeyRangePartitioner;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        32,
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.$deserializeLambda$:(Ljava/lang/invoke/SerializedLambda;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/javardd/SplitStoreFromJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        49,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.generateSplitPoints:(Luk/gov/gchq/gaffer/spark/operation/javardd/SplitStoreFromJavaRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        55,
+        56,
+        58,
+        59,
+        66,
+        68,
+        69,
+        70,
+        71,
+        68,
+        73,
+        74,
+        75,
+        77,
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.lambda$generateSplitPoints$71f2d474$1:(Luk/gov/gchq/gaffer/commonutil/pair/Pair;)Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        60,
+        61,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.javardd.SplitStoreFromJavaRDDOfElementsHandler.lambda$generateSplitPoints$a72d0da7$1:(Lorg/apache/accumulo/core/data/Key;)Lorg/apache/hadoop/io/Text;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler$EntryIteratorToElementIterator.<init>:([B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        189,
+        190,
+        191
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler$EntryIteratorToElementIterator.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        185
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler$EntryIteratorToElementIterator.apply:(Lscala/collection/Iterator;)Lscala/collection/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        195,
+        196,
+        197,
+        198,
+        196
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.access$000:()Lorg/slf4j/Logger;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.addAggregationIterator:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Lorg/apache/hadoop/conf/Configuration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        174,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        183
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.addValidationIterator:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;Lorg/apache/hadoop/conf/Configuration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        160,
+        161,
+        162,
+        163,
+        164,
+        166,
+        167,
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        93,
+        94,
+        95,
+        97,
+        98,
+        99,
+        100,
+        102
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        86
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperationUsingElementInputFormat:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        110,
+        111,
+        112,
+        113,
+        114,
+        116,
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfAllElementsHandler.doOperationUsingRFileReaderRDD:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfAllElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        127,
+        131,
+        134,
+        137,
+        135,
+        136,
+        139,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        153,
+        154,
+        155
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/io/Output;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        52,
+        53,
+        54,
+        56,
+        57,
+        58,
+        59,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.GetRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/GetRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.getFailurePath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.getFailurePath:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.getOutputPath:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.getOutputPath:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.prepareKeyValues:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/sparkaccumulo/operation/utils/AccumuloKeyRangePartitioner;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportKeyValuePairRDDToAccumuloHandler.prepareKeyValues:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo;Luk/gov/gchq/gaffer/sparkaccumulo/operation/utils/AccumuloKeyRangePartitioner;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/ImportRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        58,
+        59,
+        60,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.ImportRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/ImportRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$ElementIteratorToPairIteratorFunction.<init>:(Ljava/lang/String;[B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$ElementIteratorToPairIteratorFunction.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$ElementIteratorToPairIteratorFunction.apply:(Lscala/collection/Iterator;)Lscala/collection/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        99,
+        100,
+        101,
+        103,
+        116,
+        118
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$TextToStringFunction.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$TextToStringFunction.<init>:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/handler/scalardd/SplitStoreFromRDDOfElementsHandler$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$TextToStringFunction.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler$TextToStringFunction.apply:(Lorg/apache/hadoop/io/Text;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler.doOperation:(Luk/gov/gchq/gaffer/spark/operation/scalardd/SplitStoreFromRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.handler.scalardd.SplitStoreFromRDDOfElementsHandler.generateSplitPoints:(Luk/gov/gchq/gaffer/spark/operation/scalardd/SplitStoreFromRDDOfElements;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        64,
+        65,
+        67,
+        68,
+        69,
+        71,
+        72,
+        73,
+        74,
+        71,
+        76,
+        77,
+        78,
+        79,
+        81,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.GetJavaRDDOfElementsInRanges$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        123,
+        124
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        93,
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo$Builder.failurePath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        102,
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo$Builder.outputPath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        97,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.getFailurePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.getInput:()Lorg/apache/spark/api/java/JavaPairRDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.getOutputPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.setFailurePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.setInput:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.setInput:(Lorg/apache/spark/api/java/JavaPairRDD;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        67,
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        77,
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.setOutputPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        49,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.javardd.ImportKeyValueJavaPairRDDToAccumulo.shallowClone:()Luk/gov/gchq/gaffer/sparkaccumulo/operation/javardd/ImportKeyValueJavaPairRDDToAccumulo;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.<init>:(IILjava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.addRFile:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        79,
+        80,
+        83,
+        84,
+        87,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.getEndRow:()Lorg/apache/hadoop/io/Text;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        68,
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.getFiles:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.getStartRow:()Lorg/apache/hadoop/io/Text;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        60,
+        61,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.AccumuloTablet.index:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        56
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.<init>:(Luk/gov/gchq/gaffer/sparkaccumulo/operation/rfilereaderrdd/RFileReaderIterator;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.cloneWithSamplingEnabled:()Lorg/apache/accumulo/core/iterators/IteratorEnvironment;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        190
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.getAuthorizations:()Lorg/apache/accumulo/core/security/Authorizations;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        185
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.getConfig:()Lorg/apache/accumulo/core/conf/AccumuloConfiguration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        165
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.getIteratorScope:()Lorg/apache/accumulo/core/iterators/IteratorUtil$IteratorScope;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.getSamplerConfiguration:()Lorg/apache/accumulo/core/client/sample/SamplerConfiguration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        200
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.isFullMajorCompaction:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        175
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.isSamplingEnabled:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        195
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.registerSideChannel:(Lorg/apache/accumulo/core/iterators/SortedKeyValueIterator;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator$1.reserveMapFileReader:(Ljava/lang/String;)Lorg/apache/accumulo/core/iterators/SortedKeyValueIterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        160
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.<init>:(Lorg/apache/spark/Partition;Lorg/apache/spark/TaskContext;Lorg/apache/hadoop/conf/Configuration;Ljava/util/Set;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        74,
+        65,
+        66,
+        67,
+        75,
+        76,
+        77,
+        78,
+        80,
+        83,
+        81,
+        82,
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.applyIterator:(Lorg/apache/accumulo/core/iterators/SortedKeyValueIterator;Lorg/apache/accumulo/core/client/IteratorSetting;)Lorg/apache/accumulo/core/iterators/SortedKeyValueIterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        155,
+        156,
+        157,
+        203,
+        204,
+        205
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        214,
+        217,
+        218,
+        219,
+        222,
+        220,
+        221,
+        223,
+        224
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.getIteratorSettings:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        210
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.hasNext:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.init:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        104,
+        105,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        117,
+        118,
+        119,
+        120,
+        122,
+        124,
+        125,
+        126,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        139,
+        140,
+        141,
+        142,
+        143,
+        145,
+        147,
+        148,
+        149,
+        150
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.lambda$init$0:(Lorg/apache/hadoop/io/Text;)Lorg/apache/accumulo/core/data/ArrayByteSequence;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.lambda$init$1:(Lorg/apache/spark/TaskContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        145
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderIterator.next:()Ljava/util/Map$Entry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        93,
+        94,
+        96,
+        99,
+        97,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.<init>:(Lorg/apache/spark/SparkContext;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;[B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        76,
+        77,
+        76,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.checkAccess:(Lorg/apache/accumulo/core/client/Connector;Ljava/lang/String;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        142,
+        143,
+        144,
+        148,
+        146,
+        147,
+        149
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.compute:(Lorg/apache/spark/Partition;Lorg/apache/spark/TaskContext;)Lscala/collection/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        89,
+        90,
+        92,
+        93,
+        96,
+        94,
+        95,
+        97,
+        98,
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.createTabletMap:(Lorg/apache/accumulo/core/client/Connector;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        165,
+        166,
+        167,
+        168,
+        169,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        179,
+        180,
+        181,
+        185,
+        187,
+        188,
+        189,
+        190,
+        192,
+        197,
+        198,
+        199,
+        203,
+        204,
+        206,
+        209,
+        210,
+        211,
+        213,
+        215,
+        216,
+        217,
+        218,
+        220
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.RFileReaderRDD.getPartitions:()[Lorg/apache/spark/Partition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        106,
+        107,
+        110,
+        108,
+        109,
+        111,
+        115,
+        116,
+        118,
+        121,
+        122,
+        123,
+        126,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.Utils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        29,
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.Utils.deserialiseConfiguration:([B)Lorg/apache/hadoop/conf/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        49,
+        44,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.Utils.serialiseConfiguration:(Lorg/apache/hadoop/conf/Configuration;)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W002" : 8
+      },
+      "lineNumbers" : [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        39,
+        34,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.GetRDDOfElementsInRanges$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        122,
+        123
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        91,
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo$Builder.failurePath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        100,
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo$Builder.outputPath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        95,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.getFailurePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.getInput:()Lorg/apache/spark/rdd/RDD;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.getOutputPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.setFailurePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.setInput:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.setInput:(Lorg/apache/spark/rdd/RDD;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        65,
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.setOutputPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.scalardd.ImportKeyValuePairRDDToAccumulo.shallowClone:()Luk/gov/gchq/gaffer/sparkaccumulo/operation/scalardd/ImportKeyValuePairRDDToAccumulo;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.<init>:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        42,
+        40,
+        43,
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.findPartition:(Lorg/apache/hadoop/io/Text;I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        70,
+        71,
+        75,
+        76,
+        78
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.getNumSubBins:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        47,
+        49,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.getPartition:(Ljava/lang/Object;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.getSplits:(Luk/gov/gchq/gaffer/accumulostore/AccumuloStore;)[Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        84,
+        87,
+        85,
+        86,
+        89,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        91,
+        97,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.lambda$getSplits$0:(I)[Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.numPartitions:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.sparkaccumulo.operation.utils.AccumuloKeyRangePartitioner.setNumSubBins:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        55,
+        56
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.sparkaccumulo.operation.rfilereaderrdd.UtilsDiffblueTest.testSerialiseConfiguration"
+    ]
+  }
+}
