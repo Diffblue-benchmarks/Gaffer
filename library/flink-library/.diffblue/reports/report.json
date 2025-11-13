@@ -1,0 +1,805 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:19.279Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 400.114,
+    "environmentDetectionTime" : 0.336,
+    "indexingTime" : 0.425,
+    "entryPointsTime" : 0.332,
+    "generationTime" : 15893.482,
+    "timeToFirstTest" : 19358.237,
+    "timeToLastTest" : 17675.318,
+    "indexQueryTime" : 17.498,
+    "verificationTime" : 382.328,
+    "validationTime" : 69.756
+  },
+  "codes" : {
+    "F009" : "Internal error",
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "T021" : "Empty method body",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W001" : "Test did not compile"
+  },
+  "summary" : {
+    "classesCount" : 9,
+    "methodsCount" : 44,
+    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeManualTestCount" : 10,
+    "completeTestCount" : 8,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 391,
+    "perMethodTestability" : {
+      "T000" : 18,
+      "T001" : 2,
+      "T003" : 5,
+      "T005" : 9,
+      "T008" : 1,
+      "T012" : 7,
+      "T021" : 2
+    },
+    "perMethodOutcome" : {
+      "R000" : 10,
+      "R002" : 6,
+      "R013" : 9,
+      "R081" : 4,
+      "T003" : 5,
+      "T008" : 1,
+      "T012" : 7,
+      "W001" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 8
+    },
+    "perTestValidation" : {
+      "V000" : 8,
+      "V003" : 2
+    },
+    "warnings" : {
+      "F009" : 1,
+      "W001" : 4
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R013" : 1,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 3,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R013" : 1,
+        "T003" : 3,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R013" : 1,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferAdder" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R013" : 3,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "W001" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "warnings" : {
+        "W001" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 1,
+        "T021" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R013" : 1,
+        "R081" : 3,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2,
+        "R081" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "F009" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.util.FlinkConstants" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler.<init>:(Lorg/apache/flink/api/common/io/RichOutputFormat;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler.doOperation:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromFile;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        57,
+        58,
+        59,
+        62,
+        63,
+        64,
+        66,
+        68,
+        69,
+        71,
+        75,
+        78,
+        76,
+        77,
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromFileHandler.getOutputFormat:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromFile;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/flink/api/common/io/RichOutputFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.<init>:(Lorg/apache/flink/streaming/api/environment/StreamExecutionEnvironment;Lorg/apache/flink/streaming/api/functions/sink/SinkFunction;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.createExecutionEnvironment:()Lorg/apache/flink/streaming/api/environment/StreamExecutionEnvironment;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.createFlinkProperties:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromKafka;)Ljava/util/Properties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        106,
+        107,
+        108,
+        110,
+        111,
+        112,
+        113
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.doOperation:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromKafka;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        66,
+        68,
+        69,
+        72,
+        73,
+        75,
+        76,
+        77,
+        73,
+        78,
+        80,
+        82,
+        83,
+        85,
+        89,
+        92,
+        90,
+        91,
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromKafkaHandler.getSink:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromKafka;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/flink/streaming/api/functions/sink/SinkFunction;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        102
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler.<init>:(Lorg/apache/flink/streaming/api/functions/sink/SinkFunction;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler.doOperation:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler.doOperation:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromSocket;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        57,
+        58,
+        59,
+        62,
+        63,
+        64,
+        66,
+        68,
+        69,
+        71,
+        75,
+        78,
+        76,
+        77,
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.AddElementsFromSocketHandler.getSink:(Luk/gov/gchq/gaffer/operation/impl/add/AddElementsFromSocket;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/flink/streaming/api/functions/sink/SinkFunction;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferAdder.<init>:(Luk/gov/gchq/gaffer/operation/Validatable;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferAdder.add:(Luk/gov/gchq/gaffer/data/element/Element;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        98,
+        99,
+        102,
+        103,
+        104,
+        108,
+        111,
+        109,
+        110,
+        113,
+        114,
+        115,
+        129
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferAdder.initialise:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        92,
+        93,
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferAdder.lambda$add$0:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        117,
+        118,
+        119,
+        120,
+        121,
+        117,
+        123,
+        126,
+        124,
+        125,
+        127
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        47,
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction.<init>:(Ljava/lang/Class;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52,
+        54,
+        58,
+        55,
+        56,
+        60,
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction.flatMap:(Ljava/lang/Object;Lorg/apache/flink/util/Collector;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        75,
+        76,
+        79,
+        80,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        90,
+        91,
+        92,
+        93,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction.getSerialisationType:()Lorg/apache/flink/streaming/util/serialization/DeserializationSchema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferMapFunction.setConsumeAs:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 2
+      },
+      "lineNumbers" : [
+        64,
+        65,
+        66,
+        67,
+        69,
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.<init>:(Luk/gov/gchq/gaffer/flink/operation/handler/GafferAdder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        43,
+        44,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.<init>:(Luk/gov/gchq/gaffer/operation/Validatable;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.configure:(Lorg/apache/flink/configuration/Configuration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.open:(II)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59,
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.writeRecord:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferOutput.writeRecord:(Luk/gov/gchq/gaffer/data/element/Element;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink.<init>:(Luk/gov/gchq/gaffer/flink/operation/handler/GafferAdder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink.<init>:(Luk/gov/gchq/gaffer/operation/Validatable;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink.invoke:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink.invoke:(Luk/gov/gchq/gaffer/data/element/Element;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        49,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.GafferSink.open:(Lorg/apache/flink/configuration/Configuration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        43,
+        44,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "warnings" : {
+        "F009" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema.deserialize:([B)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema.getProducedType:()Lorg/apache/flink/api/common/typeinfo/TypeInformation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "warnings" : {
+        "F009" : 1
+      },
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema.isEndOfStream:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.serialisation.ByteArraySchema.isEndOfStream:([B)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.flink.operation.handler.util.FlinkConstants.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        33,
+        36
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.store.operation.handler;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.operation.OperationException;
+import uk.gov.gchq.gaffer.store.Context;
+import uk.gov.gchq.gaffer.store.Store;
+import uk.gov.gchq.gaffer.store.operation.add.AddStorePropertiesToLibrary;
+
+class AddStorePropertiesToLibraryHandlerDiffblueTest {
+  /**
+   * Test {@link AddStorePropertiesToLibraryHandler#doOperation(AddStorePropertiesToLibrary, Context, Store)} with {@code AddStorePropertiesToLibrary}, {@code Context}, {@code Store}.
+   * <p>
+   * Method under test: {@link AddStorePropertiesToLibraryHandler#doOperation(AddStorePropertiesToLibrary, Context, Store)}
+   */
+  @Test
+  @DisplayName("Test doOperation(AddStorePropertiesToLibrary, Context, Store) with 'AddStorePropertiesToLibrary', 'Context', 'Store'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({
+      "java.lang.Void AddStorePropertiesToLibraryHandler.doOperation(AddStorePropertiesToLibrary, Context, Store)"})
+  void testDoOperationWithAddStorePropertiesToLibraryContextStore() throws OperationException {
+    // Arrange
+    AddStorePropertiesToLibraryHandler addStorePropertiesToLibraryHandler = new AddStorePropertiesToLibraryHandler();
+    AddStorePropertiesToLibrary operation = new AddStorePropertiesToLibrary();
+    Context context = new Context();
+
+    // Act and Assert
+    assertThrows(OperationException.class,
+        () -> addStorePropertiesToLibraryHandler.doOperation(operation, context, new TestAddToGraphLibraryImpl()));
+  }
+}

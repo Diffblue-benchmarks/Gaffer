@@ -1,0 +1,450 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.named.operation;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import com.fasterxml.jackson.core.type.TypeReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.named.operation.NamedOperation.Builder;
+import uk.gov.gchq.gaffer.operation.Operation;
+import uk.gov.gchq.gaffer.operation.impl.OperationImpl;
+import uk.gov.gchq.gaffer.operation.serialisation.TypeReferenceImpl;
+
+class NamedOperationDiffblueTest {
+  /**
+   * Test Builder {@link Builder#name(String)}.
+   * <p>
+   * Method under test: {@link Builder#name(String)}
+   */
+  @Test
+  @DisplayName("Test Builder name(String)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Builder Builder.name(String)"})
+  void testBuilderName() {
+    // Arrange
+    Builder<Object, Object> builder = new Builder<>();
+
+    // Act and Assert
+    assertSame(builder, builder.name("Name"));
+  }
+
+  /**
+   * Test Builder new {@link Builder} (default constructor).
+   * <p>
+   * Method under test: default or parameterless constructor of {@link Builder}
+   */
+  @Test
+  @DisplayName("Test Builder new Builder (default constructor)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void Builder.<init>()"})
+  void testBuilderNewBuilder() {
+    // Arrange and Act
+    Builder<Object, Object> actualBuilder = new Builder<>();
+
+    // Assert
+    NamedOperation<Object, Object> _getOpResult = actualBuilder._getOp();
+    TypeReference<Object> outputTypeReference = _getOpResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(_getOpResult.getInput());
+    assertNull(_getOpResult.getOperationName());
+    assertNull(_getOpResult.getParameters());
+    assertNull(_getOpResult.getOptions());
+    assertTrue(_getOpResult.getOperations().isEmpty());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = _getOpResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Class<Operation> expectedOperationsClass = Operation.class;
+    assertEquals(expectedOperationsClass, _getOpResult.getOperationsClass());
+    assertSame(_getOpResult, actualBuilder.build());
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, _getOpResult.getOutputType());
+  }
+
+  /**
+   * Test Builder {@link Builder#parameters(Map)}.
+   * <p>
+   * Method under test: {@link Builder#parameters(Map)}
+   */
+  @Test
+  @DisplayName("Test Builder parameters(Map)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Builder Builder.parameters(Map)"})
+  void testBuilderParameters() {
+    // Arrange
+    Builder<Object, Object> builder = new Builder<>();
+
+    // Act and Assert
+    assertSame(builder, builder.parameters(new HashMap<>()));
+  }
+
+  /**
+   * Test {@link NamedOperation#setParameters(Map)} with {@code Map}.
+   * <ul>
+   *   <li>Then {@link NamedOperation} (default constructor) Parameters is {@link LinkedHashMap#LinkedHashMap()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#setParameters(Map)}
+   */
+  @Test
+  @DisplayName("Test setParameters(Map) with 'Map'; then NamedOperation (default constructor) Parameters is LinkedHashMap()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void NamedOperation.setParameters(Map)"})
+  void testSetParametersWithMap_thenNamedOperationParametersIsLinkedHashMap() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+
+    // Act
+    namedOperation.setParameters((Map<String, Object>) parameters);
+
+    // Assert
+    assertSame(parameters, namedOperation.getParameters());
+  }
+
+  /**
+   * Test {@link NamedOperation#setParameters(Map)} with {@code Map}.
+   * <ul>
+   *   <li>When {@link HashMap#HashMap()}.</li>
+   *   <li>Then {@link NamedOperation} (default constructor) Parameters Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#setParameters(Map)}
+   */
+  @Test
+  @DisplayName("Test setParameters(Map) with 'Map'; when HashMap(); then NamedOperation (default constructor) Parameters Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void NamedOperation.setParameters(Map)"})
+  void testSetParametersWithMap_whenHashMap_thenNamedOperationParametersEmpty() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+
+    // Act
+    namedOperation.setParameters(new HashMap<>());
+
+    // Assert
+    assertTrue(namedOperation.getParameters().isEmpty());
+  }
+
+  /**
+   * Test {@link NamedOperation#setParameters(Map)} with {@code Map}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then {@link NamedOperation} (default constructor) Parameters is {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#setParameters(Map)}
+   */
+  @Test
+  @DisplayName("Test setParameters(Map) with 'Map'; when 'null'; then NamedOperation (default constructor) Parameters is 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void NamedOperation.setParameters(Map)"})
+  void testSetParametersWithMap_whenNull_thenNamedOperationParametersIsNull() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+
+    // Act
+    namedOperation.setParameters((Map<String, Object>) null);
+
+    // Assert that nothing has changed
+    assertNull(namedOperation.getParameters());
+  }
+
+  /**
+   * Test {@link NamedOperation#getOutputTypeReference()}.
+   * <p>
+   * Method under test: {@link NamedOperation#getOutputTypeReference()}
+   */
+  @Test
+  @DisplayName("Test getOutputTypeReference()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"TypeReference NamedOperation.getOutputTypeReference()"})
+  void testGetOutputTypeReference() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+
+    // Act and Assert
+    assertTrue(namedOperation.getOutputTypeReference() instanceof TypeReferenceImpl.Object);
+  }
+
+  /**
+   * Test {@link NamedOperation#shallowClone()}.
+   * <ul>
+   *   <li>Given {@link NamedOperation} (default constructor) Options is {@link HashMap#HashMap()}.</li>
+   *   <li>Then return Options Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#shallowClone()}
+   */
+  @Test
+  @DisplayName("Test shallowClone(); given NamedOperation (default constructor) Options is HashMap(); then return Options Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"NamedOperation NamedOperation.shallowClone()"})
+  void testShallowClone_givenNamedOperationOptionsIsHashMap_thenReturnOptionsEmpty() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    namedOperation.setOptions(new HashMap<>());
+
+    // Act
+    NamedOperation actualShallowCloneResult = namedOperation.shallowClone();
+
+    // Assert
+    TypeReference outputTypeReference = actualShallowCloneResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(actualShallowCloneResult.getInput());
+    assertNull(actualShallowCloneResult.getOperationName());
+    assertNull(actualShallowCloneResult.getParameters());
+    assertTrue(actualShallowCloneResult.getOperations().isEmpty());
+    assertTrue(actualShallowCloneResult.getOptions().isEmpty());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = actualShallowCloneResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Class<Operation> expectedOperationsClass = Operation.class;
+    assertEquals(expectedOperationsClass, actualShallowCloneResult.getOperationsClass());
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, actualShallowCloneResult.getOutputType());
+  }
+
+  /**
+   * Test {@link NamedOperation#shallowClone()}.
+   * <ul>
+   *   <li>Given {@link NamedOperation} (default constructor).</li>
+   *   <li>Then return Parameters is {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#shallowClone()}
+   */
+  @Test
+  @DisplayName("Test shallowClone(); given NamedOperation (default constructor); then return Parameters is 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"NamedOperation NamedOperation.shallowClone()"})
+  void testShallowClone_givenNamedOperation_thenReturnParametersIsNull() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+
+    // Act
+    NamedOperation actualShallowCloneResult = namedOperation.shallowClone();
+
+    // Assert
+    TypeReference outputTypeReference = actualShallowCloneResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(actualShallowCloneResult.getInput());
+    assertNull(actualShallowCloneResult.getOperationName());
+    assertNull(actualShallowCloneResult.getParameters());
+    assertNull(actualShallowCloneResult.getOptions());
+    assertTrue(actualShallowCloneResult.getOperations().isEmpty());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = actualShallowCloneResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Class<Operation> expectedOperationsClass = Operation.class;
+    assertEquals(expectedOperationsClass, actualShallowCloneResult.getOperationsClass());
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, actualShallowCloneResult.getOutputType());
+  }
+
+  /**
+   * Test {@link NamedOperation#shallowClone()}.
+   * <ul>
+   *   <li>Then return Parameters Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#shallowClone()}
+   */
+  @Test
+  @DisplayName("Test shallowClone(); then return Parameters Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"NamedOperation NamedOperation.shallowClone()"})
+  void testShallowClone_thenReturnParametersEmpty() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    namedOperation.setParameters(new LinkedHashMap<>());
+
+    // Act
+    NamedOperation actualShallowCloneResult = namedOperation.shallowClone();
+
+    // Assert
+    TypeReference outputTypeReference = actualShallowCloneResult.getOutputTypeReference();
+    assertTrue(outputTypeReference instanceof TypeReferenceImpl.Object);
+    assertNull(actualShallowCloneResult.getInput());
+    assertNull(actualShallowCloneResult.getOperationName());
+    assertNull(actualShallowCloneResult.getOptions());
+    assertTrue(actualShallowCloneResult.getOperations().isEmpty());
+    assertTrue(actualShallowCloneResult.getParameters().isEmpty());
+    Class<Object> expectedOutputClass = Object.class;
+    Class<?> outputClass = actualShallowCloneResult.getOutputClass();
+    assertEquals(expectedOutputClass, outputClass);
+    Class<Operation> expectedOperationsClass = Operation.class;
+    assertEquals(expectedOperationsClass, actualShallowCloneResult.getOperationsClass());
+    assertSame(outputClass, outputTypeReference.getType());
+    assertSame(outputClass, actualShallowCloneResult.getOutputType());
+  }
+
+  /**
+   * Test {@link NamedOperation#getOperations()}.
+   * <ul>
+   *   <li>Given {@link LinkedHashMap#LinkedHashMap()} {@code foo} is {@code 42}.</li>
+   *   <li>Then return Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#getOperations()}
+   */
+  @Test
+  @DisplayName("Test getOperations(); given LinkedHashMap() 'foo' is '42'; then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List NamedOperation.getOperations()"})
+  void testGetOperations_givenLinkedHashMapFooIs42_thenReturnEmpty() {
+    // Arrange
+    LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+    parameters.put("foo", "42");
+
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    namedOperation.setParameters(parameters);
+
+    // Act and Assert
+    assertTrue(namedOperation.getOperations().isEmpty());
+  }
+
+  /**
+   * Test {@link NamedOperation#getOperations()}.
+   * <ul>
+   *   <li>Given {@link LinkedHashMap#LinkedHashMap()} {@code foo} is {@link OperationImpl} (default constructor).</li>
+   *   <li>Then return size is one.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#getOperations()}
+   */
+  @Test
+  @DisplayName("Test getOperations(); given LinkedHashMap() 'foo' is OperationImpl (default constructor); then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List NamedOperation.getOperations()"})
+  void testGetOperations_givenLinkedHashMapFooIsOperationImpl_thenReturnSizeIsOne() {
+    // Arrange
+    LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+    OperationImpl operationImpl = new OperationImpl();
+    parameters.put("foo", operationImpl);
+
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    namedOperation.setParameters(parameters);
+
+    // Act
+    List<Operation> actualOperations = namedOperation.getOperations();
+
+    // Assert
+    assertEquals(1, actualOperations.size());
+    assertSame(operationImpl, actualOperations.get(0));
+  }
+
+  /**
+   * Test {@link NamedOperation#getOperations()}.
+   * <ul>
+   *   <li>Given {@link NamedOperation} (default constructor) Parameters is {@link LinkedHashMap#LinkedHashMap()}.</li>
+   *   <li>Then return Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#getOperations()}
+   */
+  @Test
+  @DisplayName("Test getOperations(); given NamedOperation (default constructor) Parameters is LinkedHashMap(); then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List NamedOperation.getOperations()"})
+  void testGetOperations_givenNamedOperationParametersIsLinkedHashMap_thenReturnEmpty() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+    namedOperation.setParameters(new LinkedHashMap<>());
+
+    // Act and Assert
+    assertTrue(namedOperation.getOperations().isEmpty());
+  }
+
+  /**
+   * Test {@link NamedOperation#getOperations()}.
+   * <ul>
+   *   <li>Given {@link NamedOperation} (default constructor).</li>
+   *   <li>Then return Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link NamedOperation#getOperations()}
+   */
+  @Test
+  @DisplayName("Test getOperations(); given NamedOperation (default constructor); then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List NamedOperation.getOperations()"})
+  void testGetOperations_givenNamedOperation_thenReturnEmpty() {
+    // Arrange
+    NamedOperation<Object, Object> namedOperation = new NamedOperation<>();
+
+    // Act and Assert
+    assertTrue(namedOperation.getOperations().isEmpty());
+  }
+
+  /**
+   * Test getters and setters.
+   * <p>
+   * Methods under test:
+   * <ul>
+   *   <li>default or parameterless constructor of {@link NamedOperation}
+   *   <li>{@link NamedOperation#setInput(Iterable)}
+   *   <li>{@link NamedOperation#setOperationName(String)}
+   *   <li>{@link NamedOperation#setOptions(Map)}
+   *   <li>{@link NamedOperation#setParameters(LinkedHashMap)}
+   *   <li>{@link NamedOperation#getOperationName()}
+   *   <li>{@link NamedOperation#getOptions()}
+   *   <li>{@link NamedOperation#getParameters()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void NamedOperation.<init>()", "String NamedOperation.getOperationName()",
+      "Map NamedOperation.getOptions()", "Map NamedOperation.getParameters()", "void NamedOperation.setInput(Iterable)",
+      "void NamedOperation.setOperationName(String)", "void NamedOperation.setOptions(Map)",
+      "void NamedOperation.setParameters(LinkedHashMap)"})
+  void testGettersAndSetters() {
+    // Arrange and Act
+    NamedOperation<Object, Object> actualNamedOperation = new NamedOperation<>();
+    ArrayList<Object> input = new ArrayList<>();
+    actualNamedOperation.setInput(input);
+    actualNamedOperation.setOperationName("Operation Name");
+    HashMap<String, String> options = new HashMap<>();
+    actualNamedOperation.setOptions(options);
+    LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+    actualNamedOperation.setParameters(parameters);
+    String actualOperationName = actualNamedOperation.getOperationName();
+    Map<String, String> actualOptions = actualNamedOperation.getOptions();
+    Map<String, Object> actualParameters = actualNamedOperation.getParameters();
+
+    // Assert
+    Iterable<?> input2 = actualNamedOperation.getInput();
+    assertTrue(input2 instanceof List);
+    assertEquals("Operation Name", actualOperationName);
+    assertTrue(actualOptions.isEmpty());
+    assertTrue(actualParameters.isEmpty());
+    assertSame(input, input2);
+    assertSame(options, actualOptions);
+    assertSame(parameters, actualParameters);
+  }
+}

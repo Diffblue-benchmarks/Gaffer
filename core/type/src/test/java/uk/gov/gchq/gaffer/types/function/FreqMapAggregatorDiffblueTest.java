@@ -1,0 +1,110 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.types.function;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.types.FreqMap;
+
+class FreqMapAggregatorDiffblueTest {
+  /**
+   * Test {@link FreqMapAggregator#_apply(FreqMap, FreqMap)} with {@code FreqMap}, {@code FreqMap}.
+   * <ul>
+   *   <li>Given {@code foo}.</li>
+   *   <li>When {@link FreqMap#FreqMap()}.</li>
+   *   <li>Then return size is one.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link FreqMapAggregator#_apply(FreqMap, FreqMap)}
+   */
+  @Test
+  @DisplayName("Test _apply(FreqMap, FreqMap) with 'FreqMap', 'FreqMap'; given 'foo'; when FreqMap(); then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"FreqMap FreqMapAggregator._apply(FreqMap, FreqMap)"})
+  void test_applyWithFreqMapFreqMap_givenFoo_whenFreqMap_thenReturnSizeIsOne() {
+    // Arrange
+    FreqMapAggregator freqMapAggregator = new FreqMapAggregator();
+    FreqMap a = new FreqMap();
+
+    FreqMap b = new FreqMap();
+    b.put("foo", 1L);
+
+    // Act
+    FreqMap actual_applyResult = freqMapAggregator._apply(a, b);
+
+    // Assert
+    assertEquals(1, actual_applyResult.size());
+    assertEquals(1L, actual_applyResult.get("foo").longValue());
+  }
+
+  /**
+   * Test {@link FreqMapAggregator#_apply(FreqMap, FreqMap)} with {@code FreqMap}, {@code FreqMap}.
+   * <ul>
+   *   <li>Given zero.</li>
+   *   <li>When {@link FreqMap#FreqMap()} {@code foo} is zero.</li>
+   *   <li>Then return size is one.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link FreqMapAggregator#_apply(FreqMap, FreqMap)}
+   */
+  @Test
+  @DisplayName("Test _apply(FreqMap, FreqMap) with 'FreqMap', 'FreqMap'; given zero; when FreqMap() 'foo' is zero; then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"FreqMap FreqMapAggregator._apply(FreqMap, FreqMap)"})
+  void test_applyWithFreqMapFreqMap_givenZero_whenFreqMapFooIsZero_thenReturnSizeIsOne() {
+    // Arrange
+    FreqMapAggregator freqMapAggregator = new FreqMapAggregator();
+
+    FreqMap a = new FreqMap();
+    a.put("foo", 0L);
+
+    FreqMap b = new FreqMap();
+    b.put("foo", 1L);
+
+    // Act
+    FreqMap actual_applyResult = freqMapAggregator._apply(a, b);
+
+    // Assert
+    assertEquals(1, actual_applyResult.size());
+    assertEquals(1L, actual_applyResult.get("foo").longValue());
+  }
+
+  /**
+   * Test {@link FreqMapAggregator#_apply(FreqMap, FreqMap)} with {@code FreqMap}, {@code FreqMap}.
+   * <ul>
+   *   <li>When {@link FreqMap#FreqMap()}.</li>
+   *   <li>Then return {@link FreqMap#FreqMap()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link FreqMapAggregator#_apply(FreqMap, FreqMap)}
+   */
+  @Test
+  @DisplayName("Test _apply(FreqMap, FreqMap) with 'FreqMap', 'FreqMap'; when FreqMap(); then return FreqMap()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"FreqMap FreqMapAggregator._apply(FreqMap, FreqMap)"})
+  void test_applyWithFreqMapFreqMap_whenFreqMap_thenReturnFreqMap() {
+    // Arrange
+    FreqMapAggregator freqMapAggregator = new FreqMapAggregator();
+    FreqMap a = new FreqMap();
+
+    // Act and Assert
+    assertEquals(a, freqMapAggregator._apply(a, new FreqMap()));
+  }
+}

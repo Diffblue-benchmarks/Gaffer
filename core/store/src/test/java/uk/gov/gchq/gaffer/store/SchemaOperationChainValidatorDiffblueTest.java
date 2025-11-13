@@ -1,0 +1,119 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.store;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.Set;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.operation.Operation;
+import uk.gov.gchq.gaffer.store.operation.DeleteAllData;
+import uk.gov.gchq.gaffer.store.operation.handler.TestAddToGraphLibraryImpl;
+import uk.gov.gchq.gaffer.store.schema.Schema;
+import uk.gov.gchq.gaffer.store.schema.ViewValidator;
+import uk.gov.gchq.gaffer.user.User;
+
+class SchemaOperationChainValidatorDiffblueTest {
+  /**
+   * Test getters and setters.
+   * <ul>
+   *   <li>When {@link Schema#Schema()}.</li>
+   *   <li>Then return {@link SchemaOperationChainValidator#schema} is {@link Schema#Schema()}.</li>
+   * </ul>
+   * <p>
+   * Methods under test:
+   * <ul>
+   *   <li>{@link SchemaOperationChainValidator#SchemaOperationChainValidator(ViewValidator, Schema)}
+   *   <li>{@link SchemaOperationChainValidator#setSchema(Schema)}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters; when Schema(); then return schema is Schema()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void SchemaOperationChainValidator.<init>(ViewValidator)",
+      "void SchemaOperationChainValidator.<init>(ViewValidator, Schema)",
+      "void SchemaOperationChainValidator.setSchema(Schema)"})
+  void testGettersAndSetters_whenSchema_thenReturnSchemaIsSchema() {
+    // Arrange
+    ViewValidator viewValidator = new ViewValidator();
+    Schema schema = new Schema();
+
+    // Act
+    SchemaOperationChainValidator actualSchemaOperationChainValidator = new SchemaOperationChainValidator(viewValidator,
+        schema);
+    actualSchemaOperationChainValidator.setSchema(new Schema());
+
+    // Assert
+    assertEquals(schema, actualSchemaOperationChainValidator.schema);
+  }
+
+  /**
+   * Test {@link SchemaOperationChainValidator#getSchema(Operation, User, Store)}.
+   * <p>
+   * Method under test: {@link SchemaOperationChainValidator#getSchema(Operation, User, Store)}
+   */
+  @Test
+  @DisplayName("Test getSchema(Operation, User, Store)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Schema SchemaOperationChainValidator.getSchema(Operation, User, Store)"})
+  void testGetSchema() {
+    // Arrange
+    SchemaOperationChainValidator schemaOperationChainValidator = new SchemaOperationChainValidator(
+        new ViewValidator());
+    DeleteAllData operation = new DeleteAllData();
+    User user = new User();
+
+    // Act and Assert
+    assertNull(schemaOperationChainValidator.getSchema(operation, user, new TestAddToGraphLibraryImpl()));
+  }
+
+  /**
+   * Test {@link SchemaOperationChainValidator#getStoreTraits(Store, Context)}.
+   * <p>
+   * Method under test: {@link SchemaOperationChainValidator#getStoreTraits(Store, Context)}
+   */
+  @Test
+  @DisplayName("Test getStoreTraits(Store, Context)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Set SchemaOperationChainValidator.getStoreTraits(Store, Context)"})
+  void testGetStoreTraits() {
+    // Arrange
+    SchemaOperationChainValidator schemaOperationChainValidator = new SchemaOperationChainValidator(
+        new ViewValidator());
+    TestAddToGraphLibraryImpl store = new TestAddToGraphLibraryImpl();
+
+    // Act
+    Set<StoreTrait> actualStoreTraits = schemaOperationChainValidator.getStoreTraits(store, new Context());
+
+    // Assert
+    assertEquals(10, actualStoreTraits.size());
+    assertTrue(actualStoreTraits.contains(StoreTrait.INGEST_AGGREGATION));
+    assertTrue(actualStoreTraits.contains(StoreTrait.MATCHED_VERTEX));
+    assertTrue(actualStoreTraits.contains(StoreTrait.ORDERED));
+    assertTrue(actualStoreTraits.contains(StoreTrait.POST_AGGREGATION_FILTERING));
+    assertTrue(actualStoreTraits.contains(StoreTrait.POST_TRANSFORMATION_FILTERING));
+    assertTrue(actualStoreTraits.contains(StoreTrait.PRE_AGGREGATION_FILTERING));
+    assertTrue(actualStoreTraits.contains(StoreTrait.QUERY_AGGREGATION));
+    assertTrue(actualStoreTraits.contains(StoreTrait.STORE_VALIDATION));
+    assertTrue(actualStoreTraits.contains(StoreTrait.TRANSFORMATION));
+    assertTrue(actualStoreTraits.contains(StoreTrait.VISIBILITY));
+  }
+}

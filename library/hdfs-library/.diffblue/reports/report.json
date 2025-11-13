@@ -1,0 +1,2659 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:19.279Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 588.896,
+    "environmentDetectionTime" : 0.435,
+    "indexingTime" : 0.403,
+    "entryPointsTime" : 0.417,
+    "generationTime" : 7939.98,
+    "timeToFirstTest" : 9644.644,
+    "timeToLastTest" : 9093.341,
+    "indexQueryTime" : 13.532,
+    "verificationTime" : 313.611,
+    "validationTime" : 68.389
+  },
+  "codes" : {
+    "F009" : "Internal error",
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R015" : "Method may be nondeterministic",
+    "R083" : "Can't find a suitable constructor",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T009" : "No implementation for abstract class",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W001" : "Test did not compile"
+  },
+  "summary" : {
+    "classesCount" : 22,
+    "methodsCount" : 186,
+    "cumulativeDiffblueTestCount" : 63,
+    "cumulativeManualTestCount" : 11,
+    "completeTestCount" : 63,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 1137,
+    "perMethodTestability" : {
+      "T000" : 51,
+      "T001" : 35,
+      "T002" : 33,
+      "T003" : 4,
+      "T005" : 6,
+      "T008" : 1,
+      "T009" : 11,
+      "T010" : 39,
+      "T012" : 6
+    },
+    "perMethodOutcome" : {
+      "F009" : 5,
+      "R000" : 106,
+      "R002" : 2,
+      "R013" : 2,
+      "R015" : 2,
+      "R083" : 2,
+      "T003" : 4,
+      "T008" : 1,
+      "T009" : 11,
+      "T010" : 39,
+      "T012" : 6,
+      "W001" : 6
+    },
+    "perTestOutcome" : {
+      "R000" : 63
+    },
+    "perTestValidation" : {
+      "V000" : 63,
+      "V003" : 3
+    },
+    "warnings" : {
+      "W001" : 4
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs" : {
+      "methodsCount" : 34,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 16,
+        "T002" : 16,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 34
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce" : {
+      "methodsCount" : 26,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T010" : 24
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T010" : 24
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder" : {
+      "methodsCount" : 15,
+      "completeTestCount" : 20,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 15
+      },
+      "perMethodOutcome" : {
+        "R000" : 14,
+        "R083" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 20
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints" : {
+      "methodsCount" : 37,
+      "completeTestCount" : 14,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T001" : 15,
+        "T002" : 14,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 37
+      },
+      "perTestOutcome" : {
+        "R000" : 14
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6
+      },
+      "perMethodOutcome" : {
+        "R000" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.HdfsSplitStoreFromFileHandler" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.AddElementsFromHdfsJobFactory" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.JobFactory" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T009" : 1,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "T009" : 1,
+        "T010" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.SampleDataForSplitPointsJobFactory" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "T010" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 1,
+        "T002" : 1,
+        "T003" : 1,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "R000" : 4,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.JobInitialiser" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.TextJobInitialiser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "R002" : 1,
+        "T003" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.AddElementsFromHdfsTool" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "R015" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.SampleDataAndCreateSplitsFileTool" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 2,
+        "T003" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T009" : 5,
+        "T010" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T009" : 5,
+        "T010" : 2,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 1,
+        "T002" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T012" : 1,
+        "W001" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.JsonMapperGenerator" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.MapperGenerator" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 1,
+        "T002" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T012" : 1,
+        "W001" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.partitioner.NoPartitioner" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R083" : 1,
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T009" : 5,
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "T009" : 5,
+        "T010" : 4
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        273,
+        274
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder.failurePath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        288,
+        289
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder.inputMapperPairs:(Ljava/util/Map;)Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        283,
+        284
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder.validate:(Z)Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        277,
+        278
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs$Builder.workingPath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        293,
+        294
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getCommandLineArgs:()[Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        222
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getFailurePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getInputMapperPairs:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getJobInitialiser:()Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        132
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getMaxMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        162
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getMaxReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        182
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getMinMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        152
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getMinReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        172
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getNumMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        142
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        240
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getOutputPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getPartitioner:()Ljava/lang/Class;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        212
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getSplitsFilePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        202
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.getWorkingPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        231
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.isUseProvidedSplits:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        192
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.isValidate:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setCommandLineArgs:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        227,
+        228
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setFailurePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        99,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setInputMapperPairs:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        117,
+        118
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setJobInitialiser:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        137,
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setMaxMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        167,
+        168
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setMaxReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        187,
+        188
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setMinMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        157,
+        158
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setMinReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        177,
+        178
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setNumMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        147,
+        148
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        245,
+        246
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setOutputPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        127,
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setPartitioner:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        217,
+        218
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setSplitsFilePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        207,
+        208
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setUseProvidedSplits:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        197,
+        198
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setValidate:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        107,
+        108
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.setWorkingPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        235,
+        236
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.AddElementsFromHdfs.shallowClone:()Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        250
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.addInputMapperPair:(Ljava/lang/String;Ljava/lang/Class;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        139,
+        140
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.addInputMapperPair:(Ljava/lang/String;Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        134,
+        135
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.addInputMapperPairs:(Ljava/util/Map;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        129,
+        130
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.commandLineArgs:([Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        206,
+        207
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.inputMapperPairs:(Ljava/util/Map;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        124,
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.jobInitialiser:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        159,
+        160
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.mappers:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        174,
+        175,
+        178,
+        179
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.maxMappers:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        192,
+        193,
+        196,
+        197
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.maxReducers:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        169,
+        170
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.minMappers:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        183,
+        184,
+        187,
+        188
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.minReducers:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        164,
+        165
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.outputPath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        144,
+        145
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.partitioner:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        201,
+        202
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.splitsFilePath:(Ljava/lang/String;)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        149,
+        150
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce$Builder.useProvidedSplits:(Z)Luk/gov/gchq/gaffer/hdfs/operation/MapReduce$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        154,
+        155
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.addInputMapperPair:(Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.addInputMapperPairs:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        50,
+        51,
+        53,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getCommandLineArgs:()[Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getInputMapperPairs:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getJobInitialiser:()Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getMaxMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getMaxReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getMinMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getMinReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getNumMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getOutputPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getPartitioner:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.getSplitsFilePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.isUseProvidedSplits:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setCommandLineArgs:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setInputMapperPairs:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setJobInitialiser:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setMaxMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setMaxReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setMinMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setMinReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setNumMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setOutputPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setPartitioner:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setSplitsFilePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.MapReduce.setUseProvidedSplits:(Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        286,
+        287
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.compressionCodec:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        306,
+        307
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.inputMapperPairs:(Ljava/util/Map;)Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        296,
+        297
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.numSplits:(Ljava/lang/Integer;)Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        311,
+        312
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.proportionToSample:(F)Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        301,
+        302
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints$Builder.validate:(Z)Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        290,
+        291
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        63,
+        64,
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getCommandLineArgs:()[Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        236
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getCompressionCodec:()Ljava/lang/Class;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        245
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getInputMapperPairs:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        132
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getJobInitialiser:()Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        152
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getMaxMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        182
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getMaxReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        204
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getMinMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        172
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getMinReduceTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        192
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getNumMapTasks:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        162
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getNumSplits:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getOptions:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        254
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getOutputPath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        142
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getPartitioner:()Ljava/lang/Class;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        226
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getProportionToSample:()F" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        123
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.getSplitsFilePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        106
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.isUseProvidedSplits:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        216
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.isValidate:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setCommandLineArgs:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        241,
+        242
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setCompressionCodec:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        249,
+        250
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setInputMapperPairs:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        137,
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setJobInitialiser:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/initialiser/JobInitialiser;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        157,
+        158
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setMaxMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        187,
+        188
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setMaxReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        209,
+        210,
+        212
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setMinMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        177,
+        178
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setMinReduceTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        197,
+        198,
+        200
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setNumMapTasks:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        167,
+        168
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setNumSplits:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        119,
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setOptions:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        259,
+        260
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setOutputPath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        147,
+        148
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setPartitioner:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        231
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setProportionToSample:(F)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        127,
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setSplitsFilePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        111,
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setUseProvidedSplits:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        221,
+        222
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.setValidate:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        101,
+        102
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.shallowClone:()Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints;" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        264
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.SampleDataForSplitPoints.validate:()Luk/gov/gchq/koryphe/ValidationResult;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        88,
+        89,
+        90,
+        89,
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.HdfsSplitStoreFromFileHandler.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.HdfsSplitStoreFromFileHandler.getSplits:(Luk/gov/gchq/gaffer/operation/impl/SplitStoreFromFile;Luk/gov/gchq/gaffer/store/Context;Luk/gov/gchq/gaffer/store/Store;)Ljava/util/List;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        41,
+        42,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.AddElementsFromHdfsJobFactory.prepareStore:(Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.JobFactory.createJobConf:(Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Ljava/lang/String;Luk/gov/gchq/gaffer/store/Store;)Lorg/apache/hadoop/mapred/JobConf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.JobFactory.createJobs:(Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Luk/gov/gchq/gaffer/store/Store;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        53,
+        54,
+        56,
+        58,
+        60,
+        61,
+        62,
+        64,
+        65,
+        66,
+        67,
+        69,
+        70,
+        72,
+        73,
+        76,
+        78,
+        79,
+        81,
+        82,
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.JobFactory.setupJob:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Ljava/lang/String;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.SampleDataForSplitPointsJobFactory.createKey:()Lorg/apache/hadoop/io/Writable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.SampleDataForSplitPointsJobFactory.createSplit:(Lorg/apache/hadoop/io/Writable;Lorg/apache/hadoop/io/Writable;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.SampleDataForSplitPointsJobFactory.createValue:()Lorg/apache/hadoop/io/Writable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.factory.SampleDataForSplitPointsJobFactory.getExpectedNumberOfSplits:(Luk/gov/gchq/gaffer/store/Store;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        43,
+        44,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.getAvroSchemaFilePath:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.initialiseInput:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        54,
+        55,
+        57,
+        58,
+        59,
+        61,
+        62,
+        63,
+        65,
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.initialiseJob:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.AvroJobInitialiser.setAvroSchemaFilePath:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        73,
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.JobInitialiser.initialiseJob:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.TextJobInitialiser.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        36,
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.TextJobInitialiser.initialiseInput:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        46,
+        48,
+        49,
+        50,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.initialiser.TextJobInitialiser.initialiseJob:(Lorg/apache/hadoop/mapreduce/Job;Luk/gov/gchq/gaffer/hdfs/operation/MapReduce;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        42,
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.AddElementsFromHdfsTool.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.AddElementsFromHdfsTool.<init>:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/factory/AddElementsFromHdfsJobFactory;Luk/gov/gchq/gaffer/hdfs/operation/AddElementsFromHdfs;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        42,
+        40,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.AddElementsFromHdfsTool.getConfig:()Lorg/apache/hadoop/conf/Configuration;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.AddElementsFromHdfsTool.run:([Ljava/lang/String;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        60,
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.SampleDataAndCreateSplitsFileTool.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.SampleDataAndCreateSplitsFileTool.<init>:(Luk/gov/gchq/gaffer/hdfs/operation/handler/job/factory/SampleDataForSplitPointsJobFactory;Luk/gov/gchq/gaffer/hdfs/operation/SampleDataForSplitPoints;Luk/gov/gchq/gaffer/store/Store;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.SampleDataAndCreateSplitsFileTool.run:([Ljava/lang/String;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        70,
+        71,
+        75,
+        72,
+        73,
+        74,
+        77,
+        79,
+        80,
+        84,
+        81,
+        82,
+        83,
+        87,
+        88,
+        89,
+        94,
+        91,
+        92,
+        93,
+        103,
+        104,
+        108,
+        105,
+        106,
+        107,
+        112,
+        113,
+        115,
+        118,
+        119,
+        122,
+        123,
+        126,
+        129,
+        133,
+        130,
+        131,
+        132,
+        136,
+        139,
+        140,
+        144,
+        141,
+        142,
+        143,
+        145,
+        147
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.handler.job.tool.SampleDataAndCreateSplitsFileTool.writeSplits:(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;JI)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        156,
+        161,
+        162,
+        163,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        168,
+        171,
+        172,
+        173,
+        175,
+        176,
+        156,
+        176,
+        156,
+        176,
+        179,
+        176,
+        177,
+        178,
+        180
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.configureJSONSerialiser:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        95,
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.configureJSONSerialiser:(Lorg/apache/hadoop/mapreduce/Mapper$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.getValidationFailureMessage:(Luk/gov/gchq/gaffer/data/element/Element;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.isValid:(Luk/gov/gchq/gaffer/data/element/Element;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.map:(Ljava/lang/Object;Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/Mapper$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        76,
+        77,
+        78,
+        80,
+        81,
+        83,
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.map:(Luk/gov/gchq/gaffer/data/element/Element;Lorg/apache/hadoop/mapreduce/Mapper$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.GafferMapper.setup:(Lorg/apache/hadoop/mapreduce/Mapper$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        60,
+        61,
+        62,
+        64,
+        66,
+        69,
+        67,
+        68,
+        71,
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37,
+        34,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.<init>:(Ljava/util/function/Function;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        40,
+        34,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.getElementGenerator:()Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.getElements:(Ljava/lang/Object;Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/MapContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.getElements:(Lorg/apache/avro/mapred/AvroKey;Lorg/apache/hadoop/io/NullWritable;Lorg/apache/hadoop/mapreduce/MapContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        46,
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.AvroMapperGenerator.setElementGenerator:(Ljava/util/function/Function;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.JsonMapperGenerator.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27,
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.MapperGenerator.getElements:(Ljava/lang/Object;Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/MapContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37,
+        34,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.<init>:(Ljava/util/function/Function;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        40,
+        34,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.getElementGenerator:()Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.getElements:(Ljava/lang/Object;Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/MapContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.getElements:(Lorg/apache/hadoop/io/LongWritable;Lorg/apache/hadoop/io/Text;Lorg/apache/hadoop/mapreduce/MapContext;)Ljava/lang/Iterable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        46,
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.mapper.generator.TextMapperGenerator.setElementGenerator:(Ljava/util/function/Function;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.partitioner.NoPartitioner.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        27,
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.partitioner.NoPartitioner.getPartition:(Ljava/lang/Object;Ljava/lang/Object;I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.partitioner.NoPartitioner.getPartition:(Ljava/lang/Void;Ljava/lang/Void;I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R083",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.createValue:(Ljava/lang/Object;Ljava/lang/Object;Luk/gov/gchq/gaffer/data/element/Properties;Ljava/lang/String;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.getCounterId:(Z)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        111
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.getGroup:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.getSchema:()Luk/gov/gchq/gaffer/store/schema/Schema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.getValueProperties:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/String;)Luk/gov/gchq/gaffer/data/element/Properties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.reduce:(Ljava/lang/Object;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        69,
+        70,
+        71,
+        73,
+        74,
+        76,
+        78,
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.reduceMultiValue:(Ljava/lang/Object;Ljava/util/Iterator;Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        83,
+        85,
+        86,
+        87,
+        89,
+        90,
+        91,
+        92,
+        94,
+        95,
+        97,
+        98,
+        99,
+        107,
+        102,
+        103,
+        104,
+        106,
+        108
+      ]
+    },
+    "uk.gov.gchq.gaffer.hdfs.operation.reducer.GafferReducer.setup:(Lorg/apache/hadoop/mapreduce/Reducer$Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        54
+      ]
+    }
+  }
+}

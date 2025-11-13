@@ -1,0 +1,140 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:19.279Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 202.458,
+    "environmentDetectionTime" : 0.346,
+    "indexingTime" : 0.471,
+    "entryPointsTime" : 0.342,
+    "generationTime" : 37564.157,
+    "timeToFirstTest" : 47230.533,
+    "timeToLastTest" : 42380.622,
+    "indexQueryTime" : 11.852,
+    "verificationTime" : 2320.801,
+    "validationTime" : 81.494
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "T000" : "Method eligible for test creation",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 4,
+    "cumulativeDiffblueTestCount" : 1,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 1,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 19,
+    "perMethodTestability" : {
+      "T000" : 1,
+      "T005" : 1,
+      "T008" : 1,
+      "T012" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 1,
+      "R002" : 1,
+      "T008" : 1,
+      "T012" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 1
+    },
+    "perTestValidation" : {
+      "V000" : 1,
+      "V003" : 1
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.traffic.ElementGroup" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.traffic.transform.DescriptionTransform" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.traffic.ElementGroup.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        33,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.transform.DescriptionTransform.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.transform.DescriptionTransform.apply:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.traffic.transform.DescriptionTransform.apply:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.federatedstore.DoubleProxyTest.shouldNotErrorDueToRestProxy1FlagsPersistingIntoRestProxy2",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldMaintainView",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldBeAbleToSendViewedQueries",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldErrorIfViewIsInvalid"
+    ]
+  }
+}

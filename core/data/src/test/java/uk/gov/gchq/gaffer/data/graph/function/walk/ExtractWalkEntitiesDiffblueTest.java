@@ -1,0 +1,86 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.data.graph.function.walk;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.data.element.Edge;
+import uk.gov.gchq.gaffer.data.element.Entity;
+import uk.gov.gchq.gaffer.data.graph.Walk;
+import uk.gov.gchq.gaffer.data.graph.Walk.Builder;
+
+class ExtractWalkEntitiesDiffblueTest {
+  /**
+   * Test {@link ExtractWalkEntities#apply(Walk)} with {@code Walk}.
+   * <ul>
+   *   <li>When {@link Walk.Builder} (default constructor) build.</li>
+   *   <li>Then return {@link List}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link ExtractWalkEntities#apply(Walk)}
+   */
+  @Test
+  @DisplayName("Test apply(Walk) with 'Walk'; when Builder (default constructor) build; then return List")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterable ExtractWalkEntities.apply(Walk)"})
+  void testApplyWithWalk_whenBuilderBuild_thenReturnList() {
+    // Arrange
+    ExtractWalkEntities extractWalkEntities = new ExtractWalkEntities();
+    Walk walk = (new Builder()).build();
+
+    // Act
+    Iterable<Set<Entity>> actualApplyResult = extractWalkEntities.apply(walk);
+
+    // Assert
+    assertTrue(actualApplyResult instanceof List);
+    assertFalse(actualApplyResult.iterator().hasNext());
+    assertTrue(((List<Set<Entity>>) actualApplyResult).isEmpty());
+  }
+
+  /**
+   * Test {@link ExtractWalkEntities#apply(Walk)} with {@code Walk}.
+   * <ul>
+   *   <li>When {@link Walk#Walk(List, List)} with edges is {@link ArrayList#ArrayList()} and entities is {@link ArrayList#ArrayList()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link ExtractWalkEntities#apply(Walk)}
+   */
+  @Test
+  @DisplayName("Test apply(Walk) with 'Walk'; when Walk(List, List) with edges is ArrayList() and entities is ArrayList()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterable ExtractWalkEntities.apply(Walk)"})
+  void testApplyWithWalk_whenWalkWithEdgesIsArrayListAndEntitiesIsArrayList() {
+    // Arrange
+    ExtractWalkEntities extractWalkEntities = new ExtractWalkEntities();
+    ArrayList<Set<Edge>> edges = new ArrayList<>();
+
+    // Act
+    Iterable<Set<Entity>> actualApplyResult = extractWalkEntities.apply(new Walk(edges, new ArrayList<>()));
+
+    // Assert
+    assertTrue(actualApplyResult instanceof List);
+    assertFalse(actualApplyResult.iterator().hasNext());
+    assertTrue(((List<Set<Entity>>) actualApplyResult).isEmpty());
+  }
+}

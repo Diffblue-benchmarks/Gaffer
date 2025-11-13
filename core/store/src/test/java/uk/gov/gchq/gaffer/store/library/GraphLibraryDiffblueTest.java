@@ -1,0 +1,501 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.store.library;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.commonutil.exception.OverwritingException;
+import uk.gov.gchq.gaffer.store.StoreProperties;
+import uk.gov.gchq.gaffer.store.schema.Schema;
+
+class GraphLibraryDiffblueTest {
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)} with {@code graphId}, {@code schemaId}, {@code schema}, {@code propertiesId}, {@code properties}.
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, String, Schema, String, StoreProperties) with 'graphId', 'schemaId', 'schema', 'propertiesId', 'properties'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, String, Schema, String, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaIdSchemaPropertiesIdProperties() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class,
+        () -> (new FileGraphLibrary()).addOrUpdate(null, null, null, null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)} with {@code graphId}, {@code schemaId}, {@code schema}, {@code propertiesId}, {@code properties}.
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, String, Schema, String, StoreProperties) with 'graphId', 'schemaId', 'schema', 'propertiesId', 'properties'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, String, Schema, String, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaIdSchemaPropertiesIdProperties2() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class,
+        () -> (new FileGraphLibrary()).addOrUpdate("42", null, null, null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)} with {@code graphId}, {@code schemaId}, {@code schema}, {@code propertiesId}, {@code properties}.
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, String, Schema, String, StoreProperties) with 'graphId', 'schemaId', 'schema', 'propertiesId', 'properties'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, String, Schema, String, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaIdSchemaPropertiesIdProperties3() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class,
+        () -> fileGraphLibrary.addOrUpdate("42", null, null, null, new StoreProperties()));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)} with {@code graphId}, {@code schemaId}, {@code schema}, {@code propertiesId}, {@code properties}.
+   * <ul>
+   *   <li>When {@link Schema#Schema()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, String, Schema, String, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, String, Schema, String, StoreProperties) with 'graphId', 'schemaId', 'schema', 'propertiesId', 'properties'; when Schema()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, String, Schema, String, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaIdSchemaPropertiesIdProperties_whenSchema() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class,
+        () -> fileGraphLibrary.addOrUpdate("42", null, new Schema(), null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)} with {@code graphId}, {@code schema}, {@code properties}.
+   * <ul>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, Schema, StoreProperties) with 'graphId', 'schema', 'properties'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, Schema, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaProperties_thenThrowIllegalArgumentException() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).addOrUpdate(null, null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)} with {@code graphId}, {@code schema}, {@code properties}.
+   * <ul>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, Schema, StoreProperties) with 'graphId', 'schema', 'properties'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, Schema, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaProperties_thenThrowIllegalArgumentException2() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).addOrUpdate("42", null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)} with {@code graphId}, {@code schema}, {@code properties}.
+   * <ul>
+   *   <li>When {@link Schema#Schema()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, Schema, StoreProperties) with 'graphId', 'schema', 'properties'; when Schema()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, Schema, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaProperties_whenSchema() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.addOrUpdate("42", new Schema(), null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)} with {@code graphId}, {@code schema}, {@code properties}.
+   * <ul>
+   *   <li>When {@link StoreProperties#StoreProperties()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdate(String, Schema, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdate(String, Schema, StoreProperties) with 'graphId', 'schema', 'properties'; when StoreProperties()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdate(String, Schema, StoreProperties)"})
+  void testAddOrUpdateWithGraphIdSchemaProperties_whenStoreProperties() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.addOrUpdate("42", null, new StoreProperties()));
+  }
+
+  /**
+   * Test {@link GraphLibrary#get(String)}.
+   * <ul>
+   *   <li>When {@code 42}.</li>
+   *   <li>Then return {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#get(String)}
+   */
+  @Test
+  @DisplayName("Test get(String); when '42'; then return 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"uk.gov.gchq.gaffer.commonutil.pair.Pair GraphLibrary.get(String)"})
+  void testGet_when42_thenReturnNull() {
+    // Arrange, Act and Assert
+    assertNull((new FileGraphLibrary()).get("42"));
+  }
+
+  /**
+   * Test {@link GraphLibrary#get(String)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#get(String)}
+   */
+  @Test
+  @DisplayName("Test get(String); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"uk.gov.gchq.gaffer.commonutil.pair.Pair GraphLibrary.get(String)"})
+  void testGet_whenNull_thenThrowIllegalArgumentException() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).get(null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#getSchema(String)}.
+   * <ul>
+   *   <li>When {@code 42}.</li>
+   *   <li>Then return {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#getSchema(String)}
+   */
+  @Test
+  @DisplayName("Test getSchema(String); when '42'; then return 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Schema GraphLibrary.getSchema(String)"})
+  void testGetSchema_when42_thenReturnNull() {
+    // Arrange, Act and Assert
+    assertNull((new FileGraphLibrary()).getSchema("42"));
+  }
+
+  /**
+   * Test {@link GraphLibrary#getSchema(String)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#getSchema(String)}
+   */
+  @Test
+  @DisplayName("Test getSchema(String); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Schema GraphLibrary.getSchema(String)"})
+  void testGetSchema_whenNull_thenThrowIllegalArgumentException() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).getSchema(null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#getProperties(String)}.
+   * <ul>
+   *   <li>When {@code 42}.</li>
+   *   <li>Then return {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#getProperties(String)}
+   */
+  @Test
+  @DisplayName("Test getProperties(String); when '42'; then return 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"StoreProperties GraphLibrary.getProperties(String)"})
+  void testGetProperties_when42_thenReturnNull() {
+    // Arrange, Act and Assert
+    assertNull((new FileGraphLibrary()).getProperties("42"));
+  }
+
+  /**
+   * Test {@link GraphLibrary#getProperties(String)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#getProperties(String)}
+   */
+  @Test
+  @DisplayName("Test getProperties(String); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"StoreProperties GraphLibrary.getProperties(String)"})
+  void testGetProperties_whenNull_thenThrowIllegalArgumentException() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).getProperties(null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#exists(String)}.
+   * <p>
+   * Method under test: {@link GraphLibrary#exists(String)}
+   */
+  @Test
+  @DisplayName("Test exists(String)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean GraphLibrary.exists(String)"})
+  void testExists() {
+    // Arrange, Act and Assert
+    assertFalse((new FileGraphLibrary()).exists("42"));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addSchema(String, Schema)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addSchema(String, Schema)}
+   */
+  @Test
+  @DisplayName("Test addSchema(String, Schema); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addSchema(String, Schema)"})
+  void testAddSchema_whenNull_thenThrowIllegalArgumentException() throws OverwritingException {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> (new FileGraphLibrary()).addSchema(null, null));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addSchema(String, Schema)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addSchema(String, Schema)}
+   */
+  @Test
+  @DisplayName("Test addSchema(String, Schema); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addSchema(String, Schema)"})
+  void testAddSchema_whenNull_thenThrowIllegalArgumentException2() throws OverwritingException {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.addSchema(null, new Schema()));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdateSchema(String, Schema)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdateSchema(String, Schema)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdateSchema(String, Schema); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdateSchema(String, Schema)"})
+  void testAddOrUpdateSchema_whenNull_thenThrowIllegalArgumentException() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.addOrUpdateSchema(null, new Schema()));
+  }
+
+  /**
+   * Test {@link GraphLibrary#addOrUpdateProperties(String, StoreProperties)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#addOrUpdateProperties(String, StoreProperties)}
+   */
+  @Test
+  @DisplayName("Test addOrUpdateProperties(String, StoreProperties); when 'null'; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void GraphLibrary.addOrUpdateProperties(String, StoreProperties)"})
+  void testAddOrUpdateProperties_whenNull_thenThrowIllegalArgumentException() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class,
+        () -> fileGraphLibrary.addOrUpdateProperties(null, new StoreProperties()));
+  }
+
+  /**
+   * Test {@link GraphLibrary#resolveSchema(Schema, List)}.
+   * <ul>
+   *   <li>Given {@code null}.</li>
+   *   <li>When {@link ArrayList#ArrayList()} add {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#resolveSchema(Schema, List)}
+   */
+  @Test
+  @DisplayName("Test resolveSchema(Schema, List); given 'null'; when ArrayList() add 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Schema GraphLibrary.resolveSchema(Schema, List)"})
+  void testResolveSchema_givenNull_whenArrayListAddNull() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+    Schema schema = new Schema();
+
+    ArrayList<String> parentSchemaIds = new ArrayList<>();
+    parentSchemaIds.add(null);
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.resolveSchema(schema, parentSchemaIds));
+  }
+
+  /**
+   * Test {@link GraphLibrary#resolveSchema(Schema, List)}.
+   * <ul>
+   *   <li>Given {@code Parent Schema Ids}.</li>
+   *   <li>When {@link ArrayList#ArrayList()} add {@code Parent Schema Ids}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#resolveSchema(Schema, List)}
+   */
+  @Test
+  @DisplayName("Test resolveSchema(Schema, List); given 'Parent Schema Ids'; when ArrayList() add 'Parent Schema Ids'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Schema GraphLibrary.resolveSchema(Schema, List)"})
+  void testResolveSchema_givenParentSchemaIds_whenArrayListAddParentSchemaIds() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+    Schema schema = new Schema();
+
+    ArrayList<String> parentSchemaIds = new ArrayList<>();
+    parentSchemaIds.add("Parent Schema Ids");
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> fileGraphLibrary.resolveSchema(schema, parentSchemaIds));
+  }
+
+  /**
+   * Test {@link GraphLibrary#resolveStoreProperties(StoreProperties, String)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then return AdminAuth is empty string.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#resolveStoreProperties(StoreProperties, String)}
+   */
+  @Test
+  @DisplayName("Test resolveStoreProperties(StoreProperties, String); when 'null'; then return AdminAuth is empty string")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"StoreProperties GraphLibrary.resolveStoreProperties(StoreProperties, String)"})
+  void testResolveStoreProperties_whenNull_thenReturnAdminAuthIsEmptyString() {
+    // Arrange and Act
+    StoreProperties actualResolveStorePropertiesResult = (new FileGraphLibrary()).resolveStoreProperties(null, null);
+
+    // Assert
+    assertEquals("", actualResolveStorePropertiesResult.getAdminAuth());
+    assertEquals("", actualResolveStorePropertiesResult.getJsonSerialiserModules());
+    assertEquals("uk.gov.gchq.gaffer.store.StoreProperties",
+        actualResolveStorePropertiesResult.getStorePropertiesClassName());
+    assertEquals("uk.gov.gchq.gaffer.store.schema.Schema", actualResolveStorePropertiesResult.getSchemaClassName());
+    assertNull(actualResolveStorePropertiesResult.getStrictJson());
+    assertNull(actualResolveStorePropertiesResult.getCacheServiceClass());
+    assertNull(actualResolveStorePropertiesResult.getDefaultCacheServiceClass());
+    assertNull(actualResolveStorePropertiesResult.getJobTrackerCacheServiceClass());
+    assertNull(actualResolveStorePropertiesResult.getJsonSerialiserClass());
+    assertNull(actualResolveStorePropertiesResult.getNamedOperationCacheServiceClass());
+    assertNull(actualResolveStorePropertiesResult.getNamedViewCacheServiceClass());
+    assertNull(actualResolveStorePropertiesResult.getOperationDeclarationPaths());
+    assertNull(actualResolveStorePropertiesResult.getReflectionPackages());
+    assertNull(actualResolveStorePropertiesResult.getStoreClass());
+    Properties properties = actualResolveStorePropertiesResult.getProperties();
+    assertEquals(1, properties.size());
+    assertEquals(50, actualResolveStorePropertiesResult.getJobExecutorThreadCount().intValue());
+    assertFalse(actualResolveStorePropertiesResult.getJobTrackerEnabled());
+    assertFalse(actualResolveStorePropertiesResult.getRescheduleJobsOnStart());
+    assertTrue(properties.containsKey("gaffer.store.properties.class"));
+    assertTrue(actualResolveStorePropertiesResult.getNamedOperationEnabled());
+    assertTrue(actualResolveStorePropertiesResult.getNamedViewEnabled());
+    Class<StoreProperties> expectedStorePropertiesClass = StoreProperties.class;
+    assertEquals(expectedStorePropertiesClass, actualResolveStorePropertiesResult.getStorePropertiesClass());
+    Class<Schema> expectedSchemaClass = Schema.class;
+    assertEquals(expectedSchemaClass, actualResolveStorePropertiesResult.getSchemaClass());
+  }
+
+  /**
+   * Test {@link GraphLibrary#resolveStoreProperties(StoreProperties, String)}.
+   * <ul>
+   *   <li>When {@link StoreProperties#StoreProperties()}.</li>
+   *   <li>Then return {@link StoreProperties#StoreProperties()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link GraphLibrary#resolveStoreProperties(StoreProperties, String)}
+   */
+  @Test
+  @DisplayName("Test resolveStoreProperties(StoreProperties, String); when StoreProperties(); then return StoreProperties()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"StoreProperties GraphLibrary.resolveStoreProperties(StoreProperties, String)"})
+  void testResolveStoreProperties_whenStoreProperties_thenReturnStoreProperties() {
+    // Arrange
+    FileGraphLibrary fileGraphLibrary = new FileGraphLibrary();
+    StoreProperties properties = new StoreProperties();
+
+    // Act and Assert
+    assertEquals(properties, fileGraphLibrary.resolveStoreProperties(properties, "42"));
+  }
+}

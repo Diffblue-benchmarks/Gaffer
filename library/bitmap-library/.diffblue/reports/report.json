@@ -1,0 +1,599 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:19.279Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 196.73,
+    "environmentDetectionTime" : 0.16,
+    "indexingTime" : 0.416,
+    "entryPointsTime" : 0.158,
+    "generationTime" : 15559.7,
+    "timeToFirstTest" : 18509.098,
+    "timeToLastTest" : 17100.546,
+    "indexQueryTime" : 5.3790000000000004,
+    "verificationTime" : 377.195,
+    "validationTime" : 24.668
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 30,
+    "cumulativeDiffblueTestCount" : 34,
+    "cumulativeManualTestCount" : 24,
+    "completeTestCount" : 34,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 247,
+    "perMethodTestability" : {
+      "T000" : 17,
+      "T001" : 1,
+      "T003" : 1,
+      "T005" : 4,
+      "T008" : 2,
+      "T012" : 5
+    },
+    "perMethodOutcome" : {
+      "R000" : 18,
+      "R002" : 1,
+      "R013" : 2,
+      "T000" : 1,
+      "T003" : 1,
+      "T008" : 2,
+      "T012" : 5
+    },
+    "perTestOutcome" : {
+      "R000" : 34
+    },
+    "perTestValidation" : {
+      "V000" : 34,
+      "V003" : 21
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.bitmap.function.aggregate.RoaringBitmapAggregator" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 17,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 10,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "R013" : 2,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 17
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.BitmapJsonModules" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapConstants" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonDeserialiser" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 1,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.utils.RoaringBitmapUtils" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.bitmap.function.aggregate.RoaringBitmapAggregator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.function.aggregate.RoaringBitmapAggregator._apply:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.function.aggregate.RoaringBitmapAggregator._apply:(Lorg/roaringbitmap/RoaringBitmap;Lorg/roaringbitmap/RoaringBitmap;)Lorg/roaringbitmap/RoaringBitmap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.deserialise:([B)Lorg/roaringbitmap/RoaringBitmap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.deserialise:([BII)Lorg/roaringbitmap/RoaringBitmap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        58,
+        59,
+        60,
+        61,
+        63,
+        66,
+        64,
+        65,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.deserialiseEmpty:()Lorg/roaringbitmap/RoaringBitmap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        102
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.serialise:(Lorg/roaringbitmap/RoaringBitmap;)[B" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        49,
+        52,
+        50,
+        51,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.RoaringBitmapSerialiser.serialiseNull:()[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.BitmapJsonModules.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.BitmapJsonModules.getModules:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36,
+        38,
+        39,
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapConstants.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        25,
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonDeserialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonDeserialiser.deserialize:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Lorg/roaringbitmap/RoaringBitmap;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42,
+        43,
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser._serialise:(Lorg/roaringbitmap/RoaringBitmap;Lcom/fasterxml/jackson/core/JsonGenerator;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser.serialize:(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser.serialize:(Lorg/roaringbitmap/RoaringBitmap;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser.serializeWithType:(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.json.RoaringBitmapJsonSerialiser.serializeWithType:(Lorg/roaringbitmap/RoaringBitmap;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.utils.RoaringBitmapUtils.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.utils.RoaringBitmapUtils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        40,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.bitmap.serialisation.utils.RoaringBitmapUtils.upConvertSerialisedForm:([BII)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        46,
+        49,
+        52,
+        50,
+        51,
+        54,
+        56,
+        57,
+        58,
+        59,
+        60,
+        63,
+        64,
+        69,
+        70,
+        73,
+        76,
+        77,
+        80,
+        70,
+        82,
+        83,
+        84,
+        85,
+        88,
+        92,
+        83,
+        95,
+        98,
+        100,
+        101,
+        102,
+        104,
+        105,
+        106,
+        108,
+        121,
+        108,
+        109,
+        110,
+        111,
+        112,
+        114,
+        115,
+        116,
+        117,
+        121,
+        117,
+        119,
+        46,
+        121,
+        122
+      ]
+    }
+  }
+}

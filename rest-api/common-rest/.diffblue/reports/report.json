@@ -1,0 +1,2303 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-12T12:15:19.279Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 271.096,
+    "environmentDetectionTime" : 0.461,
+    "indexingTime" : 0.456,
+    "entryPointsTime" : 0.458,
+    "generationTime" : 35265.437,
+    "timeToFirstTest" : 44086.879,
+    "timeToLastTest" : 39701.026,
+    "indexQueryTime" : 7.759,
+    "verificationTime" : 2277.859,
+    "validationTime" : 72.207
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T009" : "No implementation for abstract class",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T020" : "Other trivial method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation",
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 20,
+    "methodsCount" : 133,
+    "cumulativeDiffblueTestCount" : 43,
+    "cumulativeManualTestCount" : 45,
+    "completeTestCount" : 43,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 1219,
+    "perMethodTestability" : {
+      "T000" : 24,
+      "T001" : 17,
+      "T002" : 4,
+      "T003" : 10,
+      "T005" : 10,
+      "T008" : 2,
+      "T009" : 43,
+      "T010" : 10,
+      "T012" : 9,
+      "T020" : 4
+    },
+    "perMethodOutcome" : {
+      "R000" : 51,
+      "R002" : 5,
+      "R013" : 1,
+      "T003" : 10,
+      "T008" : 2,
+      "T009" : 43,
+      "T010" : 10,
+      "T012" : 9,
+      "W002" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 43
+    },
+    "perTestValidation" : {
+      "V000" : 43,
+      "V003" : 1
+    },
+    "warnings" : {
+      "W001" : 3,
+      "W002" : 2
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 2,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 2,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.ServiceConstants" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.SystemProperty" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 2,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 2,
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 2,
+        "T003" : 1,
+        "T012" : 3,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 1,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 2,
+        "T002" : 2,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObjectGenerator" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleElementGenerator" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleFilterFunction" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleTransformFunction" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory" : {
+      "methodsCount" : 37,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 2,
+        "T009" : 33,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 2,
+        "T009" : 33,
+        "T010" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 1,
+        "T002" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.ExamplesFactory" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.GraphFactory" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 1,
+        "T010" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UnknownUserFactory" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UserFactory" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T010" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 6,
+        "T003" : 3,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T003" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "warnings" : {
+        "W001" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 5,
+        "T005" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.serialisation.ObjectMapperProvider" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "W002" : 2
+      },
+      "warnings" : {
+        "W002" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService" : {
+      "methodsCount" : 14,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T009" : 10,
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "T009" : 10,
+        "T010" : 4
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        70,
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.createCoreExposedProperties:()Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.getProperties:()Ljava/util/Map;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.getProperty:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.PropertiesUtil.lambda$getProperties$0:(Ljava/util/Map;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        80,
+        81,
+        82,
+        84,
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.ServiceConstants.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49,
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.ServiceConstants.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        53,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemProperty.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        72,
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemProperty.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        85,
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemProperty.getVersion:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        90,
+        91,
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemProperty.loadVersionProperties:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        98,
+        99,
+        100,
+        101,
+        104,
+        102,
+        103,
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        86,
+        87,
+        88,
+        89,
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.<init>:(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.getCode:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        101
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.getDescription:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        110,
+        111,
+        112,
+        113,
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.valueOf:(Ljava/lang/String;)Luk/gov/gchq/gaffer/rest/SystemStatus$Status;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus$Status.values:()[Luk/gov/gchq/gaffer/rest/SystemStatus$Status;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        83
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.<init>:(Luk/gov/gchq/gaffer/rest/SystemStatus$Status;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        50,
+        51,
+        54,
+        55,
+        58,
+        60,
+        61,
+        62,
+        60
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.getStatus:()Luk/gov/gchq/gaffer/rest/SystemStatus$Status;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        74,
+        75,
+        76,
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.SystemStatus.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        68,
+        69,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        25,
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.<init>:(Ljava/lang/String;[Ljava/lang/Object;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.getIds:()[Ljava/lang/Object;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.setIds:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObject.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObjectGenerator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleDomainObjectGenerator._apply:(Luk/gov/gchq/gaffer/data/element/Element;)Luk/gov/gchq/gaffer/rest/example/ExampleDomainObject;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        30,
+        31,
+        34,
+        35,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleElementGenerator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleElementGenerator._apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/data/element/Element;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleElementGenerator._apply:(Luk/gov/gchq/gaffer/rest/example/ExampleDomainObject;)Luk/gov/gchq/gaffer/data/element/Element;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        36,
+        39,
+        40,
+        41,
+        42,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleFilterFunction.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleFilterFunction.test:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleTransformFunction.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.example.ExampleTransformFunction.apply:(Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.addElements:()Luk/gov/gchq/gaffer/operation/impl/add/AddElements;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        367,
+        368,
+        369,
+        370,
+        371,
+        373,
+        374,
+        377,
+        379,
+        380
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.addNamedOperation:()Luk/gov/gchq/gaffer/named/operation/AddNamedOperation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        487,
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        494,
+        495,
+        487
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.addNamedView:()Luk/gov/gchq/gaffer/named/view/AddNamedView;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        499,
+        500,
+        501,
+        502,
+        505,
+        506,
+        504,
+        507,
+        503,
+        508,
+        499
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.generateElements:()Luk/gov/gchq/gaffer/operation/impl/generate/GenerateElements;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        403,
+        405,
+        406,
+        405,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        413,
+        419,
+        420,
+        421
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.generateExample:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/operation/Operation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        114,
+        115,
+        118,
+        119,
+        121,
+        122,
+        124,
+        125,
+        126,
+        128,
+        129,
+        130,
+        129,
+        132,
+        133
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.generateExamples:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.generateObjects:()Luk/gov/gchq/gaffer/operation/impl/generate/GenerateObjects;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        384,
+        385,
+        386,
+        387,
+        388,
+        390,
+        391,
+        393,
+        394,
+        395
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAdjacentIds:()Luk/gov/gchq/gaffer/operation/impl/get/GetAdjacentIds;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        337,
+        338,
+        339
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAllElements:()Luk/gov/gchq/gaffer/operation/impl/get/GetAllElements;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        343,
+        344,
+        345
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAnEdgeGroup:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        287,
+        288,
+        291,
+        292,
+        291,
+        294,
+        295,
+        296,
+        297,
+        298,
+        300,
+        302
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAnEdgePropertyName:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        275,
+        277,
+        278,
+        280,
+        283
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAnEntityGroup:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        255,
+        256,
+        259,
+        260,
+        261,
+        259,
+        263,
+        264,
+        265,
+        266,
+        267,
+        269,
+        271
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getAnEntityPropertyName:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        245,
+        246,
+        247,
+        248,
+        251
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getEdge:(II)Luk/gov/gchq/gaffer/data/element/Edge;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        198,
+        199,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        208,
+        210
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getEdgeId:(II)Luk/gov/gchq/gaffer/data/element/id/EdgeId;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        220,
+        221,
+        222,
+        223,
+        225,
+        226,
+        229
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getElements:()Luk/gov/gchq/gaffer/operation/impl/get/GetElements;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        357,
+        358,
+        361,
+        362,
+        363
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getEntity:(I)Luk/gov/gchq/gaffer/data/element/Entity;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        185,
+        186,
+        188,
+        189,
+        190,
+        191,
+        192,
+        194
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getEntityId:(I)Luk/gov/gchq/gaffer/data/element/id/EntityId;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        214,
+        215,
+        216,
+        215,
+        214
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getExampleValue:(Ljava/lang/Class;I)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        165,
+        167,
+        168,
+        176,
+        171,
+        175,
+        179
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getExampleVertex:(Ljava/lang/Class;I)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        321,
+        322,
+        325
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getSchema:()Luk/gov/gchq/gaffer/store/schema/Schema;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.getWalks:()Luk/gov/gchq/gaffer/operation/impl/GetWalks;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        465,
+        466,
+        467,
+        470,
+        471,
+        472,
+        475,
+        476,
+        479,
+        480,
+        478,
+        481,
+        477,
+        482,
+        483,
+        475
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.hasEdges:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        307
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.hasEntities:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        311
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.ifOperation:()Luk/gov/gchq/gaffer/operation/impl/If;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        512,
+        513,
+        514,
+        515,
+        516,
+        518,
+        519,
+        520,
+        521,
+        523,
+        524,
+        525,
+        522,
+        526,
+        518
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.isEdgeDirected:(Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        233,
+        235,
+        236,
+        239,
+        240,
+        241,
+        239
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.mapOperation:()Luk/gov/gchq/gaffer/operation/impl/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        545,
+        546,
+        547,
+        548,
+        545
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.max:()Luk/gov/gchq/gaffer/operation/impl/compare/Max;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        437,
+        439,
+        440,
+        441,
+        438,
+        442,
+        437
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.min:()Luk/gov/gchq/gaffer/operation/impl/compare/Min;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        446,
+        448,
+        449,
+        450,
+        447,
+        451,
+        446
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.operationChain:()Luk/gov/gchq/gaffer/operation/OperationChain;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        552,
+        553,
+        554,
+        555,
+        552
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.populateOperation:(Luk/gov/gchq/gaffer/operation/Operation;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        564
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.populateOperation:(Luk/gov/gchq/gaffer/operation/io/Output;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        559,
+        560
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.populateProperties:(Luk/gov/gchq/gaffer/data/element/Element;Luk/gov/gchq/gaffer/store/schema/SchemaElementDefinition;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        315,
+        316,
+        317,
+        318
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.sort:()Luk/gov/gchq/gaffer/operation/impl/compare/Sort;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        425,
+        427,
+        428,
+        429,
+        430,
+        426,
+        431,
+        432,
+        433,
+        425
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.toMap:()Luk/gov/gchq/gaffer/operation/impl/output/ToMap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        455,
+        457,
+        458,
+        459,
+        460,
+        456,
+        461,
+        455
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.AbstractExamplesFactory.whileOperation:()Luk/gov/gchq/gaffer/operation/impl/While;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        530,
+        531,
+        532,
+        533,
+        534,
+        536,
+        537,
+        538,
+        539,
+        540,
+        541,
+        536
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.createGraphBuilder:()Luk/gov/gchq/gaffer/graph/Graph$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        94,
+        95,
+        96,
+        98,
+        101,
+        103,
+        104,
+        106,
+        107,
+        108,
+        111,
+        112,
+        111,
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.createGraphFactory:()Luk/gov/gchq/gaffer/rest/factory/GraphFactory;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41,
+        45,
+        46,
+        47,
+        45,
+        48,
+        49
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.getGraph:()Luk/gov/gchq/gaffer/graph/Graph;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        70,
+        71,
+        72,
+        74,
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.getSchemaPaths:()[Ljava/nio/file/Path;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        55,
+        56,
+        59,
+        60,
+        61,
+        62,
+        61,
+        65
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.isSingletonGraph:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.setGraph:(Luk/gov/gchq/gaffer/graph/Graph;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        81,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.DefaultGraphFactory.setSingletonGraph:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        89,
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.ExamplesFactory.generateExample:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/operation/Operation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.factory.GraphFactory.createGraph:()Luk/gov/gchq/gaffer/graph/Graph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.GraphFactory.createGraphBuilder:()Luk/gov/gchq/gaffer/graph/Graph$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.factory.GraphFactory.createGraphFactory:()Luk/gov/gchq/gaffer/rest/factory/GraphFactory;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28,
+        32,
+        33,
+        34,
+        32,
+        35,
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.GraphFactory.getGraph:()Luk/gov/gchq/gaffer/graph/Graph;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UnknownUserFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UnknownUserFactory.createUser:()Luk/gov/gchq/gaffer/user/User;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31,
+        32,
+        33,
+        34,
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UserFactory.createContext:()Luk/gov/gchq/gaffer/store/Context;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UserFactory.createUser:()Luk/gov/gchq/gaffer/user/User;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.factory.UserFactory.createUserFactory:()Luk/gov/gchq/gaffer/rest/factory/UserFactory;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        34,
+        35,
+        36,
+        34,
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.<init>:(Ljava/lang/Class;Ljava/util/Set;Luk/gov/gchq/gaffer/operation/Operation;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "warnings" : {
+        "W001" : 3
+      },
+      "lineNumbers" : [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        128,
+        129,
+        132,
+        133,
+        136,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        138
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getExampleJson:()Luk/gov/gchq/gaffer/operation/Operation;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        119
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getFields:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        111
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getNext:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getOperationFields:(Ljava/lang/Class;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        57,
+        58,
+        60,
+        61,
+        62,
+        63,
+        64,
+        67,
+        70,
+        68,
+        72,
+        73,
+        74,
+        76,
+        77,
+        78,
+        79,
+        80,
+        83,
+        84,
+        86
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getOperationOutputType:(Luk/gov/gchq/gaffer/operation/Operation;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        90,
+        91,
+        92,
+        94
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getOutputClassName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        123
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getSummary:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.getSummaryValue:(Ljava/lang/Class;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        98,
+        99
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.hashCode:()I" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        149
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationDetail.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        160
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        63,
+        64,
+        67,
+        68,
+        71,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.getClassName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.getName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.getOptions:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.getSummary:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        84
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.isRequired:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.model.OperationField.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        95
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.serialisation.ObjectMapperProvider.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        26,
+        27,
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.serialisation.ObjectMapperProvider.getObjectMapper:()Lcom/fasterxml/jackson/databind/ObjectMapper;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService._execute:(Luk/gov/gchq/gaffer/operation/Operation;Luk/gov/gchq/gaffer/store/Context;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        101,
+        103,
+        107,
+        114,
+        118,
+        115,
+        116,
+        117,
+        108,
+        109,
+        110,
+        111,
+        113,
+        114,
+        118,
+        115,
+        116,
+        117,
+        119,
+        121
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.generateExampleJson:(Ljava/lang/Class;)Luk/gov/gchq/gaffer/operation/Operation;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getExamplesFactory:()Luk/gov/gchq/gaffer/rest/factory/ExamplesFactory;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getGraphFactory:()Luk/gov/gchq/gaffer/rest/factory/GraphFactory;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getNextOperations:(Ljava/lang/Class;)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        129
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getOperationClass:(Ljava/lang/String;)Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getSupportedOperationDetails:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getSupportedOperationDetails:(Z)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        72,
+        73,
+        75,
+        77,
+        79,
+        81,
+        84,
+        82,
+        83,
+        85,
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getSupportedOperations:()Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getSupportedOperations:(Z)Ljava/util/Set;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        58,
+        59,
+        61,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.getUserFactory:()Luk/gov/gchq/gaffer/rest/factory/UserFactory;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.postOperationHook:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        96
+      ]
+    },
+    "uk.gov.gchq.gaffer.rest.service.v2.AbstractOperationService.preOperationHook:(Luk/gov/gchq/gaffer/operation/OperationChain;Luk/gov/gchq/gaffer/store/Context;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        92
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "uk.gov.gchq.gaffer.federatedstore.DoubleProxyTest.shouldNotErrorDueToRestProxy1FlagsPersistingIntoRestProxy2",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldMaintainView",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldBeAbleToSendViewedQueries",
+      "uk.gov.gchq.gaffer.federatedstore.FederatedStoreToFederatedStoreTest.shouldErrorIfViewIsInvalid"
+    ]
+  }
+}

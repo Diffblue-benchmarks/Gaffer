@@ -1,0 +1,629 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.commonutil.elementvisibilityutil;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.List;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class AuthorisationsDiffblueTest {
+  /**
+   * Test {@link Authorisations#Authorisations()}.
+   * <p>
+   * Method under test: {@link Authorisations#Authorisations()}
+   */
+  @Test
+  @DisplayName("Test new Authorisations()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void Authorisations.<init>()"})
+  void testNewAuthorisations() throws UnsupportedEncodingException {
+    // Arrange and Act
+    Authorisations actualAuthorisations = new Authorisations();
+
+    // Assert
+    assertEquals(0, actualAuthorisations.size());
+    assertFalse(actualAuthorisations.iterator().hasNext());
+    assertTrue(actualAuthorisations.getAuthorisations().isEmpty());
+    assertTrue(actualAuthorisations.getAuthorisationsBB().isEmpty());
+    assertTrue(actualAuthorisations.isEmpty());
+    byte[] expectedAuthorisationsArray = "!AUTH1:".getBytes("UTF-8");
+    assertArrayEquals(expectedAuthorisationsArray, actualAuthorisations.getAuthorisationsArray());
+  }
+
+  /**
+   * Test {@link Authorisations#Authorisations(String[])}.
+   * <ul>
+   *   <li>Then return size is zero.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#Authorisations(String[])}
+   */
+  @Test
+  @DisplayName("Test new Authorisations(String[]); then return size is zero")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void Authorisations.<init>(String[])"})
+  void testNewAuthorisations_thenReturnSizeIsZero() throws UnsupportedEncodingException {
+    // Arrange and Act
+    Authorisations actualAuthorisations = new Authorisations(new String[]{});
+
+    // Assert
+    assertEquals(0, actualAuthorisations.size());
+    assertFalse(actualAuthorisations.iterator().hasNext());
+    assertTrue(actualAuthorisations.getAuthorisations().isEmpty());
+    assertTrue(actualAuthorisations.getAuthorisationsBB().isEmpty());
+    assertTrue(actualAuthorisations.isEmpty());
+    byte[] expectedAuthorisationsArray = "!AUTH1:".getBytes("UTF-8");
+    assertArrayEquals(expectedAuthorisationsArray, actualAuthorisations.getAuthorisationsArray());
+  }
+
+  /**
+   * Test {@link Authorisations#Authorisations(byte[])}.
+   * <ul>
+   *   <li>When empty array of {@code byte}.</li>
+   *   <li>Then return size is zero.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#Authorisations(byte[])}
+   */
+  @Test
+  @DisplayName("Test new Authorisations(byte[]); when empty array of byte; then return size is zero")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void Authorisations.<init>(byte[])"})
+  void testNewAuthorisations_whenEmptyArrayOfByte_thenReturnSizeIsZero() throws UnsupportedEncodingException {
+    // Arrange and Act
+    Authorisations actualAuthorisations = new Authorisations(new byte[]{});
+
+    // Assert
+    assertEquals(0, actualAuthorisations.size());
+    assertFalse(actualAuthorisations.iterator().hasNext());
+    assertTrue(actualAuthorisations.getAuthorisations().isEmpty());
+    assertTrue(actualAuthorisations.getAuthorisationsBB().isEmpty());
+    assertTrue(actualAuthorisations.isEmpty());
+    byte[] expectedAuthorisationsArray = "!AUTH1:".getBytes("UTF-8");
+    assertArrayEquals(expectedAuthorisationsArray, actualAuthorisations.getAuthorisationsArray());
+  }
+
+  /**
+   * Test {@link Authorisations#Authorisations(String[])}.
+   * <ul>
+   *   <li>When empty string.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#Authorisations(String[])}
+   */
+  @Test
+  @DisplayName("Test new Authorisations(String[]); when empty string; then throw IllegalArgumentException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void Authorisations.<init>(String[])"})
+  void testNewAuthorisations_whenEmptyString_thenThrowIllegalArgumentException() {
+    // Arrange, Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> new Authorisations(""));
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisations()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisations()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisations(); given Authorisations(); then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List Authorisations.getAuthorisations()"})
+  void testGetAuthorisations_givenAuthorisations_thenReturnEmpty() {
+    // Arrange, Act and Assert
+    assertTrue((new Authorisations()).getAuthorisations().isEmpty());
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisations()}.
+   * <ul>
+   *   <li>Then return size is one.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisations()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisations(); then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List Authorisations.getAuthorisations()"})
+  void testGetAuthorisations_thenReturnSizeIsOne() throws UnsupportedEncodingException {
+    // Arrange and Act
+    List<byte[]> actualAuthorisations = (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).getAuthorisations();
+
+    // Assert
+    assertEquals(1, actualAuthorisations.size());
+    assertArrayEquals("AXAXAXAX".getBytes("UTF-8"), actualAuthorisations.get(0));
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisationsArray()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return {@code !AUTH1:} Bytes is {@code UTF-8}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisationsArray()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisationsArray(); given Authorisations(); then return '!AUTH1:' Bytes is 'UTF-8'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"byte[] Authorisations.getAuthorisationsArray()"})
+  void testGetAuthorisationsArray_givenAuthorisations_thenReturnAuth1BytesIsUtf8() throws UnsupportedEncodingException {
+    // Arrange and Act
+    byte[] actualAuthorisationsArray = (new Authorisations()).getAuthorisationsArray();
+
+    // Assert
+    assertArrayEquals("!AUTH1:".getBytes("UTF-8"), actualAuthorisationsArray);
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisationsArray()}.
+   * <ul>
+   *   <li>Then return {@code !AUTH1:QVhBWEFYQVg=} Bytes is {@code UTF-8}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisationsArray()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisationsArray(); then return '!AUTH1:QVhBWEFYQVg=' Bytes is 'UTF-8'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"byte[] Authorisations.getAuthorisationsArray()"})
+  void testGetAuthorisationsArray_thenReturnAuth1QVhBWEFYQVgBytesIsUtf8() throws UnsupportedEncodingException {
+    // Arrange and Act
+    byte[] actualAuthorisationsArray = (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).getAuthorisationsArray();
+
+    // Assert
+    assertArrayEquals("!AUTH1:QVhBWEFYQVg=".getBytes("UTF-8"), actualAuthorisationsArray);
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisationsBB()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return Empty.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisationsBB()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisationsBB(); given Authorisations(); then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List Authorisations.getAuthorisationsBB()"})
+  void testGetAuthorisationsBB_givenAuthorisations_thenReturnEmpty() {
+    // Arrange, Act and Assert
+    assertTrue((new Authorisations()).getAuthorisationsBB().isEmpty());
+  }
+
+  /**
+   * Test {@link Authorisations#getAuthorisationsBB()}.
+   * <ul>
+   *   <li>Then return size is one.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#getAuthorisationsBB()}
+   */
+  @Test
+  @DisplayName("Test getAuthorisationsBB(); then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List Authorisations.getAuthorisationsBB()"})
+  void testGetAuthorisationsBB_thenReturnSizeIsOne() throws UnsupportedEncodingException {
+    // Arrange and Act
+    List<ByteBuffer> actualAuthorisationsBB = (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).getAuthorisationsBB();
+
+    // Assert
+    assertEquals(1, actualAuthorisationsBB.size());
+    ByteBuffer getResult = actualAuthorisationsBB.get(0);
+    assertEquals(0, getResult.position());
+    assertEquals(8, getResult.capacity());
+    assertEquals(8, getResult.limit());
+    assertTrue(getResult.hasRemaining());
+    assertTrue(getResult.hasArray());
+    byte[] expectedArrayResult = "AXAXAXAX".getBytes("UTF-8");
+    assertArrayEquals(expectedArrayResult, getResult.array());
+  }
+
+  /**
+   * Test {@link Authorisations#serialise()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return {@link Authorisations#HEADER}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#serialise()}
+   */
+  @Test
+  @DisplayName("Test serialise(); given Authorisations(); then return HEADER")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"String Authorisations.serialise()"})
+  void testSerialise_givenAuthorisations_thenReturnHeader() {
+    // Arrange, Act and Assert
+    assertEquals(Authorisations.HEADER, (new Authorisations()).serialise());
+  }
+
+  /**
+   * Test {@link Authorisations#serialise()}.
+   * <ul>
+   *   <li>Then return {@code !AUTH1:QVhBWEFYQVg=}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#serialise()}
+   */
+  @Test
+  @DisplayName("Test serialise(); then return '!AUTH1:QVhBWEFYQVg='")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"String Authorisations.serialise()"})
+  void testSerialise_thenReturnAuth1QVhBWEFYQVg() throws UnsupportedEncodingException {
+    // Arrange, Act and Assert
+    assertEquals("!AUTH1:QVhBWEFYQVg=", (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).serialise());
+  }
+
+  /**
+   * Test {@link Authorisations#toString()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return empty string.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#toString()}
+   */
+  @Test
+  @DisplayName("Test toString(); given Authorisations(); then return empty string")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"String Authorisations.toString()"})
+  void testToString_givenAuthorisations_thenReturnEmptyString() {
+    // Arrange, Act and Assert
+    assertEquals("", (new Authorisations()).toString());
+  }
+
+  /**
+   * Test {@link Authorisations#toString()}.
+   * <ul>
+   *   <li>Then return {@code AXAXAXAX}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#toString()}
+   */
+  @Test
+  @DisplayName("Test toString(); then return 'AXAXAXAX'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"String Authorisations.toString()"})
+  void testToString_thenReturnAxaxaxax() throws UnsupportedEncodingException {
+    // Arrange, Act and Assert
+    assertEquals("AXAXAXAX", (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).toString());
+  }
+
+  /**
+   * Test {@link Authorisations#contains(ArrayByteSequence)} with {@code ArrayByteSequence}.
+   * <ul>
+   *   <li>When {@link ArrayByteSequence#ArrayByteSequence(String)} with s is {@code foo}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#contains(ArrayByteSequence)}
+   */
+  @Test
+  @DisplayName("Test contains(ArrayByteSequence) with 'ArrayByteSequence'; when ArrayByteSequence(String) with s is 'foo'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.contains(ArrayByteSequence)"})
+  void testContainsWithArrayByteSequence_whenArrayByteSequenceWithSIsFoo() {
+    // Arrange
+    Authorisations authorisations = new Authorisations();
+
+    // Act and Assert
+    assertFalse(authorisations.contains(new ArrayByteSequence("foo")));
+  }
+
+  /**
+   * Test {@link Authorisations#contains(ArrayByteSequence)} with {@code ArrayByteSequence}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#contains(ArrayByteSequence)}
+   */
+  @Test
+  @DisplayName("Test contains(ArrayByteSequence) with 'ArrayByteSequence'; when 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.contains(ArrayByteSequence)"})
+  void testContainsWithArrayByteSequence_whenNull() {
+    // Arrange, Act and Assert
+    assertFalse((new Authorisations()).contains((ArrayByteSequence) null));
+  }
+
+  /**
+   * Test {@link Authorisations#contains(byte[])} with {@code byte[]}.
+   * <p>
+   * Method under test: {@link Authorisations#contains(byte[])}
+   */
+  @Test
+  @DisplayName("Test contains(byte[]) with 'byte[]'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.contains(byte[])"})
+  void testContainsWithByte() throws UnsupportedEncodingException {
+    // Arrange
+    Authorisations authorisations = new Authorisations();
+
+    // Act and Assert
+    assertFalse(authorisations.contains("AXAXAXAX".getBytes("UTF-8")));
+  }
+
+  /**
+   * Test {@link Authorisations#contains(String)} with {@code String}.
+   * <p>
+   * Method under test: {@link Authorisations#contains(String)}
+   */
+  @Test
+  @DisplayName("Test contains(String) with 'String'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.contains(String)"})
+  void testContainsWithString() {
+    // Arrange, Act and Assert
+    assertFalse((new Authorisations()).contains("Auth"));
+  }
+
+  /**
+   * Test {@link Authorisations#equals(Object)}, and {@link Authorisations#hashCode()}.
+   * <ul>
+   *   <li>When other is equal.</li>
+   *   <li>Then return equal.</li>
+   * </ul>
+   * <p>
+   * Methods under test:
+   * <ul>
+   *   <li>{@link Authorisations#equals(Object)}
+   *   <li>{@link Authorisations#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is equal; then return equal")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.equals(Object)", "int Authorisations.hashCode()"})
+  void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual() {
+    // Arrange
+    Authorisations authorisations = new Authorisations();
+    Authorisations authorisations2 = new Authorisations();
+
+    // Act and Assert
+    assertEquals(authorisations, authorisations2);
+    int expectedHashCodeResult = authorisations.hashCode();
+    assertEquals(expectedHashCodeResult, authorisations2.hashCode());
+  }
+
+  /**
+   * Test {@link Authorisations#equals(Object)}, and {@link Authorisations#hashCode()}.
+   * <ul>
+   *   <li>When other is same.</li>
+   *   <li>Then return equal.</li>
+   * </ul>
+   * <p>
+   * Methods under test:
+   * <ul>
+   *   <li>{@link Authorisations#equals(Object)}
+   *   <li>{@link Authorisations#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is same; then return equal")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.equals(Object)", "int Authorisations.hashCode()"})
+  void testEqualsAndHashCode_whenOtherIsSame_thenReturnEqual() {
+    // Arrange
+    Authorisations authorisations = new Authorisations();
+
+    // Act and Assert
+    assertEquals(authorisations, authorisations);
+    int expectedHashCodeResult = authorisations.hashCode();
+    assertEquals(expectedHashCodeResult, authorisations.hashCode());
+  }
+
+  /**
+   * Test {@link Authorisations#equals(Object)}.
+   * <ul>
+   *   <li>When other is different.</li>
+   *   <li>Then return not equal.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is different; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.equals(Object)", "int Authorisations.hashCode()"})
+  void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
+    // Arrange
+    Authorisations authorisations = new Authorisations(new byte[]{'A', 1, 'A', 1, 'A', 1, 'A', 1});
+
+    // Act and Assert
+    assertNotEquals(authorisations, new Authorisations());
+  }
+
+  /**
+   * Test {@link Authorisations#equals(Object)}.
+   * <ul>
+   *   <li>When other is {@code null}.</li>
+   *   <li>Then return not equal.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is 'null'; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.equals(Object)", "int Authorisations.hashCode()"})
+  void testEquals_whenOtherIsNull_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new Authorisations(), null);
+  }
+
+  /**
+   * Test {@link Authorisations#equals(Object)}.
+   * <ul>
+   *   <li>When other is wrong type.</li>
+   *   <li>Then return not equal.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is wrong type; then return not equal")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.equals(Object)", "int Authorisations.hashCode()"})
+  void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new Authorisations(), "Different type to Authorisations");
+  }
+
+  /**
+   * Test {@link Authorisations#size()}.
+   * <p>
+   * Method under test: {@link Authorisations#size()}
+   */
+  @Test
+  @DisplayName("Test size()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"int Authorisations.size()"})
+  void testSize() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Authorisations()).size());
+  }
+
+  /**
+   * Test {@link Authorisations#isEmpty()}.
+   * <ul>
+   *   <li>Given {@code A}.</li>
+   *   <li>Then return {@code false}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#isEmpty()}
+   */
+  @Test
+  @DisplayName("Test isEmpty(); given 'A'; then return 'false'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.isEmpty()"})
+  void testIsEmpty_givenA_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse((new Authorisations(new byte[]{'A', 4, 'A', 4, 'A', 4, 'A', 4})).isEmpty());
+  }
+
+  /**
+   * Test {@link Authorisations#isEmpty()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   *   <li>Then return {@code true}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#isEmpty()}
+   */
+  @Test
+  @DisplayName("Test isEmpty(); given Authorisations(); then return 'true'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.isEmpty()"})
+  void testIsEmpty_givenAuthorisations_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue((new Authorisations()).isEmpty());
+  }
+
+  /**
+   * Test {@link Authorisations#iterator()}.
+   * <ul>
+   *   <li>Given {@link Authorisations#Authorisations()}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#iterator()}
+   */
+  @Test
+  @DisplayName("Test iterator(); given Authorisations()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterator Authorisations.iterator()"})
+  void testIterator_givenAuthorisations() {
+    // Arrange, Act and Assert
+    assertFalse((new Authorisations()).iterator().hasNext());
+  }
+
+  /**
+   * Test {@link Authorisations#iterator()}.
+   * <ul>
+   *   <li>Then return next is {@code AXAXAXAX} Bytes is {@code UTF-8}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#iterator()}
+   */
+  @Test
+  @DisplayName("Test iterator(); then return next is 'AXAXAXAX' Bytes is 'UTF-8'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterator Authorisations.iterator()"})
+  void testIterator_thenReturnNextIsAxaxaxaxBytesIsUtf8() throws UnsupportedEncodingException {
+    // Arrange and Act
+    Iterator<byte[]> actualIteratorResult = (new Authorisations("AXAXAXAX".getBytes("UTF-8"))).iterator();
+
+    // Assert
+    byte[] actualNextResult = actualIteratorResult.next();
+    assertFalse(actualIteratorResult.hasNext());
+    assertArrayEquals("AXAXAXAX".getBytes("UTF-8"), actualNextResult);
+  }
+
+  /**
+   * Test {@link Authorisations#isValidAuthChar(byte)}.
+   * <ul>
+   *   <li>When {@code A}.</li>
+   *   <li>Then return {@code true}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#isValidAuthChar(byte)}
+   */
+  @Test
+  @DisplayName("Test isValidAuthChar(byte); when 'A'; then return 'true'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.isValidAuthChar(byte)"})
+  void testIsValidAuthChar_whenA_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue(Authorisations.isValidAuthChar((byte) 'A'));
+  }
+
+  /**
+   * Test {@link Authorisations#isValidAuthChar(byte)}.
+   * <ul>
+   *   <li>When minus one.</li>
+   *   <li>Then return {@code false}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Authorisations#isValidAuthChar(byte)}
+   */
+  @Test
+  @DisplayName("Test isValidAuthChar(byte); when minus one; then return 'false'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean Authorisations.isValidAuthChar(byte)"})
+  void testIsValidAuthChar_whenMinusOne_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse(Authorisations.isValidAuthChar((byte) -1));
+  }
+}
