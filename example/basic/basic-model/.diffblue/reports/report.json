@@ -1,0 +1,66 @@
+{
+  "meta" : {
+    "reportVersion" : "2.8"
+  },
+  "run" : {
+    "version" : "2025.11.01-3385b9f-licensed",
+    "creationTimestamp" : "2025-11-13T01:28:35.49Z",
+    "command" : "dcover coverage-reports --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest",
+    "totalTime" : 14.111,
+    "environmentDetectionTime" : 0.137,
+    "indexingTime" : 0.0,
+    "entryPointsTime" : 0.0,
+    "generationTime" : 0.0,
+    "timeToFirstTest" : 14.11,
+    "timeToLastTest" : 14.11,
+    "indexQueryTime" : 0.0,
+    "verificationTime" : 0.0,
+    "validationTime" : 0.0
+  },
+  "codes" : {
+    "T008" : "Private and never called"
+  },
+  "summary" : {
+    "classesCount" : 1,
+    "methodsCount" : 1,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 7,
+    "perMethodTestability" : {
+      "T008" : 1
+    },
+    "perMethodOutcome" : {
+      "T008" : 1
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.basic.ElementGroup" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.basic.ElementGroup.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        29,
+        31
+      ]
+    }
+  },
+  "validationMetrics" : { },
+  "outputCodes" : [ ]
+}

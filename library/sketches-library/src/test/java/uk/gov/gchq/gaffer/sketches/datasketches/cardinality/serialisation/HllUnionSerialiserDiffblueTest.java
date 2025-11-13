@@ -1,0 +1,269 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.sketches.datasketches.cardinality.serialisation;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import org.apache.datasketches.hll.Union;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import uk.gov.gchq.gaffer.exception.SerialisationException;
+
+class HllUnionSerialiserDiffblueTest {
+  /**
+   * Test {@link HllUnionSerialiser#canHandle(Class)}.
+   *
+   * <ul>
+   *   <li>When {@code Object}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#canHandle(Class)}
+   */
+  @Test
+  @DisplayName("Test canHandle(Class); when 'java.lang.Object'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean HllUnionSerialiser.canHandle(Class)"})
+  void testCanHandle_whenJavaLangObject_thenReturnFalse() {
+    // Arrange
+    HllUnionSerialiser hllUnionSerialiser = new HllUnionSerialiser();
+    Class<Object> clazz = Object.class;
+
+    // Act and Assert
+    assertFalse(hllUnionSerialiser.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#canHandle(Class)}.
+   *
+   * <ul>
+   *   <li>When {@code Union}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#canHandle(Class)}
+   */
+  @Test
+  @DisplayName(
+      "Test canHandle(Class); when 'org.apache.datasketches.hll.Union'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean HllUnionSerialiser.canHandle(Class)"})
+  void testCanHandle_whenOrgApacheDatasketchesHllUnion_thenReturnTrue() {
+    // Arrange
+    HllUnionSerialiser hllUnionSerialiser = new HllUnionSerialiser();
+    Class<Union> clazz = Union.class;
+
+    // Act and Assert
+    assertTrue(hllUnionSerialiser.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#deserialiseEmpty()}.
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#deserialiseEmpty()}
+   */
+  @Test
+  @DisplayName("Test deserialiseEmpty()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Union HllUnionSerialiser.deserialiseEmpty()"})
+  void testDeserialiseEmpty() throws SerialisationException {
+    // Arrange, Act and Assert
+    assertNull(new HllUnionSerialiser().deserialiseEmpty());
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#preservesObjectOrdering()}.
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#preservesObjectOrdering()}
+   */
+  @Test
+  @DisplayName("Test preservesObjectOrdering()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean HllUnionSerialiser.preservesObjectOrdering()"})
+  void testPreservesObjectOrdering() {
+    // Arrange, Act and Assert
+    assertFalse(new HllUnionSerialiser().preservesObjectOrdering());
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#equals(Object)}, and {@link HllUnionSerialiser#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link HllUnionSerialiser#equals(Object)}
+   *   <li>{@link HllUnionSerialiser#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is equal; then return equal")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "boolean HllUnionSerialiser.equals(Object)",
+    "int HllUnionSerialiser.hashCode()"
+  })
+  void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual() {
+    // Arrange
+    HllUnionSerialiser hllUnionSerialiser = new HllUnionSerialiser();
+    HllUnionSerialiser hllUnionSerialiser2 = new HllUnionSerialiser();
+
+    // Act and Assert
+    assertEquals(hllUnionSerialiser, hllUnionSerialiser2);
+    assertEquals(hllUnionSerialiser.hashCode(), hllUnionSerialiser2.hashCode());
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#equals(Object)}, and {@link HllUnionSerialiser#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is same.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link HllUnionSerialiser#equals(Object)}
+   *   <li>{@link HllUnionSerialiser#hashCode()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test equals(Object), and hashCode(); when other is same; then return equal")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "boolean HllUnionSerialiser.equals(Object)",
+    "int HllUnionSerialiser.hashCode()"
+  })
+  void testEqualsAndHashCode_whenOtherIsSame_thenReturnEqual() {
+    // Arrange
+    HllUnionSerialiser hllUnionSerialiser = new HllUnionSerialiser();
+
+    // Act and Assert
+    assertEquals(hllUnionSerialiser, hllUnionSerialiser);
+    int expectedHashCodeResult = hllUnionSerialiser.hashCode();
+    assertEquals(expectedHashCodeResult, hllUnionSerialiser.hashCode());
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is different; then return not equal")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "boolean HllUnionSerialiser.equals(Object)",
+    "int HllUnionSerialiser.hashCode()"
+  })
+  void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new HllUnionSerialiser(), 3);
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is 'null'; then return not equal")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "boolean HllUnionSerialiser.equals(Object)",
+    "int HllUnionSerialiser.hashCode()"
+  })
+  void testEquals_whenOtherIsNull_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new HllUnionSerialiser(), null);
+  }
+
+  /**
+   * Test {@link HllUnionSerialiser#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link HllUnionSerialiser#equals(Object)}
+   */
+  @Test
+  @DisplayName("Test equals(Object); when other is wrong type; then return not equal")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "boolean HllUnionSerialiser.equals(Object)",
+    "int HllUnionSerialiser.hashCode()"
+  })
+  void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
+    // Arrange, Act and Assert
+    assertNotEquals(new HllUnionSerialiser(), "Different type to HllUnionSerialiser");
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>default or parameterless constructor of {@link HllUnionSerialiser}
+   *   <li>{@link HllUnionSerialiser#isConsistent()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void HllUnionSerialiser.<init>()",
+    "boolean HllUnionSerialiser.isConsistent()"
+  })
+  void testGettersAndSetters() {
+    // Arrange, Act and Assert
+    assertFalse(new HllUnionSerialiser().isConsistent());
+  }
+}

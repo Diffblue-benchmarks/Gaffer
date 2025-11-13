@@ -1,0 +1,62 @@
+/*
+ * Copyright 2025 Crown Copyright
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.gchq.gaffer.rest.application;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.Set;
+import javax.ws.rs.RuntimeType;
+import javax.ws.rs.core.Application;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class ApplicationConfigV2DiffblueTest {
+  /**
+   * Test new {@link ApplicationConfigV2} (default constructor).
+   *
+   * <p>Method under test: default or parameterless constructor of {@link ApplicationConfigV2}
+   */
+  @Test
+  @DisplayName("Test new ApplicationConfigV2 (default constructor)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void ApplicationConfigV2.<init>()"})
+  void testNewApplicationConfigV2() {
+    // Arrange and Act
+    ApplicationConfigV2 actualApplicationConfigV2 = new ApplicationConfigV2();
+
+    // Assert
+    assertNull(actualApplicationConfigV2.getApplicationName());
+    assertEquals(17, actualApplicationConfigV2.resources.size());
+    Set<Object> instances = actualApplicationConfigV2.getInstances();
+    assertEquals(2, instances.size());
+    assertEquals(RuntimeType.SERVER, actualApplicationConfigV2.getRuntimeType());
+    assertTrue(actualApplicationConfigV2.getPropertyNames().isEmpty());
+    assertTrue(actualApplicationConfigV2.getProperties().isEmpty());
+    assertTrue(actualApplicationConfigV2.getResources().isEmpty());
+    Set<Class<?>> expectedClasses = actualApplicationConfigV2.resources;
+    assertEquals(expectedClasses, actualApplicationConfigV2.getClasses());
+    Application actualApplication = actualApplicationConfigV2.getApplication();
+    assertSame(actualApplicationConfigV2, actualApplication);
+    assertSame(instances, actualApplicationConfigV2.getSingletons());
+  }
+}

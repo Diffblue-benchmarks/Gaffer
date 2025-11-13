@@ -1,0 +1,3459 @@
+{
+  "meta" : {
+    "reportVersion" : "2.8"
+  },
+  "run" : {
+    "version" : "2025.11.01-3385b9f-licensed",
+    "creationTimestamp" : "2025-11-13T01:29:58.122Z",
+    "command" : "dcover create --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest --coverage-reports --upload http://localhost:8080 --project-name Gaffer --name with-diffblue-tests",
+    "totalTime" : 172.62,
+    "environmentDetectionTime" : 0.908,
+    "indexingTime" : 0.343,
+    "entryPointsTime" : 0.896,
+    "generationTime" : 271.891,
+    "timeToFirstTest" : 204.623,
+    "timeToLastTest" : 323.213,
+    "indexQueryTime" : 1.895,
+    "verificationTime" : 27.315,
+    "validationTime" : 18.275
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "T020" : "Other trivial method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 20,
+    "methodsCount" : 182,
+    "cumulativeDiffblueTestCount" : 227,
+    "cumulativeManualTestCount" : 162,
+    "completeTestCount" : 227,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 1172,
+    "perMethodTestability" : {
+      "T000" : 96,
+      "T001" : 19,
+      "T002" : 11,
+      "T003" : 15,
+      "T005" : 22,
+      "T012" : 16,
+      "T020" : 3
+    },
+    "perMethodOutcome" : {
+      "R000" : 138,
+      "R002" : 5,
+      "R004" : 2,
+      "R013" : 2,
+      "T000" : 4,
+      "T003" : 15,
+      "T012" : 16
+    },
+    "perTestOutcome" : {
+      "R000" : 227
+    },
+    "perTestValidation" : {
+      "V000" : 227,
+      "V003" : 1
+    }
+  },
+  "classes" : {
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 13,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 13
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 13
+      },
+      "perMethodOutcome" : {
+        "T003" : 13
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 26,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 9,
+        "T001" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 26
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 25,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 25
+      }
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 24,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "T000" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 24
+      }
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap" : {
+      "methodsCount" : 35,
+      "completeTestCount" : 56,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 30,
+        "T001" : 3,
+        "T003" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 30,
+        "R004" : 2,
+        "R013" : 2,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 56
+      }
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T005" : 4
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 3,
+        "T002" : 3,
+        "T005" : 2,
+        "T012" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 12,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 2,
+        "T002" : 2,
+        "T005" : 2,
+        "T012" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 10
+      }
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T002" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapAggregator" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 1,
+        "T002" : 1,
+        "T005" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 1,
+        "T002" : 1,
+        "T003" : 1,
+        "T005" : 2,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "T003" : 1,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.IterableToFreqMap" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeSubTypeValue" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeValue" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.ToFreqMap" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 2,
+        "T002" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 7
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 1,
+        "T002" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    }
+  },
+  "methods" : {
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        85,
+        86,
+        89,
+        92,
+        90,
+        91,
+        93
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.deserialise:([B)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.deserialise:([BII)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59,
+        60,
+        61,
+        60,
+        62,
+        63,
+        62,
+        60,
+        63,
+        60,
+        63,
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.deserialiseEmpty:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        75
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        108
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        98
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.AvroSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        47,
+        51,
+        53,
+        51,
+        52,
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.<init>:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.assignKeySerialiser:(Luk/gov/gchq/gaffer/types/CustomMap;Luk/gov/gchq/gaffer/serialisation/implementation/MapSerialiser;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        153,
+        154,
+        155,
+        156
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.assignValueSerialiser:(Luk/gov/gchq/gaffer/types/CustomMap;Luk/gov/gchq/gaffer/serialisation/implementation/MapSerialiser;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        147,
+        148,
+        149,
+        150
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.deserialise:([B)Luk/gov/gchq/gaffer/types/CustomMap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        126,
+        127,
+        129,
+        130,
+        131
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        172,
+        173,
+        176,
+        177,
+        180,
+        182,
+        183,
+        184,
+        185,
+        186,
+        182
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.getByteMap:()[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        167
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.getInnerMap:(Luk/gov/gchq/gaffer/serialisation/CustomMapSerialiser$CustomMapInterim;)Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        136,
+        137,
+        138,
+        140,
+        141,
+        142,
+        143
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.getKeySerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        159
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.getValueSerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.hashCode:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        191,
+        192,
+        193,
+        194,
+        195,
+        191
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.serialise:(Luk/gov/gchq/gaffer/serialisation/CustomMapSerialiser$CustomMapInterim;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        118,
+        119,
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.serialise:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;[B)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        110,
+        111,
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser$CustomMapInterim.serialise:(Luk/gov/gchq/gaffer/types/CustomMap;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        100,
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.deserialise:([B)Luk/gov/gchq/gaffer/types/CustomMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        54,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.deserialiseEmpty:()Luk/gov/gchq/gaffer/types/CustomMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        71
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        66
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.CustomMapSerialiser.serialise:(Luk/gov/gchq/gaffer/types/CustomMap;)[B" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        44,
+        45,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37,
+        39
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.deserialise:([B)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 9
+      },
+      "lineNumbers" : [
+        75,
+        76,
+        77,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        89,
+        93,
+        94,
+        95,
+        96,
+        100,
+        82,
+        104,
+        106,
+        107,
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.deserialiseEmpty:()Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        135,
+        136,
+        139,
+        140,
+        143,
+        145,
+        146,
+        147,
+        145
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        152,
+        153,
+        154,
+        152
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.FreqMapSerialiser.serialise:(Luk/gov/gchq/gaffer/types/FreqMap;)[B" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        55,
+        58,
+        56,
+        57,
+        59,
+        62,
+        65,
+        63,
+        64,
+        67,
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.deserialise:([B)Luk/gov/gchq/gaffer/types/TypeSubTypeValue;" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        84,
+        85,
+        79,
+        88,
+        89,
+        90,
+        91,
+        93,
+        94,
+        88,
+        97,
+        98,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.deserialiseEmpty:()Luk/gov/gchq/gaffer/types/TypeSubTypeValue;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        110
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeSubTypeValueSerialiser.serialise:(Luk/gov/gchq/gaffer/types/TypeSubTypeValue;)[B" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45,
+        46,
+        48,
+        49,
+        51,
+        54,
+        52,
+        53,
+        56,
+        57,
+        59,
+        62,
+        60,
+        61,
+        64,
+        65,
+        67,
+        70,
+        68,
+        69,
+        72
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.canHandle:(Ljava/lang/Class;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.deserialise:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.deserialise:([B)Luk/gov/gchq/gaffer/types/TypeValue;" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        75,
+        76,
+        70,
+        79,
+        80,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.deserialiseEmpty:()Luk/gov/gchq/gaffer/types/TypeValue;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        102
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        107
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.isConsistent:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.preservesObjectOrdering:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.serialise:(Ljava/lang/Object;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T000",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "uk.gov.gchq.gaffer.serialisation.TypeValueSerialiser.serialise:(Luk/gov/gchq/gaffer/types/TypeValue;)[B" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45,
+        47,
+        48,
+        50,
+        53,
+        51,
+        52,
+        55,
+        56,
+        58,
+        61,
+        59,
+        60,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.<init>:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.<init>:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/util/HashSet;)V" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.<init>:(Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;Ljava/util/Map;)V" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        78,
+        79,
+        80,
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        161,
+        162
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.compute:(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        209
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.computeIfAbsent:(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        201
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.computeIfPresent:(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        205
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.constructorValidation:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        96,
+        97,
+        99,
+        100,
+        102,
+        104
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.containsKey:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        145
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.containsValue:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        165
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.entrySet:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        177
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        226,
+        227,
+        230,
+        231,
+        234,
+        236,
+        237,
+        238,
+        239,
+        240,
+        236
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.forEach:(Ljava/util/function/BiConsumer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        217,
+        218
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.get:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        141
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.getJsonStorage:()Ljava/util/HashSet;" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.getKeySerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        108
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.getMap:()Ljava/util/HashMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.getValueSerialiser:()Luk/gov/gchq/gaffer/serialisation/ToBytesSerialiser;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        245,
+        246,
+        247,
+        248,
+        249,
+        245
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.interimToMap:(Ljava/util/HashSet;)Ljava/util/Map;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.isEmpty:()Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        137
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.keySet:()Ljava/util/Set;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        169
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.merge:(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        213
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        149
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.putAll:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        153,
+        154
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.putIfAbsent:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        185
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.remove:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        157
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.remove:(Ljava/lang/Object;Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        189
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.replace:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        197
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.replace:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        193
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.replaceAll:(Ljava/util/function/BiFunction;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        221,
+        222
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.size:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        132
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        254,
+        255,
+        256,
+        257,
+        258,
+        254
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.CustomMap.values:()Ljava/util/Collection;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        173
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.<init>:()V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        39,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.<init>:(I)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        43,
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.<init>:(IF)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.<init>:(Ljava/util/Map;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        36,
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.getTotal:()Ljava/lang/Long;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.upsert:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        78,
+        79
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.FreqMap.upsert:(Ljava/lang/String;Ljava/lang/Long;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        63,
+        64,
+        65,
+        67,
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        45,
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        49,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.compareTo:(Ljava/lang/Object;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.compareTo:(Luk/gov/gchq/gaffer/types/TypeSubTypeValue;)I" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        118,
+        119,
+        121,
+        122,
+        123,
+        125,
+        126,
+        127,
+        129
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        90,
+        91,
+        94,
+        95,
+        98,
+        100,
+        101,
+        102,
+        103,
+        104,
+        100
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.getSubType:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        56
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.getValue:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        81,
+        82,
+        83,
+        84,
+        85,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.setSubType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        72,
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        60,
+        61
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.setValue:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        68,
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeSubTypeValue.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        109,
+        110,
+        111,
+        112,
+        113,
+        109
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        44,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.<init>:(Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.compareTo:(Ljava/lang/Object;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.compareTo:(Luk/gov/gchq/gaffer/types/TypeValue;)I" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        105,
+        106,
+        108,
+        109,
+        110,
+        112
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        71,
+        72,
+        75,
+        76,
+        79,
+        81,
+        82,
+        83,
+        84,
+        81
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.getValue:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        89,
+        90,
+        91,
+        92,
+        89
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.setValue:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        66,
+        67
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.TypeValue.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        97,
+        98,
+        99,
+        100,
+        97
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42,
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator.<init>:(Ljava/util/function/BinaryOperator;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45,
+        46,
+        47
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator._apply:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator._apply:(Luk/gov/gchq/gaffer/types/CustomMap;Luk/gov/gchq/gaffer/types/CustomMap;)Luk/gov/gchq/gaffer/types/CustomMap;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        69
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator.getBinaryOperator:()Ljava/util/function/BinaryOperator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.binaryoperator.CustomMapAggregator.setBinaryOperator:(Ljava/util/function/BinaryOperator;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50,
+        51
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapAggregator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapAggregator._apply:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapAggregator._apply:(Luk/gov/gchq/gaffer/types/FreqMap;Luk/gov/gchq/gaffer/types/FreqMap;)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        35,
+        36,
+        37,
+        38,
+        40,
+        42,
+        43
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.apply:(Luk/gov/gchq/gaffer/types/FreqMap;)Ljava/lang/Long;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.getKey:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapExtractor.setKey:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        54,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.<init>:(Luk/gov/gchq/koryphe/predicate/KoryphePredicate;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        56,
+        57,
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.apply:(Luk/gov/gchq/gaffer/types/FreqMap;)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        82
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.filterPredicate:(Luk/gov/gchq/gaffer/types/FreqMap;)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        68,
+        70,
+        71,
+        73,
+        74,
+        77
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.getPredicate:()Luk/gov/gchq/koryphe/predicate/KoryphePredicate;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        86
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.lambda$filterPredicate$0:(Ljava/util/Map$Entry;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        73
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.lambda$filterPredicate$1:(Luk/gov/gchq/gaffer/types/FreqMap;Ljava/util/Map$Entry;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.FreqMapPredicator.setPredicate:(Luk/gov/gchq/koryphe/predicate/KoryphePredicate;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        90,
+        91
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.IterableToFreqMap.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.IterableToFreqMap.apply:(Ljava/lang/Iterable;)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.IterableToFreqMap.apply:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeSubTypeValue.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeSubTypeValue.apply:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeSubTypeValue.apply:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Luk/gov/gchq/gaffer/types/TypeSubTypeValue;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeValue.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeValue.apply:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.StringsToTypeValue.apply:(Ljava/lang/String;Ljava/lang/String;)Luk/gov/gchq/gaffer/types/TypeValue;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToFreqMap.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToFreqMap.apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/types/FreqMap;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36,
+        37
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.<init>:(Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/types/TypeSubTypeValue;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.getSubType:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.setSubType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62,
+        63
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeSubTypeValue.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        55
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        40
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34,
+        35,
+        36
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue.apply:(Ljava/lang/Object;)Luk/gov/gchq/gaffer/types/TypeValue;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "uk.gov.gchq.gaffer.types.function.ToTypeValue.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52,
+        53
+      ]
+    }
+  },
+  "validationMetrics" : { },
+  "outputCodes" : [
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"cachedIterable\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"iterable\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"maxSize\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"tooLarge\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.CloseableUtil",
+            "descriptor" : "(Ljava/lang/Object;)V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.CloseableUtil",
+            "descriptor" : "([Ljava/lang/Object;)V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.ClassLoadingMessage\",\"className\":null,\"serializableCause\":{\"cause\":null,\"message\":\"/\",\"originalClassName\":\"java.lang.ClassNotFoundException\",\"stackTrace\":[{\"className\":\"java.lang.Class\",\"fileName\":\"Class.java\",\"lineNumber\":-2,\"methodName\":\"forName0\",\"nativeMethod\":true},{\"className\":\"java.lang.Class\",\"fileName\":\"Class.java\",\"lineNumber\":264,\"methodName\":\"forName\",\"nativeMethod\":false},{\"className\":\"uk.gov.gchq.gaffer.commonutil.CollectionUtil\",\"fileName\":\"CollectionUtil.java\",\"lineNumber\":58,\"methodName\":\"toMapWithClassKeys\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor185\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":590,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.e\",\"fileName\":\"SourceFile\",\"lineNumber\":28,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.CollectionUtil",
+            "descriptor" : "(Ljava/util/Map;Ljava/util/Map;)V",
+            "methodName" : "toMapWithClassKeys"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.DebugUtil",
+            "descriptor" : "()V",
+            "methodName" : "updateDebugMode"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoSuitableConstructorMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/ExecutorService;\",\"simpleNames\":[\"ExecutorService\"]},\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ExecutorService",
+            "descriptor" : "()Ljava/util/concurrent/ScheduledExecutorService;",
+            "methodName" : "getService"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ExecutorService",
+            "descriptor" : "(I)V",
+            "methodName" : "initialise"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.verification.TestExecutionMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"expected: <true> but was: <false>\",\"originalClassName\":\"org.opentest4j.AssertionFailedError\",\"stackTrace\":[{\"className\":\"org.junit.jupiter.api.AssertionFailureBuilder\",\"fileName\":\"AssertionFailureBuilder.java\",\"lineNumber\":151,\"methodName\":\"build\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.api.AssertionFailureBuilder\",\"fileName\":\"AssertionFailureBuilder.java\",\"lineNumber\":132,\"methodName\":\"buildAndThrow\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.api.AssertTrue\",\"fileName\":\"AssertTrue.java\",\"lineNumber\":63,\"methodName\":\"failNotTrue\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.api.AssertTrue\",\"fileName\":\"AssertTrue.java\",\"lineNumber\":36,\"methodName\":\"assertTrue\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.api.AssertTrue\",\"fileName\":\"AssertTrue.java\",\"lineNumber\":31,\"methodName\":\"assertTrue\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.api.Assertions\",\"fileName\":\"Assertions.java\",\"lineNumber\":180,\"methodName\":\"assertTrue\",\"nativeMethod\":false},{\"className\":\"uk.gov.gchq.gaffer.commonutil.ExecutorServiceDiffblueTest2834918467077463580\",\"fileName\":\"ExecutorServiceDiffblueTest2834918467077463580.java\",\"lineNumber\":23,\"methodName\":\"testIsEnabled\",\"nativeMethod\":false},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"nativeMethod\":true},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":62,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.commons.util.ReflectionUtils\",\"fileName\":\"ReflectionUtils.java\",\"lineNumber\":727,\"methodName\":\"invokeMethod\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.MethodInvocation\",\"fileName\":\"MethodInvocation.java\",\"lineNumber\":60,\"methodName\":\"proceed\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation\",\"fileName\":\"InvocationInterceptorChain.java\",\"lineNumber\":131,\"methodName\":\"proceed\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.extension.TimeoutExtension\",\"fileName\":\"TimeoutExtension.java\",\"lineNumber\":156,\"methodName\":\"intercept\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.extension.TimeoutExtension\",\"fileName\":\"TimeoutExtension.java\",\"lineNumber\":147,\"methodName\":\"interceptTestableMethod\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.extension.TimeoutExtension\",\"fileName\":\"TimeoutExtension.java\",\"lineNumber\":86,\"methodName\":\"interceptTestMethod\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall\",\"fileName\":\"InterceptingExecutableInvoker.java\",\"lineNumber\":103,\"methodName\":\"lambda$ofVoidMethod$0\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InterceptingExecutableInvoker\",\"fileName\":\"InterceptingExecutableInvoker.java\",\"lineNumber\":93,\"methodName\":\"lambda$invoke$0\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation\",\"fileName\":\"InvocationInterceptorChain.java\",\"lineNumber\":106,\"methodName\":\"proceed\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InvocationInterceptorChain\",\"fileName\":\"InvocationInterceptorChain.java\",\"lineNumber\":64,\"methodName\":\"proceed\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InvocationInterceptorChain\",\"fileName\":\"InvocationInterceptorChain.java\",\"lineNumber\":45,\"methodName\":\"chainAndInvoke\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InvocationInterceptorChain\",\"fileName\":\"InvocationInterceptorChain.java\",\"lineNumber\":37,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InterceptingExecutableInvoker\",\"fileName\":\"InterceptingExecutableInvoker.java\",\"lineNumber\":92,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.execution.InterceptingExecutableInvoker\",\"fileName\":\"InterceptingExecutableInvoker.java\",\"lineNumber\":86,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor\",\"fileName\":\"TestMethodTestDescriptor.java\",\"lineNumber\":217,\"methodName\":\"lambda$invokeTestMethod$7\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor\",\"fileName\":\"TestMethodTestDescriptor.java\",\"lineNumber\":213,\"methodName\":\"invokeTestMethod\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor\",\"fileName\":\"TestMethodTestDescriptor.java\",\"lineNumber\":138,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor\",\"fileName\":\"TestMethodTestDescriptor.java\",\"lineNumber\":68,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":151,\"methodName\":\"lambda$executeRecursively$6\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":141,\"methodName\":\"lambda$executeRecursively$8\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.Node\",\"fileName\":\"Node.java\",\"lineNumber\":137,\"methodName\":\"around\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":139,\"methodName\":\"lambda$executeRecursively$9\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":138,\"methodName\":\"executeRecursively\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":95,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"java.util.ArrayList\",\"fileName\":\"ArrayList.java\",\"lineNumber\":1259,\"methodName\":\"forEach\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.agent.readwrite.RuntimeWrappers\",\"fileName\":\"RuntimeWrappers.java\",\"lineNumber\":203,\"methodName\":\"iterable$forEach\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService\",\"fileName\":\"SameThreadHierarchicalTestExecutorService.java\",\"lineNumber\":41,\"methodName\":\"invokeAll\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":155,\"methodName\":\"lambda$executeRecursively$6\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":141,\"methodName\":\"lambda$executeRecursively$8\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.Node\",\"fileName\":\"Node.java\",\"lineNumber\":137,\"methodName\":\"around\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":139,\"methodName\":\"lambda$executeRecursively$9\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":138,\"methodName\":\"executeRecursively\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":95,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"java.util.ArrayList\",\"fileName\":\"ArrayList.java\",\"lineNumber\":1259,\"methodName\":\"forEach\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.agent.readwrite.RuntimeWrappers\",\"fileName\":\"RuntimeWrappers.java\",\"lineNumber\":203,\"methodName\":\"iterable$forEach\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService\",\"fileName\":\"SameThreadHierarchicalTestExecutorService.java\",\"lineNumber\":41,\"methodName\":\"invokeAll\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":155,\"methodName\":\"lambda$executeRecursively$6\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":141,\"methodName\":\"lambda$executeRecursively$8\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.Node\",\"fileName\":\"Node.java\",\"lineNumber\":137,\"methodName\":\"around\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":139,\"methodName\":\"lambda$executeRecursively$9\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.ThrowableCollector\",\"fileName\":\"ThrowableCollector.java\",\"lineNumber\":73,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":138,\"methodName\":\"executeRecursively\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.NodeTestTask\",\"fileName\":\"NodeTestTask.java\",\"lineNumber\":95,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService\",\"fileName\":\"SameThreadHierarchicalTestExecutorService.java\",\"lineNumber\":35,\"methodName\":\"submit\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor\",\"fileName\":\"HierarchicalTestExecutor.java\",\"lineNumber\":57,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine\",\"fileName\":\"HierarchicalTestEngine.java\",\"lineNumber\":54,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":147,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":127,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":90,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":55,\"methodName\":\"lambda$execute$0\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":102,\"methodName\":\"withInterceptedStreams\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.EngineExecutionOrchestrator\",\"fileName\":\"EngineExecutionOrchestrator.java\",\"lineNumber\":54,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.DefaultLauncher\",\"fileName\":\"DefaultLauncher.java\",\"lineNumber\":114,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.DefaultLauncher\",\"fileName\":\"DefaultLauncher.java\",\"lineNumber\":86,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher\",\"fileName\":\"DefaultLauncherSession.java\",\"lineNumber\":86,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"org.junit.platform.launcher.core.SessionPerRequestLauncher\",\"fileName\":\"SessionPerRequestLauncher.java\",\"lineNumber\":53,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"com.diffblue.junit5.isolation.ILauncherImpl\",\"fileName\":\"ILauncherImpl.java\",\"lineNumber\":39,\"methodName\":\"execute\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.l.a.c\",\"fileName\":\"SourceFile\",\"lineNumber\":147,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.m.c.f\",\"fileName\":\"SourceFile\",\"lineNumber\":83,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.CompletableFuture$AsyncSupply\",\"fileName\":\"CompletableFuture.java\",\"lineNumber\":1604,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1149,\"methodName\":\"runWorker\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":624,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":750,\"methodName\":\"run\",\"nativeMethod\":false}]},\"testClassJavaCode\":\"File /tmp/ExecutorServiceDiffblueTest2834918467077463580.java, 26 lines:\\n   1: package uk.gov.gchq.gaffer.commonutil;\\n   2: \\n   3: import static org.junit.jupiter.api.Assertions.assertTrue;\\n   4: import com.diffblue.cover.annotations.ManagedByDiffblue;\\n   5: import com.diffblue.cover.annotations.MethodsUnderTest;\\n   6: import org.junit.jupiter.api.DisplayName;\\n   7: import org.junit.jupiter.api.Tag;\\n   8: import org.junit.jupiter.api.Test;\\n   9: \\n  10: class ExecutorServiceDiffblueTest2834918467077463580 {\\n  11:   /**\\n  12:    * Test {@link ExecutorService#isEnabled()}.\\n  13:    *\\n  14:    * <p>Method under test: {@link ExecutorService#isEnabled()}\\n  15:    */\\n  16:   @Test\\n  17:   @DisplayName(\\\"Test isEnabled()\\\")\\n  18:   @Tag(\\\"ContributionFromDiffblue\\\")\\n  19:   @ManagedByDiffblue\\n  20:   @MethodsUnderTest({\\\"boolean ExecutorService.isEnabled()\\\"})\\n  21:   void testIsEnabled() {\\n  22:     // Arrange, Act and Assert\\n  23:     assertTrue(ExecutorService.isEnabled());\\n  24:   }\\n  25: }\\n  26: \\nTest execution failed for method uk.gov.gchq.gaffer.commonutil.ExecutorService.isEnabled\\nFailure reason: expected: <true> but was: <false>\\n\"}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ExecutorService",
+            "descriptor" : "()Z",
+            "methodName" : "isEnabled"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ExecutorService",
+            "descriptor" : "()V",
+            "methodName" : "shutdown"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.LongUtil",
+            "descriptor" : "()J",
+            "methodName" : "getTimeBasedRandom"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"arrayContentDetail\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"arrayEnd\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"arraySeparator\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"arrayStart\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"contentEnd\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"contentStart\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"defaultFullDetail\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"fieldNameValueSeparator\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"fieldSeparator\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"fieldSeparatorAtEnd\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"fieldSeparatorAtStart\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"nullText\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"sizeEndText\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"sizeStartText\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"summaryObjectEndText\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"summaryObjectStartText\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"useClassName\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"useFieldNames\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"useIdentityHashCode\"},{\"className\":{\"descriptor\":\"Lorg/apache/commons/lang3/builder/ToStringStyle;\",\"simpleNames\":[\"ToStringStyle\"]},\"fieldName\":\"useShortClassName\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ToStringBuilder$GafferFullStyle",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.ToStringBuilder$GafferShortStyle",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.elementvisibilityutil.ElementVisibility$Node",
+            "descriptor" : "(Luk/gov/gchq/gaffer/commonutil/elementvisibilityutil/ElementVisibility$Node;)V",
+            "methodName" : "add"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.elementvisibilityutil.ElementVisibility$NodeType",
+            "descriptor" : "(Ljava/lang/String;)Luk/gov/gchq/gaffer/commonutil/elementvisibilityutil/ElementVisibility$NodeType;",
+            "methodName" : "valueOf"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.elementvisibilityutil.ElementVisibility$NodeType",
+            "descriptor" : "()[Luk/gov/gchq/gaffer/commonutil/elementvisibilityutil/ElementVisibility$NodeType;",
+            "methodName" : "values"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/elementvisibilityutil/VisibilityEvaluator;\",\"simpleNames\":[\"VisibilityEvaluator\"]},\"fieldName\":\"auths\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.elementvisibilityutil.VisibilityEvaluator",
+            "descriptor" : "(Luk/gov/gchq/gaffer/commonutil/elementvisibilityutil/Authorisations;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.AlwaysValid",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.BatchedIterable",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.BatchedIterable",
+            "descriptor" : "()Ljava/util/Iterator;",
+            "methodName" : "iterator"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"cachedIterable\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"iterable\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"maxSize\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/CachingIterable;\",\"simpleNames\":[\"CachingIterable\"]},\"fieldName\":\"tooLarge\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.CachingIterable",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.ClassInstantiationMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/ConsumableBlockingQueue;\",\"simpleNames\":[\"ConsumableBlockingQueue\"]},\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.ConsumableBlockingQueue",
+            "descriptor" : "(Ljava/lang/Object;)Z",
+            "methodName" : "equals"
+          },
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.ConsumableBlockingQueue",
+            "descriptor" : "()I",
+            "methodName" : "hashCode"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.ClassInstantiationMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/ConsumableBlockingQueue;\",\"simpleNames\":[\"ConsumableBlockingQueue\"]},\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.ConsumableBlockingQueue",
+            "descriptor" : "(Ljava/lang/Object;)Z",
+            "methodName" : "equals"
+          },
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.ConsumableBlockingQueue",
+            "descriptor" : "()I",
+            "methodName" : "hashCode"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.ClassInstantiationMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/ConsumableBlockingQueue;\",\"simpleNames\":[\"ConsumableBlockingQueue\"]},\"serializableCause\":{\"cause\":null,\"message\":\"Failed to instantiate class under test\",\"originalClassName\":\"com.diffblue.cover.exception.BaseException\",\"stackTrace\":[{\"className\":\"com.diffblue.fuzztest.g.i\",\"fileName\":\"SourceFile\",\"lineNumber\":115,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.a\",\"fileName\":\"SourceFile\",\"lineNumber\":46,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.p\",\"fileName\":\"SourceFile\",\"lineNumber\":128,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.a\",\"fileName\":\"SourceFile\",\"lineNumber\":46,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.ae\",\"fileName\":\"SourceFile\",\"lineNumber\":94,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.af\",\"fileName\":\"SourceFile\",\"lineNumber\":161,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.ae\",\"fileName\":\"SourceFile\",\"lineNumber\":193,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.e\",\"fileName\":\"SourceFile\",\"lineNumber\":500,\"methodName\":\"r\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":164,\"methodName\":\"lambda$callWorkerThread$3\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.ConsumableBlockingQueue",
+            "descriptor" : "()Ljava/util/Iterator;",
+            "methodName" : "iterator"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.StreamIterator",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.UnsupportedOperationException\",\"stackTrace\":[{\"className\":\"uk.gov.gchq.gaffer.commonutil.iterable.EmptyIterator\",\"fileName\":\"EmptyIterator.java\",\"lineNumber\":48,\"methodName\":\"remove\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.agent.readwrite.RuntimeWrappers\",\"fileName\":\"RuntimeWrappers.java\",\"lineNumber\":853,\"methodName\":\"iterator$remove\",\"nativeMethod\":false},{\"className\":\"uk.gov.gchq.gaffer.commonutil.iterable.StreamIterator\",\"fileName\":\"StreamIterator.java\",\"lineNumber\":67,\"methodName\":\"remove\",\"nativeMethod\":false},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"nativeMethod\":true},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":62,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.StreamIterator",
+            "descriptor" : "()V",
+            "methodName" : "remove"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/SuppliedIterable;\",\"simpleNames\":[\"SuppliedIterable\"]},\"fieldName\":\"closeables\"},{\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/iterable/SuppliedIterable;\",\"simpleNames\":[\"SuppliedIterable\"]},\"fieldName\":\"supplier\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.SuppliedIterable",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformIterable",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformIterable",
+            "descriptor" : "()Ljava/lang/Iterable;",
+            "methodName" : "getInput"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformIterable",
+            "descriptor" : "()Luk/gov/gchq/gaffer/commonutil/iterable/Validator;",
+            "methodName" : "getValidator"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformIterable",
+            "descriptor" : "(Ljava/lang/Object;)V",
+            "methodName" : "handleInvalidItem"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformIterable",
+            "descriptor" : "()Ljava/util/Iterator;",
+            "methodName" : "iterator"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformOneToManyIterable",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformOneToManyIterable",
+            "descriptor" : "(Ljava/lang/Object;)V",
+            "methodName" : "handleInvalidItem"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.NonAbstractMethodInAbstractClassMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.iterable.TransformOneToManyIterable",
+            "descriptor" : "()Ljava/util/Iterator;",
+            "methodName" : "iterator"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoSuitableConstructorMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/otel/OtelUtil;\",\"simpleNames\":[\"OtelUtil\"]},\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.otel.OtelUtil",
+            "descriptor" : "()Z",
+            "methodName" : "getOpenTelemetryActive"
+          },
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.otel.OtelUtil",
+            "descriptor" : "(Z)V",
+            "methodName" : "setOpenTelemetryActive"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoSuitableConstructorMessage\",\"className\":{\"descriptor\":\"Luk/gov/gchq/gaffer/commonutil/otel/OtelUtil;\",\"simpleNames\":[\"OtelUtil\"]},\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.otel.OtelUtil",
+            "descriptor" : "()Z",
+            "methodName" : "getOpenTelemetryActive"
+          },
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.otel.OtelUtil",
+            "descriptor" : "(Z)V",
+            "methodName" : "setOpenTelemetryActive"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.otel.OtelUtil",
+            "descriptor" : "(Ljava/lang/String;Ljava/lang/String;)Lio/opentelemetry/api/trace/Span;",
+            "methodName" : "startSpan"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.stream.FlatMapStreamSupplier",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.commonutil.stream.MapStreamSupplier",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.CustomMap",
+            "descriptor" : "()V",
+            "methodName" : "clear"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.IllegalArgumentException\",\"stackTrace\":[{\"className\":\"java.util.HashMap\",\"fileName\":\"HashMap.java\",\"lineNumber\":1290,\"methodName\":\"forEach\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.agent.readwrite.RuntimeWrappers\",\"fileName\":\"RuntimeWrappers.java\",\"lineNumber\":1637,\"methodName\":\"map$forEach\",\"nativeMethod\":false},{\"className\":\"uk.gov.gchq.gaffer.types.CustomMap\",\"fileName\":\"CustomMap.java\",\"lineNumber\":217,\"methodName\":\"forEach\",\"nativeMethod\":false},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"nativeMethod\":true},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":62,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.CustomMap",
+            "descriptor" : "(Ljava/util/function/BiConsumer;)V",
+            "methodName" : "forEach"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.CustomMap",
+            "descriptor" : "(Ljava/util/Map;)V",
+            "methodName" : "putAll"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.IllegalArgumentException\",\"stackTrace\":[{\"className\":\"java.util.HashMap\",\"fileName\":\"HashMap.java\",\"lineNumber\":1306,\"methodName\":\"replaceAll\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.agent.readwrite.RuntimeWrappers\",\"fileName\":\"RuntimeWrappers.java\",\"lineNumber\":1709,\"methodName\":\"map$replaceAll\",\"nativeMethod\":false},{\"className\":\"uk.gov.gchq.gaffer.types.CustomMap\",\"fileName\":\"CustomMap.java\",\"lineNumber\":221,\"methodName\":\"replaceAll\",\"nativeMethod\":false},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"nativeMethod\":true},{\"className\":\"sun.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":62,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.CustomMap",
+            "descriptor" : "(Ljava/util/function/BiFunction;)V",
+            "methodName" : "replaceAll"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.function.FreqMapAggregator",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.function.IterableToFreqMap",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.function.StringsToTypeSubTypeValue",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.function.StringsToTypeValue",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "uk.gov.gchq.gaffer.types.function.ToFreqMap",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    }
+  ]
+}
