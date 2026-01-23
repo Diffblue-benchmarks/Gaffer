@@ -31,3 +31,9 @@ example/real-federated-store/*.properties
 example/real-federated-store/*.json
 example/real-federated-store/*.jar
 .flattened-pom.xml
+
+.diffblue/cache
+**.diffblue/cache
+**/.diffblue/cache
+**/**.diffblue/cache
+**/**/.diffblue/cache
