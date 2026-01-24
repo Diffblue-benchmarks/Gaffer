@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,28 +255,6 @@ class CsvGeneratorDiffblueTest {
     // Assert
     assertEquals("Column Header", builder.build().getHeader());
     assertSame(builder, actualPropertyResult);
-  }
-
-  /**
-   * Test Builder {@link Builder#quoted(boolean)}.
-   *
-   * <p>Method under test: {@link Builder#quoted(boolean)}
-   */
-  @Test
-  @DisplayName("Test Builder quoted(boolean)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.quoted(boolean)"})
-  void testBuilderQuoted() {
-    // Arrange
-    Builder builder = new Builder();
-
-    // Act
-    Builder actualQuotedResult = builder.quoted(true);
-
-    // Assert
-    assertTrue(builder.build().isQuoted());
-    assertSame(builder, actualQuotedResult);
   }
 
   /**

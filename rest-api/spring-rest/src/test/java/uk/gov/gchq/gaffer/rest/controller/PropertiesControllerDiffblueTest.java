@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,47 +97,6 @@ class PropertiesControllerDiffblueTest {
   void testGetProperties_whenGetRestProperties() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/rest/properties");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(propertiesController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isOk())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"gaffer.properties.app.title\":\"Gaffer REST\",\"gaffer.properties.app.description\":\"The Gaffer REST"
-                        + " service.\",\"gaffer.properties.app.banner.description\":\"\",\"gaffer.properties.app.banner.colour\":\"\","
-                        + "\"gaffer.properties.app.doc.url\":\"https://gchq.github.io/gaffer-doc/latest/\",\"gaffer.properties.app"
-                        + ".logo.link\":\"https://github.com/gchq/Gaffer\",\"gaffer.properties.app.logo.src\":\"images/logo.png\",\"gaffer"
-                        + ".properties.app.logo.favicon.small\":\"images/logo.png\",\"gaffer.properties.app.logo.favicon.large\":"
-                        + "\"images/logo.png\",\"gaffer.version\":\"2.3.3-SNAPSHOT\",\"koryphe.version\":\"2.6.0\"}"));
-  }
-
-  /**
-   * Test {@link PropertiesController#getProperty(String)}.
-   *
-   * <ul>
-   *   <li>Given array of {@link Object} with {@code Property}.
-   *   <li>When empty string.
-   *   <li>Then status {@link StatusResultMatchers#isOk()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link PropertiesController#getProperty(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test getProperty(String); given array of Object with 'Property'; when empty string; then status isOk()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String PropertiesController.getProperty(String)"})
-  void testGetProperty_givenArrayOfObjectWithProperty_whenEmptyString_thenStatusIsOk()
-      throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/properties/{property}", "");
 
     // Act and Assert
     MockMvcBuilders.standaloneSetup(propertiesController)

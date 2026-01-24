@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,25 +35,6 @@ class EdgeKryoSerializerDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"void EdgeKryoSerializer.<init>()"})
   void testNewEdgeKryoSerializer() {
-    // Arrange and Act
-    EdgeKryoSerializer actualEdgeKryoSerializer = new EdgeKryoSerializer();
-
-    // Assert
-    assertFalse(actualEdgeKryoSerializer.getAcceptsNull());
-    assertFalse(actualEdgeKryoSerializer.isImmutable());
-  }
-
-  /**
-   * Test new {@link EdgeKryoSerializer} (default constructor).
-   *
-   * <p>Method under test: default or parameterless constructor of {@link EdgeKryoSerializer}
-   */
-  @Test
-  @DisplayName("Test new EdgeKryoSerializer (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void EdgeKryoSerializer.<init>()"})
-  void testNewEdgeKryoSerializer2() {
     // Arrange and Act
     EdgeKryoSerializer actualEdgeKryoSerializer = new EdgeKryoSerializer();
 

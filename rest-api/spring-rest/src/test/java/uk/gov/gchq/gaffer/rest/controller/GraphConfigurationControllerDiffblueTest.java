@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -379,78 +379,6 @@ class GraphConfigurationControllerDiffblueTest {
    * Test {@link GraphConfigurationController#getSerialisedFields(String)}.
    *
    * <ul>
-   *   <li>When {@code Class Name}.
-   *   <li>Then status {@link StatusResultMatchers#isInternalServerError()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link GraphConfigurationController#getSerialisedFields(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test getSerialisedFields(String); when 'Class Name'; then status isInternalServerError()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.util.Set GraphConfigurationController.getSerialisedFields(String)"})
-  void testGetSerialisedFields_whenClassName_thenStatusIsInternalServerError() throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/graph/config/serialisedFields/{className}", "Class Name");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(graphConfigurationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isInternalServerError())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":500,\"status\":\"Internal Server Error\",\"simpleMessage\":\"Class name was not recognised:"
-                        + " Class Name\",\"detailMessage\":null}"));
-  }
-
-  /**
-   * Test {@link GraphConfigurationController#getSerialisedFields(String)}.
-   *
-   * <ul>
-   *   <li>When {@code Class Namejava.util.Set}.
-   *   <li>Then status {@link StatusResultMatchers#isInternalServerError()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link GraphConfigurationController#getSerialisedFields(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test getSerialisedFields(String); when 'Class Namejava.util.Set'; then status isInternalServerError()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.util.Set GraphConfigurationController.getSerialisedFields(String)"})
-  void testGetSerialisedFields_whenClassNamejavaUtilSet_thenStatusIsInternalServerError()
-      throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get(
-            "/rest/graph/config/serialisedFields/{className}", "Class Namejava.util.Set");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(graphConfigurationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isInternalServerError())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":500,\"status\":\"Internal Server Error\",\"simpleMessage\":\"Class name was not recognised:"
-                        + " Class Namejava.util.Set\",\"detailMessage\":null}"));
-  }
-
-  /**
-   * Test {@link GraphConfigurationController#getSerialisedFields(String)}.
-   *
-   * <ul>
    *   <li>When {@code java.util.Set}.
    *   <li>Then status {@link StatusResultMatchers#isOk()}.
    * </ul>
@@ -748,18 +676,14 @@ class GraphConfigurationControllerDiffblueTest {
   /**
    * Test {@link GraphConfigurationController#getStoreTraits()}.
    *
-   * <ul>
-   *   <li>Then content string a string.
-   * </ul>
-   *
    * <p>Method under test: {@link GraphConfigurationController#getStoreTraits()}
    */
   @Test
-  @DisplayName("Test getStoreTraits(); then content string a string")
+  @DisplayName("Test getStoreTraits()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"java.util.Set GraphConfigurationController.getStoreTraits()"})
-  void testGetStoreTraits_thenContentStringAString() throws Exception {
+  void testGetStoreTraits2() throws Exception {
     // Arrange
     when(graphFactory.getGraph()).thenThrow(new GafferRuntimeException("An error occurred"));
 

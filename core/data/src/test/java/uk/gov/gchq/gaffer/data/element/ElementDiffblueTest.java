@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,10 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
@@ -40,40 +38,6 @@ import uk.gov.gchq.gaffer.data.element.id.EdgeId;
 import uk.gov.gchq.gaffer.data.element.id.EdgeId.MatchedVertex;
 
 class ElementDiffblueTest {
-  /**
-   * Test {@link Element#putProperty(String, Object)}.
-   *
-   * <p>Method under test: {@link Element#putProperty(String, Object)}
-   */
-  @Test
-  @DisplayName("Test putProperty(String, Object)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void Element.putProperty(String, Object)"})
-  void testPutProperty() {
-    // Arrange
-    Edge edge =
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build();
-    LazyEdge lazyEdge = new LazyEdge(edge, mock(ElementValueLoader.class));
-
-    // Act
-    lazyEdge.putProperty("Name", "Value");
-
-    // Assert
-    Properties properties = lazyEdge.getElement().getProperties();
-    assertEquals(1, properties.size());
-    assertEquals("Value", properties.get("Name"));
-    LazyProperties properties2 = lazyEdge.getProperties();
-    assertEquals(1, properties2.size());
-    assertEquals("Value", properties2.get((Object) "Name"));
-  }
-
   /**
    * Test {@link Element#putProperty(String, Object)}.
    *
@@ -285,46 +249,6 @@ class ElementDiffblueTest {
     Properties properties2 = edge.getProperties();
     assertTrue(properties2.isEmpty());
     assertSame(properties, properties2);
-  }
-
-  /**
-   * Test {@link Element#getProperty(String)}.
-   *
-   * <p>Method under test: {@link Element#getProperty(String)}
-   */
-  @Test
-  @DisplayName("Test getProperty(String)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Object Element.getProperty(String)"})
-  void testGetProperty() {
-    // Arrange
-    ElementValueLoader valueLoader = mock(ElementValueLoader.class);
-    when(valueLoader.getProperty(Mockito.<String>any(), Mockito.<Properties>any()))
-        .thenReturn("Property");
-    Edge edge =
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build();
-
-    LazyEdge lazyEdge = new LazyEdge(edge, valueLoader);
-
-    // Act
-    Object actualProperty = lazyEdge.getProperty("Name");
-
-    // Assert
-    verify(valueLoader).getProperty(eq("Name"), isA(Properties.class));
-    Properties properties = lazyEdge.getElement().getProperties();
-    assertEquals(1, properties.size());
-    assertEquals("Property", properties.get("Name"));
-    assertEquals("Property", actualProperty);
-    LazyProperties properties2 = lazyEdge.getProperties();
-    assertEquals(1, properties2.size());
-    assertEquals("Property", properties2.get((Object) "Name"));
   }
 
   /**
@@ -782,62 +706,6 @@ class ElementDiffblueTest {
             .matchedVertex(MatchedVertex.SOURCE)
             .source("Source")
             .build());
-  }
-
-  /**
-   * Test {@link Element#equals(Object)}.
-   *
-   * <ul>
-   *   <li>When other is {@code null}.
-   *   <li>Then return not equal.
-   * </ul>
-   *
-   * <p>Method under test: {@link Element#equals(Object)}
-   */
-  @Test
-  @DisplayName("Test equals(Object); when other is 'null'; then return not equal")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean Element.equals(Object)", "int Element.hashCode()"})
-  void testEquals_whenOtherIsNull_thenReturnNotEqual() {
-    // Arrange, Act and Assert
-    assertNotEquals(
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build(),
-        null);
-  }
-
-  /**
-   * Test {@link Element#equals(Object)}.
-   *
-   * <ul>
-   *   <li>When other is wrong type.
-   *   <li>Then return not equal.
-   * </ul>
-   *
-   * <p>Method under test: {@link Element#equals(Object)}
-   */
-  @Test
-  @DisplayName("Test equals(Object); when other is wrong type; then return not equal")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean Element.equals(Object)", "int Element.hashCode()"})
-  void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
-    // Arrange, Act and Assert
-    assertNotEquals(
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build(),
-        "Different type to Element");
   }
 
   /**

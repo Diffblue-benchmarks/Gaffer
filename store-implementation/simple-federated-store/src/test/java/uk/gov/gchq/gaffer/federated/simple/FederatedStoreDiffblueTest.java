@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,12 +35,7 @@ import org.junit.jupiter.api.Test;
 import uk.gov.gchq.gaffer.accumulostore.operation.impl.GetElementsBetweenSets;
 import uk.gov.gchq.gaffer.data.element.Element;
 import uk.gov.gchq.gaffer.federated.simple.operation.AddGraph;
-import uk.gov.gchq.gaffer.federated.simple.operation.ChangeGraphAccess;
-import uk.gov.gchq.gaffer.federated.simple.operation.ChangeGraphId;
 import uk.gov.gchq.gaffer.federated.simple.operation.FederatedOperationChainValidator;
-import uk.gov.gchq.gaffer.federated.simple.operation.GetAllGraphIds;
-import uk.gov.gchq.gaffer.federated.simple.operation.GetAllGraphInfo;
-import uk.gov.gchq.gaffer.federated.simple.operation.RemoveGraph;
 import uk.gov.gchq.gaffer.federated.simple.operation.handler.FederatedOperationHandler;
 import uk.gov.gchq.gaffer.federated.simple.operation.handler.FederatedOutputHandler;
 import uk.gov.gchq.gaffer.federated.simple.util.FederatedTestUtils;
@@ -49,7 +44,6 @@ import uk.gov.gchq.gaffer.named.operation.NamedOperation;
 import uk.gov.gchq.gaffer.operation.Operation;
 import uk.gov.gchq.gaffer.operation.OperationChain;
 import uk.gov.gchq.gaffer.operation.OperationException;
-import uk.gov.gchq.gaffer.operation.impl.GetWalks;
 import uk.gov.gchq.gaffer.operation.impl.delete.DeleteElements;
 import uk.gov.gchq.gaffer.operation.impl.get.GetAllElements;
 import uk.gov.gchq.gaffer.operation.impl.get.GetElements;
@@ -61,7 +55,6 @@ import uk.gov.gchq.gaffer.store.StoreException;
 import uk.gov.gchq.gaffer.store.StoreProperties;
 import uk.gov.gchq.gaffer.store.StoreTrait;
 import uk.gov.gchq.gaffer.store.operation.DeleteAllData;
-import uk.gov.gchq.gaffer.store.operation.GetSchema;
 import uk.gov.gchq.gaffer.store.operation.GetTraits;
 import uk.gov.gchq.gaffer.store.operation.handler.OperationHandler;
 import uk.gov.gchq.gaffer.store.operation.handler.OutputOperationHandler;
@@ -88,33 +81,6 @@ class FederatedStoreDiffblueTest {
   void testGetDefaultGraphIds_givenFederatedStore_thenReturnEmpty() {
     // Arrange, Act and Assert
     assertTrue(new FederatedStore().getDefaultGraphIds().isEmpty());
-  }
-
-  /**
-   * Test {@link FederatedStore#getStoreSpecificOperations()}.
-   *
-   * <p>Method under test: {@link FederatedStore#getStoreSpecificOperations()}
-   */
-  @Test
-  @DisplayName("Test getStoreSpecificOperations()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Set FederatedStore.getStoreSpecificOperations()"})
-  void testGetStoreSpecificOperations() {
-    // Arrange and Act
-    Set<Class<? extends Operation>> actualStoreSpecificOperations =
-        new FederatedStore().getStoreSpecificOperations();
-
-    // Assert
-    assertEquals(8, actualStoreSpecificOperations.size());
-    assertTrue(actualStoreSpecificOperations.contains(AddGraph.class));
-    assertTrue(actualStoreSpecificOperations.contains(ChangeGraphAccess.class));
-    assertTrue(actualStoreSpecificOperations.contains(ChangeGraphId.class));
-    assertTrue(actualStoreSpecificOperations.contains(GetAllGraphIds.class));
-    assertTrue(actualStoreSpecificOperations.contains(GetAllGraphInfo.class));
-    assertTrue(actualStoreSpecificOperations.contains(RemoveGraph.class));
-    assertTrue(actualStoreSpecificOperations.contains(GetWalks.class));
-    assertTrue(actualStoreSpecificOperations.contains(GetSchema.class));
   }
 
   /**

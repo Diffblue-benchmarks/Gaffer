@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package uk.gov.gchq.gaffer.jsonserialisation;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -23,15 +24,30 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonStreamContext;
 import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.core.filter.FilteringGeneratorDelegate;
+import com.fasterxml.jackson.core.filter.TokenFilter;
+import com.fasterxml.jackson.core.filter.TokenFilter.Inclusion;
+import com.fasterxml.jackson.core.io.ContentReference;
+import com.fasterxml.jackson.core.io.IOContext;
+import com.fasterxml.jackson.core.json.JsonWriteContext;
+import com.fasterxml.jackson.core.json.UTF8JsonGenerator;
+import com.fasterxml.jackson.core.json.WriterBasedJsonGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.util.BufferRecycler;
+import com.fasterxml.jackson.core.util.JsonGeneratorDelegate;
+import com.fasterxml.jackson.core.util.JsonParserDelegate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MappingJsonFactory;
 import com.fasterxml.jackson.databind.Module;
@@ -43,9 +59,11 @@ import com.fasterxml.jackson.databind.ext.CoreXMLSerializers;
 import com.fasterxml.jackson.databind.ext.CoreXMLSerializers.XMLGregorianCalendarSerializer;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker.Std;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
 import com.fasterxml.jackson.databind.jsontype.impl.StdSubtypeResolver;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.databind.node.DoubleNode;
 import com.fasterxml.jackson.databind.node.IntNode;
 import com.fasterxml.jackson.databind.node.JsonNodeType;
 import com.fasterxml.jackson.databind.node.MissingNode;
@@ -57,14 +75,19 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.databind.type.PlaceholderForType;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
+import com.fasterxml.jackson.databind.util.TokenBuffer;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import uk.gov.gchq.gaffer.exception.SerialisationException;
 import uk.gov.gchq.gaffer.jsonserialisation.jackson.IterableDeserializer;
@@ -622,6 +645,269 @@ class JSONSerialiserDiffblueTest {
 
     // Act and Assert
     assertTrue(JSONSerialiser.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude()
+      throws SerialisationException {
+    // Arrange
+    DoubleNode n = DoubleNode.valueOf(10.0d);
+    TreeTraversingParser d = new TreeTraversingParser(n);
+    JsonParserDelegate p = new JsonParserDelegate(d);
+    TokenBuffer d2 = new TokenBuffer(p);
+    JsonGeneratorDelegate jsonGenerator = new JsonGeneratorDelegate(d2, true);
+
+    // Act
+    JSONSerialiser.serialise("Object", jsonGenerator, true, "Fields To Exclude");
+
+    // Assert
+    JsonStreamContext outputContext = jsonGenerator.getOutputContext();
+    assertTrue(outputContext instanceof JsonWriteContext);
+    JsonGenerator delegateResult = jsonGenerator.delegate();
+    assertTrue(delegateResult instanceof TokenBuffer);
+    assertNull(jsonGenerator.getPrettyPrinter());
+    assertEquals(1, outputContext.getEntryCount());
+    assertFalse(((TokenBuffer) delegateResult).isEmpty());
+    assertTrue(outputContext.hasCurrentIndex());
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude2() throws IOException {
+    // Arrange
+    JsonGenerator d = mock(JsonGenerator.class);
+    doNothing().when(d).flush();
+    doNothing().when(d).writeNull();
+    JsonGeneratorDelegate d2 = new JsonGeneratorDelegate(d);
+    JsonGeneratorDelegate jsonGenerator = new JsonGeneratorDelegate(d2, true);
+
+    // Act
+    JSONSerialiser.serialise(null, jsonGenerator, false, "Fields To Exclude");
+
+    // Assert that nothing has changed
+    verify(d).flush();
+    verify(d).writeNull();
+    assertTrue(jsonGenerator.delegate() instanceof JsonGeneratorDelegate);
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude3() throws IOException {
+    // Arrange
+    JsonGenerator d = mock(JsonGenerator.class);
+    doThrow(new IllegalArgumentException()).when(d).writeNull();
+    JsonGeneratorDelegate d2 = new JsonGeneratorDelegate(d);
+
+    // Act and Assert
+    assertThrows(
+        SerialisationException.class,
+        () ->
+            JSONSerialiser.serialise(
+                null, new JsonGeneratorDelegate(d2, true), false, "Fields To Exclude"));
+    verify(d).writeNull();
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude4()
+      throws UnsupportedEncodingException, SerialisationException {
+    // Arrange
+    BufferRecycler br = new BufferRecycler();
+    IOContext ctxt = new IOContext(br, ContentReference.unknown(), true);
+    JsonMapper codec = JsonMapper.builder().findAndAddModules().build();
+    JsonGeneratorDelegate jsonGenerator =
+        new JsonGeneratorDelegate(
+            new UTF8JsonGenerator(ctxt, 1, codec, new ByteArrayOutputStream()), true);
+
+    // Act
+    JSONSerialiser.serialise(null, jsonGenerator, false, "Fields To Exclude");
+
+    // Assert
+    JsonStreamContext outputContext = jsonGenerator.getOutputContext();
+    assertTrue(outputContext instanceof JsonWriteContext);
+    assertNull(jsonGenerator.getPrettyPrinter());
+    assertEquals(1, outputContext.getEntryCount());
+    assertTrue(outputContext.hasCurrentIndex());
+    byte[] expectedToByteArrayResult = "null".getBytes("UTF-8");
+    assertArrayEquals(
+        expectedToByteArrayResult,
+        ((ByteArrayOutputStream) jsonGenerator.getOutputTarget()).toByteArray());
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude5()
+      throws SerialisationException {
+    // Arrange
+    BufferRecycler br = new BufferRecycler();
+    IOContext ctxt = new IOContext(br, ContentReference.unknown(), true);
+    JsonMapper codec = JsonMapper.builder().findAndAddModules().build();
+    JsonGeneratorDelegate jsonGenerator =
+        new JsonGeneratorDelegate(
+            new WriterBasedJsonGenerator(ctxt, 1, codec, new StringWriter()), true);
+
+    // Act
+    JSONSerialiser.serialise(null, jsonGenerator, false, "Fields To Exclude");
+
+    // Assert
+    JsonStreamContext outputContext = jsonGenerator.getOutputContext();
+    assertTrue(outputContext instanceof JsonWriteContext);
+    assertEquals("null", jsonGenerator.getOutputTarget().toString());
+    assertNull(jsonGenerator.getPrettyPrinter());
+    assertEquals(1, outputContext.getEntryCount());
+    assertTrue(outputContext.hasCurrentIndex());
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude6()
+      throws SerialisationException {
+    // Arrange
+    TokenFilter tokenFilter = mock(TokenFilter.class);
+    when(tokenFilter.includeNull()).thenReturn(true);
+
+    TokenFilter f = mock(TokenFilter.class);
+    when(f.includeRootValue(ArgumentMatchers.anyInt())).thenReturn(tokenFilter);
+    DoubleNode n = DoubleNode.valueOf(10.0d);
+    TreeTraversingParser d = new TreeTraversingParser(n);
+    JsonParserDelegate p = new JsonParserDelegate(d);
+    TokenBuffer d2 = new TokenBuffer(p);
+    JsonGeneratorDelegate d3 = new JsonGeneratorDelegate(d2, true);
+
+    FilteringGeneratorDelegate d4 =
+        new FilteringGeneratorDelegate(d3, f, Inclusion.ONLY_INCLUDE_ALL, true);
+    JsonGeneratorDelegate jsonGenerator = new JsonGeneratorDelegate(d4, true);
+
+    // Act
+    JSONSerialiser.serialise(null, jsonGenerator, false, "Fields To Exclude");
+
+    // Assert
+    verify(tokenFilter).includeNull();
+    verify(f).includeRootValue(0);
+    JsonGenerator delegateResult = jsonGenerator.delegate();
+    assertTrue(delegateResult instanceof FilteringGeneratorDelegate);
+    JsonGenerator delegateResult2 = ((FilteringGeneratorDelegate) delegateResult).delegate();
+    JsonStreamContext outputContext = delegateResult2.getOutputContext();
+    assertTrue(outputContext instanceof JsonWriteContext);
+    assertTrue(delegateResult2 instanceof JsonGeneratorDelegate);
+    JsonGenerator delegateResult3 = ((JsonGeneratorDelegate) delegateResult2).delegate();
+    assertTrue(delegateResult3 instanceof TokenBuffer);
+    assertEquals(1, outputContext.getEntryCount());
+    assertEquals(1, ((FilteringGeneratorDelegate) delegateResult).getMatchCount());
+    assertFalse(((TokenBuffer) delegateResult3).isEmpty());
+    assertTrue(outputContext.hasCurrentIndex());
+  }
+
+  /**
+   * Test {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean, String[])} with {@code
+   * object}, {@code jsonGenerator}, {@code prettyPrint}, {@code fieldsToExclude}.
+   *
+   * <ul>
+   *   <li>Given {@link IOException#IOException()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link JSONSerialiser#serialise(Object, JsonGenerator, boolean,
+   * String[])}
+   */
+  @Test
+  @DisplayName(
+      "Test serialise(Object, JsonGenerator, boolean, String[]) with 'object', 'jsonGenerator', 'prettyPrint', 'fieldsToExclude'; given IOException()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void JSONSerialiser.serialise(Object, JsonGenerator, boolean, String[])"})
+  void testSerialiseWithObjectJsonGeneratorPrettyPrintFieldsToExclude_givenIOException()
+      throws IOException {
+    // Arrange
+    JsonGenerator d = mock(JsonGenerator.class);
+    doThrow(new IOException()).when(d).writeNull();
+    JsonGeneratorDelegate d2 = new JsonGeneratorDelegate(d);
+    JsonGeneratorDelegate d3 = new JsonGeneratorDelegate(d2, true);
+
+    TokenFilter tokenFilter = mock(TokenFilter.class);
+    when(tokenFilter.includeNull()).thenReturn(true);
+
+    TokenFilter f = mock(TokenFilter.class);
+    when(f.includeRootValue(ArgumentMatchers.anyInt())).thenReturn(tokenFilter);
+
+    FilteringGeneratorDelegate d4 =
+        new FilteringGeneratorDelegate(d3, f, Inclusion.ONLY_INCLUDE_ALL, true);
+
+    // Act and Assert
+    assertThrows(
+        SerialisationException.class,
+        () ->
+            JSONSerialiser.serialise(
+                null, new JsonGeneratorDelegate(d4, true), false, "Fields To Exclude"));
+    verify(d).writeNull();
+    verify(tokenFilter).includeNull();
+    verify(f).includeRootValue(0);
   }
 
   /**

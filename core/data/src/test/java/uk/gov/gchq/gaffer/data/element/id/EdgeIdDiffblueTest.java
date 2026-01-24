@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,53 +33,6 @@ import uk.gov.gchq.gaffer.data.element.id.ElementId.Matches;
 
 class EdgeIdDiffblueTest {
   /**
-   * Test {@link EdgeId#isDirected()}.
-   *
-   * <ul>
-   *   <li>Given {@link Edge#Edge(String)} with {@code Group}.
-   *   <li>Then return {@code false}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EdgeId#isDirected()}
-   */
-  @Test
-  @DisplayName("Test isDirected(); given Edge(String) with 'Group'; then return 'false'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean EdgeId.isDirected()"})
-  void testIsDirected_givenEdgeWithGroup_thenReturnFalse() {
-    // Arrange, Act and Assert
-    assertFalse(new Edge("Group").isDirected());
-  }
-
-  /**
-   * Test {@link EdgeId#isDirected()}.
-   *
-   * <ul>
-   *   <li>Then return {@code true}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EdgeId#isDirected()}
-   */
-  @Test
-  @DisplayName("Test isDirected(); then return 'true'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean EdgeId.isDirected()"})
-  void testIsDirected_thenReturnTrue() {
-    // Arrange, Act and Assert
-    assertTrue(
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build()
-            .isDirected());
-  }
-
-  /**
    * Test {@link EdgeId#isUndirected()}.
    *
    * <ul>
@@ -104,197 +57,6 @@ class EdgeIdDiffblueTest {
             .source("Source")
             .build()
             .isUndirected());
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@code DESTINATION}.
-   *   <li>Then return {@code false}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'DESTINATION'; then return 'false'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenDestination_thenReturnFalse() {
-    // Arrange, Act and Assert
-    assertFalse(MatchedVertex.isEqual(MatchedVertex.DESTINATION, null));
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@code DESTINATION}.
-   *   <li>Then return {@code false}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'DESTINATION'; then return 'false'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenDestination_thenReturnFalse2() {
-    // Arrange, Act and Assert
-    assertFalse(MatchedVertex.isEqual(null, MatchedVertex.DESTINATION));
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@code SOURCE}.
-   *   <li>Then return {@code false}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'SOURCE'; then return 'false'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenSource_thenReturnFalse() {
-    // Arrange, Act and Assert
-    assertFalse(MatchedVertex.isEqual(MatchedVertex.DESTINATION, MatchedVertex.SOURCE));
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@code SOURCE}.
-   *   <li>Then return {@code true}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'SOURCE'; then return 'true'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenSource_thenReturnTrue() {
-    // Arrange, Act and Assert
-    assertTrue(MatchedVertex.isEqual(MatchedVertex.SOURCE, MatchedVertex.SOURCE));
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@link MatchedVertex#SOURCE}.
-   *   <li>Then return {@code true}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when SOURCE; then return 'true'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenSource_thenReturnTrue2() {
-    // Arrange, Act and Assert
-    assertTrue(MatchedVertex.isEqual(MatchedVertex.SOURCE, null));
-  }
-
-  /**
-   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
-   *
-   * <ul>
-   *   <li>When {@link MatchedVertex#SOURCE}.
-   *   <li>Then return {@code true}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
-   */
-  @Test
-  @DisplayName(
-      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when SOURCE; then return 'true'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
-  void testMatchedVertexIsEqual_whenSource_thenReturnTrue3() {
-    // Arrange, Act and Assert
-    assertTrue(MatchedVertex.isEqual(null, MatchedVertex.SOURCE));
-  }
-
-  /**
-   * Test {@link EdgeId#setIdentifiers(Object, Object, DirectedType)} with {@code Object}, {@code
-   * Object}, {@code DirectedType}.
-   *
-   * <p>Method under test: {@link EdgeId#setIdentifiers(Object, Object, DirectedType)}
-   */
-  @Test
-  @DisplayName(
-      "Test setIdentifiers(Object, Object, DirectedType) with 'Object', 'Object', 'DirectedType'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void EdgeId.setIdentifiers(Object, Object, DirectedType)"})
-  void testSetIdentifiersWithObjectObjectDirectedType() {
-    // Arrange
-    Edge edge =
-        new Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build();
-
-    // Act
-    edge.setIdentifiers("Source", "Destination", DirectedType.EITHER);
-
-    // Assert that nothing has changed
-    assertEquals("Source", edge.getSource());
-    assertEquals("Source", edge.getMatchedVertexValue());
-    assertEquals(DirectedType.DIRECTED, edge.getDirectedType());
-    assertFalse(edge.isUndirected());
-    assertTrue(edge.isDirected());
-  }
-
-  /**
-   * Test {@link EdgeId#setIdentifiers(Object, Object, DirectedType)} with {@code Object}, {@code
-   * Object}, {@code DirectedType}.
-   *
-   * <ul>
-   *   <li>Then {@link Edge#Edge(String)} with {@code Group} Source is {@code Source}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EdgeId#setIdentifiers(Object, Object, DirectedType)}
-   */
-  @Test
-  @DisplayName(
-      "Test setIdentifiers(Object, Object, DirectedType) with 'Object', 'Object', 'DirectedType'; then Edge(String) with 'Group' Source is 'Source'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void EdgeId.setIdentifiers(Object, Object, DirectedType)"})
-  void testSetIdentifiersWithObjectObjectDirectedType_thenEdgeWithGroupSourceIsSource() {
-    // Arrange
-    Edge edge = new Edge("Group");
-
-    // Act
-    edge.setIdentifiers("Source", "Destination", DirectedType.EITHER);
-
-    // Assert
-    assertEquals("Source", edge.getSource());
-    assertEquals("Source", edge.getMatchedVertexValue());
-    assertEquals(DirectedType.DIRECTED, edge.getDirectedType());
-    assertFalse(edge.isUndirected());
-    assertTrue(edge.isDirected());
   }
 
   /**
@@ -556,7 +318,7 @@ class EdgeIdDiffblueTest {
   @DisplayName("Test getMatchedVertexValue(); then return 'Destination'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"Object EdgeId.getMatchedVertexValue()"})
+  @MethodsUnderTest({"java.lang.Object EdgeId.getMatchedVertexValue()"})
   void testGetMatchedVertexValue_thenReturnDestination() {
     // Arrange
     Edge edge =
@@ -580,7 +342,7 @@ class EdgeIdDiffblueTest {
   @DisplayName("Test getAdjacentMatchedVertexValue(); then return 'Source'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"Object EdgeId.getAdjacentMatchedVertexValue()"})
+  @MethodsUnderTest({"java.lang.Object EdgeId.getAdjacentMatchedVertexValue()"})
   void testGetAdjacentMatchedVertexValue_thenReturnSource() {
     // Arrange
     Edge edge =
@@ -589,5 +351,131 @@ class EdgeIdDiffblueTest {
 
     // Act and Assert
     assertEquals("Source", edge.getAdjacentMatchedVertexValue());
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@code DESTINATION}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'DESTINATION'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenDestination_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse(MatchedVertex.isEqual(MatchedVertex.DESTINATION, null));
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@code DESTINATION}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'DESTINATION'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenDestination_thenReturnFalse2() {
+    // Arrange, Act and Assert
+    assertFalse(MatchedVertex.isEqual(null, MatchedVertex.DESTINATION));
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@code SOURCE}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'SOURCE'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenSource_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse(MatchedVertex.isEqual(MatchedVertex.DESTINATION, MatchedVertex.SOURCE));
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@code SOURCE}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when 'SOURCE'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenSource_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue(MatchedVertex.isEqual(MatchedVertex.SOURCE, MatchedVertex.SOURCE));
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@link MatchedVertex#SOURCE}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when SOURCE; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenSource_thenReturnTrue2() {
+    // Arrange, Act and Assert
+    assertTrue(MatchedVertex.isEqual(MatchedVertex.SOURCE, null));
+  }
+
+  /**
+   * Test MatchedVertex {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}.
+   *
+   * <ul>
+   *   <li>When {@link MatchedVertex#SOURCE}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MatchedVertex#isEqual(MatchedVertex, MatchedVertex)}
+   */
+  @Test
+  @DisplayName(
+      "Test MatchedVertex isEqual(MatchedVertex, MatchedVertex); when SOURCE; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"boolean MatchedVertex.isEqual(MatchedVertex, MatchedVertex)"})
+  void testMatchedVertexIsEqual_whenSource_thenReturnTrue3() {
+    // Arrange, Act and Assert
+    assertTrue(MatchedVertex.isEqual(null, MatchedVertex.SOURCE));
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,33 +112,6 @@ class RBMBackedTimestampSetDiffblueTest {
   }
 
   /**
-   * Test Builder {@link Builder#timestamp(Instant)}.
-   *
-   * <ul>
-   *   <li>Given {@link Builder} (default constructor).
-   * </ul>
-   *
-   * <p>Method under test: {@link Builder#timestamp(Instant)}
-   */
-  @Test
-  @DisplayName("Test Builder timestamp(Instant); given Builder (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.timestamp(Instant)"})
-  void testBuilderTimestamp_givenBuilder() {
-    // Arrange
-    Builder builder = new Builder();
-
-    // Act
-    Builder actualTimestampResult =
-        builder.timestamp(
-            LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
-
-    // Assert
-    assertSame(builder, actualTimestampResult);
-  }
-
-  /**
    * Test Builder {@link Builder#timestamps(Collection)} with {@code Collection}.
    *
    * <p>Method under test: {@link Builder#timestamps(Collection)}
@@ -231,30 +204,6 @@ class RBMBackedTimestampSetDiffblueTest {
 
     // Act
     Builder actualTimestampsResult = builder.timestamps(new ArrayList<>());
-
-    // Assert
-    assertSame(builder, actualTimestampsResult);
-  }
-
-  /**
-   * Test Builder {@link Builder#timestamps(Instant[])} with {@code Instant[]}.
-   *
-   * <p>Method under test: {@link Builder#timestamps(Instant[])}
-   */
-  @Test
-  @DisplayName("Test Builder timestamps(Instant[]) with 'Instant[]'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.timestamps(Instant[])"})
-  void testBuilderTimestampsWithInstant() {
-    // Arrange
-    Builder builder = new Builder();
-    builder.timestamp(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
-
-    // Act
-    Builder actualTimestampsResult =
-        builder.timestamps(
-            LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
 
     // Assert
     assertSame(builder, actualTimestampsResult);

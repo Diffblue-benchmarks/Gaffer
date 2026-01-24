@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,10 @@ import uk.gov.gchq.gaffer.accumulostore.key.AccumuloElementConverter;
 import uk.gov.gchq.gaffer.accumulostore.key.MockAccumuloElementConverter;
 import uk.gov.gchq.gaffer.commonutil.pair.Pair;
 import uk.gov.gchq.gaffer.data.element.Edge;
+import uk.gov.gchq.gaffer.data.element.Edge.Builder;
 import uk.gov.gchq.gaffer.data.element.Element;
+import uk.gov.gchq.gaffer.data.element.id.EdgeId;
+import uk.gov.gchq.gaffer.data.element.id.EdgeId.MatchedVertex;
 
 class ElementConverterFunctionDiffblueTest {
   /**
@@ -69,7 +72,14 @@ class ElementConverterFunctionDiffblueTest {
     Pair<Key, Key> pair = new Pair<>(key, new Key());
     when(mockAccumuloElementConverter.getKeysFromElement(Mockito.<Element>any())).thenReturn(pair);
     when(converterBroadcast.value()).thenReturn(mockAccumuloElementConverter);
-    Edge e = new Edge("Group");
+    Edge e =
+        new Builder()
+            .dest("Dest")
+            .directed(true)
+            .group("Group")
+            .matchedVertex(MatchedVertex.SOURCE)
+            .source("Source")
+            .build();
 
     // Act
     Iterator<Tuple2<Key, Value>> actualCallResult =
@@ -119,7 +129,14 @@ class ElementConverterFunctionDiffblueTest {
 
     // Act
     Iterator<Tuple2<Key, Value>> actualCallResult =
-        elementConverterFunction.call(new Edge("Group"));
+        elementConverterFunction.call(
+            new Builder()
+                .dest("Dest")
+                .directed(true)
+                .group("Group")
+                .matchedVertex(MatchedVertex.SOURCE)
+                .source("Source")
+                .build());
 
     // Assert
     verify(converterBroadcast, atLeast(1)).value();

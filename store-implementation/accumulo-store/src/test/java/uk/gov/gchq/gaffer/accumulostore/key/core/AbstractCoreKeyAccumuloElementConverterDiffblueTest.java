@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1435,19 +1435,17 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
    * Test {@link AbstractCoreKeyAccumuloElementConverter#serialiseVertex(Object)}.
    *
    * <ul>
-   *   <li>Given {@link Schema} {@link Schema#getVertexSerialiser()} return {@link AvroSerialiser}
-   *       (default constructor).
+   *   <li>Then return nineteenth element is sixteen.
    * </ul>
    *
    * <p>Method under test: {@link AbstractCoreKeyAccumuloElementConverter#serialiseVertex(Object)}
    */
   @Test
-  @DisplayName(
-      "Test serialiseVertex(Object); given Schema getVertexSerialiser() return AvroSerialiser (default constructor)")
+  @DisplayName("Test serialiseVertex(Object); then return nineteenth element is sixteen")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"byte[] AbstractCoreKeyAccumuloElementConverter.serialiseVertex(Object)"})
-  void testSerialiseVertex_givenSchemaGetVertexSerialiserReturnAvroSerialiser() {
+  void testSerialiseVertex_thenReturnNineteenthElementIsSixteen() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
@@ -1455,12 +1453,39 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
     when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
 
     // Act
-    new ByteEntityAccumuloElementConverter(schema).serialiseVertex("Vertex");
+    byte[] actualSerialiseVertexResult =
+        new ByteEntityAccumuloElementConverter(schema).serialiseVertex("Vertex");
 
     // Assert
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
+    assertEquals((byte) 16, actualSerialiseVertexResult[18]);
+    assertEquals((byte) 1, actualSerialiseVertexResult[3]);
+    assertEquals((byte) 22, actualSerialiseVertexResult[6]);
+    assertEquals((byte) 2, actualSerialiseVertexResult[4]);
+    assertEquals((byte) 2, actualSerialiseVertexResult[5]);
+    assertEquals(70, actualSerialiseVertexResult.length);
+    assertEquals('.', actualSerialiseVertexResult[11]);
+    assertEquals('O', actualSerialiseVertexResult[0]);
+    assertEquals('"', actualSerialiseVertexResult[19]);
+    assertEquals('a', actualSerialiseVertexResult[17]);
+    assertEquals('a', actualSerialiseVertexResult[7]);
+    assertEquals('b', actualSerialiseVertexResult[1]);
+    assertEquals('c', actualSerialiseVertexResult[13]);
+    assertEquals('e', actualSerialiseVertexResult[15]);
+    assertEquals('h', actualSerialiseVertexResult[14]);
+    assertEquals('i', actualSerialiseVertexResult[23]);
+    assertEquals('j', actualSerialiseVertexResult[2]);
+    assertEquals('m', actualSerialiseVertexResult[Short.SIZE]);
+    assertEquals('n', actualSerialiseVertexResult[24]);
+    assertEquals('o', actualSerialiseVertexResult[10]);
+    assertEquals('r', actualSerialiseVertexResult[22]);
+    assertEquals('r', actualSerialiseVertexResult[9]);
+    assertEquals('s', actualSerialiseVertexResult[12]);
+    assertEquals('s', actualSerialiseVertexResult[20]);
+    assertEquals('t', actualSerialiseVertexResult[21]);
+    assertEquals('v', actualSerialiseVertexResult[8]);
   }
 
   /**
@@ -1600,19 +1625,14 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
   /**
    * Test {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedSource(Edge)}.
    *
-   * <ul>
-   *   <li>Given {@code Source}.
-   *   <li>Then calls {@link Edge#getSource()}.
-   * </ul>
-   *
    * <p>Method under test: {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedSource(Edge)}
    */
   @Test
-  @DisplayName("Test getSerialisedSource(Edge); given 'Source'; then calls getSource()")
+  @DisplayName("Test getSerialisedSource(Edge)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"byte[] AbstractCoreKeyAccumuloElementConverter.getSerialisedSource(Edge)"})
-  void testGetSerialisedSource_givenSource_thenCallsGetSource() {
+  void testGetSerialisedSource() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
@@ -1621,14 +1641,17 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
     ByteEntityAccumuloElementConverter byteEntityAccumuloElementConverter =
         new ByteEntityAccumuloElementConverter(schema);
 
-    Edge edge = mock(Edge.class);
-    when(edge.getSource()).thenReturn("Source");
-
     // Act
-    byteEntityAccumuloElementConverter.getSerialisedSource(edge);
+    byteEntityAccumuloElementConverter.getSerialisedSource(
+        new Builder()
+            .dest("Dest")
+            .directed(true)
+            .group("Group")
+            .matchedVertex(MatchedVertex.SOURCE)
+            .source("Source")
+            .build());
 
     // Assert
-    verify(edge).getSource();
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
@@ -1638,37 +1661,34 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
    * Test {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedSource(Edge)}.
    *
    * <ul>
+   *   <li>Given {@code Source}.
    *   <li>Then return forty-seventh element is fourteen.
    * </ul>
    *
    * <p>Method under test: {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedSource(Edge)}
    */
   @Test
-  @DisplayName("Test getSerialisedSource(Edge); then return forty-seventh element is fourteen")
+  @DisplayName(
+      "Test getSerialisedSource(Edge); given 'Source'; then return forty-seventh element is fourteen")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"byte[] AbstractCoreKeyAccumuloElementConverter.getSerialisedSource(Edge)"})
-  void testGetSerialisedSource_thenReturnFortySeventhElementIsFourteen() {
+  void testGetSerialisedSource_givenSource_thenReturnFortySeventhElementIsFourteen() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
     when(schema.getAggregatedGroups()).thenReturn(new ArrayList<>());
     when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-    ByteEntityAccumuloElementConverter byteEntityAccumuloElementConverter =
-        new ByteEntityAccumuloElementConverter(schema);
+
+    Edge edge = mock(Edge.class);
+    when(edge.getSource()).thenReturn("Source");
 
     // Act
     byte[] actualSerialisedSource =
-        byteEntityAccumuloElementConverter.getSerialisedSource(
-            new Builder()
-                .dest("Dest")
-                .directed(true)
-                .group("Group")
-                .matchedVertex(MatchedVertex.SOURCE)
-                .source("Source")
-                .build());
+        new ByteEntityAccumuloElementConverter(schema).getSerialisedSource(edge);
 
     // Assert
+    verify(edge).getSource();
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
@@ -1754,71 +1774,17 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
   /**
    * Test {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedDestination(Edge)}.
    *
-   * <ul>
-   *   <li>Given {@code Destination}.
-   *   <li>Then return array length is seventy-five.
-   * </ul>
-   *
    * <p>Method under test: {@link
    * AbstractCoreKeyAccumuloElementConverter#getSerialisedDestination(Edge)}
    */
   @Test
-  @DisplayName(
-      "Test getSerialisedDestination(Edge); given 'Destination'; then return array length is seventy-five")
+  @DisplayName("Test getSerialisedDestination(Edge)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "byte[] AbstractCoreKeyAccumuloElementConverter.getSerialisedDestination(Edge)"
   })
-  void testGetSerialisedDestination_givenDestination_thenReturnArrayLengthIsSeventyFive() {
-    // Arrange
-    Schema schema = mock(Schema.class);
-    when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
-    when(schema.getAggregatedGroups()).thenReturn(new ArrayList<>());
-    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-    ByteEntityAccumuloElementConverter byteEntityAccumuloElementConverter =
-        new ByteEntityAccumuloElementConverter(schema);
-
-    Edge edge = mock(Edge.class);
-    when(edge.getDestination()).thenReturn("Destination");
-
-    // Act
-    byte[] actualSerialisedDestination =
-        byteEntityAccumuloElementConverter.getSerialisedDestination(edge);
-
-    // Assert
-    verify(edge).getDestination();
-    verify(schema).getAggregatedGroups();
-    verify(schema).getConfig("timestampProperty");
-    verify(schema).getVertexSerialiser();
-    assertEquals(75, actualSerialisedDestination.length);
-    assertEquals('a', actualSerialisedDestination[54]);
-    assertEquals('i', actualSerialisedDestination[52]);
-    assertEquals('i', actualSerialisedDestination[56]);
-    assertEquals('n', actualSerialisedDestination[53]);
-    assertEquals('n', actualSerialisedDestination[58]);
-    assertEquals('o', actualSerialisedDestination[57]);
-    assertEquals('t', actualSerialisedDestination[55]);
-  }
-
-  /**
-   * Test {@link AbstractCoreKeyAccumuloElementConverter#getSerialisedDestination(Edge)}.
-   *
-   * <ul>
-   *   <li>Then return array length is sixty-eight.
-   * </ul>
-   *
-   * <p>Method under test: {@link
-   * AbstractCoreKeyAccumuloElementConverter#getSerialisedDestination(Edge)}
-   */
-  @Test
-  @DisplayName("Test getSerialisedDestination(Edge); then return array length is sixty-eight")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "byte[] AbstractCoreKeyAccumuloElementConverter.getSerialisedDestination(Edge)"
-  })
-  void testGetSerialisedDestination_thenReturnArrayLengthIsSixtyEight() {
+  void testGetSerialisedDestination() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
@@ -1828,21 +1794,19 @@ class AbstractCoreKeyAccumuloElementConverterDiffblueTest {
         new ByteEntityAccumuloElementConverter(schema);
 
     // Act
-    byte[] actualSerialisedDestination =
-        byteEntityAccumuloElementConverter.getSerialisedDestination(
-            new Builder()
-                .dest("Dest")
-                .directed(true)
-                .group("Group")
-                .matchedVertex(MatchedVertex.SOURCE)
-                .source("Source")
-                .build());
+    byteEntityAccumuloElementConverter.getSerialisedDestination(
+        new Builder()
+            .dest("Dest")
+            .directed(true)
+            .group("Group")
+            .matchedVertex(MatchedVertex.SOURCE)
+            .source("Source")
+            .build());
 
     // Assert
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
-    assertEquals(68, actualSerialisedDestination.length);
   }
 
   /**

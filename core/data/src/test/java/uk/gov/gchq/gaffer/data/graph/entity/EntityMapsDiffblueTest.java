@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
@@ -96,33 +93,6 @@ class EntityMapsDiffblueTest {
   void testSize() {
     // Arrange, Act and Assert
     assertEquals(0, new SimpleEntityMaps().size());
-  }
-
-  /**
-   * Test {@link EntityMaps#empty()}.
-   *
-   * <ul>
-   *   <li>Given {@link EntityMaps} {@link EntityMaps#empty()} return {@code false}.
-   *   <li>Then calls {@link EntityMaps#empty()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EntityMaps#empty()}
-   */
-  @Test
-  @DisplayName("Test empty(); given EntityMaps empty() return 'false'; then calls empty()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean EntityMaps.empty()"})
-  void testEmpty_givenEntityMapsEmptyReturnFalse_thenCallsEmpty() {
-    // Arrange
-    EntityMaps entityMaps = mock(EntityMaps.class);
-    when(entityMaps.empty()).thenReturn(false);
-
-    // Act
-    entityMaps.empty();
-
-    // Assert
-    verify(entityMaps).empty();
   }
 
   /**

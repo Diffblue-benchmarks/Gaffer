@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package uk.gov.gchq.gaffer.spark.operation.dataframe.converter.property.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -25,6 +26,7 @@ import static org.mockito.Mockito.when;
 import com.clearspring.analytics.stream.cardinality.HyperLogLogPlus;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import org.apache.spark.sql.types.DataType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -76,6 +78,26 @@ class HyperLogLogPlusConverterDiffblueTest {
 
     // Act and Assert
     assertFalse(hyperLogLogPlusConverter.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link HyperLogLogPlusConverter#convertedType()}.
+   *
+   * <p>Method under test: {@link HyperLogLogPlusConverter#convertedType()}
+   */
+  @Test
+  @DisplayName("Test convertedType()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"DataType HyperLogLogPlusConverter.convertedType()"})
+  void testConvertedType() {
+    // Arrange and Act
+    DataType actualConvertedTypeResult = new HyperLogLogPlusConverter().convertedType();
+
+    // Assert
+    assertSame(
+        ((org.apache.spark.sql.types.LongType$) actualConvertedTypeResult).MODULE$,
+        actualConvertedTypeResult);
   }
 
   /**

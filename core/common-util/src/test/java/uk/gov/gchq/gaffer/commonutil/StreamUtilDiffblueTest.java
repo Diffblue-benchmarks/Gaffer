@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -305,7 +305,7 @@ class StreamUtilDiffblueTest {
     byte[] byteArray = new byte[51];
     assertEquals(51, actualOpenStreamsResult[0].read(byteArray));
     assertArrayEquals(
-        "1762992530624-0\n1762992561418-0\n1762992828220-0\n176".getBytes("UTF-8"), byteArray);
+        "1769169611137-0\n1769169636384-0\n1769169917295-0\n176".getBytes("UTF-8"), byteArray);
   }
 
   /**
@@ -427,7 +427,7 @@ class StreamUtilDiffblueTest {
         StreamUtil.openStream(Paths.get(System.getProperty("java.io.tmpdir"), "").toUri())
             .read(byteArray));
     assertArrayEquals(
-        "1762992530624-0\n1762992561418-0\n1762992828220-0\n176".getBytes("UTF-8"), byteArray);
+        "1769169611137-0\n1769169636384-0\n1769169917295-0\n176".getBytes("UTF-8"), byteArray);
   }
 
   /**

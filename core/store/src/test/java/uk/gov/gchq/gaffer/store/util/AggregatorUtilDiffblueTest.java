@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -31,6 +35,7 @@ import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -43,8 +48,9 @@ import org.mockito.Mockito;
 import uk.gov.gchq.gaffer.data.element.Edge;
 import uk.gov.gchq.gaffer.data.element.Edge.Builder;
 import uk.gov.gchq.gaffer.data.element.Element;
-import uk.gov.gchq.gaffer.data.element.Entity;
+import uk.gov.gchq.gaffer.data.element.ElementValueLoader;
 import uk.gov.gchq.gaffer.data.element.GroupedProperties;
+import uk.gov.gchq.gaffer.data.element.LazyEdge;
 import uk.gov.gchq.gaffer.data.element.function.ElementAggregator;
 import uk.gov.gchq.gaffer.data.element.id.EdgeId;
 import uk.gov.gchq.gaffer.data.element.id.EdgeId.MatchedVertex;
@@ -1221,48 +1227,234 @@ class AggregatorUtilDiffblueTest {
   /**
    * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
    *
-   * <ul>
-   *   <li>When {@link Entity.Builder} (default constructor) group {@code Group} vertex {@code
-   *       Vertex} build.
-   * </ul>
+   * <p>Method under test: {@link ToElementKey#apply(Element)}
+   */
+  @Test
+  @DisplayName("Test ToElementKey apply(Element) with 'Element'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
+  void testToElementKeyApplyWithElement() {
+    // Arrange
+    HashSet<String> stringSet = new HashSet<>();
+    stringSet.add("foo");
+
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", stringSet);
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Element element = mock(Element.class);
+    when(element.getProperty(Mockito.<String>any())).thenReturn("Property");
+    Edge edge =
+        new Builder()
+            .dest("Dest")
+            .directed(true)
+            .group("Group")
+            .matchedVertex(MatchedVertex.SOURCE)
+            .source("Source")
+            .build();
+    LazyEdge lazyEdge = new LazyEdge(edge, mock(ElementValueLoader.class));
+    when(element.emptyClone()).thenReturn(lazyEdge);
+    when(element.getGroup()).thenReturn("foo");
+
+    // Act
+    Element actualApplyResult = toElementKey.apply(element);
+
+    // Assert
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    verify(element).getProperty("foo");
+    assertSame(lazyEdge, actualApplyResult);
+  }
+
+  /**
+   * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
    *
    * <p>Method under test: {@link ToElementKey#apply(Element)}
    */
   @Test
-  @DisplayName(
-      "Test ToElementKey apply(Element) with 'Element'; when Builder (default constructor) group 'Group' vertex 'Vertex' build")
+  @DisplayName("Test ToElementKey apply(Element) with 'Element'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
-  void testToElementKeyApplyWithElement_whenBuilderGroupGroupVertexVertexBuild() {
+  void testToElementKeyApplyWithElement2() {
     // Arrange
-    ToElementKey toElementKey = new ToElementKey(new HashMap<>());
+    HashSet<String> stringSet = new HashSet<>();
+    stringSet.add("foo");
+
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", stringSet);
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Edge edge = mock(Edge.class);
+    doThrow(new IllegalArgumentException())
+        .when(edge)
+        .putProperty(Mockito.<String>any(), Mockito.<Object>any());
+
+    Element element = mock(Element.class);
+    when(element.getProperty(Mockito.<String>any())).thenReturn("Property");
+    when(element.emptyClone()).thenReturn(edge);
+    when(element.getGroup()).thenReturn("foo");
 
     // Act and Assert
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> toElementKey.apply(new Entity.Builder().group("Group").vertex("Vertex").build()));
+    assertThrows(IllegalArgumentException.class, () -> toElementKey.apply(element));
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    verify(element).getProperty("foo");
+    verify(edge).putProperty(eq("foo"), isA(Object.class));
   }
 
   /**
    * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
    *
    * <ul>
-   *   <li>When {@link Edge#Edge(String)} with {@code Group}.
+   *   <li>Given {@link Edge} {@link Edge#putProperty(String, Object)} does nothing.
    * </ul>
    *
    * <p>Method under test: {@link ToElementKey#apply(Element)}
    */
   @Test
-  @DisplayName("Test ToElementKey apply(Element) with 'Element'; when Edge(String) with 'Group'")
+  @DisplayName(
+      "Test ToElementKey apply(Element) with 'Element'; given Edge putProperty(String, Object) does nothing")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
-  void testToElementKeyApplyWithElement_whenEdgeWithGroup() {
+  void testToElementKeyApplyWithElement_givenEdgePutPropertyDoesNothing() {
     // Arrange
-    ToElementKey toElementKey = new ToElementKey(new HashMap<>());
+    HashSet<String> stringSet = new HashSet<>();
+    stringSet.add("foo");
+
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", stringSet);
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Edge edge = mock(Edge.class);
+    doNothing().when(edge).putProperty(Mockito.<String>any(), Mockito.<Object>any());
+
+    Element element = mock(Element.class);
+    when(element.getProperty(Mockito.<String>any())).thenReturn("Property");
+    when(element.emptyClone()).thenReturn(edge);
+    when(element.getGroup()).thenReturn("foo");
+
+    // Act
+    toElementKey.apply(element);
+
+    // Assert
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    verify(element).getProperty("foo");
+    verify(edge).putProperty(eq("foo"), isA(Object.class));
+  }
+
+  /**
+   * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
+   *
+   * <ul>
+   *   <li>Given {@link Edge#Edge(String)} with {@code Group}.
+   *   <li>Then return {@link Edge#Edge(String)} with {@code Group}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ToElementKey#apply(Element)}
+   */
+  @Test
+  @DisplayName(
+      "Test ToElementKey apply(Element) with 'Element'; given Edge(String) with 'Group'; then return Edge(String) with 'Group'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
+  void testToElementKeyApplyWithElement_givenEdgeWithGroup_thenReturnEdgeWithGroup() {
+    // Arrange
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", new HashSet<>());
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Element element = mock(Element.class);
+    Edge edge = new Edge("Group");
+    when(element.emptyClone()).thenReturn(edge);
+    when(element.getGroup()).thenReturn("foo");
+
+    // Act
+    Element actualApplyResult = toElementKey.apply(element);
+
+    // Assert
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    assertSame(edge, actualApplyResult);
+  }
+
+  /**
+   * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
+   *
+   * <ul>
+   *   <li>Given {@link IllegalArgumentException#IllegalArgumentException()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ToElementKey#apply(Element)}
+   */
+  @Test
+  @DisplayName("Test ToElementKey apply(Element) with 'Element'; given IllegalArgumentException()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
+  void testToElementKeyApplyWithElement_givenIllegalArgumentException() {
+    // Arrange
+    HashSet<String> stringSet = new HashSet<>();
+    stringSet.add("foo");
+
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", stringSet);
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Element element = mock(Element.class);
+    when(element.getProperty(Mockito.<String>any())).thenThrow(new IllegalArgumentException());
+    when(element.emptyClone()).thenReturn(new Edge("Group"));
+    when(element.getGroup()).thenReturn("foo");
 
     // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> toElementKey.apply(new Edge("Group")));
+    assertThrows(IllegalArgumentException.class, () -> toElementKey.apply(element));
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    verify(element).getProperty("foo");
+  }
+
+  /**
+   * Test ToElementKey {@link ToElementKey#apply(Element)} with {@code Element}.
+   *
+   * <ul>
+   *   <li>Given {@code Property}.
+   *   <li>Then return {@link Edge#Edge(String)} with {@code Group}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ToElementKey#apply(Element)}
+   */
+  @Test
+  @DisplayName(
+      "Test ToElementKey apply(Element) with 'Element'; given 'Property'; then return Edge(String) with 'Group'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Element ToElementKey.apply(Element)"})
+  void testToElementKeyApplyWithElement_givenProperty_thenReturnEdgeWithGroup() {
+    // Arrange
+    HashSet<String> stringSet = new HashSet<>();
+    stringSet.add("foo");
+
+    HashMap<String, Set<String>> groupToGroupBys = new HashMap<>();
+    groupToGroupBys.put("foo", stringSet);
+    ToElementKey toElementKey = new ToElementKey(groupToGroupBys);
+
+    Element element = mock(Element.class);
+    when(element.getProperty(Mockito.<String>any())).thenReturn("Property");
+    Edge edge = new Edge("Group");
+    when(element.emptyClone()).thenReturn(edge);
+    when(element.getGroup()).thenReturn("foo");
+
+    // Act
+    Element actualApplyResult = toElementKey.apply(element);
+
+    // Assert
+    verify(element).emptyClone();
+    verify(element).getGroup();
+    verify(element).getProperty("foo");
+    assertSame(edge, actualApplyResult);
   }
 }

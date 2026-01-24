@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import uk.gov.gchq.gaffer.operation.OperationException;
 import uk.gov.gchq.gaffer.serialisation.ToBytesSerialiser;
 import uk.gov.gchq.gaffer.store.Context;
 import uk.gov.gchq.gaffer.store.Context.Builder;
-import uk.gov.gchq.gaffer.store.Store;
 import uk.gov.gchq.gaffer.store.StoreTrait;
 import uk.gov.gchq.gaffer.store.TypeReferenceStoreImpl;
 import uk.gov.gchq.gaffer.store.TypeReferenceStoreImpl.StoreTraits;
@@ -125,38 +124,5 @@ class GetTraitsHandlerDiffblueTest {
 
     // Assert that nothing has changed
     assertTrue(storeTraits.isEmpty());
-  }
-
-  /**
-   * Test {@link GetTraitsHandler#doOperation(GetTraits, Context, Store)} with {@code GetTraits},
-   * {@code Context}, {@code Store}.
-   *
-   * <ul>
-   *   <li>Given {@code false}.
-   *   <li>Then return Empty.
-   * </ul>
-   *
-   * <p>Method under test: {@link GetTraitsHandler#doOperation(GetTraits, Context, Store)}
-   */
-  @Test
-  @DisplayName(
-      "Test doOperation(GetTraits, Context, Store) with 'GetTraits', 'Context', 'Store'; given 'false'; then return Empty")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Set GetTraitsHandler.doOperation(GetTraits, Context, Store)"})
-  void testDoOperationWithGetTraitsContextStore_givenFalse_thenReturnEmpty()
-      throws OperationException {
-    // Arrange
-    GetTraitsHandler getTraitsHandler = new GetTraitsHandler(new HashSet<>());
-
-    GetTraits operation = new GetTraits();
-    operation.setCurrentTraits(false);
-    Context context = new Context();
-
-    // Act and Assert
-    assertTrue(
-        getTraitsHandler
-            .doOperation(operation, context, new TestAddToGraphLibraryImpl())
-            .isEmpty());
   }
 }

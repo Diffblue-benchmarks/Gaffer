@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
@@ -92,33 +89,6 @@ class AdjacencyMapsDiffblueTest {
   void testSize() {
     // Arrange, Act and Assert
     assertEquals(0, new PrunedAdjacencyMaps().size());
-  }
-
-  /**
-   * Test {@link AdjacencyMaps#empty()}.
-   *
-   * <ul>
-   *   <li>Given {@link AdjacencyMaps} {@link AdjacencyMaps#empty()} return {@code false}.
-   *   <li>Then calls {@link AdjacencyMaps#empty()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link AdjacencyMaps#empty()}
-   */
-  @Test
-  @DisplayName("Test empty(); given AdjacencyMaps empty() return 'false'; then calls empty()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"boolean AdjacencyMaps.empty()"})
-  void testEmpty_givenAdjacencyMapsEmptyReturnFalse_thenCallsEmpty() {
-    // Arrange
-    AdjacencyMaps adjacencyMaps = mock(AdjacencyMaps.class);
-    when(adjacencyMaps.empty()).thenReturn(false);
-
-    // Act
-    adjacencyMaps.empty();
-
-    // Assert
-    verify(adjacencyMaps).empty();
   }
 
   /**

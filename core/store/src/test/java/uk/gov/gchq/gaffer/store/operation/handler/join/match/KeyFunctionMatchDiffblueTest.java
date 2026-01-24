@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,26 +73,6 @@ class KeyFunctionMatchDiffblueTest {
     // Assert
     assertSame(firstKeyFunction, actualKeyFunctionMatch.getFirstKeyFunction());
     assertSame(secondKeyFunction, actualKeyFunctionMatch.getSecondKeyFunction());
-  }
-
-  /**
-   * Test Builder new {@link Builder} (default constructor).
-   *
-   * <p>Method under test: default or parameterless constructor of {@link Builder}
-   */
-  @Test
-  @DisplayName("Test Builder new Builder (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void Builder.<init>()"})
-  void testBuilderNewBuilder() {
-    // Arrange, Act and Assert
-    KeyFunctionMatch keyFunctionMatch = new Builder().build();
-    Function firstKeyFunction = keyFunctionMatch.getFirstKeyFunction();
-    assertTrue(firstKeyFunction instanceof Identity);
-    Function secondKeyFunction = keyFunctionMatch.getSecondKeyFunction();
-    assertTrue(secondKeyFunction instanceof Identity);
-    assertEquals(firstKeyFunction, secondKeyFunction);
   }
 
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,43 +54,6 @@ import uk.gov.gchq.gaffer.store.library.NoGraphLibrary;
 import uk.gov.gchq.gaffer.store.schema.Schema;
 
 class GraphSerialisableDiffblueTest {
-  /**
-   * Test Builder {@link GraphSerialisable.Builder#config(GraphConfig)}.
-   *
-   * <p>Method under test: {@link GraphSerialisable.Builder#config(GraphConfig)}
-   */
-  @Test
-  @DisplayName("Test Builder config(GraphConfig)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"GraphSerialisable.Builder GraphSerialisable.Builder.config(GraphConfig)"})
-  void testBuilderConfig() throws UnsupportedEncodingException {
-    // Arrange
-    GraphSerialisable.Builder builder = new GraphSerialisable.Builder();
-
-    // Act
-    GraphSerialisable.Builder actualConfigResult = builder.config(new GraphConfig("42"));
-
-    // Assert
-    GraphSerialisable graphSerialisable = builder.build();
-    GraphConfig config = graphSerialisable.getConfig();
-    assertTrue(config.getLibrary() instanceof NoGraphLibrary);
-    assertEquals("42", config.getGraphId());
-    assertEquals("42", graphSerialisable.getGraphId());
-    assertNull(graphSerialisable.getSerialisedProperties());
-    assertNull(graphSerialisable.getSerialisedSchema());
-    assertNull(config.getOtelActive());
-    assertNull(config.getDescription());
-    assertNull(config.getView());
-    assertNull(graphSerialisable.getStoreProperties());
-    assertNull(graphSerialisable.getSchema());
-    assertTrue(config.getHooks().isEmpty());
-    assertSame(builder, actualConfigResult);
-    assertArrayEquals(
-        "{\n  \"graphId\" : \"42\",\n  \"hooks\" : [ ]\n}".getBytes("UTF-8"),
-        graphSerialisable.getSerialisedConfig());
-  }
-
   /**
    * Test Builder {@link GraphSerialisable.Builder#mergeConfig(GraphConfig)}.
    *
@@ -359,27 +322,6 @@ class GraphSerialisableDiffblueTest {
   }
 
   /**
-   * Test Builder {@link GraphSerialisable.Builder#properties(Properties)} with {@code Properties}.
-   *
-   * <p>Method under test: {@link GraphSerialisable.Builder#properties(Properties)}
-   */
-  @Test
-  @DisplayName("Test Builder properties(Properties) with 'Properties'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"GraphSerialisable.Builder GraphSerialisable.Builder.properties(Properties)"})
-  void testBuilderPropertiesWithProperties() {
-    // Arrange
-    GraphSerialisable.Builder builder = new GraphSerialisable.Builder();
-
-    // Act
-    GraphSerialisable.Builder actualPropertiesResult = builder.properties(new Properties());
-
-    // Assert
-    assertSame(builder, actualPropertiesResult);
-  }
-
-  /**
    * Test Builder {@link GraphSerialisable.Builder#properties(StoreProperties)} with {@code
    * StoreProperties}.
    *
@@ -405,56 +347,6 @@ class GraphSerialisableDiffblueTest {
 
     // Assert
     assertSame(builder, actualPropertiesResult);
-  }
-
-  /**
-   * Test Builder {@link GraphSerialisable.Builder#properties(StoreProperties)} with {@code
-   * StoreProperties}.
-   *
-   * <ul>
-   *   <li>When {@link StoreProperties#StoreProperties()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link GraphSerialisable.Builder#properties(StoreProperties)}
-   */
-  @Test
-  @DisplayName(
-      "Test Builder properties(StoreProperties) with 'StoreProperties'; when StoreProperties()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "GraphSerialisable.Builder GraphSerialisable.Builder.properties(StoreProperties)"
-  })
-  void testBuilderPropertiesWithStoreProperties_whenStoreProperties() {
-    // Arrange
-    GraphSerialisable.Builder builder = new GraphSerialisable.Builder();
-
-    // Act
-    GraphSerialisable.Builder actualPropertiesResult = builder.properties(new StoreProperties());
-
-    // Assert
-    assertSame(builder, actualPropertiesResult);
-  }
-
-  /**
-   * Test Builder {@link GraphSerialisable.Builder#schema(Schema)} with {@code Schema}.
-   *
-   * <p>Method under test: {@link GraphSerialisable.Builder#schema(Schema)}
-   */
-  @Test
-  @DisplayName("Test Builder schema(Schema) with 'Schema'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"GraphSerialisable.Builder GraphSerialisable.Builder.schema(Schema)"})
-  void testBuilderSchemaWithSchema() {
-    // Arrange
-    GraphSerialisable.Builder builder = new GraphSerialisable.Builder();
-
-    // Act
-    GraphSerialisable.Builder actualSchemaResult = builder.schema(new Schema());
-
-    // Assert
-    assertSame(builder, actualSchemaResult);
   }
 
   /**

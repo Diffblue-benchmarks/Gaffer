@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,7 +113,7 @@ class JobTrackerDiffblueTest {
     Builder parentJobIdResult =
         new Builder()
             .description("The characteristics of someone or something")
-            .jobId("42")
+            .jobId("Job IdJob Id")
             .opChain("Op Chain")
             .parentJobId("42");
 
@@ -122,72 +122,6 @@ class JobTrackerDiffblueTest {
             .repeat(new Repeat())
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    // Act and Assert
-    assertEquals("suffix job tracker cache name", jobTracker.getSuffixCacheName());
-  }
-
-  /**
-   * Test {@link JobTracker#getSuffixCacheName()}.
-   *
-   * <p>Method under test: {@link JobTracker#getSuffixCacheName()}
-   */
-  @Test
-  @DisplayName("Test getSuffixCacheName()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String JobTracker.getSuffixCacheName()"})
-  void testGetSuffixCacheName2() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
-        new Builder()
-            .description(JobTracker.JOB_TRACKER_CACHE_SERVICE_NAME)
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    // Act and Assert
-    assertEquals("suffix job tracker cache name", jobTracker.getSuffixCacheName());
-  }
-
-  /**
-   * Test {@link JobTracker#getSuffixCacheName()}.
-   *
-   * <p>Method under test: {@link JobTracker#getSuffixCacheName()}
-   */
-  @Test
-  @DisplayName("Test getSuffixCacheName()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String JobTracker.getSuffixCacheName()"})
-  void testGetSuffixCacheName3() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
-        new Builder()
-            .description(JobTracker.JOB_TRACKER_CACHE_SERVICE_NAME)
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.SCHEDULED_PARENT);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
     jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
 
@@ -244,10 +178,12 @@ class JobTrackerDiffblueTest {
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
+    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
+    JobDetail jobDetail2 = new JobDetail();
 
     // Act and Assert
-    assertDoesNotThrow(
-        () -> jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build()));
+    assertThrows(
+        IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail2, new User()));
   }
 
   /**
@@ -265,11 +201,7 @@ class JobTrackerDiffblueTest {
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder()
-            .description("The characteristics of someone or something")
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
+        new Builder().description("Description").jobId("42").opChain("Op Chain").parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
@@ -301,8 +233,8 @@ class JobTrackerDiffblueTest {
 
     Builder parentJobIdResult =
         new Builder()
-            .description("jobId is required")
-            .jobId("42")
+            .description("The characteristics of someone or something")
+            .jobId("jobId is required")
             .opChain("Op Chain")
             .parentJobId("42");
 
@@ -335,12 +267,16 @@ class JobTrackerDiffblueTest {
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder().description("").jobId("42").opChain("Op Chain").parentJobId("42");
+        new Builder()
+            .description("The characteristics of someone or something")
+            .jobId("42")
+            .opChain("Op Chain")
+            .parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
             .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
+            .serialisedOperationChain("")
             .status(JobStatus.RUNNING);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
     jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
@@ -366,14 +302,18 @@ class JobTrackerDiffblueTest {
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder().description("42").jobId("42").opChain("Op Chain").parentJobId("42");
+        new Builder()
+            .description("The characteristics of someone or something")
+            .jobId("42")
+            .opChain("Op Chain")
+            .parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
             .repeat(new Repeat())
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
+    JobDetail jobDetail = statusResult.user(new User.Builder().userId("User Id").build()).build();
     jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
     JobDetail jobDetail2 = new JobDetail();
 
@@ -401,7 +341,7 @@ class JobTrackerDiffblueTest {
             .description("The characteristics of someone or something")
             .jobId("42")
             .opChain("Op Chain")
-            .parentJobId("");
+            .parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
@@ -409,27 +349,12 @@ class JobTrackerDiffblueTest {
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    Builder parentJobIdResult2 =
-        new Builder()
-            .description("The characteristics of someone or something")
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
-
-    Builder statusResult2 =
-        parentJobIdResult2
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
-    JobDetail jobDetail2 = statusResult2.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail2, new User.Builder().userId("42").build());
-    JobDetail jobDetail3 = new JobDetail();
+    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("User Id").build());
+    JobDetail jobDetail2 = new JobDetail();
 
     // Act and Assert
     assertThrows(
-        IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail3, new User()));
+        IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail2, new User()));
   }
 
   /**
@@ -447,80 +372,6 @@ class JobTrackerDiffblueTest {
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder().description("").jobId("42").opChain("Op Chain").parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(null, new User()));
-  }
-
-  /**
-   * Test {@link JobTracker#addOrUpdateJob(JobDetail, User)}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link JobDetail#JobDetail()} JobId is {@code 42}.
-   *   <li>Then does not throw.
-   * </ul>
-   *
-   * <p>Method under test: {@link JobTracker#addOrUpdateJob(JobDetail, User)}
-   */
-  @Test
-  @DisplayName(
-      "Test addOrUpdateJob(JobDetail, User); given '42'; when JobDetail() JobId is '42'; then does not throw")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void JobTracker.addOrUpdateJob(JobDetail, User)"})
-  void testAddOrUpdateJob_given42_whenJobDetailJobIdIs42_thenDoesNotThrow() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
-        new Builder().description("42").jobId("42").opChain("Op Chain").parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    JobDetail jobDetail2 = new JobDetail();
-    jobDetail2.setJobId("42");
-
-    // Act and Assert
-    assertDoesNotThrow(() -> jobTracker.addOrUpdateJob(jobDetail2, new User()));
-  }
-
-  /**
-   * Test {@link JobTracker#addOrUpdateJob(JobDetail, User)}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link JobDetail#JobDetail()} ParentJobId is {@code 42}.
-   * </ul>
-   *
-   * <p>Method under test: {@link JobTracker#addOrUpdateJob(JobDetail, User)}
-   */
-  @Test
-  @DisplayName(
-      "Test addOrUpdateJob(JobDetail, User); given '42'; when JobDetail() ParentJobId is '42'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void JobTracker.addOrUpdateJob(JobDetail, User)"})
-  void testAddOrUpdateJob_given42_whenJobDetailParentJobIdIs42() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
         new Builder()
             .description("The characteristics of someone or something")
             .jobId("42")
@@ -531,12 +382,10 @@ class JobTrackerDiffblueTest {
         parentJobIdResult
             .repeat(new Repeat())
             .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
+            .status(JobStatus.SCHEDULED_PARENT);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
     jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
     JobDetail jobDetail2 = new JobDetail();
-    jobDetail2.setParentJobId("42");
 
     // Act and Assert
     assertThrows(
@@ -568,47 +417,6 @@ class JobTrackerDiffblueTest {
     // Act and Assert
     assertThrows(
         IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail, new User()));
-  }
-
-  /**
-   * Test {@link JobTracker#addOrUpdateJob(JobDetail, User)}.
-   *
-   * <ul>
-   *   <li>Given {@code jobId is required}.
-   * </ul>
-   *
-   * <p>Method under test: {@link JobTracker#addOrUpdateJob(JobDetail, User)}
-   */
-  @Test
-  @DisplayName("Test addOrUpdateJob(JobDetail, User); given 'jobId is required'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void JobTracker.addOrUpdateJob(JobDetail, User)"})
-  void testAddOrUpdateJob_givenJobIdIsRequired() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
-        new Builder()
-            .description("jobId is required")
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    JobDetail jobDetail2 = new JobDetail();
-    jobDetail2.setSerialisedOperationChain("jobId is required");
-
-    // Act and Assert
-    assertThrows(
-        IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail2, new User()));
   }
 
   /**
@@ -665,24 +473,26 @@ class JobTrackerDiffblueTest {
    * Test {@link JobTracker#addOrUpdateJob(JobDetail, User)}.
    *
    * <ul>
-   *   <li>Given {@code RUNNING}.
-   *   <li>When {@link JobDetail#JobDetail()} Status is {@code RUNNING}.
+   *   <li>Then does not throw.
    * </ul>
    *
    * <p>Method under test: {@link JobTracker#addOrUpdateJob(JobDetail, User)}
    */
   @Test
-  @DisplayName(
-      "Test addOrUpdateJob(JobDetail, User); given 'RUNNING'; when JobDetail() Status is 'RUNNING'")
+  @DisplayName("Test addOrUpdateJob(JobDetail, User); then does not throw")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void JobTracker.addOrUpdateJob(JobDetail, User)"})
-  void testAddOrUpdateJob_givenRunning_whenJobDetailStatusIsRunning() {
+  void testAddOrUpdateJob_thenDoesNotThrow() {
     // Arrange
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder().description("42").jobId("42").opChain("Op Chain").parentJobId("42");
+        new Builder()
+            .description("The characteristics of someone or something")
+            .jobId("42")
+            .opChain("Op Chain")
+            .parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
@@ -690,14 +500,10 @@ class JobTrackerDiffblueTest {
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    JobDetail jobDetail2 = new JobDetail();
-    jobDetail2.setStatus(JobStatus.RUNNING);
 
     // Act and Assert
-    assertThrows(
-        IllegalArgumentException.class, () -> jobTracker.addOrUpdateJob(jobDetail2, new User()));
+    assertDoesNotThrow(
+        () -> jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build()));
   }
 
   /**
@@ -715,11 +521,7 @@ class JobTrackerDiffblueTest {
     JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
 
     Builder parentJobIdResult =
-        new Builder()
-            .description("The characteristics of someone or something")
-            .jobId("42")
-            .opChain("Op Chain")
-            .parentJobId("42");
+        new Builder().description("Description").jobId("42").opChain("Op Chain").parentJobId("42");
 
     Builder statusResult =
         parentJobIdResult
@@ -749,9 +551,9 @@ class JobTrackerDiffblueTest {
 
     Builder parentJobIdResult =
         new Builder()
-            .description("The characteristics of someone or something")
+            .description("Description42")
             .jobId("42")
-            .opChain("Op ChainOp Chain")
+            .opChain("Op Chain")
             .parentJobId("42");
 
     Builder statusResult =
@@ -762,20 +564,38 @@ class JobTrackerDiffblueTest {
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
     jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
 
-    Builder parentJobIdResult2 =
+    // Act and Assert
+    assertThrows(GafferRuntimeException.class, () -> jobTracker.getAllJobs(new User()).iterator());
+  }
+
+  /**
+   * Test {@link JobTracker#getAllJobs(User)}.
+   *
+   * <p>Method under test: {@link JobTracker#getAllJobs(User)}
+   */
+  @Test
+  @DisplayName("Test getAllJobs(User)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.lang.Iterable JobTracker.getAllJobs(User)"})
+  void testGetAllJobs3() {
+    // Arrange
+    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
+
+    Builder parentJobIdResult =
         new Builder()
-            .description("The characteristics of someone or something")
+            .description("Description42")
             .jobId("42")
             .opChain("Op Chain")
             .parentJobId("42");
 
-    Builder statusResult2 =
-        parentJobIdResult2
+    Builder statusResult =
+        parentJobIdResult
             .repeat(new Repeat())
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
-    JobDetail jobDetail2 = statusResult2.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail2, new User.Builder().userId("42").build());
+    JobDetail jobDetail = statusResult.user(new User.Builder().userId("").build()).build();
+    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
 
     // Act and Assert
     assertThrows(GafferRuntimeException.class, () -> jobTracker.getAllJobs(new User()).iterator());
@@ -864,73 +684,22 @@ class JobTrackerDiffblueTest {
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
     JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId(null).build());
+    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
 
-    // Act and Assert
-    assertThrows(GafferRuntimeException.class, () -> jobTracker.getAllScheduledJobs().iterator());
-  }
-
-  /**
-   * Test {@link JobTracker#getAllScheduledJobs()}.
-   *
-   * <p>Method under test: {@link JobTracker#getAllScheduledJobs()}
-   */
-  @Test
-  @DisplayName("Test getAllScheduledJobs()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.lang.Iterable JobTracker.getAllScheduledJobs()"})
-  void testGetAllScheduledJobs3() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
+    Builder parentJobIdResult2 =
         new Builder()
             .description("The characteristics of someone or something")
             .jobId("42")
-            .opChain("Error getting all keysError getting all keys")
-            .parentJobId("42");
+            .opChain("Op Chain")
+            .parentJobId("");
 
-    Builder statusResult =
-        parentJobIdResult
+    Builder statusResult2 =
+        parentJobIdResult2
             .repeat(new Repeat())
             .serialisedOperationChain("Serialised Operation Chain")
             .status(JobStatus.RUNNING);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
-
-    // Act and Assert
-    assertThrows(GafferRuntimeException.class, () -> jobTracker.getAllScheduledJobs().iterator());
-  }
-
-  /**
-   * Test {@link JobTracker#getAllScheduledJobs()}.
-   *
-   * <p>Method under test: {@link JobTracker#getAllScheduledJobs()}
-   */
-  @Test
-  @DisplayName("Test getAllScheduledJobs()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.lang.Iterable JobTracker.getAllScheduledJobs()"})
-  void testGetAllScheduledJobs4() {
-    // Arrange
-    JobTracker jobTracker = new JobTracker("Suffix Job Tracker Cache Name");
-
-    Builder parentJobIdResult =
-        new Builder()
-            .description("The characteristics of someone or something")
-            .jobId("42")
-            .opChain("Error getting all keysError getting all keys")
-            .parentJobId("42");
-
-    Builder statusResult =
-        parentJobIdResult
-            .repeat(new Repeat())
-            .serialisedOperationChain("Serialised Operation Chain")
-            .status(JobStatus.CANCELLED);
-    JobDetail jobDetail = statusResult.user(new User.Builder().userId("42").build()).build();
-    jobTracker.addOrUpdateJob(jobDetail, new User.Builder().userId("42").build());
+    JobDetail jobDetail2 = statusResult2.user(new User.Builder().userId("42").build()).build();
+    jobTracker.addOrUpdateJob(jobDetail2, new User.Builder().userId("42").build());
 
     // Act and Assert
     assertThrows(GafferRuntimeException.class, () -> jobTracker.getAllScheduledJobs().iterator());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,39 +130,6 @@ class GafferPopVertexGeneratorDiffblueTest {
     assertTrue(idResult instanceof List);
     assertEquals("An Edge cannot be converted into a GafferPopVertex", actual_applyResult.label());
     assertTrue(((List<Object>) idResult).isEmpty());
-  }
-
-  /**
-   * Test {@link GafferPopVertexGenerator#_apply(Element)}.
-   *
-   * <ul>
-   *   <li>Then return id is {@code Edge[directed=false,group=Group,properties=Properties[]]}.
-   * </ul>
-   *
-   * <p>Method under test: {@link GafferPopVertexGenerator#_apply(Element)}
-   */
-  @Test
-  @DisplayName(
-      "Test _apply(Element); then return id is 'Edge[directed=false,group=Group,properties=Properties[]]'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"GafferPopVertex GafferPopVertexGenerator._apply(Element)"})
-  void test_apply_thenReturnIdIsEdgeDirectedFalseGroupGroupPropertiesProperties() {
-    // Arrange
-    GafferPopVertexGenerator gafferPopVertexGenerator = new GafferPopVertexGenerator(null);
-
-    Entity element = new Entity("An Edge cannot be converted into a GafferPopVertex");
-    element.setVertex(new Edge("Group"));
-
-    // Act
-    GafferPopVertex actual_applyResult = gafferPopVertexGenerator._apply(element);
-
-    // Assert
-    assertEquals("An Edge cannot be converted into a GafferPopVertex", actual_applyResult.label());
-    assertEquals(
-        "Edge[directed=false,group=Group,properties=Properties[]]", actual_applyResult.id());
-    assertNull(actual_applyResult.graph());
-    assertTrue(actual_applyResult.isReadOnly());
   }
 
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -581,102 +581,5 @@ class DefaultScoreResolverDiffblueTest {
 
     // Assert
     assertEquals(1, actualScore.intValue());
-  }
-
-  /**
-   * Test {@link DefaultScoreResolver#getScore(Operation)} with {@code operation}.
-   *
-   * <ul>
-   *   <li>Given {@link DefaultScoreResolver#DefaultScoreResolver()}.
-   *   <li>Then return intValue is one.
-   * </ul>
-   *
-   * <p>Method under test: {@link DefaultScoreResolver#getScore(Operation)}
-   */
-  @Test
-  @DisplayName(
-      "Test getScore(Operation) with 'operation'; given DefaultScoreResolver(); then return intValue is one")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Integer DefaultScoreResolver.getScore(Operation)"})
-  void testGetScoreWithOperation_givenDefaultScoreResolver_thenReturnIntValueIsOne() {
-    // Arrange
-    DefaultScoreResolver defaultScoreResolver = new DefaultScoreResolver();
-    OperationChain<Object> operation = OperationChain.wrap(new NamedOperation<>());
-
-    // Act and Assert
-    assertEquals(1, defaultScoreResolver.getScore(operation).intValue());
-  }
-
-  /**
-   * Test {@link DefaultScoreResolver#getScore(Operation)} with {@code operation}.
-   *
-   * <ul>
-   *   <li>Given {@link DefaultScoreResolver#DefaultScoreResolver()}.
-   *   <li>When {@link OperationImpl} (default constructor).
-   * </ul>
-   *
-   * <p>Method under test: {@link DefaultScoreResolver#getScore(Operation)}
-   */
-  @Test
-  @DisplayName(
-      "Test getScore(Operation) with 'operation'; given DefaultScoreResolver(); when OperationImpl (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Integer DefaultScoreResolver.getScore(Operation)"})
-  void testGetScoreWithOperation_givenDefaultScoreResolver_whenOperationImpl() {
-    // Arrange
-    DefaultScoreResolver defaultScoreResolver = new DefaultScoreResolver();
-
-    // Act and Assert
-    assertEquals(1, defaultScoreResolver.getScore(new OperationImpl()).intValue());
-  }
-
-  /**
-   * Test {@link DefaultScoreResolver#getScore(Operation)} with {@code operation}.
-   *
-   * <ul>
-   *   <li>Given {@code Operation}.
-   * </ul>
-   *
-   * <p>Method under test: {@link DefaultScoreResolver#getScore(Operation)}
-   */
-  @Test
-  @DisplayName(
-      "Test getScore(Operation) with 'operation'; given 'uk.gov.gchq.gaffer.operation.Operation'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Integer DefaultScoreResolver.getScore(Operation)"})
-  void testGetScoreWithOperation_givenUkGovGchqGafferOperationOperation() {
-    // Arrange
-    HashMap<Class<? extends Operation>, Integer> opScores = new HashMap<>();
-    Class<Operation> forNameResult = Operation.class;
-    opScores.put(forNameResult, 1);
-    DefaultScoreResolver defaultScoreResolver = new DefaultScoreResolver(opScores);
-    OperationChain<Object> operation = OperationChain.wrap(new NamedOperation<>());
-
-    // Act and Assert
-    assertEquals(1, defaultScoreResolver.getScore(operation).intValue());
-  }
-
-  /**
-   * Test {@link DefaultScoreResolver#getScore(Operation)} with {@code operation}.
-   *
-   * <ul>
-   *   <li>When {@code null}.
-   *   <li>Then return intValue is zero.
-   * </ul>
-   *
-   * <p>Method under test: {@link DefaultScoreResolver#getScore(Operation)}
-   */
-  @Test
-  @DisplayName(
-      "Test getScore(Operation) with 'operation'; when 'null'; then return intValue is zero")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Integer DefaultScoreResolver.getScore(Operation)"})
-  void testGetScoreWithOperation_whenNull_thenReturnIntValueIsZero() {
-    // Arrange, Act and Assert
-    assertEquals(0, new DefaultScoreResolver().getScore(null).intValue());
   }
 }

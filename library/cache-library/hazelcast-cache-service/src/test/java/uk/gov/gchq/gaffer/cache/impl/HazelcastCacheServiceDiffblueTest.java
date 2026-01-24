@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,7 @@ class HazelcastCacheServiceDiffblueTest {
    * Test {@link HazelcastCacheService#initialise(Properties)}.
    *
    * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link Properties#Properties()} {@code 42} is {@code 42}.
+   *   <li>Given {@code gaffer.cache.config.file}.
    *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
    *
@@ -55,14 +54,13 @@ class HazelcastCacheServiceDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test initialise(Properties); given '42'; when Properties() '42' is '42'; then throw IllegalArgumentException")
+      "Test initialise(Properties); given 'gaffer.cache.config.file'; then throw IllegalArgumentException")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HazelcastCacheService.initialise(Properties)"})
-  void testInitialise_given42_whenProperties42Is42_thenThrowIllegalArgumentException() {
+  void testInitialise_givenGafferCacheConfigFile_thenThrowIllegalArgumentException() {
     // Arrange
     Properties properties = new Properties();
-    properties.put("42", "42");
     properties.put("gaffer.cache.config.file", "42");
 
     // Act and Assert
@@ -74,45 +72,22 @@ class HazelcastCacheServiceDiffblueTest {
    * Test {@link HazelcastCacheService#initialise(Properties)}.
    *
    * <ul>
-   *   <li>Given {@code foo}.
-   *   <li>When {@link Properties#Properties()} {@code gaffer.cache.config.file} is {@code foo}.
+   *   <li>Given {@code gaffer.cache.config.file}.
+   *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
    *
    * <p>Method under test: {@link HazelcastCacheService#initialise(Properties)}
    */
   @Test
   @DisplayName(
-      "Test initialise(Properties); given 'foo'; when Properties() 'gaffer.cache.config.file' is 'foo'")
+      "Test initialise(Properties); given 'gaffer.cache.config.file'; then throw IllegalArgumentException")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HazelcastCacheService.initialise(Properties)"})
-  void testInitialise_givenFoo_whenPropertiesGafferCacheConfigFileIsFoo() {
+  void testInitialise_givenGafferCacheConfigFile_thenThrowIllegalArgumentException2() {
     // Arrange
     Properties properties = new Properties();
-    properties.put("gaffer.cache.config.file", "foo");
-
-    // Act and Assert
-    assertThrows(
-        IllegalArgumentException.class, () -> hazelcastCacheService.initialise(properties));
-  }
-
-  /**
-   * Test {@link HazelcastCacheService#initialise(Properties)}.
-   *
-   * <ul>
-   *   <li>When {@link Properties#Properties()} {@code gaffer.cache.config.file} is {@code 42}.
-   * </ul>
-   *
-   * <p>Method under test: {@link HazelcastCacheService#initialise(Properties)}
-   */
-  @Test
-  @DisplayName("Test initialise(Properties); when Properties() 'gaffer.cache.config.file' is '42'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void HazelcastCacheService.initialise(Properties)"})
-  void testInitialise_whenPropertiesGafferCacheConfigFileIs42() {
-    // Arrange
-    Properties properties = new Properties();
+    properties.put("42", "42");
     properties.put("gaffer.cache.config.file", "42");
 
     // Act and Assert

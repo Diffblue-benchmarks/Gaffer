@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,30 +40,32 @@ import uk.gov.gchq.gaffer.operation.data.generator.EntityIdExtractor;
 import uk.gov.gchq.gaffer.operation.function.ToElementId;
 import uk.gov.gchq.gaffer.rest.example.ExampleDomainObjectGenerator;
 import uk.gov.gchq.gaffer.rest.example.ExampleElementGenerator;
+import uk.gov.gchq.gaffer.rest.example.ExampleFilterFunction;
+import uk.gov.gchq.gaffer.rest.example.ExampleTransformFunction;
 import uk.gov.gchq.gaffer.sketches.clearspring.cardinality.HyperLogLogPlusEntityGenerator;
-import uk.gov.gchq.gaffer.sketches.clearspring.cardinality.predicate.HyperLogLogPlusIsLessThan;
 import uk.gov.gchq.gaffer.sketches.datasketches.cardinality.HllSketchEntityGenerator;
-import uk.gov.gchq.gaffer.store.util.AggregatorUtil;
-import uk.gov.gchq.gaffer.store.util.AggregatorUtil.ToQueryElementKey;
-import uk.gov.gchq.gaffer.types.function.IterableToFreqMap;
-import uk.gov.gchq.koryphe.function.FunctionMap;
-import uk.gov.gchq.koryphe.impl.function.Base64Decode;
-import uk.gov.gchq.koryphe.impl.function.CsvToMaps;
+import uk.gov.gchq.koryphe.impl.function.CreateObject;
 import uk.gov.gchq.koryphe.impl.function.DefaultIfEmpty;
+import uk.gov.gchq.koryphe.impl.function.ExtractValue;
 import uk.gov.gchq.koryphe.impl.function.Identity;
-import uk.gov.gchq.koryphe.impl.function.IterableFunction;
+import uk.gov.gchq.koryphe.impl.function.Size;
+import uk.gov.gchq.koryphe.impl.function.ToArray;
+import uk.gov.gchq.koryphe.impl.function.ToNull;
 import uk.gov.gchq.koryphe.impl.predicate.AgeOff;
 import uk.gov.gchq.koryphe.impl.predicate.And;
-import uk.gov.gchq.koryphe.impl.predicate.AreIn;
-import uk.gov.gchq.koryphe.impl.predicate.CollectionContains;
-import uk.gov.gchq.koryphe.impl.predicate.IsEqual;
-import uk.gov.gchq.koryphe.impl.predicate.IsIn;
+import uk.gov.gchq.koryphe.impl.predicate.If;
+import uk.gov.gchq.koryphe.impl.predicate.IsFalse;
+import uk.gov.gchq.koryphe.impl.predicate.IsShorterThan;
+import uk.gov.gchq.koryphe.impl.predicate.IsXMoreThanY;
+import uk.gov.gchq.koryphe.impl.predicate.MapContains;
+import uk.gov.gchq.koryphe.impl.predicate.MapContainsPredicate;
+import uk.gov.gchq.koryphe.impl.predicate.MultiRegex;
 import uk.gov.gchq.koryphe.impl.predicate.Not;
-import uk.gov.gchq.koryphe.impl.predicate.Or;
-import uk.gov.gchq.koryphe.impl.predicate.Regex;
 import uk.gov.gchq.koryphe.impl.predicate.range.InRange;
-import uk.gov.gchq.koryphe.tuple.predicate.IntegerTupleAdaptedPredicate;
-import uk.gov.gchq.koryphe.tuple.predicate.TupleAdaptedPredicate;
+import uk.gov.gchq.koryphe.impl.predicate.range.InRangeDual;
+import uk.gov.gchq.koryphe.predicate.AdaptedPredicate;
+import uk.gov.gchq.koryphe.predicate.PredicateComposite;
+import uk.gov.gchq.koryphe.tuple.TupleInputAdapter;
 import uk.gov.gchq.koryphe.tuple.predicate.TupleAdaptedPredicateComposite;
 
 class GraphConfigurationServiceDiffblueTest {
@@ -104,17 +106,17 @@ class GraphConfigurationServiceDiffblueTest {
 
     // Assert
     assertEquals(50, actualFilterFunctions.size());
-    assertTrue(actualFilterFunctions.contains(DefaultUserPredicate.class));
     assertTrue(actualFilterFunctions.contains(PropertiesFilter.class));
-    assertTrue(actualFilterFunctions.contains(HyperLogLogPlusIsLessThan.class));
     assertTrue(actualFilterFunctions.contains(AgeOff.class));
-    assertTrue(actualFilterFunctions.contains(And.class));
-    assertTrue(actualFilterFunctions.contains(AreIn.class));
-    assertTrue(actualFilterFunctions.contains(CollectionContains.class));
-    assertTrue(actualFilterFunctions.contains(IsEqual.class));
-    assertTrue(actualFilterFunctions.contains(Or.class));
-    assertTrue(actualFilterFunctions.contains(Regex.class));
+    assertTrue(actualFilterFunctions.contains(If.class));
+    assertTrue(actualFilterFunctions.contains(IsFalse.class));
+    assertTrue(actualFilterFunctions.contains(IsXMoreThanY.class));
+    assertTrue(actualFilterFunctions.contains(MapContains.class));
+    assertTrue(actualFilterFunctions.contains(MapContainsPredicate.class));
+    assertTrue(actualFilterFunctions.contains(MultiRegex.class));
     assertTrue(actualFilterFunctions.contains(InRange.class));
+    assertTrue(actualFilterFunctions.contains(InRangeDual.class));
+    assertTrue(actualFilterFunctions.contains(PredicateComposite.class));
   }
 
   /**
@@ -142,11 +144,13 @@ class GraphConfigurationServiceDiffblueTest {
     assertTrue(actualFilterFunctions.contains(DefaultUserPredicate.class));
     assertTrue(actualFilterFunctions.contains(ElementFilter.class));
     assertTrue(actualFilterFunctions.contains(PropertiesFilter.class));
+    assertTrue(actualFilterFunctions.contains(ExampleFilterFunction.class));
     assertTrue(actualFilterFunctions.contains(And.class));
-    assertTrue(actualFilterFunctions.contains(IsIn.class));
+    assertTrue(actualFilterFunctions.contains(If.class));
+    assertTrue(actualFilterFunctions.contains(IsShorterThan.class));
     assertTrue(actualFilterFunctions.contains(Not.class));
-    assertTrue(actualFilterFunctions.contains(IntegerTupleAdaptedPredicate.class));
-    assertTrue(actualFilterFunctions.contains(TupleAdaptedPredicate.class));
+    assertTrue(actualFilterFunctions.contains(AdaptedPredicate.class));
+    assertTrue(actualFilterFunctions.contains(PredicateComposite.class));
     assertTrue(actualFilterFunctions.contains(TupleAdaptedPredicateComposite.class));
   }
 
@@ -195,15 +199,17 @@ class GraphConfigurationServiceDiffblueTest {
 
     // Assert
     assertEquals(50, actualFilterFunctions.size());
-    assertTrue(actualFilterFunctions.contains(DefaultUserPredicate.class));
     assertTrue(actualFilterFunctions.contains(PropertiesFilter.class));
-    assertTrue(actualFilterFunctions.contains(HyperLogLogPlusIsLessThan.class));
     assertTrue(actualFilterFunctions.contains(AgeOff.class));
-    assertTrue(actualFilterFunctions.contains(And.class));
-    assertTrue(actualFilterFunctions.contains(AreIn.class));
-    assertTrue(actualFilterFunctions.contains(CollectionContains.class));
-    assertTrue(actualFilterFunctions.contains(Regex.class));
+    assertTrue(actualFilterFunctions.contains(If.class));
+    assertTrue(actualFilterFunctions.contains(IsFalse.class));
+    assertTrue(actualFilterFunctions.contains(IsXMoreThanY.class));
+    assertTrue(actualFilterFunctions.contains(MapContains.class));
+    assertTrue(actualFilterFunctions.contains(MapContainsPredicate.class));
+    assertTrue(actualFilterFunctions.contains(MultiRegex.class));
     assertTrue(actualFilterFunctions.contains(InRange.class));
+    assertTrue(actualFilterFunctions.contains(InRangeDual.class));
+    assertTrue(actualFilterFunctions.contains(PredicateComposite.class));
   }
 
   /**
@@ -433,17 +439,17 @@ class GraphConfigurationServiceDiffblueTest {
 
     // Assert
     assertEquals(128, actualTransformFunctions.size());
-    assertTrue(actualTransformFunctions.contains(MapGenerator.class));
     assertTrue(actualTransformFunctions.contains(ToElementId.class));
-    assertTrue(actualTransformFunctions.contains(ExampleDomainObjectGenerator.class));
-    assertTrue(actualTransformFunctions.contains(ToQueryElementKey.class));
-    assertTrue(actualTransformFunctions.contains(IterableToFreqMap.class));
-    assertTrue(actualTransformFunctions.contains(FunctionMap.class));
-    assertTrue(actualTransformFunctions.contains(Base64Decode.class));
-    assertTrue(actualTransformFunctions.contains(CsvToMaps.class));
+    assertTrue(actualTransformFunctions.contains(ExampleElementGenerator.class));
+    assertTrue(actualTransformFunctions.contains(ExampleTransformFunction.class));
+    assertTrue(actualTransformFunctions.contains(CreateObject.class));
     assertTrue(actualTransformFunctions.contains(DefaultIfEmpty.class));
+    assertTrue(actualTransformFunctions.contains(ExtractValue.class));
     assertTrue(actualTransformFunctions.contains(Identity.class));
-    assertTrue(actualTransformFunctions.contains(IterableFunction.class));
+    assertTrue(actualTransformFunctions.contains(Size.class));
+    assertTrue(actualTransformFunctions.contains(ToArray.class));
+    assertTrue(actualTransformFunctions.contains(ToNull.class));
+    assertTrue(actualTransformFunctions.contains(TupleInputAdapter.class));
   }
 
   /**

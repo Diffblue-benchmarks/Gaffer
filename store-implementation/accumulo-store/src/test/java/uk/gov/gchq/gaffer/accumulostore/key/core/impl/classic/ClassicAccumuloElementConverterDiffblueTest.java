@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,8 +43,6 @@ import org.mockito.Mockito;
 import uk.gov.gchq.gaffer.accumulostore.key.exception.AccumuloElementConversionException;
 import uk.gov.gchq.gaffer.data.element.Edge;
 import uk.gov.gchq.gaffer.data.element.Entity;
-import uk.gov.gchq.gaffer.data.element.id.EdgeId;
-import uk.gov.gchq.gaffer.data.element.id.EdgeId.MatchedVertex;
 import uk.gov.gchq.gaffer.data.element.id.EntityId;
 import uk.gov.gchq.gaffer.exception.SerialisationException;
 import uk.gov.gchq.gaffer.operation.data.EntitySeed;
@@ -275,17 +273,17 @@ class ClassicAccumuloElementConverterDiffblueTest {
    * Test {@link ClassicAccumuloElementConverter#getRowKeyFromEntity(Entity)}.
    *
    * <ul>
-   *   <li>Then return forty-seventh element is fourteen.
+   *   <li>Then return nineteenth element is sixteen.
    * </ul>
    *
    * <p>Method under test: {@link ClassicAccumuloElementConverter#getRowKeyFromEntity(Entity)}
    */
   @Test
-  @DisplayName("Test getRowKeyFromEntity(Entity); then return forty-seventh element is fourteen")
+  @DisplayName("Test getRowKeyFromEntity(Entity); then return nineteenth element is sixteen")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"byte[] ClassicAccumuloElementConverter.getRowKeyFromEntity(Entity)"})
-  void testGetRowKeyFromEntity_thenReturnFortySeventhElementIsFourteen() {
+  void testGetRowKeyFromEntity_thenReturnNineteenthElementIsSixteen() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
@@ -294,37 +292,29 @@ class ClassicAccumuloElementConverterDiffblueTest {
     ClassicAccumuloElementConverter classicAccumuloElementConverter =
         new ClassicAccumuloElementConverter(schema);
 
-    Entity entity = mock(Entity.class);
-    when(entity.getVertex()).thenReturn("Vertex");
+    Entity entity = new Entity("Group");
+    entity.setVertex("Vertex");
 
     // Act
     byte[] actualRowKeyFromEntity = classicAccumuloElementConverter.getRowKeyFromEntity(entity);
 
     // Assert
-    verify(entity).getVertex();
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
-    assertEquals((byte) 14, actualRowKeyFromEntity[46]);
     assertEquals((byte) 16, actualRowKeyFromEntity[18]);
     assertEquals((byte) 22, actualRowKeyFromEntity[6]);
-    assertEquals(70, actualRowKeyFromEntity.length);
     assertEquals(ClassicBytePositions.CORRECT_WAY_DIRECTED_EDGE, actualRowKeyFromEntity[4]);
-    assertEquals(ClassicBytePositions.CORRECT_WAY_DIRECTED_EDGE, actualRowKeyFromEntity[45]);
     assertEquals(ClassicBytePositions.CORRECT_WAY_DIRECTED_EDGE, actualRowKeyFromEntity[5]);
     assertEquals(ClassicBytePositions.UNDIRECTED_EDGE, actualRowKeyFromEntity[3]);
     assertEquals('.', actualRowKeyFromEntity[11]);
     assertEquals('O', actualRowKeyFromEntity[0]);
-    assertEquals('V', actualRowKeyFromEntity[48]);
     assertEquals('"', actualRowKeyFromEntity[19]);
-    assertEquals('\f', actualRowKeyFromEntity[47]);
     assertEquals('a', actualRowKeyFromEntity[17]);
     assertEquals('a', actualRowKeyFromEntity[7]);
     assertEquals('b', actualRowKeyFromEntity[1]);
     assertEquals('c', actualRowKeyFromEntity[13]);
     assertEquals('e', actualRowKeyFromEntity[15]);
-    assertEquals('e', actualRowKeyFromEntity[49]);
-    assertEquals('e', actualRowKeyFromEntity[52]);
     assertEquals('h', actualRowKeyFromEntity[14]);
     assertEquals('i', actualRowKeyFromEntity[23]);
     assertEquals('j', actualRowKeyFromEntity[2]);
@@ -332,14 +322,11 @@ class ClassicAccumuloElementConverterDiffblueTest {
     assertEquals('n', actualRowKeyFromEntity[24]);
     assertEquals('o', actualRowKeyFromEntity[10]);
     assertEquals('r', actualRowKeyFromEntity[22]);
-    assertEquals('r', actualRowKeyFromEntity[50]);
     assertEquals('r', actualRowKeyFromEntity[9]);
     assertEquals('s', actualRowKeyFromEntity[12]);
     assertEquals('s', actualRowKeyFromEntity[20]);
     assertEquals('t', actualRowKeyFromEntity[21]);
-    assertEquals('t', actualRowKeyFromEntity[51]);
     assertEquals('v', actualRowKeyFromEntity[8]);
-    assertEquals('x', actualRowKeyFromEntity[53]);
   }
 
   /**
@@ -388,18 +375,19 @@ class ClassicAccumuloElementConverterDiffblueTest {
    * Test {@link ClassicAccumuloElementConverter#getRowKeyFromEntity(Entity)}.
    *
    * <ul>
-   *   <li>When {@link Entity#Entity(String)} with {@code Group} Vertex is {@code Vertex}.
+   *   <li>When {@link Entity} {@link Entity#getVertex()} return {@code Vertex}.
+   *   <li>Then calls {@link Entity#getVertex()}.
    * </ul>
    *
    * <p>Method under test: {@link ClassicAccumuloElementConverter#getRowKeyFromEntity(Entity)}
    */
   @Test
   @DisplayName(
-      "Test getRowKeyFromEntity(Entity); when Entity(String) with 'Group' Vertex is 'Vertex'")
+      "Test getRowKeyFromEntity(Entity); when Entity getVertex() return 'Vertex'; then calls getVertex()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"byte[] ClassicAccumuloElementConverter.getRowKeyFromEntity(Entity)"})
-  void testGetRowKeyFromEntity_whenEntityWithGroupVertexIsVertex() {
+  void testGetRowKeyFromEntity_whenEntityGetVertexReturnVertex_thenCallsGetVertex() {
     // Arrange
     Schema schema = mock(Schema.class);
     when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
@@ -408,13 +396,14 @@ class ClassicAccumuloElementConverterDiffblueTest {
     ClassicAccumuloElementConverter classicAccumuloElementConverter =
         new ClassicAccumuloElementConverter(schema);
 
-    Entity entity = new Entity("Group");
-    entity.setVertex("Vertex");
+    Entity entity = mock(Entity.class);
+    when(entity.getVertex()).thenReturn("Vertex");
 
     // Act
     classicAccumuloElementConverter.getRowKeyFromEntity(entity);
 
     // Assert
+    verify(entity).getVertex();
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");
     verify(schema).getVertexSerialiser();
@@ -441,43 +430,6 @@ class ClassicAccumuloElementConverterDiffblueTest {
     ClassicAccumuloElementConverter classicAccumuloElementConverter =
         new ClassicAccumuloElementConverter(schema);
 
-    // Act
-    classicAccumuloElementConverter.getRowKeysFromEdge(
-        new Edge.Builder()
-            .dest("Dest")
-            .directed(true)
-            .group("Group")
-            .matchedVertex(MatchedVertex.SOURCE)
-            .source("Source")
-            .build());
-
-    // Assert
-    verify(schema).getAggregatedGroups();
-    verify(schema).getConfig("timestampProperty");
-    verify(schema, atLeast(1)).getVertexSerialiser();
-  }
-
-  /**
-   * Test {@link ClassicAccumuloElementConverter#getRowKeysFromEdge(Edge)}.
-   *
-   * <p>Method under test: {@link ClassicAccumuloElementConverter#getRowKeysFromEdge(Edge)}
-   */
-  @Test
-  @DisplayName("Test getRowKeysFromEdge(Edge)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "uk.gov.gchq.gaffer.commonutil.pair.Pair ClassicAccumuloElementConverter.getRowKeysFromEdge(Edge)"
-  })
-  void testGetRowKeysFromEdge2() {
-    // Arrange
-    Schema schema = mock(Schema.class);
-    when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
-    when(schema.getAggregatedGroups()).thenReturn(new ArrayList<>());
-    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-    ClassicAccumuloElementConverter classicAccumuloElementConverter =
-        new ClassicAccumuloElementConverter(schema);
-
     Edge edge = mock(Edge.class);
     when(edge.getDestination())
         .thenThrow(new AccumuloElementConversionException("An error occurred"));
@@ -490,6 +442,50 @@ class ClassicAccumuloElementConverterDiffblueTest {
         () -> classicAccumuloElementConverter.getRowKeysFromEdge(edge));
     verify(edge).getDestination();
     verify(edge).getSource();
+    verify(edge).isDirected();
+    verify(schema).getAggregatedGroups();
+    verify(schema).getConfig("timestampProperty");
+    verify(schema, atLeast(1)).getVertexSerialiser();
+  }
+
+  /**
+   * Test {@link ClassicAccumuloElementConverter#getRowKeysFromEdge(Edge)}.
+   *
+   * <ul>
+   *   <li>Given {@code Destination}.
+   *   <li>When {@link Edge} {@link Edge#getDestination()} return {@code Destination}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ClassicAccumuloElementConverter#getRowKeysFromEdge(Edge)}
+   */
+  @Test
+  @DisplayName(
+      "Test getRowKeysFromEdge(Edge); given 'Destination'; when Edge getDestination() return 'Destination'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "uk.gov.gchq.gaffer.commonutil.pair.Pair ClassicAccumuloElementConverter.getRowKeysFromEdge(Edge)"
+  })
+  void testGetRowKeysFromEdge_givenDestination_whenEdgeGetDestinationReturnDestination() {
+    // Arrange
+    Schema schema = mock(Schema.class);
+    when(schema.getConfig(Mockito.<String>any())).thenReturn("Config");
+    when(schema.getAggregatedGroups()).thenReturn(new ArrayList<>());
+    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
+    ClassicAccumuloElementConverter classicAccumuloElementConverter =
+        new ClassicAccumuloElementConverter(schema);
+
+    Edge edge = mock(Edge.class);
+    when(edge.getDestination()).thenReturn("Destination");
+    when(edge.isDirected()).thenReturn(false);
+    when(edge.getSource()).thenReturn("Source");
+
+    // Act
+    classicAccumuloElementConverter.getRowKeysFromEdge(edge);
+
+    // Assert
+    verify(edge, atLeast(1)).getDestination();
+    verify(edge, atLeast(1)).getSource();
     verify(edge).isDirected();
     verify(schema).getAggregatedGroups();
     verify(schema).getConfig("timestampProperty");

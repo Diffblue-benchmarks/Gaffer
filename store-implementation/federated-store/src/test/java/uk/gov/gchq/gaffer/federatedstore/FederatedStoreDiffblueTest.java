@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +38,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import uk.gov.gchq.gaffer.core.exception.GafferRuntimeException;
-import uk.gov.gchq.gaffer.federatedstore.operation.AddGraphWithHooks;
 import uk.gov.gchq.gaffer.federatedstore.operation.FederatedOperationChainValidator;
-import uk.gov.gchq.gaffer.federatedstore.operation.GetAllGraphIds;
+import uk.gov.gchq.gaffer.federatedstore.operation.GetAllGraphInfo;
 import uk.gov.gchq.gaffer.federatedstore.operation.IFederationOperation;
 import uk.gov.gchq.gaffer.federatedstore.operation.RemoveGraph;
 import uk.gov.gchq.gaffer.federatedstore.operation.handler.impl.FederatedNoOutputHandler;
@@ -52,13 +51,14 @@ import uk.gov.gchq.gaffer.operation.Operation;
 import uk.gov.gchq.gaffer.operation.export.graph.ExportToOtherAuthorisedGraph;
 import uk.gov.gchq.gaffer.operation.impl.function.Aggregate;
 import uk.gov.gchq.gaffer.operation.impl.function.Filter;
-import uk.gov.gchq.gaffer.operation.impl.join.Join;
+import uk.gov.gchq.gaffer.operation.impl.function.Transform;
 import uk.gov.gchq.gaffer.serialisation.Serialiser;
 import uk.gov.gchq.gaffer.store.Context;
 import uk.gov.gchq.gaffer.store.StoreException;
 import uk.gov.gchq.gaffer.store.StoreProperties;
 import uk.gov.gchq.gaffer.store.library.FileGraphLibrary;
 import uk.gov.gchq.gaffer.store.library.GraphLibrary;
+import uk.gov.gchq.gaffer.store.operation.GetSchema;
 import uk.gov.gchq.gaffer.store.schema.Schema;
 import uk.gov.gchq.gaffer.user.User;
 import uk.gov.gchq.koryphe.impl.binaryoperator.CollectionIntersect;
@@ -888,12 +888,12 @@ class FederatedStoreDiffblueTest {
     // Assert
     Set<Class<? extends Operation>> supportedOperations = federatedStore.getSupportedOperations();
     assertEquals(Short.SIZE, supportedOperations.size());
-    assertTrue(supportedOperations.contains(AddGraphWithHooks.class));
-    assertTrue(supportedOperations.contains(GetAllGraphIds.class));
+    assertTrue(supportedOperations.contains(GetAllGraphInfo.class));
     assertTrue(supportedOperations.contains(RemoveGraph.class));
     assertTrue(supportedOperations.contains(Aggregate.class));
     assertTrue(supportedOperations.contains(Filter.class));
-    assertTrue(supportedOperations.contains(Join.class));
+    assertTrue(supportedOperations.contains(Transform.class));
+    assertTrue(supportedOperations.contains(GetSchema.class));
   }
 
   /**
@@ -920,12 +920,12 @@ class FederatedStoreDiffblueTest {
     // Assert
     Set<Class<? extends Operation>> supportedOperations = federatedStore.getSupportedOperations();
     assertEquals(Short.SIZE, supportedOperations.size());
-    assertTrue(supportedOperations.contains(AddGraphWithHooks.class));
-    assertTrue(supportedOperations.contains(GetAllGraphIds.class));
+    assertTrue(supportedOperations.contains(GetAllGraphInfo.class));
     assertTrue(supportedOperations.contains(RemoveGraph.class));
     assertTrue(supportedOperations.contains(Aggregate.class));
     assertTrue(supportedOperations.contains(Filter.class));
-    assertTrue(supportedOperations.contains(Join.class));
+    assertTrue(supportedOperations.contains(Transform.class));
+    assertTrue(supportedOperations.contains(GetSchema.class));
   }
 
   /**

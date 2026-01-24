@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.StatusResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import uk.gov.gchq.gaffer.core.exception.GafferRuntimeException;
 import uk.gov.gchq.gaffer.rest.factory.GraphFactory;
@@ -48,14 +49,18 @@ class StatusControllerDiffblueTest {
   /**
    * Test {@link StatusController#getStatus()}.
    *
+   * <ul>
+   *   <li>Then status {@link StatusResultMatchers#isInternalServerError()}.
+   * </ul>
+   *
    * <p>Method under test: {@link StatusController#getStatus()}
    */
   @Test
-  @DisplayName("Test getStatus()")
+  @DisplayName("Test getStatus(); then status isInternalServerError()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"uk.gov.gchq.gaffer.rest.SystemStatus StatusController.getStatus()"})
-  void testGetStatus() throws Exception {
+  void testGetStatus_thenStatusIsInternalServerError() throws Exception {
     // Arrange
     when(graphFactory.getGraph()).thenThrow(new GafferRuntimeException("An error occurred"));
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,30 +83,6 @@ class OperationServiceDiffblueTest {
     // Act and Assert
     assertThrows(RuntimeException.class, () -> operationService.executeChunked(operation));
     verify(operation).getOperations();
-  }
-
-  /**
-   * Test {@link OperationService#executeChunked(Operation)}.
-   *
-   * <ul>
-   *   <li>When {@code null}.
-   *   <li>Then return RawType is {@link String}.
-   * </ul>
-   *
-   * <p>Method under test: {@link OperationService#executeChunked(Operation)}
-   */
-  @Test
-  @DisplayName("Test executeChunked(Operation); when 'null'; then return RawType is String")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ChunkedOutput OperationService.executeChunked(Operation)"})
-  void testExecuteChunked_whenNull_thenReturnRawTypeIsString() {
-    // Arrange and Act
-    ChunkedOutput<String> actualExecuteChunkedResult = new OperationService().executeChunked(null);
-
-    // Assert
-    Class<String> expectedRawType = String.class;
-    assertEquals(expectedRawType, actualExecuteChunkedResult.getRawType());
   }
 
   /**

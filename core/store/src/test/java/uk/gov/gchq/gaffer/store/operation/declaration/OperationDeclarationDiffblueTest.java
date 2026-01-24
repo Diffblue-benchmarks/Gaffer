@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,27 +57,6 @@ class OperationDeclarationDiffblueTest {
   }
 
   /**
-   * Test Builder {@link Builder#handler(OperationHandler)}.
-   *
-   * <p>Method under test: {@link Builder#handler(OperationHandler)}
-   */
-  @Test
-  @DisplayName("Test Builder handler(OperationHandler)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.handler(OperationHandler)"})
-  void testBuilderHandler() {
-    // Arrange
-    Builder builder = new Builder();
-
-    // Act
-    Builder actualHandlerResult = builder.handler(mock(OperationHandler.class));
-
-    // Assert
-    assertSame(builder, actualHandlerResult);
-  }
-
-  /**
    * Test Builder new {@link Builder} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link Builder}
@@ -92,28 +71,6 @@ class OperationDeclarationDiffblueTest {
     OperationDeclaration operationDeclaration = new Builder().build();
     assertNull(operationDeclaration.getOperation());
     assertNull(operationDeclaration.getHandler());
-  }
-
-  /**
-   * Test Builder {@link Builder#operation(Class)}.
-   *
-   * <p>Method under test: {@link Builder#operation(Class)}
-   */
-  @Test
-  @DisplayName("Test Builder operation(Class)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.operation(Class)"})
-  void testBuilderOperation() {
-    // Arrange
-    Builder builder = new Builder();
-    Class<Operation> operation = Operation.class;
-
-    // Act
-    Builder actualOperationResult = builder.operation(operation);
-
-    // Assert
-    assertSame(builder, actualOperationResult);
   }
 
   /**

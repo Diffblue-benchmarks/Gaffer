@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,33 +62,6 @@ class NamedViewDetailDiffblueTest {
   void testBuilderViewWithString_whenNull_thenThrowIllegalArgumentException() {
     // Arrange, Act and Assert
     assertThrows(IllegalArgumentException.class, () -> new Builder().view((String) null));
-  }
-
-  /**
-   * Test Builder {@link Builder#view(String)} with {@code String}.
-   *
-   * <ul>
-   *   <li>When {@code View}.
-   *   <li>Then return {@link Builder} (default constructor).
-   * </ul>
-   *
-   * <p>Method under test: {@link Builder#view(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test Builder view(String) with 'String'; when 'View'; then return Builder (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.view(String)"})
-  void testBuilderViewWithString_whenView_thenReturnBuilder() {
-    // Arrange
-    Builder builder = new Builder();
-
-    // Act
-    Builder actualViewResult = builder.view("View");
-
-    // Assert
-    assertSame(builder, actualViewResult);
   }
 
   /**

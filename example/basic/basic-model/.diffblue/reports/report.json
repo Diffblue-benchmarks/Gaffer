@@ -3,16 +3,16 @@
     "reportVersion" : "2.8"
   },
   "run" : {
-    "version" : "2025.11.01-3385b9f-licensed",
-    "creationTimestamp" : "2025-11-13T01:28:35.49Z",
+    "version" : "2026.01.01-c73dc7d-licensed",
+    "creationTimestamp" : "2026-01-23T12:44:28.118Z",
     "command" : "dcover coverage-reports --exclude-modules=uk.gov.gchq.gaffer:accumulo-rest,uk.gov.gchq.gaffer:map-rest,uk.gov.gchq.gaffer:basic-rest",
-    "totalTime" : 14.111,
-    "environmentDetectionTime" : 0.137,
+    "totalTime" : 13.905,
+    "environmentDetectionTime" : 0.213,
     "indexingTime" : 0.0,
     "entryPointsTime" : 0.0,
     "generationTime" : 0.0,
-    "timeToFirstTest" : 14.11,
-    "timeToLastTest" : 14.11,
+    "timeToFirstTest" : 13.905,
+    "timeToLastTest" : 13.905,
     "indexQueryTime" : 0.0,
     "verificationTime" : 0.0,
     "validationTime" : 0.0

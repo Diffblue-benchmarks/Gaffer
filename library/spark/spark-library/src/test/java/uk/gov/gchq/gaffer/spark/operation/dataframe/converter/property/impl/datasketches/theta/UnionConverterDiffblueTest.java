@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package uk.gov.gchq.gaffer.spark.operation.dataframe.converter.property.impl.dat
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -26,6 +27,7 @@ import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.apache.datasketches.theta.CompactSketch;
 import org.apache.datasketches.theta.Union;
+import org.apache.spark.sql.types.DataType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -79,6 +81,26 @@ class UnionConverterDiffblueTest {
 
     // Act and Assert
     assertTrue(unionConverter.canHandle(clazz));
+  }
+
+  /**
+   * Test {@link UnionConverter#convertedType()}.
+   *
+   * <p>Method under test: {@link UnionConverter#convertedType()}
+   */
+  @Test
+  @DisplayName("Test convertedType()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"DataType UnionConverter.convertedType()"})
+  void testConvertedType() {
+    // Arrange and Act
+    DataType actualConvertedTypeResult = new UnionConverter().convertedType();
+
+    // Assert
+    assertSame(
+        ((org.apache.spark.sql.types.DoubleType$) actualConvertedTypeResult).MODULE$,
+        actualConvertedTypeResult);
   }
 
   /**

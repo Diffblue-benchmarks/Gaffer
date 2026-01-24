@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package uk.gov.gchq.gaffer.accumulostore.key.core.impl.byteEntity;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.isA;
@@ -68,54 +69,6 @@ class ByteEntityRangeFactoryDiffblueTest {
     "List ByteEntityRangeFactory.getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType)"
   })
   void testGetRangeWithSourceValDestValDirectedOperationInOutType()
-      throws UnsupportedEncodingException, RangeFactoryException, SerialisationException {
-    // Arrange
-    AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
-    when(avroSerialiser.serialise(Mockito.<Object>any())).thenReturn("AXAXAXAX".getBytes("UTF-8"));
-
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(avroSerialiser);
-    ByteEntityRangeFactory byteEntityRangeFactory = new ByteEntityRangeFactory(schema);
-
-    // Act
-    List<Range> actualRange =
-        byteEntityRangeFactory.getRange(
-            "Source Val",
-            "Dest Val",
-            DirectedType.EITHER,
-            new GetElementsBetweenSets(),
-            IncludeIncomingOutgoingType.EITHER);
-
-    // Assert
-    verify(avroSerialiser, atLeast(1)).serialise(Mockito.<Object>any());
-    verify(schema, atLeast(1)).getVertexSerialiser();
-    assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(1);
-    Key startKey = getResult.getStartKey();
-    assertEquals(21, startKey.getLength());
-    assertEquals(21, startKey.getSize());
-    Key endKey = getResult.getEndKey();
-    assertEquals(22, endKey.getLength());
-    assertEquals(22, endKey.getSize());
-  }
-
-  /**
-   * Test {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType, GraphFilters,
-   * IncludeIncomingOutgoingType)} with {@code sourceVal}, {@code destVal}, {@code directed}, {@code
-   * operation}, {@code inOutType}.
-   *
-   * <p>Method under test: {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType,
-   * GraphFilters, IncludeIncomingOutgoingType)}
-   */
-  @Test
-  @DisplayName(
-      "Test getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType) with 'sourceVal', 'destVal', 'directed', 'operation', 'inOutType'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "List ByteEntityRangeFactory.getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType)"
-  })
-  void testGetRangeWithSourceValDestValDirectedOperationInOutType2()
       throws RangeFactoryException, SerialisationException {
     // Arrange
     AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
@@ -138,136 +91,6 @@ class ByteEntityRangeFactoryDiffblueTest {
                 IncludeIncomingOutgoingType.EITHER));
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
-  }
-
-  /**
-   * Test {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType, GraphFilters,
-   * IncludeIncomingOutgoingType)} with {@code sourceVal}, {@code destVal}, {@code directed}, {@code
-   * operation}, {@code inOutType}.
-   *
-   * <p>Method under test: {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType,
-   * GraphFilters, IncludeIncomingOutgoingType)}
-   */
-  @Test
-  @DisplayName(
-      "Test getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType) with 'sourceVal', 'destVal', 'directed', 'operation', 'inOutType'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "List ByteEntityRangeFactory.getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType)"
-  })
-  void testGetRangeWithSourceValDestValDirectedOperationInOutType3()
-      throws RangeFactoryException, SerialisationException {
-    // Arrange
-    AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
-    when(avroSerialiser.serialise(Mockito.<Object>any()))
-        .thenReturn(
-            new byte[] {
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY,
-              'A',
-              ByteEntityPositions.ENTITY
-            });
-
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(avroSerialiser);
-    ByteEntityRangeFactory byteEntityRangeFactory = new ByteEntityRangeFactory(schema);
-
-    // Act
-    List<Range> actualRange =
-        byteEntityRangeFactory.getRange(
-            "Source Val",
-            "Dest Val",
-            DirectedType.EITHER,
-            new GetElementsBetweenSets(),
-            IncludeIncomingOutgoingType.EITHER);
-
-    // Assert
-    verify(avroSerialiser, atLeast(1)).serialise(Mockito.<Object>any());
-    verify(schema, atLeast(1)).getVertexSerialiser();
-    assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
-    Key startKey = getResult.getStartKey();
-    assertEquals(53, startKey.getLength());
-    Range getResult2 = actualRange.get(1);
-    Key startKey2 = getResult2.getStartKey();
-    assertEquals(53, startKey2.getLength());
-    assertEquals(53, startKey.getSize());
-    assertEquals(53, startKey2.getSize());
-    Key endKey = getResult.getEndKey();
-    assertEquals(54, endKey.getLength());
-    Key endKey2 = getResult2.getEndKey();
-    assertEquals(54, endKey2.getLength());
-    assertEquals(54, endKey.getSize());
-    assertEquals(54, endKey2.getSize());
-  }
-
-  /**
-   * Test {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType, GraphFilters,
-   * IncludeIncomingOutgoingType)} with {@code sourceVal}, {@code destVal}, {@code directed}, {@code
-   * operation}, {@code inOutType}.
-   *
-   * <p>Method under test: {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType,
-   * GraphFilters, IncludeIncomingOutgoingType)}
-   */
-  @Test
-  @DisplayName(
-      "Test getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType) with 'sourceVal', 'destVal', 'directed', 'operation', 'inOutType'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "List ByteEntityRangeFactory.getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType)"
-  })
-  void testGetRangeWithSourceValDestValDirectedOperationInOutType4()
-      throws RangeFactoryException, SerialisationException {
-    // Arrange
-    AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
-    when(avroSerialiser.serialise(Mockito.<Object>any()))
-        .thenReturn(new byte[] {0, 'X', 'A', 'X', 'A', 'X', 'A', 'X'});
-
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(avroSerialiser);
-    ByteEntityRangeFactory byteEntityRangeFactory = new ByteEntityRangeFactory(schema);
-
-    // Act
-    List<Range> actualRange =
-        byteEntityRangeFactory.getRange(
-            "Source Val",
-            "Dest Val",
-            DirectedType.EITHER,
-            new GetElementsBetweenSets(),
-            IncludeIncomingOutgoingType.EITHER);
-
-    // Assert
-    verify(avroSerialiser, atLeast(1)).serialise(Mockito.<Object>any());
-    verify(schema, atLeast(1)).getVertexSerialiser();
-    assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
-    Key startKey = getResult.getStartKey();
-    assertEquals(23, startKey.getLength());
-    Range getResult2 = actualRange.get(1);
-    Key startKey2 = getResult2.getStartKey();
-    assertEquals(23, startKey2.getLength());
-    assertEquals(23, startKey.getSize());
-    assertEquals(23, startKey2.getSize());
-    Key endKey = getResult.getEndKey();
-    assertEquals(24, endKey.getLength());
-    Key endKey2 = getResult2.getEndKey();
-    assertEquals(24, endKey2.getLength());
-    assertEquals(24, endKey.getSize());
-    assertEquals(24, endKey2.getSize());
   }
 
   /**
@@ -329,6 +152,56 @@ class ByteEntityRangeFactoryDiffblueTest {
    * operation}, {@code inOutType}.
    *
    * <ul>
+   *   <li>Then return size is two.
+   * </ul>
+   *
+   * <p>Method under test: {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType,
+   * GraphFilters, IncludeIncomingOutgoingType)}
+   */
+  @Test
+  @DisplayName(
+      "Test getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType) with 'sourceVal', 'destVal', 'directed', 'operation', 'inOutType'; then return size is two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "List ByteEntityRangeFactory.getRange(Object, Object, DirectedType, GraphFilters, IncludeIncomingOutgoingType)"
+  })
+  void testGetRangeWithSourceValDestValDirectedOperationInOutType_thenReturnSizeIsTwo()
+      throws UnsupportedEncodingException, RangeFactoryException, SerialisationException {
+    // Arrange
+    AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
+    when(avroSerialiser.serialise(Mockito.<Object>any())).thenReturn("AXAXAXAX".getBytes("UTF-8"));
+
+    Schema schema = mock(Schema.class);
+    when(schema.getVertexSerialiser()).thenReturn(avroSerialiser);
+    ByteEntityRangeFactory byteEntityRangeFactory = new ByteEntityRangeFactory(schema);
+
+    // Act
+    List<Range> actualRange =
+        byteEntityRangeFactory.getRange(
+            "Source Val",
+            "Dest Val",
+            null,
+            new GetElementsBetweenSets(),
+            IncludeIncomingOutgoingType.EITHER);
+
+    // Assert
+    verify(avroSerialiser, atLeast(1)).serialise(Mockito.<Object>any());
+    verify(schema, atLeast(1)).getVertexSerialiser();
+    assertEquals(2, actualRange.size());
+    Range getResult = actualRange.get(1);
+    assertFalse(getResult.isInfiniteStartKey());
+    assertFalse(getResult.isInfiniteStopKey());
+    assertTrue(getResult.isEndKeyInclusive());
+    assertTrue(getResult.isStartKeyInclusive());
+  }
+
+  /**
+   * Test {@link ByteEntityRangeFactory#getRange(Object, Object, DirectedType, GraphFilters,
+   * IncludeIncomingOutgoingType)} with {@code sourceVal}, {@code destVal}, {@code directed}, {@code
+   * operation}, {@code inOutType}.
+   *
+   * <ul>
    *   <li>When {@code DIRECTED}.
    * </ul>
    *
@@ -374,56 +247,6 @@ class ByteEntityRangeFactoryDiffblueTest {
     assertTrue(startKey.getColumnQualifierData() instanceof ArrayByteSequence);
     assertTrue(endKey.getColumnVisibilityData() instanceof ArrayByteSequence);
     assertTrue(startKey.getColumnVisibilityData() instanceof ArrayByteSequence);
-  }
-
-  /**
-   * Test {@link ByteEntityRangeFactory#getRange(Object, GraphFilters, boolean)} with {@code
-   * vertex}, {@code operation}, {@code includeEdgesParam}.
-   *
-   * <p>Method under test: {@link ByteEntityRangeFactory#getRange(Object, GraphFilters, boolean)}
-   */
-  @Test
-  @DisplayName(
-      "Test getRange(Object, GraphFilters, boolean) with 'vertex', 'operation', 'includeEdgesParam'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"List ByteEntityRangeFactory.getRange(Object, GraphFilters, boolean)"})
-  void testGetRangeWithVertexOperationIncludeEdgesParam() throws RangeFactoryException {
-    // Arrange
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-    ByteEntityRangeFactory byteEntityRangeFactory = new ByteEntityRangeFactory(schema);
-
-    View view = mock(View.class);
-    when(view.hasEntities()).thenReturn(true);
-
-    GetElementsBetweenSets operation = mock(GetElementsBetweenSets.class);
-    when(operation.getDirectedType()).thenReturn(DirectedType.EITHER);
-    when(operation.getView()).thenReturn(view);
-    when(operation.getIncludeIncomingOutGoing()).thenReturn(IncludeIncomingOutgoingType.EITHER);
-
-    // Act
-    List<Range> actualRange = byteEntityRangeFactory.getRange("Vertex", operation, true);
-
-    // Assert
-    verify(operation).getDirectedType();
-    verify(operation).getIncludeIncomingOutGoing();
-    verify(operation).getView();
-    verify(view).hasEntities();
-    verify(schema).getVertexSerialiser();
-    assertEquals(1, actualRange.size());
-    Range getResult = actualRange.get(0);
-    TRange toThriftResult = getResult.toThrift();
-    TKey start = toThriftResult.getStart();
-    assertArrayEquals(new byte[] {}, start.getColFamily());
-    TKey stop = toThriftResult.getStop();
-    assertArrayEquals(new byte[] {}, stop.getColFamily());
-    assertArrayEquals(new byte[] {}, start.getColQualifier());
-    assertArrayEquals(new byte[] {}, stop.getColQualifier());
-    assertArrayEquals(new byte[] {}, start.getColVisibility());
-    assertArrayEquals(new byte[] {}, stop.getColVisibility());
-    assertArrayEquals(new byte[] {}, getResult.getEndKey().getColumnVisibilityParsed().flatten());
-    assertArrayEquals(new byte[] {}, getResult.getStartKey().getColumnVisibilityParsed().flatten());
   }
 
   /**
@@ -851,12 +674,10 @@ class ByteEntityRangeFactoryDiffblueTest {
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
     assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
+    assertTrue(actualRange.get(0).getEndKey().getRowData() instanceof ArrayByteSequence);
+    Range getResult = actualRange.get(1);
     assertTrue(getResult.getEndKey().getRowData() instanceof ArrayByteSequence);
-    Range getResult2 = actualRange.get(1);
-    assertTrue(getResult2.getEndKey().getRowData() instanceof ArrayByteSequence);
     assertTrue(getResult.getStartKey().getRowData() instanceof ArrayByteSequence);
-    assertTrue(getResult2.getStartKey().getRowData() instanceof ArrayByteSequence);
   }
 
   /**
@@ -904,12 +725,10 @@ class ByteEntityRangeFactoryDiffblueTest {
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
     assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
+    assertTrue(actualRange.get(0).getEndKey().getRowData() instanceof ArrayByteSequence);
+    Range getResult = actualRange.get(1);
     assertTrue(getResult.getEndKey().getRowData() instanceof ArrayByteSequence);
-    Range getResult2 = actualRange.get(1);
-    assertTrue(getResult2.getEndKey().getRowData() instanceof ArrayByteSequence);
     assertTrue(getResult.getStartKey().getRowData() instanceof ArrayByteSequence);
-    assertTrue(getResult2.getStartKey().getRowData() instanceof ArrayByteSequence);
   }
 
   /**
@@ -1082,12 +901,10 @@ class ByteEntityRangeFactoryDiffblueTest {
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
     assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
+    assertTrue(actualRange.get(0).getEndKey().getRowData() instanceof ArrayByteSequence);
+    Range getResult = actualRange.get(1);
     assertTrue(getResult.getEndKey().getRowData() instanceof ArrayByteSequence);
-    Range getResult2 = actualRange.get(1);
-    assertTrue(getResult2.getEndKey().getRowData() instanceof ArrayByteSequence);
     assertTrue(getResult.getStartKey().getRowData() instanceof ArrayByteSequence);
-    assertTrue(getResult2.getStartKey().getRowData() instanceof ArrayByteSequence);
   }
 
   /**
@@ -1254,12 +1071,10 @@ class ByteEntityRangeFactoryDiffblueTest {
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
     assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
+    assertTrue(actualRange.get(0).getEndKey().getRowData() instanceof ArrayByteSequence);
+    Range getResult = actualRange.get(1);
     assertTrue(getResult.getEndKey().getRowData() instanceof ArrayByteSequence);
-    Range getResult2 = actualRange.get(1);
-    assertTrue(getResult2.getEndKey().getRowData() instanceof ArrayByteSequence);
     assertTrue(getResult.getStartKey().getRowData() instanceof ArrayByteSequence);
-    assertTrue(getResult2.getStartKey().getRowData() instanceof ArrayByteSequence);
   }
 
   /**
@@ -1307,12 +1122,10 @@ class ByteEntityRangeFactoryDiffblueTest {
     verify(avroSerialiser).serialise(isA(Object.class));
     verify(schema).getVertexSerialiser();
     assertEquals(2, actualRange.size());
-    Range getResult = actualRange.get(0);
+    assertTrue(actualRange.get(0).getEndKey().getRowData() instanceof ArrayByteSequence);
+    Range getResult = actualRange.get(1);
     assertTrue(getResult.getEndKey().getRowData() instanceof ArrayByteSequence);
-    Range getResult2 = actualRange.get(1);
-    assertTrue(getResult2.getEndKey().getRowData() instanceof ArrayByteSequence);
     assertTrue(getResult.getStartKey().getRowData() instanceof ArrayByteSequence);
-    assertTrue(getResult2.getStartKey().getRowData() instanceof ArrayByteSequence);
   }
 
   /**
@@ -1485,7 +1298,8 @@ class ByteEntityRangeFactoryDiffblueTest {
    * Test {@link ByteEntityRangeFactory#getKeyFromEdgeId(Object, Object, boolean, boolean)}.
    *
    * <ul>
-   *   <li>Then ColumnFamilyData return {@link ArrayByteSequence}.
+   *   <li>Given {@link Schema} {@link Schema#getVertexSerialiser()} return {@link AvroSerialiser}
+   *       (default constructor).
    * </ul>
    *
    * <p>Method under test: {@link ByteEntityRangeFactory#getKeyFromEdgeId(Object, Object, boolean,
@@ -1493,13 +1307,13 @@ class ByteEntityRangeFactoryDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test getKeyFromEdgeId(Object, Object, boolean, boolean); then ColumnFamilyData return ArrayByteSequence")
+      "Test getKeyFromEdgeId(Object, Object, boolean, boolean); given Schema getVertexSerialiser() return AvroSerialiser (default constructor)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "Key ByteEntityRangeFactory.getKeyFromEdgeId(Object, Object, boolean, boolean)"
   })
-  void testGetKeyFromEdgeId_thenColumnFamilyDataReturnArrayByteSequence()
+  void testGetKeyFromEdgeId_givenSchemaGetVertexSerialiserReturnAvroSerialiser()
       throws RangeFactoryException {
     // Arrange
     Schema schema = mock(Schema.class);
@@ -1511,16 +1325,8 @@ class ByteEntityRangeFactoryDiffblueTest {
 
     // Assert
     verify(schema).getVertexSerialiser();
-    ByteSequence columnFamilyData = actualKeyFromEdgeId.getColumnFamilyData();
-    assertTrue(columnFamilyData instanceof ArrayByteSequence);
-    ByteSequence columnQualifierData = actualKeyFromEdgeId.getColumnQualifierData();
-    assertTrue(columnQualifierData instanceof ArrayByteSequence);
-    ByteSequence columnVisibilityData = actualKeyFromEdgeId.getColumnVisibilityData();
-    assertTrue(columnVisibilityData instanceof ArrayByteSequence);
-    assertTrue(actualKeyFromEdgeId.getRowData() instanceof ArrayByteSequence);
-    assertEquals(columnFamilyData, columnQualifierData);
-    assertEquals(columnFamilyData, columnVisibilityData);
-    assertArrayEquals(new byte[] {}, actualKeyFromEdgeId.getColumnVisibilityParsed().flatten());
+    assertTrue(actualKeyFromEdgeId.getColumnQualifierData() instanceof ArrayByteSequence);
+    assertTrue(actualKeyFromEdgeId.getColumnVisibilityData() instanceof ArrayByteSequence);
   }
 
   /**

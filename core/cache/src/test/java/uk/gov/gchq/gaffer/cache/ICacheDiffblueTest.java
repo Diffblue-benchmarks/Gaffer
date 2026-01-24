@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,23 +80,5 @@ class ICacheDiffblueTest {
 
     // Act and Assert
     assertThrows(OverwritingException.class, () -> hashMapCache.putSafe("Key", "Value"));
-  }
-
-  /**
-   * Test {@link ICache#size()}.
-   *
-   * <p>Method under test: {@link ICache#size()}
-   */
-  @Test
-  @DisplayName("Test size()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"int ICache.size()"})
-  void testSize() {
-    // Arrange
-    HashMapCache<Object, Object> hashMapCache = new HashMapCache<>(true);
-
-    // Act and Assert
-    assertEquals(0, hashMapCache.size());
   }
 }

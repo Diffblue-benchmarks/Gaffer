@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.StatusResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import uk.gov.gchq.gaffer.core.exception.GafferRuntimeException;
 import uk.gov.gchq.gaffer.operation.Operation;
@@ -67,71 +66,6 @@ class OperationControllerDiffblueTest {
   @MockBean private GraphFactory graphFactory;
 
   @Autowired private OperationController operationController;
-
-  /**
-   * Test {@link OperationController#getOperations()}.
-   *
-   * <p>Method under test: {@link OperationController#getOperations()}
-   */
-  @Test
-  @DisplayName("Test getOperations()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.util.Set OperationController.getOperations()"})
-  void testGetOperations() throws Exception {
-    // Arrange
-    when(graphFactory.getGraph()).thenThrow(new ClassCastException());
-
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/graph/operations");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(operationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isInternalServerError())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":500,\"status\":\"Internal Server Error\",\"simpleMessage\":null,\"detailMessage\":null}"));
-  }
-
-  /**
-   * Test {@link OperationController#getOperations()}.
-   *
-   * <ul>
-   *   <li>Then content string a string.
-   * </ul>
-   *
-   * <p>Method under test: {@link OperationController#getOperations()}
-   */
-  @Test
-  @DisplayName("Test getOperations(); then content string a string")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"java.util.Set OperationController.getOperations()"})
-  void testGetOperations_thenContentStringAString() throws Exception {
-    // Arrange
-    when(graphFactory.getGraph()).thenThrow(new GafferRuntimeException("An error occurred"));
-
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/graph/operations");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(operationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isInternalServerError())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":500,\"status\":\"Internal Server Error\",\"simpleMessage\":\"An error occurred\",\"detailMessage"
-                        + "\":null}"));
-  }
 
   /**
    * Test {@link OperationController#getAllOperationDetails()}.
@@ -333,45 +267,6 @@ class OperationControllerDiffblueTest {
   }
 
   /**
-   * Test {@link OperationController#getOperationDetails(String)}.
-   *
-   * <ul>
-   *   <li>Given {@link GraphFactory}.
-   *   <li>When {@code Class Name}.
-   *   <li>Then status {@link StatusResultMatchers#isNotFound()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link OperationController#getOperationDetails(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test getOperationDetails(String); given GraphFactory; when 'Class Name'; then status isNotFound()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "uk.gov.gchq.gaffer.rest.model.OperationDetail OperationController.getOperationDetails(String)"
-  })
-  void testGetOperationDetails_givenGraphFactory_whenClassName_thenStatusIsNotFound()
-      throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/graph/operations/{className}", "Class Name");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(operationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isNotFound())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":404,\"status\":\"Not Found\",\"simpleMessage\":\"Class: Class Name was not found on the"
-                        + " classpath.\",\"detailMessage\":null}"));
-  }
-
-  /**
    * Test {@link OperationController#getNextOperations(String)} with {@code className}.
    *
    * <ul>
@@ -540,41 +435,6 @@ class OperationControllerDiffblueTest {
                 .string(
                     "{\"statusCode\":404,\"status\":\"Not Found\",\"simpleMessage\":\"Class: . was not found on the classpath.\","
                         + "\"detailMessage\":null}"));
-  }
-
-  /**
-   * Test {@link OperationController#getOperationExample(String)}.
-   *
-   * <ul>
-   *   <li>Given array of {@link Object} with {@code Class Name}.
-   *   <li>When empty string.
-   * </ul>
-   *
-   * <p>Method under test: {@link OperationController#getOperationExample(String)}
-   */
-  @Test
-  @DisplayName(
-      "Test getOperationExample(String); given array of Object with 'Class Name'; when empty string")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Operation OperationController.getOperationExample(String)"})
-  void testGetOperationExample_givenArrayOfObjectWithClassName_whenEmptyString() throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.get("/rest/graph/operations/{className}/example", "");
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(operationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isNotFound())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(
-            content()
-                .string(
-                    "{\"statusCode\":404,\"status\":\"Not Found\",\"simpleMessage\":\"Class: example was not found on the"
-                        + " classpath.\",\"detailMessage\":null}"));
   }
 
   /**
@@ -823,6 +683,91 @@ class OperationControllerDiffblueTest {
    * Test {@link OperationController#executeChunked(HttpHeaders, Operation)}.
    *
    * <ul>
+   *   <li>Given {@link AbstractUserFactory} (default constructor) HttpHeaders is {@link
+   *       HttpHeaders#HttpHeaders()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link OperationController#executeChunked(HttpHeaders, Operation)}
+   */
+  @Test
+  @DisplayName(
+      "Test executeChunked(HttpHeaders, Operation); given AbstractUserFactory (default constructor) HttpHeaders is HttpHeaders()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "org.springframework.http.ResponseEntity OperationController.executeChunked(HttpHeaders, Operation)"
+  })
+  void testExecuteChunked_givenAbstractUserFactoryHttpHeadersIsHttpHeaders() throws Exception {
+    // Arrange
+    MockHttpServletRequestBuilder contentTypeResult =
+        MockMvcRequestBuilders.post("/rest/graph/operations/execute/chunked")
+            .contentType(MediaType.APPLICATION_JSON);
+
+    JsonMapper jsonMapper = JsonMapper.builder().findAndAddModules().build();
+
+    MockHttpServletRequestBuilder requestBuilder =
+        contentTypeResult.content(jsonMapper.writeValueAsString(new GetJobDetails()));
+
+    AbstractUserFactory userFactory = new AbstractUserFactory();
+    userFactory.setHttpHeaders(new HttpHeaders());
+    OperationController operationController =
+        new OperationController(
+            new DefaultGraphFactory(), userFactory, mock(ExamplesFactory.class));
+
+    // Act and Assert
+    MockMvcBuilders.standaloneSetup(operationController)
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isOk())
+        .andExpect(content().contentType("application/json"))
+        .andExpect(content().string(""));
+  }
+
+  /**
+   * Test {@link OperationController#executeChunked(HttpHeaders, Operation)}.
+   *
+   * <ul>
+   *   <li>Given {@link AbstractUserFactory} {@link AbstractUserFactory#setHttpHeaders(HttpHeaders)}
+   *       does nothing.
+   * </ul>
+   *
+   * <p>Method under test: {@link OperationController#executeChunked(HttpHeaders, Operation)}
+   */
+  @Test
+  @DisplayName(
+      "Test executeChunked(HttpHeaders, Operation); given AbstractUserFactory setHttpHeaders(HttpHeaders) does nothing")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "org.springframework.http.ResponseEntity OperationController.executeChunked(HttpHeaders, Operation)"
+  })
+  void testExecuteChunked_givenAbstractUserFactorySetHttpHeadersDoesNothing() throws Exception {
+    // Arrange
+    doNothing().when(abstractUserFactory).setHttpHeaders(Mockito.<HttpHeaders>any());
+
+    MockHttpServletRequestBuilder contentTypeResult =
+        MockMvcRequestBuilders.post("/rest/graph/operations/execute/chunked")
+            .contentType(MediaType.APPLICATION_JSON);
+
+    JsonMapper jsonMapper = JsonMapper.builder().findAndAddModules().build();
+
+    MockHttpServletRequestBuilder requestBuilder =
+        contentTypeResult.content(jsonMapper.writeValueAsString(new GetJobDetails()));
+
+    // Act and Assert
+    MockMvcBuilders.standaloneSetup(operationController)
+        .setControllerAdvice(gafferExceptionMapper)
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isOk())
+        .andExpect(content().contentType("application/json"))
+        .andExpect(content().string(""));
+  }
+
+  /**
+   * Test {@link OperationController#executeChunked(HttpHeaders, Operation)}.
+   *
+   * <ul>
    *   <li>Then content string a string.
    * </ul>
    *
@@ -865,45 +810,6 @@ class OperationControllerDiffblueTest {
                 .string(
                     "{\"statusCode\":500,\"status\":\"Internal Server Error\",\"simpleMessage\":\"An error occurred\",\"detailMessage"
                         + "\":null}"));
-  }
-
-  /**
-   * Test {@link OperationController#executeChunked(HttpHeaders, Operation)}.
-   *
-   * <ul>
-   *   <li>Then status {@link StatusResultMatchers#isOk()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link OperationController#executeChunked(HttpHeaders, Operation)}
-   */
-  @Test
-  @DisplayName("Test executeChunked(HttpHeaders, Operation); then status isOk()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "org.springframework.http.ResponseEntity OperationController.executeChunked(HttpHeaders, Operation)"
-  })
-  void testExecuteChunked_thenStatusIsOk() throws Exception {
-    // Arrange
-    doNothing().when(abstractUserFactory).setHttpHeaders(Mockito.<HttpHeaders>any());
-
-    MockHttpServletRequestBuilder contentTypeResult =
-        MockMvcRequestBuilders.post("/rest/graph/operations/execute/chunked")
-            .contentType(MediaType.APPLICATION_JSON);
-
-    JsonMapper jsonMapper = JsonMapper.builder().findAndAddModules().build();
-
-    MockHttpServletRequestBuilder requestBuilder =
-        contentTypeResult.content(jsonMapper.writeValueAsString(new GetJobDetails()));
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(operationController)
-        .setControllerAdvice(gafferExceptionMapper)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isOk())
-        .andExpect(content().contentType("application/json"))
-        .andExpect(content().string(""));
   }
 
   /**

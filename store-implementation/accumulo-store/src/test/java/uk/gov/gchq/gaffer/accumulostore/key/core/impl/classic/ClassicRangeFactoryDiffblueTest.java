@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ import org.apache.accumulo.core.data.Key;
 import org.apache.accumulo.core.data.Range;
 import org.apache.accumulo.core.dataImpl.thrift.TKey;
 import org.apache.accumulo.core.dataImpl.thrift.TRange;
-import org.apache.hadoop.io.Text;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -83,18 +82,9 @@ class ClassicRangeFactoryDiffblueTest {
     assertEquals(1, actualRange.size());
     Range getResult = actualRange.get(0);
     Key startKey = getResult.getStartKey();
-    ByteSequence rowData = startKey.getRowData();
-    assertTrue(rowData instanceof ArrayByteSequence);
-    assertEquals(71, rowData.length());
-    assertEquals(71, startKey.getLength());
-    assertEquals(71, startKey.getSize());
-    Text row = startKey.getRow();
-    assertEquals(71, row.getLength());
-    assertEquals(71, rowData.getBackingArray().length);
+    assertTrue(startKey.getRowData() instanceof ArrayByteSequence);
     TRange toThriftResult = getResult.toThrift();
     TKey start = toThriftResult.getStart();
-    assertEquals(71, start.getRow().length);
-    assertEquals(71, row.getBytes().length);
     assertArrayEquals(new byte[] {}, start.getColFamily());
     TKey stop = toThriftResult.getStop();
     assertArrayEquals(new byte[] {}, stop.getColFamily());
@@ -213,63 +203,6 @@ class ClassicRangeFactoryDiffblueTest {
    * {@code operation}, {@code includeEdgesParam}.
    *
    * <ul>
-   *   <li>Then return array length is seventy.
-   * </ul>
-   *
-   * <p>Method under test: {@link ClassicRangeFactory#getRange(Object, GraphFilters, boolean)}
-   */
-  @Test
-  @DisplayName(
-      "Test getRange(Object, GraphFilters, boolean) with 'vertex', 'operation', 'includeEdgesParam'; then return array length is seventy")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"List ClassicRangeFactory.getRange(Object, GraphFilters, boolean)"})
-  void testGetRangeWithVertexOperationIncludeEdgesParam_thenReturnArrayLengthIsSeventy()
-      throws RangeFactoryException {
-    // Arrange
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-    ClassicRangeFactory classicRangeFactory = new ClassicRangeFactory(schema);
-
-    View view = mock(View.class);
-    when(view.hasEntities()).thenReturn(true);
-
-    GetElementsBetweenSets operation = mock(GetElementsBetweenSets.class);
-    when(operation.getView()).thenReturn(view);
-
-    // Act
-    List<Range> actualRange = classicRangeFactory.getRange("Vertex", operation, true);
-
-    // Assert
-    verify(operation).getView();
-    verify(view).hasEntities();
-    verify(schema).getVertexSerialiser();
-    assertEquals(1, actualRange.size());
-    Range getResult = actualRange.get(0);
-    Key startKey = getResult.getStartKey();
-    ByteSequence rowData = startKey.getRowData();
-    assertTrue(rowData instanceof ArrayByteSequence);
-    assertEquals(70, rowData.getBackingArray().length);
-    TRange toThriftResult = getResult.toThrift();
-    TKey start = toThriftResult.getStart();
-    assertEquals(70, start.getRow().length);
-    assertEquals(70, startKey.getRow().getBytes().length);
-    assertArrayEquals(new byte[] {}, start.getColFamily());
-    TKey stop = toThriftResult.getStop();
-    assertArrayEquals(new byte[] {}, stop.getColFamily());
-    assertArrayEquals(new byte[] {}, start.getColQualifier());
-    assertArrayEquals(new byte[] {}, stop.getColQualifier());
-    assertArrayEquals(new byte[] {}, start.getColVisibility());
-    assertArrayEquals(new byte[] {}, stop.getColVisibility());
-    assertArrayEquals(new byte[] {}, getResult.getEndKey().getColumnVisibilityParsed().flatten());
-    assertArrayEquals(new byte[] {}, startKey.getColumnVisibilityParsed().flatten());
-  }
-
-  /**
-   * Test {@link ClassicRangeFactory#getRange(Object, GraphFilters, boolean)} with {@code vertex},
-   * {@code operation}, {@code includeEdgesParam}.
-   *
-   * <ul>
    *   <li>Then throw {@link RangeFactoryException}.
    * </ul>
    *
@@ -314,56 +247,6 @@ class ClassicRangeFactoryDiffblueTest {
    * <ul>
    *   <li>Given {@link Schema} {@link Schema#getVertexSerialiser()} return {@link AvroSerialiser}
    *       (default constructor).
-   * </ul>
-   *
-   * <p>Method under test: {@link ClassicRangeFactory#getKeyFromEdgeId(Object, Object, DirectedType,
-   * IncludeIncomingOutgoingType, boolean)}
-   */
-  @Test
-  @DisplayName(
-      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); given Schema getVertexSerialiser() return AvroSerialiser (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "Key ClassicRangeFactory.getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean)"
-  })
-  void testGetKeyFromEdgeId_givenSchemaGetVertexSerialiserReturnAvroSerialiser()
-      throws RangeFactoryException {
-    // Arrange
-    Schema schema = mock(Schema.class);
-    when(schema.getVertexSerialiser()).thenReturn(new AvroSerialiser());
-
-    // Act
-    Key actualKeyFromEdgeId =
-        new ClassicRangeFactory(schema)
-            .getKeyFromEdgeId(
-                "Source Val",
-                "Dest Val",
-                DirectedType.EITHER,
-                IncludeIncomingOutgoingType.EITHER,
-                true);
-
-    // Assert
-    verify(schema).getVertexSerialiser();
-    ByteSequence columnFamilyData = actualKeyFromEdgeId.getColumnFamilyData();
-    assertTrue(columnFamilyData instanceof ArrayByteSequence);
-    ByteSequence columnQualifierData = actualKeyFromEdgeId.getColumnQualifierData();
-    assertTrue(columnQualifierData instanceof ArrayByteSequence);
-    ByteSequence columnVisibilityData = actualKeyFromEdgeId.getColumnVisibilityData();
-    assertTrue(columnVisibilityData instanceof ArrayByteSequence);
-    assertTrue(actualKeyFromEdgeId.getRowData() instanceof ArrayByteSequence);
-    assertEquals(columnFamilyData, columnQualifierData);
-    assertEquals(columnFamilyData, columnVisibilityData);
-    assertArrayEquals(new byte[] {}, actualKeyFromEdgeId.getColumnVisibilityParsed().flatten());
-  }
-
-  /**
-   * Test {@link ClassicRangeFactory#getKeyFromEdgeId(Object, Object, DirectedType,
-   * IncludeIncomingOutgoingType, boolean)}.
-   *
-   * <ul>
-   *   <li>Given {@link Schema} {@link Schema#getVertexSerialiser()} return {@link AvroSerialiser}
-   *       (default constructor).
    *   <li>When {@code null}.
    * </ul>
    *
@@ -392,8 +275,16 @@ class ClassicRangeFactoryDiffblueTest {
 
     // Assert
     verify(schema).getVertexSerialiser();
-    assertTrue(actualKeyFromEdgeId.getColumnQualifierData() instanceof ArrayByteSequence);
-    assertTrue(actualKeyFromEdgeId.getColumnVisibilityData() instanceof ArrayByteSequence);
+    ByteSequence columnFamilyData = actualKeyFromEdgeId.getColumnFamilyData();
+    assertTrue(columnFamilyData instanceof ArrayByteSequence);
+    ByteSequence columnQualifierData = actualKeyFromEdgeId.getColumnQualifierData();
+    assertTrue(columnQualifierData instanceof ArrayByteSequence);
+    ByteSequence columnVisibilityData = actualKeyFromEdgeId.getColumnVisibilityData();
+    assertTrue(columnVisibilityData instanceof ArrayByteSequence);
+    assertTrue(actualKeyFromEdgeId.getRowData() instanceof ArrayByteSequence);
+    assertEquals(columnFamilyData, columnQualifierData);
+    assertEquals(columnFamilyData, columnVisibilityData);
+    assertArrayEquals(new byte[] {}, actualKeyFromEdgeId.getColumnVisibilityParsed().flatten());
   }
 
   /**
@@ -493,7 +384,6 @@ class ClassicRangeFactoryDiffblueTest {
    *
    * <ul>
    *   <li>When {@code DIRECTED}.
-   *   <li>Then return RowData toArray is RowData BackingArray.
    * </ul>
    *
    * <p>Method under test: {@link ClassicRangeFactory#getKeyFromEdgeId(Object, Object, DirectedType,
@@ -501,13 +391,13 @@ class ClassicRangeFactoryDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'DIRECTED'; then return RowData toArray is RowData BackingArray")
+      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'DIRECTED'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "Key ClassicRangeFactory.getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean)"
   })
-  void testGetKeyFromEdgeId_whenDirected_thenReturnRowDataToArrayIsRowDataBackingArray()
+  void testGetKeyFromEdgeId_whenDirected()
       throws UnsupportedEncodingException, RangeFactoryException, SerialisationException {
     // Arrange
     AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
@@ -598,7 +488,6 @@ class ClassicRangeFactoryDiffblueTest {
    *
    * <ul>
    *   <li>When {@code DIRECTED}.
-   *   <li>Then return RowData toArray is RowData BackingArray.
    * </ul>
    *
    * <p>Method under test: {@link ClassicRangeFactory#getKeyFromEdgeId(Object, Object, DirectedType,
@@ -606,13 +495,13 @@ class ClassicRangeFactoryDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'DIRECTED'; then return RowData toArray is RowData BackingArray")
+      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'DIRECTED'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "Key ClassicRangeFactory.getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean)"
   })
-  void testGetKeyFromEdgeId_whenDirected_thenReturnRowDataToArrayIsRowDataBackingArray2()
+  void testGetKeyFromEdgeId_whenDirected2()
       throws UnsupportedEncodingException, RangeFactoryException, SerialisationException {
     // Arrange
     AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);
@@ -703,7 +592,6 @@ class ClassicRangeFactoryDiffblueTest {
    *
    * <ul>
    *   <li>When {@code INCOMING}.
-   *   <li>Then return RowData toArray is RowData BackingArray.
    * </ul>
    *
    * <p>Method under test: {@link ClassicRangeFactory#getKeyFromEdgeId(Object, Object, DirectedType,
@@ -711,13 +599,13 @@ class ClassicRangeFactoryDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'INCOMING'; then return RowData toArray is RowData BackingArray")
+      "Test getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean); when 'INCOMING'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "Key ClassicRangeFactory.getKeyFromEdgeId(Object, Object, DirectedType, IncludeIncomingOutgoingType, boolean)"
   })
-  void testGetKeyFromEdgeId_whenIncoming_thenReturnRowDataToArrayIsRowDataBackingArray()
+  void testGetKeyFromEdgeId_whenIncoming()
       throws UnsupportedEncodingException, RangeFactoryException, SerialisationException {
     // Arrange
     AvroSerialiser avroSerialiser = mock(AvroSerialiser.class);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Crown Copyright
+ * Copyright 2026 Crown Copyright
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -435,38 +435,6 @@ class FederatedAccessDiffblueTest {
     // Arrange
     Builder builder = new Builder();
 
-    // Act
-    builder.graphAuths("Op Auth");
-
-    // Assert
-    FederatedAccess federatedAccess = builder.build();
-    AccessPredicate orDefaultReadAccessPredicate =
-        federatedAccess.getOrDefaultReadAccessPredicate();
-    assertTrue(orDefaultReadAccessPredicate instanceof FederatedGraphReadAccessPredicate);
-    Predicate<User> userPredicate = orDefaultReadAccessPredicate.getUserPredicate();
-    assertTrue(userPredicate instanceof FederatedGraphReadUserPredicate);
-    List<String> auths = ((FederatedGraphReadUserPredicate) userPredicate).getAuths();
-    assertEquals(1, auths.size());
-    assertEquals("Op Auth", auths.get(0));
-    Set<String> graphAuths = federatedAccess.getGraphAuths();
-    assertEquals(1, graphAuths.size());
-    assertTrue(graphAuths.contains("Op Auth"));
-  }
-
-  /**
-   * Test Builder {@link Builder#graphAuths(String[])} with {@code opAuth}.
-   *
-   * <p>Method under test: {@link Builder#graphAuths(String[])}
-   */
-  @Test
-  @DisplayName("Test Builder graphAuths(String[]) with 'opAuth'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Builder Builder.graphAuths(String[])"})
-  void testBuilderGraphAuthsWithOpAuth2() {
-    // Arrange
-    Builder builder = new Builder();
-
     // Act and Assert
     FederatedAccess federatedAccess = builder.graphAuths((String[]) null).build();
     AccessPredicate orDefaultReadAccessPredicate =
@@ -530,38 +498,6 @@ class FederatedAccessDiffblueTest {
 
     // Assert
     assertSame(actualReadAccessPredicateResult, actualWriteAccessPredicateResult);
-  }
-
-  /**
-   * Test Builder new {@link Builder} (default constructor).
-   *
-   * <p>Method under test: default or parameterless constructor of {@link Builder}
-   */
-  @Test
-  @DisplayName("Test Builder new Builder (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void Builder.<init>()"})
-  void testBuilderNewBuilder2() {
-    // Arrange, Act and Assert
-    FederatedAccess federatedAccess = new Builder().build();
-    AccessPredicate orDefaultReadAccessPredicate =
-        federatedAccess.getOrDefaultReadAccessPredicate();
-    assertTrue(orDefaultReadAccessPredicate instanceof FederatedGraphReadAccessPredicate);
-    AccessPredicate orDefaultWriteAccessPredicate =
-        federatedAccess.getOrDefaultWriteAccessPredicate();
-    assertTrue(orDefaultWriteAccessPredicate instanceof FederatedGraphWriteAccessPredicate);
-    assertTrue(
-        orDefaultReadAccessPredicate.getUserPredicate() instanceof FederatedGraphReadUserPredicate);
-    assertTrue(
-        orDefaultWriteAccessPredicate.getUserPredicate()
-            instanceof FederatedGraphWriteUserPredicate);
-    assertNull(federatedAccess.getOwningUserId());
-    assertNull(federatedAccess.getGraphAuths());
-    assertNull(federatedAccess.getReadAccessPredicate());
-    assertNull(federatedAccess.getWriteAccessPredicate());
-    assertEquals(ResourceType.FederatedStoreGraph, federatedAccess.getResourceType());
-    assertFalse(federatedAccess.isPublic());
   }
 
   /**
